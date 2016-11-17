@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Документация", 
+		"/collective/sibir-brass/o-nas/doсuments/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Артисты", 
+		"/collective/sibir-brass/o-nas/artisty/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"История", 
+		"/collective/sibir-brass/o-nas/history/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Руководство", 
+		"/collective/sibir-brass/o-nas/control/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Видео", 
+		"/collective/sibir-brass/o-nas/video/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Вакансии", 
+		"/collective/sibir-brass/o-nas/jobs/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Фотоотчеты", 
+		"/collective/sibir-brass/o-nas/photogal/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

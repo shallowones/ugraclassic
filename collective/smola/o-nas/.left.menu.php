@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Документация", 
+		"/collective/smola/o-nas/doсuments/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Артисты", 
+		"/collective/smola/o-nas/artisty/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"История", 
+		"/collective/smola/o-nas/history/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Руководство", 
+		"/collective/smola/o-nas/control/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Видео", 
+		"/collective/smola/o-nas/video/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Вакансии", 
+		"/collective/smola/o-nas/jobs/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Фотоотчеты", 
+		"/collective/smola/o-nas/photogal/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

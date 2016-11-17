@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Документация", 
+		"/collective/akadem-tants/o-nas/doсuments/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Артисты", 
+		"/collective/akadem-tants/o-nas/artisty/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"История", 
+		"/collective/akadem-tants/o-nas/history/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Руководство", 
+		"/collective/akadem-tants/o-nas/control/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Видео", 
+		"/collective/akadem-tants/o-nas/video/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Вакансии", 
+		"/collective/akadem-tants/o-nas/jobs/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Фотоотчеты", 
+		"/collective/akadem-tants/o-nas/photogal/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

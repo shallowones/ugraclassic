@@ -1,0 +1,193 @@
+.events-slider-region .item{
+	width: 306px;
+    float: left;
+    background: #fff;
+    //padding-bottom: 67px;
+}
+.events-slider-region .item{
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+.events-slider-region .owl-dots {
+    width: 100%;
+    display: block;
+    text-align: center;
+    z-index: 5;
+    padding-bottom: 40px;
+}
+
+.events-slider-region .owl-dot {
+    margin: 0px 6px;
+    margin-top: 25px;
+    width: 8px;
+    height: 8px;
+    background: #b1b1b1;
+    display: inline-block;
+    color:#585858;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.events-slider-region .owl-dot.active {
+    background: #daac4f;
+}
+
+.events-slider-region .events-photo {
+    width: 306px;
+    height: 185px;
+}
+
+.events-slider-region .events-info {
+    padding: 20px;
+    background: #fff;
+    width: 100%;
+    display: inline-block;
+    //padding-bottom: 70px;
+}
+
+.events-slider-region .events-name {
+    font-family: 'Noto Serif', serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.events-slider-region .events-name a:link, .events-slider-region .events-name a:visited, .events-slider-region .events-name a:active {
+    text-decoration: none;
+    color: #272727;
+}
+
+.events-slider-region .events-name a:hover {
+    text-decoration: none;
+    color: #165985;
+}
+
+.events-slider-region .events-hall-block {
+    display: table;
+    margin-top: 10px;
+}
+
+.events-slider-region .events-slider-date {
+    font-family: Arial;
+    color: #272727;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.events-slider-region .events-hall {
+    font-family: Arial;
+    color: #272727;
+    font-size: 14px;
+    margin-top: 16px;
+    width: 220px;
+    line-height: 18px;
+    display: table-cell;
+    vertical-align: top;
+    font-style: italic;
+}
+
+.events-slider-region .events-slider-region-date {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    color: #272727;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.events-slider-region .events-age {
+    padding: 8px 0 0 0;
+    border: 1px solid #daac4f;
+    border-radius: 30px;
+    width: 31px;
+    text-align: center;
+    height: 31px;
+    color: #daac4f;
+    font-size: 13px;
+    font-family: 'Arial', sans-serif;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+.events-slider-region .all-news {
+    border-radius: 30px;
+    width: 176px;
+    height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 2px solid #abc5d6;
+    padding-top: 9px;
+    font-family: Arial;
+    font-weight: bold;
+    text-decoration: none;
+    color: #abc5d6;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.events-slider-region .all-news:hover {
+    color: #36454f !important;
+    border: 2px solid #36454f;
+    text-decoration: none;
+}
+
+
+
+.events-slider-region .owl-nav {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.events-slider-region .owl-nav .owl-prev{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    left: -54px;
+}
+
+.events-slider-region .owl-nav .owl-next{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    right: -54px;
+}
+
+
+.events-slider-region .owl-nav .owl-prev i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) 0px 0 no-repeat;
+    position: absolute;
+    top: 37%;
+    bottom: 50%;
+}
+
+.events-slider-region .owl-nav .owl-next i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) -20px 0 no-repeat;
+    position: absolute;
+    top: 37%;
+    bottom: 50%;
+    right: 0;
+}
+
+.events-slider-region .owl-carousel .owl-stage-outer {
+    z-index: 100;
+}
+
+
+@media (max-width: 757px) {
+	.events-slider-region .item {
+		width: 100%;
+		height: initial;
+	}
+}

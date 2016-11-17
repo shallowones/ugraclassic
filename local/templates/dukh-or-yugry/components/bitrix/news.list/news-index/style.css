@@ -1,0 +1,119 @@
+.news-index {
+	margin-bottom: 45px;
+}
+
+.news-index .news-item {
+	min-height: 180px;
+    margin-bottom: 6px;
+}
+
+.news-index .preview_picture {
+	float: left;
+	width: 306px;
+	height: 180px;
+	margin-right: 15px;
+}
+
+.news-index .news-info {
+	float: left;
+	width: calc(100% - 321px);
+	padding-top: 10px;
+}
+
+.news-index .news-date {
+	font-family: Arial;
+	letter-spacing: 1px;
+	color: #666666;
+	font-style: italic;
+	font-size: 14px;
+}
+
+.news-index .news-name-text-box {
+	height: 136px;
+	overflow: hidden;
+}
+
+.news-index .news-name {
+	margin-top: 7px;
+}
+
+.news-index .news-name a {
+	font-family: 'Noto Serif', serif;
+	color: #272727;
+	font-size: 16px;
+	line-height: 22px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.news-index .news-name a:hover, .news-name a:active {
+	text-decoration: none;
+    color: #165985;
+}
+
+.news-index .news-text {
+	font-family: Arial;
+	color: #272727;
+	font-size: 14px;
+	line-height: 22px;
+	text-decoration: none;
+	margin-top: 5px;
+}
+
+.news-index .all-news {
+    border-radius: 30px;
+    width: 176px;
+    height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 2px solid #baaa97;
+    padding-top: 9px;
+    font-family: Arial;
+    font-weight: bold;
+    text-decoration: none;
+    color: #baaa97;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.news-index .all-news:hover {
+    color: #36454f !important;
+    border: 2px solid #36454f;
+    text-decoration: none;
+}
+
+@media (max-width: 1000px) and (min-width: 758px) {
+	.news-index .news-name-text-box {
+		height: 150px;
+		overflow: hidden;
+	}
+}
+
+
+@media (max-width: 757px) {
+	.news-index .news-item {
+		min-height: initial;
+		margin-bottom: 30px;
+	}
+
+	.news-index .preview_picture {
+		float: initial;
+		width: 100%;
+		height: 100%;
+		margin-right: initial;
+	}
+
+	.news-index .news-info {
+		float: initial;
+		width: 100%;
+		padding-top: initial;
+		margin-top: 15px;
+		text-align: justify;
+	}
+
+	.news-index .news-name-text-box {
+		height: initial;
+		overflow: initial;
+	}
+}

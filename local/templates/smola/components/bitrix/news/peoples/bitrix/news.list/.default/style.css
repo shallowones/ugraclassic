@@ -1,0 +1,44 @@
+.artist-list {
+	font-family: Arial;
+}
+
+.artist-list .artist-item {
+	width: 45%;
+	text-align: left;
+	margin-bottom: 17px;
+}
+
+.artist-list .artist-item:nth-child(1n) {
+	float:left;
+	margin-right: 50px;
+}
+
+.artist-list .artist-item:nth-child(2n) {
+	margin-right: 0;
+}
+
+.artist-list .artist-item .artist-tool {
+	color: #999;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+.artist-list .artist-item .artist-tool span {
+	color: #d68673;
+}
+
+.artist-list .artist-item .artist-name {
+	color: #272727;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+@media (max-width: 757px) {
+	.artist-list .artist-item {
+		float: initial;
+		text-align: center;
+		margin-right: 0;
+		width: 100%;
+		margin-bottom: 25px;
+	}
+}

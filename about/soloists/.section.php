@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Солисты";
+$arDirProperties = Array(
+
+);
+?>

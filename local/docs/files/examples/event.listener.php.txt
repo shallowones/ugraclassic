@@ -1,0 +1,27 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: agr
+ * Date: 6/30/16
+ * Time: 12:22 PM
+ */
+
+namespace Example;
+
+/**
+ * Класс содержит методы для обработки различных событий
+ *
+ */
+class EventListener
+{
+    /**
+     * Обработка события OnBeforeIBlockElementAdd модуля iblock
+     * @param Event $event
+     */
+    public static function OnBeforeIBlockElementAdd(Event $event)
+    {
+        /**
+         * Обработка события
+         */
+    }
+}

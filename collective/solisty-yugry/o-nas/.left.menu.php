@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Документация", 
+		"/collective/solisty-yugry/o-nas/doсuments/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Артисты", 
+		"/collective/solisty-yugry/o-nas/artisty/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"История", 
+		"/collective/solisty-yugry/o-nas/history/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Руководство", 
+		"/collective/solisty-yugry/o-nas/control/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Видео", 
+		"/collective/solisty-yugry/o-nas/video/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Вакансии", 
+		"/collective/solisty-yugry/o-nas/jobs/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Фотоотчеты", 
+		"/collective/solisty-yugry/o-nas/photogal/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

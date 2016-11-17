@@ -1,0 +1,96 @@
+.photogalereya-slider .photogalereya-item{
+    height: 480px;
+    width: 100%;
+    position: relative;
+}
+
+.photogalereya-slider .album-name {
+    background: url(img/album-name.png); 
+    position: absolute;
+    bottom: 0;  
+    padding: 15px 20px;
+    margin: 15px;
+    font-family: 'Noto Serif', serif;
+    font-size: 16px;
+}
+
+.photogalereya-slider .album-name a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.photogalereya-slider .album-name a:hover {
+    text-decoration: underline;
+}
+
+
+.photogalereya-slider .owl-dots {
+    width: 100%;
+    display: block;
+    text-align: center;
+    z-index: 5;
+    padding-bottom: 40px;
+}
+
+.photogalereya-slider .owl-dot {
+    margin: 0px 6px;
+    margin-top: 25px;
+    width: 8px;
+    height: 8px;
+    background: #b1b1b1;
+    display: inline-block;
+    color:#585858;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.photogalereya-slider .owl-dot.active {
+    background: #daac4f;
+}
+
+ .photogalereya-slider .owl-nav {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.photogalereya-slider .owl-nav .owl-prev{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    left: -54px;
+}
+
+.photogalereya-slider .owl-nav .owl-next{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    right: -54px;
+}
+
+
+.photogalereya-slider .owl-nav .owl-prev i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) 0px 0 no-repeat;
+    position: absolute;
+    top: 40%;
+    bottom: 0%;
+}
+
+.photogalereya-slider .owl-nav .owl-next i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) -20px 0 no-repeat;
+    position: absolute;
+    top: 40%;
+    bottom: 0%;
+    right: 0;
+}
+
+.photogalereya-slider .owl-carousel .owl-stage-outer {
+    z-index: 100;
+}

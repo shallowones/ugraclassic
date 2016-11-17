@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Документация", 
+		"/collective/ans-pes-i-tants/o-nas/doсuments/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Артисты", 
+		"/collective/ans-pes-i-tants/o-nas/artisty/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"История", 
+		"/collective/ans-pes-i-tants/o-nas/history/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Руководство", 
+		"/collective/ans-pes-i-tants/o-nas/control/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Видео", 
+		"/collective/ans-pes-i-tants/o-nas/video/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Вакансии", 
+		"/collective/ans-pes-i-tants/o-nas/jobs/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Фотоотчеты", 
+		"/collective/ans-pes-i-tants/o-nas/photogal/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

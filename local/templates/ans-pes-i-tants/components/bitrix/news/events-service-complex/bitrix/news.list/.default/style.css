@@ -1,0 +1,169 @@
+.afisha-list {
+	width: 100%;
+}
+
+.afisha-list .afisha-item {
+	position: relative;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #dfdddd;
+}
+
+.afisha-list .afisha-info {
+	float: left;
+    width: calc(100% - 290px);
+    padding-left: 25px;
+}
+
+.afisha-list .afisha-info .info-1 {
+	margin-top: 30px;
+}
+
+
+.afisha-list .preview-picture {
+	float: left;
+	width: 220px;
+	//height: 160px;
+	//width: 30%;
+    height: 100%;
+}
+
+.afisha-list .afisha-name {
+    font-family: 'Noto Serif', serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    line-height: 22px;
+}
+
+.afisha-list .afisha-name a:link, .afisha-list .afisha-name a:visited, .afisha-list .afisha-name a:active {
+    text-decoration: none;
+    color: #272727;
+}
+
+.afisha-list .afisha-name a:hover {
+    text-decoration: none;
+    color: #165985;
+}
+
+.afisha-list .afisha-date {
+	color: #7f7e7e;
+    font-family: Arial;
+    font-size: 14px;
+    text-transform: uppercase;
+    float: left;
+}
+
+
+.afisha-list .afisha-text {
+    font-family: Arial;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.1px;
+    text-align: justify;
+}
+
+.afisha-list .afisha-age {
+	padding: 7px 0 0 0;
+    border: 1px solid #daac4f;
+    border-radius: 30px;
+    width: 26px;
+    text-align: center;
+    height: 26px;
+    color: #daac4f;
+    font-size: 11px;
+    font-family: Arial;
+    float: left;
+    margin-left: 25px;
+    margin-top: -7px;
+}
+
+.afisha-list .tickets-info {
+	position: absolute;
+	right: 0;
+	bottom: 25px;
+	text-align: right;
+}
+
+.afisha-list .tickets-info .buy-ticket {
+	width: 127px;
+    height: 31px;
+    background: #e64227;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    padding-top: 9px;
+    margin-top: 9px;
+    font-size: 13px;
+}
+
+.afisha-list .tickets-info .buy-ticket:hover {
+    background: #e35151;
+    cursor: pointer;
+}
+
+
+.afisha-list .ddmm {
+    float:left;
+    color: #daac4f;
+}
+
+.afisha-list .yyyy {
+    float:left;
+    margin-left: 7px;
+}
+
+.afisha-list .time {
+    float:left;
+    margin-left:25px;
+    color: #daac4f;
+}
+
+.afisha-list .hall {
+    float:left;
+    margin-left:7px;
+}
+
+
+
+@media (max-width: 1000px) and (min-width: 758px) {
+    .afisha-list .afisha-age {
+        float: right;
+    }
+
+    .afisha-list .hall {
+       float: initial;
+       margin-top: 23px; 
+       margin-left: 0;
+    }
+}
+
+
+@media (max-width: 757px) {
+    .afisha-list .afisha-age {
+        float: right;
+    }
+
+    .afisha-list .hall {
+       float: initial;
+       margin-top: 23px; 
+       margin-left: 0;
+    }
+
+    .afisha-list .preview-picture {
+        float: initial;
+        width: 100%;
+    }
+
+    .afisha-list .afisha-info {
+        width: 100%;
+        padding-left: 0;
+        float: initial;
+        text-align: justify;
+        margin-top: 5px;
+    }
+}

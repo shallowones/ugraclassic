@@ -1,0 +1,49 @@
+@media (max-width:1100px) and (min-width:816px)
+{
+}
+
+#slider-promo
+{
+    width: 609px;
+    height: 408px;
+    float: left;
+}
+
+#slider-promo .item
+{
+    overflow: hidden;
+
+    width: 609px;
+    height: 408px;
+
+    background: #d2d2d2;
+    text-align: center;
+}
+
+#slider-promo .item img
+{
+    width: auto;
+    max-height: 100%;
+    vertical-align: middle;
+}
+
+.promo-right-col
+{
+    width: 310px;
+    height: 408px;
+    margin-left: 10px;
+    float: right; 
+    overflow: hidden;
+    cursor: pointer;
+}
+.promo-right-col .outter{
+	margin-top: -207px;
+}
+
+.promo-right-col .promo-right-item {
+	margin-bottom: 6px;
+}
+
+.promo-inactive {
+	display: none;
+}

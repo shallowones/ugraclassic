@@ -1,0 +1,130 @@
+.online-list {
+	width: 100%;
+}
+
+.online-list .online-item {
+	width: 100%;
+	position: relative;
+	padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dfdddd;
+}
+
+.online-list .online-item .img-online {
+	float: left;
+	width: 300px;
+	position: relative;
+}
+
+.online-list .online-item .img-online .camera {
+	background: url(img/camera.png) no-repeat;
+	width: 54px;
+	height: 54px;
+	position: absolute;
+	right: 15px;
+    top: 15px;
+}
+
+.online-list .online-info {
+	float: left;
+    width: calc(100% - 325px);
+    padding-left: 25px;
+}
+
+.online-list .online-name {
+    font-family: 'Noto Serif', serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    line-height: 22px;
+}
+
+.online-list .online-name a:link, .online-list .online-name a:visited, .online-list .online-name a:active {
+    text-decoration: none;
+    color: #272727;
+}
+
+.online-list .online-name a:hover {
+    text-decoration: none;
+    color: #daac4f;
+}
+
+.online-list .online-age {
+	padding: 8px 0 0 0;
+    border: 1px solid #c8c8c8;
+    border-radius: 30px;
+    width: 31px;
+    text-align: center;
+    height: 31px;
+    color: #9d9d9d;
+    font-size: 13px;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: absolute;
+    top: 0px;
+    right: 25px;
+}
+
+.online-list .online-date {
+	color: #272727;
+	font-size: 13px;
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	line-height: 20px;
+	padding-top: 10px;
+}
+
+.online-list .online-date span {
+	color: #7f7e7e;
+}
+
+.online-list .preview-text {
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 22px;
+}
+
+.online-list .online-name-text-box {
+	height: 114px;
+    overflow: hidden;
+}
+
+@media (min-width: 1400px) {
+    .online-list .online-info {
+        width: calc(100% - 380px);
+    }
+}
+
+@media (max-width: 757px) {
+    .online-list .online-info {
+        float: initial;
+    }
+
+
+    .online-list .online-item .img-online {
+        width: 100%;
+        float: initial;
+    }
+
+    .online-list .online-item .img-online img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .online-list .online-info {
+        width: 100%;
+        float: initial;
+        padding-left: 0;
+    }
+
+    .online-list .online-age {
+        position: initial;
+    }
+
+    .online-list .online-name-text-box {
+        height: initial;
+        overflow: initial;
+    }
+
+}

@@ -1,0 +1,132 @@
+.photoalbum-list {
+	
+}
+
+.photoalbum-list .photoalbum-item {
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: top;
+    width: 225px;
+    margin-right: 6px;
+}
+
+.photoalbum-list .photoalbum-item:nth-child(4n) {
+    margin-right: 0;
+}
+
+.photoalbum-list .preview-picture {
+    height: 140px;
+    width: 100%;
+}
+
+.photoalbum-list .photoalbum-name {
+    font-family: Arial;
+    font-size: 14px;
+    margin-top: 7px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.photoalbum-list .photoalbum-name a:link, .photoalbum-list .photoalbum-name a:visited, .photoalbum-list .photoalbum-name a:active {
+    text-decoration: none;
+    color: #333;
+}
+
+.photoalbum-list .photoalbum-name a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+
+@media (min-width: 1401px) {
+    .photoalbum-list .photoalbum-item:nth-child(4n) {
+        margin-right: 10px;
+    }
+
+    .photoalbum-list .photoalbum-item:nth-child(5n) {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 758px) {
+    .photoalbum-list .photoalbum-item:nth-child(4n) {
+        margin-right: 10px;
+    }
+
+    .photoalbum-list .photoalbum-item:nth-child(3n) {
+        margin-right: 0px;
+    }
+
+    .photoalbum-list .photoalbum-item {
+        width: 200px;
+    }
+}
+
+
+@media (max-width: 757px) and (min-width:451px) {
+    .photoalbum-list .photoalbum-item:nth-child(1n){
+        margin-right: 10px;
+    }
+
+    .photoalbum-list .photoalbum-item:nth-child(2n){
+        margin-right: 0;
+    }
+
+    .photoalbum-list .photoalbum-item:nth-child(3n) {
+        margin-right: 10px;
+    }
+
+    .photoalbum-list .photoalbum-item:nth-child(4n) {
+        margin-right: 0px;
+    }
+
+    .photoalbum-list .photoalbum-item .img-photoalbum {
+        height: initial;
+    }
+
+    .photoalbum-list .photoalbum-item {
+        width: 47%;
+    }
+
+    .photoalbum-list .preview-picture {
+        height: initial;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .photoalbum-list .photoalbum-item:nth-child(1n){
+        float: initial;
+        margin-right: 0;
+    }
+
+    .photoalbum-list .photoalbum-item:nth-child(2n){
+        float: initial;
+        margin-right: 0;
+    }
+
+    .photoalbum-list .photoalbum-item:nth-child(4n) {
+        margin-right: 0px;
+    }
+
+    .photoalbum-list .photoalbum-item:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .photoalbum-list .photoalbum-item .img-photoalbum {
+        height: initial;
+    }
+
+    .photoalbum-list .photoalbum-item {
+        width: 100%;
+        float: initial;
+    }
+
+    .photoalbum-list .photoalbum-item img {
+        width: 100%;
+    }
+
+    .photoalbum-list .preview-picture {
+        height: initial;
+    }
+}

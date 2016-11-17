@@ -1,0 +1,75 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: agr
+ * Date: 6/29/16
+ * Time: 1:21 PM
+ */
+
+namespace UW;
+
+use \Bitrix\Main\EventManager;
+
+/**
+ * Базовый класс, содержащий вспомогательные методы общего назначения
+ * Class SystemBase
+ * @package UW
+ */
+class SystemBase
+{
+    /**
+     * Вывод отладочной информации
+     * @param mixed $var Переменная для дебага
+     * @param int $mode Режим: 1 - в поток вывода; 2 - в файл (/upload/debug.txt)
+     * @param string $title Подпись для блока с дебагом
+     * @param bool $die Прекратить выполнение скрипта
+     */
+    final public static function debug($var, $mode = 0, $title = 'debug', $die = false)
+    {
+        switch($mode){
+            case 0:
+                echo "<pre>";
+                echo "######### {$title} ##########<br/>";
+                print_r($var);
+                echo "</pre>";
+
+                break;
+            case 1:
+                $var = print_r($var, true);
+                $handle = fopen($_SERVER["DOCUMENT_ROOT"]."/upload/debug.txt", "a+");
+                fwrite($handle, "######### {$title} ##########\n");
+                fwrite($handle, $var);
+                fwrite($handle, "\n\n\n");
+
+                fclose($handle);
+                break;
+        }
+
+        if($die)
+            die('Stopped by debugger');
+    }
+
+    /**
+     * Метод регистрирует события в системе
+     * @param array $arHandlers
+     *
+     * @see https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2244#events Документация по работе с событиями
+     *
+     * @return void
+     */
+    final public static function registerHandlers($arHandlers)
+    {
+        $eventManager = EventManager::getInstance();
+
+        foreach($arHandlers as $module => $arEvents)
+        {
+            foreach($arEvents as $event => $arHandler)
+            {
+                foreach($arHandler as $key => $handler)
+                {
+                    $eventManager->addEventHandler($module, $event, $handler);
+                }
+            }
+        }
+    }
+}

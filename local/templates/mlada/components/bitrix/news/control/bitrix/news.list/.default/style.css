@@ -1,0 +1,77 @@
+.control-list {
+	font-family: Arial;
+	font-size: 14px;
+}
+
+.control-list .control-item {
+	float:left;
+	width: 300px;
+	margin-right: 15px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.control-list .control-item .preview_picture {
+	margin-bottom: 15px;
+}
+
+.control-list .control-item:nth-child(3n) {
+	margin-right: 0;
+}
+
+.control-list .control-item .control-name {
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 14px; 
+}
+
+.control-list .control-item .control-name a:link,
+.control-list .control-item .control-name a:active,
+.control-list .control-item .control-name a:visited,
+.control-list .control-item .control-name a:hover {
+	color: #272727;
+}
+
+.control-list .control-item .contorl-post {
+	color: #999;
+	margin-bottom: 15px;
+}
+
+.control-list .control-item .contorl-mail {
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.control-list .control-item .contorl-mail a:link,
+.control-list .control-item .contorl-mail a:active
+ {
+	text-decoration: underline;
+	color: #2c82bb;
+}
+
+.control-list .control-item .contorl-mail a:hover {
+	text-decoration: none !important;
+	color: #2c82bb;
+}
+
+.control-list .control-item .control-phone {
+	color: #272727;
+}
+
+@media (max-width: 1000px) and (min-width: 758px) {
+	.control-list .control-item:nth-child(2n) {
+		margin-right: 0;
+	}
+
+	.control-list .control-item:nth-child(3n) {
+		margin-right: 15px;
+	}
+}
+
+@media (max-width: 757px) {
+	.control-list .control-item {
+		width: 100%;
+		float: initial;
+		margin-right: 0;
+	}
+}

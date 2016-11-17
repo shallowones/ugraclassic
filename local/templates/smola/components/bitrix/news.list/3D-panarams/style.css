@@ -1,0 +1,10 @@
+.item-3d{
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+	overflow: hidden;
+	height:175px;
+	width:100%;
+
+}
+

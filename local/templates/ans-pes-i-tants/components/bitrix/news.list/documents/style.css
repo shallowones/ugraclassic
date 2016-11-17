@@ -1,0 +1,73 @@
+.doc-list .doc-item {
+	height: 100%;
+	margin-bottom: 20px;
+	display: table;
+}
+
+.doc-list .doc-ico{
+	width: 35px;
+	height: 41px;
+	line-height: 15px;
+	padding-top: 4px;
+	text-align: center;
+
+	vertical-align: middle;
+    display: inline-block
+}
+
+.doc-list a {
+	color: #2c82bb !important;
+}
+
+.doc-list a:hover {
+	text-decoration: none;
+}
+
+a.doc-link .doc-name {
+	display: inline-block;
+	text-decoration: underline;
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 14px;
+	margin-left: 18px;
+}
+
+a.doc-link:hover .doc-name {
+	text-decoration: none;
+}
+
+.doc-excel, .doc-docx, .doc-powerp, .doc-img, .doc-pdf, .doc-rar, .doc-none{
+	background: #f2635f url(img/doc.png) no-repeat;
+	color:#fff;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.doc-excel:before {
+	content: "xls";
+}
+
+.doc-docx:before {
+	content: "doc";
+}
+
+.doc-powerp:before {
+	content: "ppt";
+}
+
+.doc-img:before {
+	content: "jpg";
+}
+
+.doc-pdf:before {
+	content: "pdf";
+}
+
+.doc-rar:before {
+	content: "rar";
+}
+
+.doc-none:before {
+	content: "file";
+}

@@ -1,0 +1,49 @@
+.bx_breadcrumbs{
+    padding-top:45px;
+}
+.bx_breadcrumbs ul{
+    margin:0;
+    padding:0
+}
+
+.bx_breadcrumbs ul li{
+    display:inline-block;
+    line-height:20px
+}
+.bx_breadcrumbs ul li a{
+    color: #000;
+    display:block;
+    text-decoration:none;
+    line-height: 16px;
+}
+.bx_breadcrumbs ul li:first-child span{padding-left:0}
+.bx_breadcrumbs ul li:last-child  a{background:none}
+.bx_breadcrumbs ul li a:hover{
+    line-height: 16px;
+    text-decoration: underline;
+}
+.bx_breadcrumbs ul li span{
+    font-family: Arial;
+    font-size: 14px;
+    display:block;
+    padding:0 14px;
+    color: #000;
+    text-decoration:none;
+    font-weight: bold;
+}
+.bx_breadcrumbs ul li.slash{
+    background: url(img/slash.png);
+    width: 8px;
+    height: 11px;
+}
+.bx_breadcrumbs ul li.slash:last-child{
+    display: none;
+}
+.bx_breadcrumbs,
+.bx_breadcrumbs ul li{
+    -webkit-transition:all 0.3s ease;
+    -moz-transition:all 0.3s ease;
+    -ms-transition:all 0.3s ease;
+    -o-transition:all 0.3s ease;
+    transition:all 0.3s ease;
+}

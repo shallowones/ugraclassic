@@ -1,0 +1,143 @@
+.menu-sitemap-tree {
+	display: table;
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-top: 50px;
+}
+
+.menu-sitemap-tree ul {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.menu-sitemap-tree ul li a {
+	color: #b59452;
+	font-weight: bold;
+	font-size: 17px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+}
+
+.menu-sitemap-tree ul li ul {
+	margin-top: 15px;
+}
+
+.menu-sitemap-tree ul li ul li {
+	padding-bottom: 8px;
+}
+
+.menu-sitemap-tree ul li ul li a {
+	color: #d0cfcf;
+	font-weight: normal;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.menu-sitemap-tree ul li ul li:nth-child(3), .menu-sitemap-tree ul li ul li:nth-child(4) {
+	margin-bottom: initial;
+}
+
+.menu-sitemap-tree ul li:nth-child(3), .menu-sitemap-tree ul li:nth-child(4) {
+	margin-bottom: 15px;
+}
+
+.menu-sitemap-tree ul li:nth-child(4) ul {
+	display: none !important;
+}
+	
+.menu-sitemap-tree li {
+	padding:0;
+	float: left;
+}
+
+.menu-sitemap-tree li li {
+	padding:0;
+}
+
+.menu-sitemap-tree li.close ul {
+	display: none;
+}
+
+
+@media (min-width: 1400px) {
+    .menu-sitemap-tree li {
+	    width: 325px;
+	} 
+}
+
+@media (min-width: 1000px) and (max-width: 1399px) {
+	.menu-sitemap-tree li {
+	    width: 310px;
+	} 
+}
+    
+@media (min-width: 758px) and (max-width: 1000px) {
+	.menu-sitemap-tree li {
+	    width: 310px;
+	    float: initial;
+	} 
+
+	.menu-sitemap-tree ul li:nth-child(2) {
+		float: initial;
+		margin-top: 15px;
+	}
+
+	.menu-sitemap-tree ul li ul li:nth-child(2) {
+		float: left;
+		margin-top: 0;
+	}
+
+	.menu-sitemap-tree ul li:nth-child(3) {
+		position: absolute;
+	    right: 0;
+	    top: 50px;
+	}
+
+	.menu-sitemap-tree ul li:nth-child(4) {
+		position: absolute;
+	    right: 0;
+	    top: 80px;
+	}
+
+	.menu-sitemap-tree ul li:nth-child(5) {
+		position: absolute;
+	    right: 0;
+	    top: 110px;
+	}
+
+	.menu-sitemap-tree ul li ul li:nth-child(3) {
+		position: initial;
+	    right: 0;
+	    top: 50px;
+	}
+
+	.menu-sitemap-tree ul li ul li:nth-child(4) {
+		position: initial;
+	    right: 0;
+	    top: 50px;
+	}
+
+	.menu-sitemap-tree ul li ul li:nth-child(5) {
+		position: initial;
+	    right: 0;
+	    top: 50px;
+	}
+
+
+}
+
+@media (max-width: 757px) {
+	.menu-sitemap-tree li {
+	    width: 310px;
+	    float: initial;
+	} 
+
+	.menu-sitemap-tree ul li {
+		margin-top: 10px;
+	}
+
+	.menu-sitemap-tree ul li ul li {
+		margin-top: 0px;
+	}
+}

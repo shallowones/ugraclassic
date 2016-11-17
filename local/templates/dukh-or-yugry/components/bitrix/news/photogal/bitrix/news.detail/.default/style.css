@@ -1,0 +1,80 @@
+.photoalbum-detail {
+
+}
+
+.photoalbum-detail .photoalbum-detail-text {
+	font-family: 'Noto Serif', serif;
+	line-height: 22px;
+	font-size: 16px;
+	color: #272727;
+    text-align: justify;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.photoalbum-gallery-img {
+	float: left;
+	margin:0 16px 16px 0;
+}
+
+.photoalbum-gallery-img:nth-child(5n) {
+	margin-right: 0
+}
+
+.photoalbum-gallery {
+	float: left;
+	width: 100%;
+}
+
+.photoalbum-gallery-img img {
+	width: 100%;
+	height: 100%
+}
+
+@media (max-width: 1399px) and (min-width: 1000px) {
+	.photoalbum-gallery-img:nth-child(5n) {
+		margin-right: 16px;
+	}
+
+	.photoalbum-gallery-img:nth-child(4n) {
+		margin-right: 0px;
+	}
+}
+
+@media (max-width: 1000px) and (min-width: 758px) {
+	.photoalbum-gallery-img {
+		width: 30%;
+	}
+
+	.photoalbum-gallery-img:nth-child(5n) {
+		margin-right: 16px;
+	}
+
+	.photoalbum-gallery-img:nth-child(4n) {
+		margin-right: 16px;
+	}
+
+	.photoalbum-gallery-img:nth-child(3n) {
+		margin-right: 0px;
+	}
+}
+
+@media (max-width: 757px) and (min-width: 591px) {
+	.photoalbum-gallery-img {
+		width: 47%;
+	}
+
+	.photoalbum-gallery-img:nth-child(5n) {
+		margin-right: 16px;
+	}
+}
+
+@media (max-width: 590px) {
+	.photoalbum-gallery-img {
+		width: 100%;
+	}
+
+	.photoalbum-gallery-img:nth-child(5n) {
+		margin-right: 0px;
+	}
+}

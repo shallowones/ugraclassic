@@ -1,0 +1,119 @@
+.calendar-slider .item{
+    background: #fff;
+    height: 50px;
+}
+
+.calendar-slider .item{
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+
+.calendar-slider .events-day {
+    padding: 10px 16px;
+    background: #fff;
+    width: 50px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.calendar-slider .owl-stage {
+        width: 200% !important;
+}
+
+.calendar-slider .events-month {
+    padding: 18px;
+    background: #fff;
+    width: 100%;
+    display: inline-block;
+}
+
+.calendar-slider .owl-dots {
+    width: 100%;
+    display: block;
+    text-align: center;
+    z-index: 5;
+    padding-bottom: 40px;
+}
+
+.calendar-slider .owl-dot {
+    margin: 0px 6px;
+    margin-top: 25px;
+    width: 8px;
+    height: 8px;
+    background: #b1b1b1;
+    display: inline-block;
+    color:#585858;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.calendar-slider .owl-dot.active {
+    background: #daac4f;
+}
+
+
+.calendar-slider .owl-nav {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.calendar-slider .owl-nav .owl-prev{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    left: -54px;
+}
+
+.calendar-slider .owl-nav .owl-next{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    right: -54px;
+}
+
+
+.calendar-slider .owl-nav .owl-prev i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) 0px 0 no-repeat;
+    position: absolute;
+    top: 47%;
+    bottom: 50%;
+}
+
+.calendar-slider .owl-nav .owl-next i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) -20px 0 no-repeat;
+    position: absolute;
+    top: 47%;
+    bottom: 50%;
+    right: 0;
+}
+
+.calendar-slider .owl-carousel .owl-stage-outer {
+    z-index: 100;
+}
+
+
+@media (min-width: 758px) and (max-width: 1000px) {
+    .calendar-slider {
+        width: 700px;
+    }
+
+    .calendar-slider .owl-nav, .calendar-slider .owl-dots, .calendar-slider .owl-carousel .owl-stage-outer {
+        width: 660px;
+    }
+}
+
+@media (max-width: 757px) {
+    .calendar-slider .item {
+        width: 100%;
+        height: initial !important;
+    }
+}

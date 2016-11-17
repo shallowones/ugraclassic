@@ -1,0 +1,192 @@
+.events-slider .item{
+	width: 306px;
+    float: left;
+    background: #fff;
+    padding-bottom: 97px;
+    margin-top: 13px;
+}
+
+.events-slider .item{
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+.events-name .item .photo {
+    width: 100%;
+    height: 100%;
+}
+
+.events-slider .owl-dots {
+    width: 100%;
+    display: block;
+    text-align: center;
+    z-index: 5;
+    padding-bottom: 40px;
+}
+
+.events-slider .owl-dot {
+    margin: 0px 6px;
+    margin-top: 25px;
+    width: 8px;
+    height: 8px;
+    background: #b1b1b1;
+    display: inline-block;
+    color:#585858;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.events-slider .owl-dot.active {
+    background: #daac4f;
+}
+
+.events-slider .events-photo {
+    width: 306px;
+    height: 185px;
+}
+
+.events-slider .events-info {
+    padding: 20px;
+    background: #fff;
+    width: 100%;
+    display: inline-block;
+    //padding-bottom: 70px;
+}
+
+.events-slider .events-name {
+    font-family: 'Noto Serif', serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 12px;
+    line-height: 22px;
+}
+
+.events-slider .events-name a:link, .events-slider .events-name a:visited, .events-slider .events-name a:active {
+    text-decoration: none;
+    color: #272727;
+}
+
+.events-slider .events-name a:hover {
+    text-decoration: none;
+    color: #daac4f;
+}
+
+.events-slider .events-hall {
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #7f7e7e;
+    letter-spacing: 1px;
+    font-size: 13px;
+    margin-top: 16px;
+    position: absolute;
+    bottom: 69px;
+}
+
+.events-slider .events-slider-date {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    color: #272727;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.events-slider .events-age {
+    padding: 8px 0 0 0;
+    border: 1px solid #c8c8c8;
+    border-radius: 30px;
+    width: 31px;
+    text-align: center;
+    height: 31px;
+    color: #9d9d9d;
+    font-size: 13px;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: absolute;
+    bottom: 20px;
+}
+
+.events-slider .buy-ticket {
+    width: 127px;
+    height: 31px;
+    background: #daac4f;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    padding-top: 9px;
+    font-size: 13px;
+}
+
+.events-slider .buy-ticket:hover {
+    background: #e35151;
+    cursor: pointer;
+}
+
+ .events-slider .owl-nav {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.events-slider .owl-nav .owl-prev{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    left: -54px;
+}
+
+.events-slider .owl-nav .owl-next{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    right: -54px;
+}
+
+
+.events-slider .owl-nav .owl-prev i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) 0px 0 no-repeat;
+    position: absolute;
+    top: 47%;
+    bottom: 50%;
+}
+
+.events-slider .owl-nav .owl-next i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) -20px 0 no-repeat;
+    position: absolute;
+    top: 47%;
+    bottom: 50%;
+    right: 0;
+}
+
+.events-slider .owl-carousel .owl-stage-outer {
+    z-index: 100;
+}
+
+
+@media (min-width: 758px) and (max-width: 1000px) {
+    .events-slider {
+        width: 700px;
+    }
+
+    .events-slider .owl-nav, .events-slider .owl-dots, .events-slider .owl-carousel .owl-stage-outer {
+        width: 660px;
+    }
+}
+
+@media (max-width: 757px) {
+    .events-slider .item {
+        width: 100%;
+        height: initial !important;
+    }
+}

@@ -1,0 +1,74 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Общие сведения", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"История", 
+		"/about/history/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Структура", 
+		"/about/structure/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Направления деятельности", 
+		"/about/activities/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Документы", 
+		"/about/docs/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Дирекция", 
+		"/about/management/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Концертные залы", 
+		"/about/halls/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Солисты", 
+		"/about/soloists/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Вакансии", 
+		"/about/jobs/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Услуги", 
+		"/about/services/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
