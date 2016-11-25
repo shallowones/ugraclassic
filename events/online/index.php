@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Онлайн трансляции");
+$APPLICATION->SetTitle("Online-трансляции");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"online", 

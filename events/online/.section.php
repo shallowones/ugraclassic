@@ -1,6 +1,6 @@
 <?
-$sSectionName = "Онлайн трансляции";
-$arDirProperties = Array(
+$sSectionName = "Online-трансляции";
+$arDirProperties = array(
 
 );
 ?>

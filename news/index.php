@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Новостная лента");
+$APPLICATION->SetTitle("Новости КТЦ");
 
 $ibNewsID		=	\UW\IBBase::getIBIdByCode("news");
 ?><?$APPLICATION->IncludeComponent(

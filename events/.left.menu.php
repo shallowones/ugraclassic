@@ -8,36 +8,22 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Служебные мероприятия", 
+		"Спецпроекты", 
 		"/events/official_events/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Мероприятия по региону", 
+		"Гастрольная карта", 
 		"/events/region-event/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Онлайн трансляции", 
+		"Online-трансляции", 
 		"/events/online/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Фотоотчет", 
-		"/events/photo/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Гастроли", 
-		"/events/tour/", 
 		Array(), 
 		Array(), 
 		"" 

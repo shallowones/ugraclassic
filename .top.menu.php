@@ -8,8 +8,15 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"События", 
+		"Афиша", 
 		"/events/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Медиацентр", 
+		"/mediacenter/", 
 		Array(), 
 		Array(), 
 		"" 

@@ -1,8 +1,15 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Новостная лента", 
+		"Новости КТЦ", 
 		"/news/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости культуры Югры", 
+		"/news/newsculture/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -15,8 +22,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Архив новостей", 
-		"/news/arkhive/", 
+		"Фотоотчёты", 
+		"/news/photo/", 
 		Array(), 
 		Array(), 
 		"" 

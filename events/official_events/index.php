@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Служебные мероприятия");
+$APPLICATION->SetTitle("Спецпроекты");
 
 $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
 ?>
