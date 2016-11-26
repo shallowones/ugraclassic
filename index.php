@@ -578,5 +578,19 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 		</div><!-- .wrapper -->
 	</div><!-- 3d tour -->
 
+    <div class="partners-box"> <!-- partners -->
+        <div class="wrapper">
+            <h1>МЫ В СОЦСЕТЯХ</h1>
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
+
+    <!-- VK Widget -->
+    <div id="vk_groups"></div>
+    <script type="text/javascript">
+        VK.Widgets.Group("vk_groups", {mode: 3, width: "600"}, 8121061);
+    </script>
+            <br ><br >
+        </div><!-- .wrapper -->
+    </div><!-- 3d tour -->
+
 </div><!-- .content -->
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
