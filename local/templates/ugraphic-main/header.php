@@ -40,7 +40,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 				<div class="head-info">
 					<div>
-						<div class="social">
+						<?/*<div class="social">
 							<a href="https://www.facebook.com/pages/Концертно-театральный-Центр-Югра-Классик/439242576105852" title="">
 								<div class="fb"></div>
 							</a>
@@ -56,9 +56,12 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 							<a href="https://www.youtube.com/channel/UC3YYsQ9U0QZUIXsFpucu32A/videos" title="">
 								<div class="yt"></div>
 							</a>
-						</div><!-- .social -->
+						</div><!-- .social -->*/?>
 
 						<div class="contact">
+							<div class="spec-version">
+								<a href="#">Версия для слабовидящих</a>
+							</div>
 							<span class="cont-name1">Приемная:</span> <span class="phone-one">8 3467 <b>352-535</b></span> <br/>
 							<span class="cont-name2">Касса:</span> <span class="phone-two">8 3467 <b>352-550</b></span>
 						</div><!-- .contact -->
@@ -66,7 +69,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						<div class="login-panel">
 							<a href="/">Вход</a>
 							<a href="/">Регистрация</a>
-
 						</div><!-- .login-panel -->
 
 					</div>
