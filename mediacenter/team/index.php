@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Наша команда");
+$ibTeamID 			= 	\UW\IBBase::getIBIdByCode("our_team");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"our_team",
@@ -27,7 +28,7 @@ $APPLICATION->SetTitle("Наша команда");
 		"FIELD_CODE" => array("",""),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "74",
+		"IBLOCK_ID" => $ibTeamID,
 		"IBLOCK_TYPE" => "peoples",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "Y",
