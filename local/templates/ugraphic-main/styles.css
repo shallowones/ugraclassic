@@ -438,13 +438,56 @@
     width: 100%;
     max-height: 350px;
 }
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------------------- STATIC */
+.static {
+    line-height: 22px;
+}
+.static p {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+.chronicle { }
+.chronicle > h2 {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 50px 0;
+}
+.chron {
+    margin: 0 0 0 -30px;
+    padding: 0;
+    list-style-type: none;
+}
+.chron__item {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    margin: 0 0 40px 30px;
+}
+.chron__item .year {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    color: #daac4f;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.chron__item p {
+    font-size: 14px;
+    color: #272727;
+    margin-bottom: 10px;
+}
+p.unmar {
+    margin-bottom: 10px;
+}
+.yellow-list {
+    list-style: initial;
+    padding-left: 30px;
+}
+.yellow-list > li {
+    color: #daac4f;
+}
+.yellow-list > li > p {
+    color: #272727;
+}
 
 
 
