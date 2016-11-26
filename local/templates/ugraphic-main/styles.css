@@ -27,6 +27,10 @@
     cursor: pointer;
     border-radius: 16px;
     padding: 11px 14px;
+    color: #daac4f;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    font-size: 13px;
 }
 .categories__item:hover, .cat-active {
     background: white;
@@ -277,14 +281,163 @@
 .cont-name1, .cont-name2 {
     color: #777777;
 }
-/* --------------------------------------------------------------------------------------------------------------- */
-
-
-
-
-
-
-
+/* ---------------------------------------------------------------------------------------------------------- DOCS */
+.documents {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+}
+.documents__item {
+    margin-bottom: 10px;
+    line-height: 22px;
+}
+.documents__item > a {
+    display: flex;
+    color: #272727;
+}
+.documents__item > a:hover {
+    color: #daac4f;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.documents__item > a:hover > .doc-format {
+    color: #daac4f;
+    transition: 0.2s;
+}
+.doc-format {
+    width: 35px;
+    height: 46px;
+    margin-right: 20px;
+    color: white;
+    bottom: 5px;
+    font-size: 13px;
+    background: url('img/doc.png') no-repeat 0 0;
+    text-align: center;
+    padding-top: 16px;
+    font-weight: bold;
+}
+.doc-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+.doc-size {
+    color: #8a8989;
+}
+/* ---------------------------------------------------------------------------------------------------------- TEAM */
+.team {
+    padding: 0;
+    margin: 0 0 0 -30px;
+    list-style-type: none;
+}
+.team__item {
+    display: inline-block;
+    margin: 0 0 35px 30px;
+    line-height: 22px;
+    width: 210px;
+    vertical-align: top;
+    font-size: 16px;
+    text-align: center;
+}
+.team-img {
+    height: 280px;
+    margin-bottom: 15px;
+}
+.team-name {
+    color: #272727;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.team-phone {
+    color: #daac4f;
+    margin-bottom: 5px;
+}
+.team-phone > span {
+    font-weight: bold;
+}
+.team__item > p {
+    margin: 0;
+    color: #9d9c9c;
+    font-size: 13px;
+}
+/* ------------------------------------------------------------------------------------------------------- CONTACTS */
+.header-ktc {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-family: 'Merriweather', sans-serif;
+    margin-bottom: 30px;
+}
+.header-ktc .line {
+    width: 28%;
+    border-bottom: 2px solid #daac4f;
+}
+.header-ktc .name {
+    font-weight: bold;
+    font-size: 18px;
+    width: 50%;
+}
+.contacts {
+    display: flex;
+    line-height: 22px;
+    font-size: 16px;
+}
+.cont-row-one {
+    width: 50%;
+    margin-right: 20%;
+}
+.cont-row-two {
+    width: 20%;
+}
+.desc {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #8a8989;
+    margin-bottom: 5px;
+}
+.cont {
+    padding: 0;
+    margin: 0 0 15px 0;
+    list-style-type: none;
+}
+.cont__item {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.cont__item:nth-child(2n+1) {
+    margin-right: 45px;
+}
+.cont__item > span {
+    font-weight: bold;
+    font-size: 22px;
+}
+.cont__item > a {
+    text-decoration: underline;
+    color: #272727;
+}
+.cont__item > a:hover {
+    text-decoration: none;
+    transition: 0.3s;
+}
+.cont__item.soc {
+    margin-right: 15px;
+}
+.cont__item > a .vk {
+    background: url('img/vk.png') no-repeat 0 0;
+    width: 16px;
+    height: 10px;
+}
+.cont__item > a .instagram {
+    background: url('img/instagram.png') no-repeat 0 0;
+    width: 14px;
+    height: 14px;
+}
+.map {
+    margin-top: 25px;
+    width: 100%;
+    max-height: 350px;
+}
 
 
 
