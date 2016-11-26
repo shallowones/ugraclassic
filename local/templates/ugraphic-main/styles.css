@@ -27,6 +27,10 @@
     cursor: pointer;
     border-radius: 16px;
     padding: 11px 14px;
+    color: #daac4f;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    font-size: 13px;
 }
 .categories__item:hover, .cat-active {
     background: white;
@@ -277,9 +281,49 @@
 .cont-name1, .cont-name2 {
     color: #777777;
 }
-/* --------------------------------------------------------------------------------------------------------------- */
-
-
+/* ---------------------------------------------------------------------------------------------------------- DOCS */
+.documents {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+}
+.documents__item {
+    margin-bottom: 10px;
+    line-height: 22px;
+}
+.documents__item > a {
+    display: flex;
+    color: #272727;
+}
+.documents__item > a:hover {
+    color: #daac4f;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.documents__item > a:hover > .doc-format {
+    color: #daac4f;
+    transition: 0.2s;
+}
+.doc-format {
+    width: 35px;
+    height: 46px;
+    margin-right: 20px;
+    color: white;
+    bottom: 5px;
+    font-size: 13px;
+    background: url('img/doc.png') no-repeat 0 0;
+    text-align: center;
+    padding-top: 16px;
+    font-weight: bold;
+}
+.doc-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+.doc-size {
+    color: #8a8989;
+}
 
 
 
