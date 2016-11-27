@@ -1,6 +1,6 @@
 <?
 $sSectionName = "Контакты";
 $arDirProperties = Array(
-   "SHOW_RIGHT_COL" => "Y"
+   "SHOW_RIGHT_COL" => "N"
 );
 ?>
