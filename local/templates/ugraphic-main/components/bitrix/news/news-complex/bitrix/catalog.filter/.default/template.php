@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -12,33 +12,45 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get">
-	<?foreach($arResult["ITEMS"] as $arItem):
-		if(array_key_exists("HIDDEN", $arItem)):
-			echo $arItem["INPUT"];
-		endif;
-	endforeach;?>
-	<table class="data-table" cellspacing="0" cellpadding="2">
-	<thead>
-		<tr>
-			<td colspan="2" align="center"><?=GetMessage("IBLOCK_FILTER_TITLE")?></td>
-		</tr>
-	</thead>
-	<tbody>
-		<?foreach($arResult["ITEMS"] as $arItem):?>
-			<?if(!array_key_exists("HIDDEN", $arItem)):?>
-				<tr>
-					<td valign="top"><?=$arItem["NAME"]?>:</td>
-					<td valign="top"><?=$arItem["INPUT"]?></td>
-				</tr>
-			<?endif?>
-		<?endforeach;?>
-	</tbody>
-	<tfoot>
-		<tr>
-			<td colspan="2">
-				<input type="submit" name="set_filter" value="<?=GetMessage("IBLOCK_SET_FILTER")?>" /><input type="hidden" name="set_filter" value="Y" />&nbsp;&nbsp;<input type="submit" name="del_filter" value="<?=GetMessage("IBLOCK_DEL_FILTER")?>" /></td>
-		</tr>
-	</tfoot>
-	</table>
+
+<form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" method="get" action="<? echo $arResult["FORM_ACTION"] ?>"
+      enctype="multipart/form-data" class="filter-form">
+    <div class="first-line">
+        <div class="label-name">Категория:</div>
+        <ul class="categories" id="sections">
+            <li class="categories__item cat-active" id="cat-all">
+                Все
+                <input type="hidden" value="" name="sections" title="">
+            </li>
+            <? foreach ($arResult['SECTIONS'] as $arSection): ?>
+                <li class="categories__item" value="<? echo $arSection['ID'] ?>">
+                    <? echo $arSection['NAME'] ?>
+                </li>
+            <? endforeach; ?>
+        </ul>
+    </div>
+    <div class="second-line">
+        <div class="label-name">Дата:</div>
+        <ul class="dates">
+            <li class="dates__item">
+                <input type="text" value="" name="date_start" id="date_start" title="">
+            </li>
+            <li class="dates__item">
+                <input type="text" value="" name="date_end" id="date_end" title="">
+            </li>
+        </ul>
+        <ul class="categories" id="months">
+            <? foreach ($arResult['MONTHS'] as $arMonth): ?>
+                <li class="categories__item" value="<? echo $arMonth['DATE'] ?>">
+                    <? echo $arMonth['NAME'] ?>
+                </li>
+            <? endforeach; ?>
+        </ul>
+    </div>
+    <div class="filter-buttons">
+        <div class="confirm">
+            <input type="submit" name="set_filter" value="Применить">
+        </div>
+        <div class="reset"><a href="javascript:void(0)">Сбросить фильтр</a></div>
+    </div>
 </form>

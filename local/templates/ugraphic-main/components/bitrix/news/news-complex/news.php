@@ -33,7 +33,8 @@ $this->setFrameMode(true);
 <br />
 <?endif?>
 <?if($arParams["USE_FILTER"]=="Y"):?>
-<?$APPLICATION->IncludeComponent(
+<? // фильтр переписан ниже, компонент находится только для шаблона
+	$APPLICATION->IncludeComponent(
 	"bitrix:catalog.filter",
 	"",
 	Array(
@@ -49,6 +50,17 @@ $this->setFrameMode(true);
 	),
 	$component
 );
+	if (!empty($_GET['set_filter'])) {
+		if (!empty($_GET['sections'])) {
+			$GLOBALS[$arParams["FILTER_NAME"]]['SECTION_ID'] = $_GET['sections'];
+		}
+		if (!empty($_GET['date_start'])) {
+			$GLOBALS[$arParams["FILTER_NAME"]]['>=PROPERTY_date'] = FormatDate('Y-m-d', MakeTimeStamp($_GET['date_start']));
+		}
+		if (!empty($_GET['date_end'])) {
+			$GLOBALS[$arParams["FILTER_NAME"]]['<=PROPERTY_date'] = FormatDate('Y-m-d', MakeTimeStamp($_GET['date_end']));
+		}
+	}
 ?>
 <br />
 <?endif?>

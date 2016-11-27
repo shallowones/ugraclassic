@@ -117,12 +117,18 @@
     color: white;
     margin-right: 30px;
 }
-.confirm > a, .reset > a {
+.confirm > input[type="submit"] {
+    border: none;
+    background: none;
+    outline: none;
+    text-transform: uppercase;
+}
+.confirm > input[type="submit"], .reset > a {
     color: inherit;
     font-weight: bold;
     font-size: 14px;
 }
-.confirm > a:hover, .reset > a:hover {
+.confirm > input[type="submit"]:hover, .reset > a:hover {
     text-decoration: none;
 }
 .confirm:hover {

@@ -24,6 +24,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			
 			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/fancyapps/jquery.fancybox.pack.js");
 			Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/fancyapps/jquery.fancybox.css");
+
+			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/main.js");
 		?>
 		<?$APPLICATION->ShowHead();?>
 	</head>
