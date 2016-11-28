@@ -1,11 +1,13 @@
 $( document ).ready( function() {
     // календарь фильтра
-    var calendar = $('.dates__item > input');
+    var calendar = $('.dates__item');
     calendar.on('click', function () {
-        BX.calendar({
-            node: this,
-            field: this,
-            bTime: false
+        $(this).find('input').each(function () {
+            BX.calendar({
+                node: this,
+                field: this,
+                bTime: false
+            });
         });
     });
 
