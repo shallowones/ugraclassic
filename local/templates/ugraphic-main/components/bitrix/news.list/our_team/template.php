@@ -30,8 +30,8 @@ $this->setFrameMode(true);
         <?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
             <div class="team-name"><?echo $arItem["NAME"]?></div>
         <?endif?>
-        <? if($arItem['DISPLAY_PROPERTIES']['PHONE']['DISPLAY_VALUES']): ?>
-            <div class="team-phone"><?=$arItem['DISPLAY_PROPERTIES']['PHONE']['DISPLAY_VALUES']?></div>
+        <? if($arItem['DISPLAY_PROPERTIES']['PHONE']['DISPLAY_VALUE']): ?>
+            <div class="team-phone"><?=$arItem['DISPLAY_PROPERTIES']['PHONE']['DISPLAY_VALUE']?></div>
         <? endif; ?>
         <?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
             <p><?echo $arItem["PREVIEW_TEXT"];?></p>

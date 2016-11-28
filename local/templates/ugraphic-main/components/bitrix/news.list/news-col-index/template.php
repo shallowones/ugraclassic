@@ -41,7 +41,7 @@ $this->setFrameMode(true);
             <?endif;?>
             <?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
                 <p>
-                    <?echo $arItem["PREVIEW_TEXT"];?>
+                    <?echo TruncateText(strip_tags($arItem["PREVIEW_TEXT"]),110);?>
                 </p>
             <?endif;?>
         </div>
