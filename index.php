@@ -786,10 +786,10 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 
     <div class="partners-box"> <!-- partners -->
         <div class="wrapper">
-            <h1>МЫ В СОЦСЕТЯХ</h1>
-            <table>
+            <h1 style="">МЫ В СОЦСЕТЯХ</h1>
+            <table style="display: block; margin: 0 auto; width: 1220px;">
                 <tr>
-                    <td>
+                    <td style="vertical-align: top;">
                         <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
 
                         <!-- VK Widget -->
@@ -798,9 +798,9 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
                             VK.Widgets.Group("vk_groups", {mode: 3, width: "600"}, 8121061);
                         </script>
                     </td>
-                    <td>
+                    <td style="padding-left: 20px; vertical-align: top;">
                         <!-- Горизонтальная ориентация -->
-                        <?/*<iframe src='/local/libs/inwidget/index.php?width=800&inline=7&view=14&toolbar=false' scrolling='no' frameborder='no' style='border:none;width:800px;height:295px;overflow:hidden;'></iframe>*/?>
+                        <iframe src='/local/libs/inwidget/index.php?width=600&inline=7&view=14&toolbar=false' scrolling='no' frameborder='no' style='border:none;width:600px;height:295px;overflow:hidden;'></iframe>
                     </td>
                 </tr>
             </table>

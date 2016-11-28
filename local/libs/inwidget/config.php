@@ -6,12 +6,12 @@
 $CONFIG = array(
 
 	// Instagram login
-	'LOGIN' => 'vladimrescuer',
+	'LOGIN' => 'ugra_classic86_test',
 
 	// ACCESS TOKEN granted to you by some Instagram app.
 	// Follow this link: http://inwidget.ru/getAccessToken.php
 	// to get your own ACCESS TOKEN by inWidget app.
-	'ACCESS_TOKEN' => '3271445207.47ae58f.f9e9e7c1ecaa442fa8a178f99df30d71',
+	'ACCESS_TOKEN' => '4205107047.a5bb244.f921d33a7a504ad18fa39cb1b4d197e7',
 
 	// Get pictures from WORLDWIDE by tag name. 
 	// Use this options only if you want show pictures of other users. 
