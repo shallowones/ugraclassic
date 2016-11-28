@@ -18,14 +18,21 @@ $this->setFrameMode(true);
     <div class="first-line">
         <div class="label-name">Категория:</div>
         <ul class="categories" id="sections">
-            <li class="categories__item cat-active" id="cat-all">
+            <li class="categories__item <? if (!$arResult['CHECK_GET']) echo 'cat-active' ?>" id="cat-all">
                 Все
                 <input type="hidden" value="" name="sections" title="">
             </li>
             <? foreach ($arResult['SECTIONS'] as $arSection): ?>
-                <li class="categories__item" value="<? echo $arSection['ID'] ?>">
-                    <? echo $arSection['NAME'] ?>
-                </li>
+                <? if ($arSection['SELECTED']): ?>
+                    <li class="categories__item cat-active" value="<? echo $arSection['ID'] ?>">
+                        <? echo $arSection['NAME'] ?>
+                        <input type="hidden" value="<? echo $arSection['ID'] ?>" name="sections" title="">
+                    </li>
+                <? else: ?>
+                    <li class="categories__item" value="<? echo $arSection['ID'] ?>">
+                        <? echo $arSection['NAME'] ?>
+                    </li>
+                <? endif; ?>
             <? endforeach; ?>
         </ul>
     </div>
@@ -33,10 +40,10 @@ $this->setFrameMode(true);
         <div class="label-name">Дата:</div>
         <ul class="dates">
             <li class="dates__item">
-                <input type="text" value="" name="date_start" id="date_start" title="">
+                <input type="text" value="<? if ($_GET['date_start']) echo $_GET['date_start'] ?>" name="date_start" id="date_start" title="">
             </li>
             <li class="dates__item">
-                <input type="text" value="" name="date_end" id="date_end" title="">
+                <input type="text" value="<? if ($_GET['date_end']) echo $_GET['date_end'] ?>" name="date_end" id="date_end" title="">
             </li>
         </ul>
         <ul class="categories" id="months">
