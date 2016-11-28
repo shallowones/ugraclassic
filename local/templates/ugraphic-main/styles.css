@@ -311,6 +311,9 @@
     color: #daac4f;
     transition: 0.2s;
 }
+.documents__item .description {
+    width: 95%;
+}
 .doc-format {
     width: 35px;
     height: 46px;
@@ -318,10 +321,11 @@
     color: white;
     bottom: 5px;
     font-size: 13px;
-    background: url('img/doc.png') no-repeat 0 0;
+    background: url('img/doc-all.png') no-repeat 0 0;
     text-align: center;
     padding-top: 16px;
     font-weight: bold;
+    position: relative;
 }
 .doc-name {
     font-size: 16px;
