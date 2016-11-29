@@ -135,6 +135,12 @@ $arComponentParameters = array(
 			"TYPE" => "CHECKBOX",
 			"DEFAULT" => "Y",
 		),
+        "COL_NAME" => array(
+            "PARENT" => "BASE",
+            "NAME" => 'Название коллектива',
+            "TYPE" => "STRING",
+            "DEFAULT" => "",
+        ),
 	),
 );
 

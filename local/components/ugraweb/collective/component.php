@@ -8,6 +8,7 @@ $arDefaultUrlTemplates404 = array(
     'index' => '',
     "collective" => "#COLL_CODE#/",
     "news" => "#COLL_CODE#/news/",
+    "news_detail" => "#COLL_CODE#/news/#ELEMENT_ID#/",
     "afisha" => "#COLL_CODE#/afisha/",
     "photos" => "#USER_ID#/photos/",
     "messages" => "#USER_ID#/messages/",

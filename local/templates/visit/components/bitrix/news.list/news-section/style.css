@@ -1,0 +1,121 @@
+.news-complex {
+}
+
+.news-complex .news-item {
+	min-height: 180px;
+	margin-bottom: 5px;
+}
+
+.news-complex .news-item .preview_picture {
+	float: left;
+	width: 306px;
+	height: 180px;
+	margin-right: 20px;
+}
+
+.news-complex .news-item .news-info {
+	float: left;
+	width: calc(100% - 326px);
+	padding-top: 10px;
+}
+
+.news-complex .news-item .news-date {
+	font-family: Arial;
+	color: #666;
+	font-size: 13px;
+	font-style: italic;
+}
+
+.news-complex .news-item .news-name-text-box {
+	height: 136px;
+	overflow: hidden;
+}
+
+.news-complex .news-item .news-name {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.news-complex .news-item .news-name a {
+	font-family: 'Noto Serif', serif;
+	color: #272727;
+	font-size: 16px;
+	line-height: 22px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.news-complex .news-item .news-name a:hover, .news-name a:active {
+	text-decoration: none;
+	color: #9b0029;
+}
+
+.news-complex .news-item .news-text {
+	font-family: Arial;
+	color: #272727;
+	font-size: 14px;
+	line-height: 22px;
+	text-decoration: none;
+}
+
+.all-news {
+	background: #eaeaea;
+	border-radius: 30px;
+	width: 122px;
+	height: 31px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 13px;
+	padding-top: 9px;
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: #7f7e7e;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.all-news:hover {
+	background: #e64227;
+	color: #fff !important;
+	text-decoration: none;
+}
+
+.news-complex a:hover {
+	text-decoration: none;
+}
+
+@media (max-width: 1000px) and (min-width: 758px) {
+	.news-complex .news-item .news-info .news-name-text-box {
+		height: 150px;
+		overflow: hidden;
+	}
+}
+
+
+@media (max-width: 757px) {
+	.news-complex .news-item {
+		min-height: initial;
+		margin-bottom: 30px;
+	}
+
+	.news-complex .news-item .preview_picture {
+		float: initial;
+		width: 100%;
+		height: 100%;
+		margin-right: initial;
+	}
+
+	.news-complex .news-item .news-info {
+		float: initial;
+		width: 100%;
+		padding-top: initial;
+		margin-top: 15px;
+		text-align: justify;
+	}
+
+	.news-complex .news-item .news-name-text-box {
+		height: initial;
+		overflow: initial;
+	}
+}

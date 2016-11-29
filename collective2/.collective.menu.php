@@ -1,43 +1,61 @@
 <?
-global $APPLICATION;
-$dir = $APPLICATION->GetCurDir();
-$arDir = explode('/', $dir);
-$CODE_SITE = $arDir[2];
+$CODE_SITE = \UW\Services::GetCodeSite();
 
 $aMenuLinks = Array(
 	Array(
 		"Главная",
         $CODE_SITE."/index.php",
 		Array(), 
-		Array(), 
+		Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"1"),
 		"" 
 	),
 	Array(
 		"О нас",
         $CODE_SITE."/o-nas/",
 		Array(), 
-		Array(), 
+		Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"1", "DEPTH_LEVEL"=>"1"),
 		"" 
 	),
+        Array(
+            "Артисты",
+            $CODE_SITE."/o-nas/artisty/",
+            Array(),
+            Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
+            ""
+        ),
+        Array(
+            "Руководство",
+            $CODE_SITE."/o-nas/control/",
+            Array(),
+            Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
+            ""
+        ),
+        Array(
+            "Руководство",
+            $CODE_SITE."/o-nas/photogal/",
+            Array(),
+            Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
+            ""
+        ),
 	Array(
 		"Афиша",
         $CODE_SITE."/afisha/",
-		Array(), 
-		Array(), 
+		Array(),
+        Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"1"),
 		"" 
 	),
 	Array(
 		"Новости",
         $CODE_SITE."/news/",
-		Array(), 
-		Array(), 
+		Array(),
+        Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"1"),
 		"" 
 	),
 	Array(
 		"Контакты",
         $CODE_SITE."/contacts/",
-		Array(), 
-		Array(), 
+		Array(),
+        Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"1"),
 		"" 
 	)
 );

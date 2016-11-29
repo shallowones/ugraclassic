@@ -1,19 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-use Bitrix\Main\Page\Asset;
-Asset::getInstance()->addCss("/collective/kontsertnyy-orkestr-yugry/index.css");
+$idColl = \UW\Services::GetCollectiveID($arParams['IB_NEWS']);
 
-$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_kontsertnyy-orkestr-yugry");
-$ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_collective");
-$ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_kontsertnyy-orkestr-yugry");
-
-$arColl = \CIBlockElement::GetList([],['CODE'=>$arResult['VARIABLES']['COLL_CODE']],false,false,['ID','NAME'])->GetNext();
-$arIBCollNews = CIBlock::GetList([],['CODE'=>'news_collective'])->Fetch();
-$arCollNews = \CIBlockSection::GetList([],['IBLOCK_ID'=>$arIBCollNews['ID'],'=UF_COLLECTIVE'=>$arColl['ID']])->GetNext();
-
-//\UW\SystemBase::debug(\CIBlockSection::GetList([],['CODE'=>'news_collective'],false,[])->GetNext());
-//\UW\SystemBase::debug($arColl);
-//\UW\SystemBase::debug($arCollNews['ID']);
+$sectionNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/";
+$detailNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/#ELEMENT_ID#/";
 ?>
 
 <div class="index-content">
@@ -52,7 +42,7 @@ $arCollNews = \CIBlockSection::GetList([],['IBLOCK_ID'=>$arIBCollNews['ID'],'=UF
                     ),
                     "FILTER_NAME" => "",
                     "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                    "IBLOCK_ID" => $ibEventsID,
+                    "IBLOCK_ID" => $arParams['IB_EVENTS'],
                     "IBLOCK_TYPE" => "afisha",
                     "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                     "INCLUDE_SUBSECTIONS" => "Y",
@@ -106,7 +96,7 @@ $arCollNews = \CIBlockSection::GetList([],['IBLOCK_ID'=>$arIBCollNews['ID'],'=UF
                 "bitrix:news.list",
                 "news-index",
                 array(
-                    "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                    "ACTIVE_DATE_FORMAT" => "j F Y",
                     "ADD_SECTIONS_CHAIN" => "N",
                     "AJAX_MODE" => "N",
                     "AJAX_OPTION_ADDITIONAL" => "",
@@ -118,7 +108,7 @@ $arCollNews = \CIBlockSection::GetList([],['IBLOCK_ID'=>$arIBCollNews['ID'],'=UF
                     "CACHE_TIME" => "36000000",
                     "CACHE_TYPE" => "A",
                     "CHECK_DATES" => "Y",
-                    "DETAIL_URL" => "",
+                    "DETAIL_URL" => $detailNews,
                     "DISPLAY_BOTTOM_PAGER" => "N",
                     "DISPLAY_DATE" => "Y",
                     "DISPLAY_NAME" => "Y",
@@ -131,8 +121,8 @@ $arCollNews = \CIBlockSection::GetList([],['IBLOCK_ID'=>$arIBCollNews['ID'],'=UF
                     ),
                     "FILTER_NAME" => "",
                     "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                    "IBLOCK_ID" => $ibNewsID,
-                    "IBLOCK_TYPE" => "news",
+                    "IBLOCK_ID" => $arParams['IB_NEWS'],
+                    "IBLOCK_TYPE" => "site_visit",
                     "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                     "INCLUDE_SUBSECTIONS" => "Y",
                     "MESSAGE_404" => "",
@@ -144,7 +134,7 @@ $arCollNews = \CIBlockSection::GetList([],['IBLOCK_ID'=>$arIBCollNews['ID'],'=UF
                     "PAGER_SHOW_ALWAYS" => "N",
                     "PAGER_TEMPLATE" => ".default",
                     "PAGER_TITLE" => "Новости",
-                    "PARENT_SECTION" => $arCollNews['ID'],
+                    "PARENT_SECTION" => $idColl,
                     "PARENT_SECTION_CODE" => "",
                     "PREVIEW_TRUNCATE_LEN" => "",
                     "PROPERTY_CODE" => array(
@@ -164,7 +154,7 @@ $arCollNews = \CIBlockSection::GetList([],['IBLOCK_ID'=>$arIBCollNews['ID'],'=UF
                     "SORT_ORDER1" => "DESC",
                     "SORT_ORDER2" => "ASC",
                     "COMPONENT_TEMPLATE" => "news-index",
-                    "LINK_TO_NEWS" => "/collective/kontsertnyy-orkestr-yugry/news/"
+                    "LINK_TO_NEWS" => $sectionNews
                 ),
                 false
             );?>
@@ -207,7 +197,7 @@ $arCollNews = \CIBlockSection::GetList([],['IBLOCK_ID'=>$arIBCollNews['ID'],'=UF
                     ),
                     "FILTER_NAME" => "",
                     "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                    "IBLOCK_ID" => $ibPhotogalID,
+                    "IBLOCK_ID" => $arParams['IB_PHOTOGAL'],
                     "IBLOCK_TYPE" => "photo",
                     "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                     "INCLUDE_SUBSECTIONS" => "Y",
