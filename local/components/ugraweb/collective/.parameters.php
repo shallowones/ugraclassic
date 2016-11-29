@@ -8,8 +8,10 @@ $arComponentParameters = array(
 	),
 	"PARAMETERS" => array(
 		"VARIABLE_ALIASES" => Array(
+            "index" => Array("NAME" => 'Индексная'),
             "collective" => Array("NAME" => 'Коллектив'),
             "news" => Array("NAME" => 'Новости'),
+            "afisha" => Array("NAME" => 'Афиша'),
 			"detail" => Array("NAME" => GetMessage("T_IBLOCK_SEF_PAGE_NEWS_DETAIL")),
 			"about" => Array("NAME" => GetMessage("T_IBLOCK_SEF_PAGE_NEWS_ABOUT")),
 			"company_news" => Array("NAME" => 'Страничка с новостями'),
@@ -20,20 +22,25 @@ $arComponentParameters = array(
 			"contacts" => Array("NAME" => GetMessage("T_IBLOCK_SEF_PAGE_NEWS_CONTACTS")),
 		),		
 		"SEF_MODE" => Array(
+            "index" => array(
+                "NAME" => 'Индексная',
+                "DEFAULT" => "",
+                "VARIABLES" => array(),
+            ),
 			"collective" => array(
 				"NAME" => 'Коллектив',
 				"DEFAULT" => "",
-				"VARIABLES" => array("USER_ID"),
+				"VARIABLES" => array("COLL_CODE"),
 			),
 			"news" => array(
 				"NAME" => 'Новости',
 				"DEFAULT" => "",
-				"VARIABLES" => array("USER_ID"),
+				"VARIABLES" => array("COLL_CODE"),
 			),
-			"friends" => array(
-				"NAME" => 'Мои друзья',
+			"afisha" => array(
+				"NAME" => 'Афиша',
 				"DEFAULT" => "",
-				"VARIABLES" => array("USER_ID"),
+				"VARIABLES" => array("COLL_CODE"),
 			),
 			"photos" => array(
 				"NAME" => 'Мои фотографии',

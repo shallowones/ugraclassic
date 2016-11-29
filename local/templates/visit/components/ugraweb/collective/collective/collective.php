@@ -7,6 +7,13 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_kontsertnyy-orkestr-yugry");
 $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_collective");
 $ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_kontsertnyy-orkestr-yugry");
 
+$arColl = \CIBlockElement::GetList([],['CODE'=>$arResult['VARIABLES']['COLL_CODE']],false,false,['ID','NAME'])->GetNext();
+$arIBCollNews = CIBlock::GetList([],['CODE'=>'news_collective'])->Fetch();
+$arCollNews = \CIBlockSection::GetList([],['IBLOCK_ID'=>$arIBCollNews['ID'],'=UF_COLLECTIVE'=>$arColl['ID']])->GetNext();
+
+//\UW\SystemBase::debug(\CIBlockSection::GetList([],['CODE'=>'news_collective'],false,[])->GetNext());
+//\UW\SystemBase::debug($arColl);
+//\UW\SystemBase::debug($arCollNews['ID']);
 ?>
 
 <div class="index-content">
@@ -137,7 +144,7 @@ $ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_kontsertnyy-orkestr-yugry")
                     "PAGER_SHOW_ALWAYS" => "N",
                     "PAGER_TEMPLATE" => ".default",
                     "PAGER_TITLE" => "Новости",
-                    "PARENT_SECTION" => "",
+                    "PARENT_SECTION" => $arCollNews['ID'],
                     "PARENT_SECTION_CODE" => "",
                     "PREVIEW_TRUNCATE_LEN" => "",
                     "PROPERTY_CODE" => array(

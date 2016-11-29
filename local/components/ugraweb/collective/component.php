@@ -5,9 +5,10 @@
 
 $arDefaultUrlTemplates404 = array(
     "nf_404" => "",
+    'index' => '',
     "collective" => "#COLL_CODE#/",
-    "search" => "#COLL_CODE#/news/",
-    "friends" => "#USER_ID#/friends/",
+    "news" => "#COLL_CODE#/news/",
+    "afisha" => "#COLL_CODE#/afisha/",
     "photos" => "#USER_ID#/photos/",
     "messages" => "#USER_ID#/messages/",
     "black_list" => "#USER_ID#/black-list/",
