@@ -6,7 +6,7 @@
 $arDefaultUrlTemplates404 = array(
     "nf_404" => "",
     "collective" => "#COLL_CODE#/",
-    "search" => "#USER_ID#/search/",
+    "search" => "#COLL_CODE#/news/",
     "friends" => "#USER_ID#/friends/",
     "photos" => "#USER_ID#/photos/",
     "messages" => "#USER_ID#/messages/",
@@ -86,7 +86,7 @@ if($arParams["SEF_MODE"] == "Y")
         "ALIASES" => $arVariableAliases,
     );
 }
-echo '######'.$componentPage;
+//echo '######'.$componentPage;
 $this->IncludeComponentTemplate($componentPage);
 
 ?>

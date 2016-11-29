@@ -9,6 +9,7 @@ $arComponentParameters = array(
 	"PARAMETERS" => array(
 		"VARIABLE_ALIASES" => Array(
             "collective" => Array("NAME" => 'Коллектив'),
+            "news" => Array("NAME" => 'Новости'),
 			"detail" => Array("NAME" => GetMessage("T_IBLOCK_SEF_PAGE_NEWS_DETAIL")),
 			"about" => Array("NAME" => GetMessage("T_IBLOCK_SEF_PAGE_NEWS_ABOUT")),
 			"company_news" => Array("NAME" => 'Страничка с новостями'),
@@ -24,8 +25,8 @@ $arComponentParameters = array(
 				"DEFAULT" => "",
 				"VARIABLES" => array("USER_ID"),
 			),
-			"search" => array(
-				"NAME" => 'Поиск анкет',
+			"news" => array(
+				"NAME" => 'Новости',
 				"DEFAULT" => "",
 				"VARIABLES" => array("USER_ID"),
 			),
