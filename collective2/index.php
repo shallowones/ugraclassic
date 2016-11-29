@@ -20,7 +20,7 @@ $APPLICATION->SetTitle("Главная");
 		"CACHE_GROUPS" => "Y",
 		"SEF_URL_TEMPLATES" => array(
 			"collective" => "#COLL_CODE#/",
-			"search" => "",
+			"news" => "#COLL_CODE#/news/",
 			"friends" => "",
 			"photos" => "",
 			"messages" => "",
