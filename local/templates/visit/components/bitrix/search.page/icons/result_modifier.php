@@ -270,7 +270,32 @@ foreach($arResult["SEARCH"] as $i=>$arItem)
 
                     $arResult["SEARCH"][$i]['URL'] = $arResult["SEARCH"][$i]['URL_WO_PARAMS'];
 
-                    //\UW\SystemBase::debug($arColl);
+                    $chain = '<a href="/">Главная</a> /';
+                    $chain .= '<a href="/collective2/'.$arColl['CODE'].'/">'.$arColl['NAME'].'</a> /';
+
+                    $arIBContent = CIBlock::GetList([],['ID'=>$arItem['PARAM2']],false)->GetNext();
+
+                    if($arIBContent['ID'])
+                    {
+                        $arUrl   = explode('/', $arResult["SEARCH"][$i]['URL']);
+                        $nameSec = $arUrl[count($arUrl)-3];
+
+                        $o_nas = 'o-nas';
+                        if(strpos($arResult["SEARCH"][$i]['URL'], $o_nas) !== false)
+                        {
+                            $arUrl   = explode('/', $arResult["SEARCH"][$i]['URL']);
+                            $nameSec2 = $arUrl[count($arUrl)-4];
+
+                            $chain  .= '<a href="/collective2/'.$arColl['CODE'].'/'.$o_nas.'/">О нас</a> /';
+                            $chain  .= '<a href="/collective2/'.$arColl['CODE'].'/'.$o_nas.'/'.$nameSec.'/">'.$arIBContent['NAME'].'</a> /';
+                        }
+                        else
+                        {
+                            $chain  .= '<a href="/collective2/'.$arColl['CODE'].'/'.$nameSec.'/">'.$arIBContent['NAME'].'</a> /';
+                        }
+
+                        $arResult["SEARCH"][$i]['CHAIN_PATH'] = $chain;
+                    }
                 }
             }
         }

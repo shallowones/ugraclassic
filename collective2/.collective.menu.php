@@ -31,7 +31,7 @@ $aMenuLinks = Array(
             ""
         ),
         Array(
-            "Руководство",
+            "Фотоотчеты",
             $CODE_SITE."/o-nas/photogal/",
             Array(),
             Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
