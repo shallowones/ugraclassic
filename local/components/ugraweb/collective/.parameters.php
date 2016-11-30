@@ -12,6 +12,7 @@ $arComponentParameters = array(
             "collective" => Array("NAME" => 'Коллектив'),
             "news" => Array("NAME" => 'Новости'),
             "afisha" => Array("NAME" => 'Афиша'),
+            "search" => Array("NAME" => 'Поиск'),
 			"detail" => Array("NAME" => GetMessage("T_IBLOCK_SEF_PAGE_NEWS_DETAIL")),
 			"about" => Array("NAME" => GetMessage("T_IBLOCK_SEF_PAGE_NEWS_ABOUT")),
 			"company_news" => Array("NAME" => 'Страничка с новостями'),
@@ -42,6 +43,11 @@ $arComponentParameters = array(
 				"DEFAULT" => "",
 				"VARIABLES" => array("COLL_CODE"),
 			),
+            "search" => array(
+                "NAME" => 'Поиск',
+                "DEFAULT" => "",
+                "VARIABLES" => array("COLL_CODE"),
+            ),
 			"photos" => array(
 				"NAME" => 'Мои фотографии',
 				"DEFAULT" => "",

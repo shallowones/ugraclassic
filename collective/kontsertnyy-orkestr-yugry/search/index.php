@@ -35,7 +35,6 @@ $APPLICATION->SetTitle("Поиск");
 			3 => "iblock_afisha",
 			4 => "iblock_peoples",
 			5 => "iblock_documents",
-			6 => "iblock_site_visit",
 		),
 		"arrWHERE" => "",
 		"COMPONENT_TEMPLATE" => "icons",
