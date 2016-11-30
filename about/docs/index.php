@@ -7,7 +7,7 @@ $arYear = CIBlockSection::GetList(
     ['NAME'=>'DESC'],
     ['IBLOCK_ID'=>$ibDocumentsID,'ACTIVE'=>'Y'],
     false,
-    ['IBLOCK_ID','ID','NAME']
+    ['IBLOCK_ID','ID','NAME','CODE']
 )->Fetch();
 
 ?><?$APPLICATION->IncludeComponent(

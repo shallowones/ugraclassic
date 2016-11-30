@@ -21,7 +21,7 @@ $this->setFrameMode(true);
 		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 		?>
 		
-		<a href="<?=$arItem["DISPLAY_PROPERTIES"]["URL"]["~VALUE"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>">
+		<a href="<?=$arItem["DISPLAY_PROPERTIES"]["URL"]["~VALUE"]?>" target="_blank" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>">
 			<div class="item-3d" id="<?=$this->GetEditAreaId($arItem['ID']);?>" style="background:url('<?=$slide["src"]?>') no-repeat center center;">
 			</div>
 		</a>
