@@ -10,6 +10,7 @@ $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_collective");
 $ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_kontsertnyy-orkestr-yugry");
 
 $colName 			= 	\UW\Services::GetSiteParam('NAME');
+$sectionVis 		= 	\UW\Services::GetNameSectionVis();
 ?>
 <?$APPLICATION->IncludeComponent(
 	"ugraweb:collective", 
@@ -17,7 +18,7 @@ $colName 			= 	\UW\Services::GetSiteParam('NAME');
 	array(
 		"COMPONENT_TEMPLATE" => "collective",
 		"SEF_MODE" => "Y",
-		"SEF_FOLDER" => "/collective2/",
+		"SEF_FOLDER" => "/{$sectionVis}/",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",

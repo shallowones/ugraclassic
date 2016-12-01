@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"Документация", 
-		"/collective/kontsertnyy-orkestr-yugry/o-nas/doсuments/", 
+		"/collective/kontsertnyy-orkestr-yugry/o-nas/documents/",
 		Array(), 
 		Array(), 
 		"" 

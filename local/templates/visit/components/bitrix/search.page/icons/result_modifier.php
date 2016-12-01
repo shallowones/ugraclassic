@@ -90,6 +90,7 @@ $image_path = $this->GetFolder()."/images/";
 $abs_path = $_SERVER["DOCUMENT_ROOT"].$image_path;
 
 $ibCollID 	= 	\UW\IBBase::getIBIdByCode("collective");
+$sectionVis = \UW\Services::GetNameSectionVis();
 
 foreach($arResult["SEARCH"] as $i=>$arItem)
 {
@@ -271,7 +272,7 @@ foreach($arResult["SEARCH"] as $i=>$arItem)
                     $arResult["SEARCH"][$i]['URL'] = $arResult["SEARCH"][$i]['URL_WO_PARAMS'];
 
                     $chain = '<a href="/">Главная</a> /';
-                    $chain .= '<a href="/collective2/'.$arColl['CODE'].'/">'.$arColl['NAME'].'</a> /';
+                    $chain .= '<a href="/'.$sectionVis.'/'.$arColl['CODE'].'/">'.$arColl['NAME'].'</a> /';
 
                     $arIBContent = CIBlock::GetList([],['ID'=>$arItem['PARAM2']],false)->GetNext();
 
@@ -286,12 +287,12 @@ foreach($arResult["SEARCH"] as $i=>$arItem)
                             $arUrl   = explode('/', $arResult["SEARCH"][$i]['URL']);
                             $nameSec2 = $arUrl[count($arUrl)-4];
 
-                            $chain  .= '<a href="/collective2/'.$arColl['CODE'].'/'.$o_nas.'/">О нас</a> /';
-                            $chain  .= '<a href="/collective2/'.$arColl['CODE'].'/'.$o_nas.'/'.$nameSec.'/">'.$arIBContent['NAME'].'</a> /';
+                            $chain  .= '<a href="/'.$sectionVis.'/'.$arColl['CODE'].'/'.$o_nas.'/">О нас</a> /';
+                            $chain  .= '<a href="/'.$sectionVis.'/'.$arColl['CODE'].'/'.$o_nas.'/'.$nameSec.'/">'.$arIBContent['NAME'].'</a> /';
                         }
                         else
                         {
-                            $chain  .= '<a href="/collective2/'.$arColl['CODE'].'/'.$nameSec.'/">'.$arIBContent['NAME'].'</a> /';
+                            $chain  .= '<a href="/'.$sectionVis.'/'.$arColl['CODE'].'/'.$nameSec.'/">'.$arIBContent['NAME'].'</a> /';
                         }
 
                         $arResult["SEARCH"][$i]['CHAIN_PATH'] = $chain;

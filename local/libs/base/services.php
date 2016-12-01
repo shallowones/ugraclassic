@@ -4,16 +4,33 @@ namespace UW;
 class Services
 {
     /**
+     * Получат массив URL
+     * @return string
+     */
+    public static function GetArrayURL()
+    {
+        global $APPLICATION;
+        $dir = $APPLICATION->GetCurDir();
+        $arDir = explode('/', $dir);
+        return $arDir;
+    }
+
+    /**
+     * Получате название раздела с сайтами-визитками по URL
+     * @return string
+     */
+    public static function GetNameSectionVis()
+    {
+        return self::GetArrayURL()[1];
+    }
+
+    /**
      * Получате код сайта по URL
      * @return string
      */
     public static function GetCodeSite()
     {
-        global $APPLICATION;
-        $dir = $APPLICATION->GetCurDir();
-        $arDir = explode('/', $dir);
-        $CODE_SITE = $arDir[2];
-        return $CODE_SITE;
+        return self::GetArrayURL()[2];
     }
 
     /**

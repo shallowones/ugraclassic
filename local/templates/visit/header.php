@@ -1,6 +1,9 @@
 <?
 if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
+
+$codeSite = \UW\Services::GetCodeSite();
+$sectionVis = \UW\Services::GetNameSectionVis();
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -44,7 +47,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				</div><!-- .head-info -->
 
 
-				<a href="/collective/kontsertnyy-orkestr-yugry/" title="Главная страница Концертного оркестра Югры">
+				<a href="/<?=$sectionVis?>/<?=$codeSite?>/" title="Главная страница Концертного оркестра Югры">
 					<div class="logo"></div>
 				</a>
 
@@ -118,9 +121,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				</div><!-- .wrapper -->
 			</div><!-- .menu-head -->
 
-		</div><!-- #header -->		
-	
-		<?if ($APPLICATION->GetCurPage() != "/collective/kontsertnyy-orkestr-yugry/index.php"):?>
+		</div><!-- #header -->
+		<?if ($APPLICATION->GetCurDir() != "/".$sectionVis."/".$codeSite."/"):?>
 			<div class="main-container"> 
 				<div class="row">
 						<div class="content-header">

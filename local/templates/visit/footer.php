@@ -1,6 +1,8 @@
 <?
 if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
+
+    use Bitrix\Main\Page\Asset;
 ?>
 		<?if ($APPLICATION->GetCurPage() != "/collective/kontsertnyy-orkestr-yugry/index.php"):?>
 			<?if ($APPLICATION->GetDirProperty("SHOW_RIGHT_COL") == "Y"):?>
@@ -45,6 +47,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 		</div><!-- .wrapper -->
 	</div><!-- #footer -->
-
+    <? Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/styles/".$codeSite."/styles.css"); ?>
 	</body>
 </html>
