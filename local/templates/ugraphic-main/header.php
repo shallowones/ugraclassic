@@ -16,6 +16,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			Asset::getInstance()->addCss("https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic");
 
 			Asset::getInstance()->addJs("https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js");
+			Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/js/jquery.selectBox.css");
+			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jquery.selectBox.js");
 
 			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jQuery.equalHeights.js");
 

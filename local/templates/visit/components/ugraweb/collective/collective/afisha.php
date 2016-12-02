@@ -1,7 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-
-$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_kontsertnyy-orkestr-yugry");
-?>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die(); ?>
 
 <?
 $APPLICATION->IncludeComponent(
@@ -30,7 +27,7 @@ $APPLICATION->IncludeComponent(
         ),
         "DETAIL_PAGER_SHOW_ALL" => "Y",
         "DETAIL_PAGER_TEMPLATE" => "",
-        "DETAIL_PAGER_TITLE" => "Страница",
+        "DETAIL_PAGER_TITLE" => "Афиша",
         "DETAIL_PROPERTY_CODE" => array(
             0 => "",
             1 => "date",
@@ -49,7 +46,7 @@ $APPLICATION->IncludeComponent(
         "DISPLAY_PREVIEW_TEXT" => "Y",
         "DISPLAY_TOP_PAGER" => "N",
         "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-        "IBLOCK_ID" => $ibEventsID,
+        "IBLOCK_ID" => $arParams['IB_EVENTS'],
         "IBLOCK_TYPE" => "afisha",
         "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
         "LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
@@ -105,11 +102,11 @@ $APPLICATION->IncludeComponent(
             0 => "",
             1 => "",
         ),
-        "SEF_FOLDER" => "/collective/kontsertnyy-orkestr-yugry/afisha/",
+        "SEF_FOLDER" => "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/",
         "SEF_URL_TEMPLATES" => array(
             "news" => "",
             "section" => "",
-            "detail" => "#ELEMENT_CODE#/",
+            "detail" => "#ELEMENT_ID#/",
         )
     ),
     false

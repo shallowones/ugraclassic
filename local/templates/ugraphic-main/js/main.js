@@ -67,4 +67,11 @@ $( document ).ready( function() {
         });
     });
 
+    /*$(window).resize(function() {
+        console.log($(this).width());
+    });*/
+
+    //$('select').selectBox();
+
+
 });

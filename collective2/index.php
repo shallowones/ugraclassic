@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Главная");
 
-$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_kontsertnyy-orkestr-yugry");
+$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_collective");
 $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_collective");
 $ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_kontsertnyy-orkestr-yugry");
 

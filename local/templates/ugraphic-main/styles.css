@@ -643,4 +643,97 @@ p.unmar {
         overflow: initial;
     }
 }
-/* --------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------- MAP */
+.tours {
+    background: #f8f8f8;
+    padding: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.tours__item {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: top;
+    width: 30%
+}
+.tours__item > .dates {
+    margin-top: 13px;
+    margin-right: 0;
+    display: flex;
+}
+.tours__item > .dates > .dates__item {
+    margin: 0 20px 0 0;
+}
+.tours__item > label {
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #7f7e7e;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+.tours__item > select {
+    font-size: 16px;
+    padding: 4px 0;
+    border: none;
+    border-bottom: 3px solid #b5b3b3;
+    font-family: 'Noto Serif', serif;
+    background: #f8f8f8;
+    outline: none;
+    margin: 0;
+    width: 100%;
+}
+.tours__item > select:hover {
+    cursor: pointer;
+}
+.tours__item > select > option {}
+.tours > .filter-buttons {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: right;
+}
+.tours > .filter-buttons > input[type='button'] {
+    text-transform: uppercase;
+    color: white;
+    border: 1px solid #daac4f;
+    background: #daac4f;
+    padding: 10px 20px;
+    border-radius: 22px;
+}
+.tours > .filter-buttons > input[type='button']:hover {
+    color: #daac4f;
+    background: white;
+    transition: 0.2s;
+}
+.tours > .filter-buttons > .reset {
+    padding: 10px 20px;
+}
+.tours > .filter-buttons > .reset > a {
+    color: #898888;
+}
+.tours > .filter-buttons > .reset > a:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width: 1400px) {
+    .tours > .filter-buttons {
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .tours {
+        padding: 40px 10px 10px;
+    }
+    .tours__item {
+        margin: 0 20px 30px 0;
+        width: 47%;
+    }
+    .tours__item:nth-child(2) {
+        margin-right: 0;
+    }
+    .tours__item:nth-child(3) {
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
+}

@@ -29,7 +29,7 @@ $detailNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/#
                     "CACHE_TIME" => "36000000",
                     "CACHE_TYPE" => "N",
                     "CHECK_DATES" => "Y",
-                    "DETAIL_URL" => "",
+                    "DETAIL_URL" => "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/#ELEMENT_ID#/",
                     "DISPLAY_BOTTOM_PAGER" => "N",
                     "DISPLAY_DATE" => "N",
                     "DISPLAY_NAME" => "Y",
@@ -54,8 +54,8 @@ $detailNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/#
                     "PAGER_SHOW_ALL" => "N",
                     "PAGER_SHOW_ALWAYS" => "N",
                     "PAGER_TEMPLATE" => ".default",
-                    "PAGER_TITLE" => "Новости",
-                    "PARENT_SECTION" => "",
+                    "PAGER_TITLE" => "Афиша",
+                    "PARENT_SECTION" => \UW\Services::GetCollectiveID($arParams['IB_EVENTS']),
                     "PARENT_SECTION_CODE" => "",
                     "PREVIEW_TRUNCATE_LEN" => "",
                     "PROPERTY_CODE" => array(
@@ -77,7 +77,7 @@ $detailNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/#
                     "SORT_ORDER1" => "DESC",
                     "SORT_ORDER2" => "ASC",
                     "COMPONENT_TEMPLATE" => "slider-events-region",
-                    "LINK_TO_NEWS" => "/collective/kontsertnyy-orkestr-yugry/afisha/"
+                    "LINK_TO_NEWS" => "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/"
                 ),
                 false,
                 array(
