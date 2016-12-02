@@ -10,7 +10,7 @@ $APPLICATION->AddChainItem("Афиша", $sectionEvents);
 
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.detail",
-    "",
+    "events-service-complex-detail",
     Array(
         "DISPLAY_DATE" => "N",
         "DISPLAY_NAME" => "N",
@@ -58,7 +58,7 @@ $APPLICATION->AddChainItem("Афиша", $sectionEvents);
         "AJAX_OPTION_STYLE" => "Y",
         "AJAX_OPTION_HISTORY" => "N"
     ),
-    false
+    $component
 );?>
 
 <p><br /><a href="<?=$sectionEvents?>">Вернуться к списку</a></p>

@@ -1,113 +1,81 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die(); ?>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
-<?
-$APPLICATION->IncludeComponent(
-    "bitrix:news",
-    "events-service-complex",
+$elementID      =   $arResult['VARIABLES']['ELEMENT_ID'];
+$sectionHome    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/";
+$sectionEvents    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/";
+
+$APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
+$APPLICATION->AddChainItem("Афиша");
+?>
+
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "events-service-complex-list",
     array(
-        "ADD_ELEMENT_CHAIN" => "N",
+        "ACTIVE_DATE_FORMAT" => "j F Y",
         "ADD_SECTIONS_CHAIN" => "N",
         "AJAX_MODE" => "N",
         "AJAX_OPTION_ADDITIONAL" => "",
         "AJAX_OPTION_HISTORY" => "N",
         "AJAX_OPTION_JUMP" => "N",
         "AJAX_OPTION_STYLE" => "Y",
-        "BROWSER_TITLE" => "-",
-        "CACHE_FILTER" => "N",
-        "CACHE_GROUPS" => "Y",
+        "CACHE_FILTER" => "Y",
+        "CACHE_GROUPS" => "N",
         "CACHE_TIME" => "36000000",
-        "CACHE_TYPE" => "A",
+        "CACHE_TYPE" => "N",
         "CHECK_DATES" => "Y",
-        "DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
-        "DETAIL_DISPLAY_TOP_PAGER" => "N",
-        "DETAIL_FIELD_CODE" => array(
-            0 => "PREVIEW_PICTURE",
-            1 => "",
-        ),
-        "DETAIL_PAGER_SHOW_ALL" => "Y",
-        "DETAIL_PAGER_TEMPLATE" => "",
-        "DETAIL_PAGER_TITLE" => "Афиша",
-        "DETAIL_PROPERTY_CODE" => array(
-            0 => "",
-            1 => "date",
-            2 => "hall",
-            3 => "duration",
-            4 => "cost",
-            5 => "info",
-            6 => "age",
-            7 => "",
-        ),
-        "DETAIL_SET_CANONICAL_URL" => "N",
-        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DETAIL_URL" => "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/#ELEMENT_ID#/",
+        "DISPLAY_BOTTOM_PAGER" => "N",
         "DISPLAY_DATE" => "N",
         "DISPLAY_NAME" => "Y",
         "DISPLAY_PICTURE" => "Y",
-        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "N",
         "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array(
+            0 => "",
+            1 => "",
+        ),
+        "FILTER_NAME" => "",
         "HIDE_LINK_WHEN_NO_DETAIL" => "N",
         "IBLOCK_ID" => $arParams['IB_EVENTS'],
         "IBLOCK_TYPE" => "afisha",
         "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-        "LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "LIST_FIELD_CODE" => array(
-            0 => "",
-            1 => "",
-        ),
-        "LIST_PROPERTY_CODE" => array(
-            0 => "",
-            1 => "age",
-            2 => "date",
-            3 => "hall",
-            4 => "duration",
-            5 => "cost",
-            6 => "",
-        ),
+        "INCLUDE_SUBSECTIONS" => "Y",
         "MESSAGE_404" => "",
-        "META_DESCRIPTION" => "-",
-        "META_KEYWORDS" => "-",
-        "NEWS_COUNT" => "10",
+        "NEWS_COUNT" => "20",
         "PAGER_BASE_LINK_ENABLE" => "N",
         "PAGER_DESC_NUMBERING" => "N",
         "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
         "PAGER_SHOW_ALL" => "N",
-        "PAGER_SHOW_ALWAYS" => "Y",
-        "PAGER_TEMPLATE" => "visual",
-        "PAGER_TITLE" => "Событие",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Афиша",
+        "PARENT_SECTION" => \UW\Services::GetCollectiveID($arParams['IB_EVENTS']),
+        "PARENT_SECTION_CODE" => "",
         "PREVIEW_TRUNCATE_LEN" => "",
-        "SEF_MODE" => "Y",
+        "PROPERTY_CODE" => array(
+            0 => "",
+            1 => "age",
+            2 => "date",
+            3 => "hall",
+            4 => "",
+        ),
+        "SET_BROWSER_TITLE" => "N",
         "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "Y",
+        "SET_META_KEYWORDS" => "N",
         "SET_STATUS_404" => "N",
-        "SET_TITLE" => "Y",
+        "SET_TITLE" => "N",
         "SHOW_404" => "N",
         "SORT_BY1" => "ACTIVE_FROM",
         "SORT_BY2" => "SORT",
         "SORT_ORDER1" => "DESC",
         "SORT_ORDER2" => "ASC",
-        "USE_CATEGORIES" => "N",
-        "USE_FILTER" => "N",
-        "USE_PERMISSIONS" => "N",
-        "USE_RATING" => "N",
-        "USE_REVIEW" => "N",
-        "USE_RSS" => "N",
-        "USE_SEARCH" => "N",
-        "USE_SHARE" => "N",
-        "COMPONENT_TEMPLATE" => "events-service-complex",
-        "FILTER_NAME" => "specialFilter",
-        "FILTER_FIELD_CODE" => array(
-            0 => "",
-            1 => "",
-        ),
-        "FILTER_PROPERTY_CODE" => array(
-            0 => "",
-            1 => "",
-        ),
-        "SEF_FOLDER" => "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/",
-        "SEF_URL_TEMPLATES" => array(
-            "news" => "",
-            "section" => "",
-            "detail" => "#ELEMENT_ID#/",
-        )
+        "COMPONENT_TEMPLATE" => "slider-events-region",
+        "LINK_TO_NEWS" => "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/"
     ),
-    false
+    $component,
+    array(
+        "ACTIVE_COMPONENT" => "Y"
+    )
 );?>
