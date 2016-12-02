@@ -1,9 +1,11 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-$idColl = \UW\Services::GetCollectiveID($arParams['IB_NEWS']);
+$idColl         = \UW\Services::GetCollectiveID($arParams['IB_NEWS']);
+$idCollPhoto    = \UW\Services::GetCollectiveID($arParams['IB_PHOTOGAL']);
 
-$sectionNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/";
-$detailNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/#ELEMENT_ID#/";
+$sectionNews    = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/";
+$detailNews     = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/#ELEMENT_ID#/";
+$detailPhoto    = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/o-nas/photogal/#ELEMENT_ID#/";
 ?>
 
 <div class="index-content">
@@ -184,7 +186,7 @@ $detailNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/#
                     "CACHE_TIME" => "36000000",
                     "CACHE_TYPE" => "N",
                     "CHECK_DATES" => "Y",
-                    "DETAIL_URL" => "",
+                    "DETAIL_URL" => $detailPhoto,
                     "DISPLAY_BOTTOM_PAGER" => "N",
                     "DISPLAY_DATE" => "N",
                     "DISPLAY_NAME" => "Y",
@@ -198,7 +200,7 @@ $detailNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/#
                     "FILTER_NAME" => "",
                     "HIDE_LINK_WHEN_NO_DETAIL" => "N",
                     "IBLOCK_ID" => $arParams['IB_PHOTOGAL'],
-                    "IBLOCK_TYPE" => "photo",
+                    "IBLOCK_TYPE" => "site_visit",
                     "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                     "INCLUDE_SUBSECTIONS" => "Y",
                     "MESSAGE_404" => "",
@@ -210,7 +212,7 @@ $detailNews = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/news/#
                     "PAGER_SHOW_ALWAYS" => "N",
                     "PAGER_TEMPLATE" => ".default",
                     "PAGER_TITLE" => "Новости",
-                    "PARENT_SECTION" => "",
+                    "PARENT_SECTION" => $idCollPhoto,
                     "PARENT_SECTION_CODE" => "",
                     "PREVIEW_TRUNCATE_LEN" => "",
                     "PROPERTY_CODE" => array(

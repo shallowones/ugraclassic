@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Главная");
 
 $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_collective");
 $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_collective");
-$ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_kontsertnyy-orkestr-yugry");
+$ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_collective");
 
 $colName 			= 	\UW\Services::GetSiteParam('NAME');
 $sectionVis 		= 	\UW\Services::GetNameSectionVis();
