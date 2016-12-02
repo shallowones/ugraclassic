@@ -1,0 +1,44 @@
+.artist-detail .detail-picture {
+	width: 310px;
+	float: left;
+	padding-bottom: 40px;
+}
+
+.artist-detail .detail-text {
+	float: left;
+	margin-left: 22px;
+	width: calc(100% - 332px);
+	font-family: Arial;
+	font-size: 14px;
+	color: #272727;
+	line-height: 160%
+}
+
+.artist-detail .detail-text h4 {
+	font-weight: bold;
+	padding-bottom: 5px;
+	margin-top: 15px;
+}
+
+.artist-detail .detail-text ul {
+	padding-left: 17px;
+}
+
+.artist-detail .detail-text li {
+	list-style: initial !important;
+}
+
+@media (max-width: 757px) {
+	.artist-detail .detail-picture {
+		float: initial;
+		width: 100%;
+		padding-bottom: 20px;
+	}
+
+	.artist-detail .detail-text {
+		float: initial;
+		width: 100%;
+		margin-left: 0;
+		text-align: justify;
+	}
+}
