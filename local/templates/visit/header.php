@@ -2,8 +2,12 @@
 if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 
-$codeSite = \UW\Services::GetCodeSite();
-$sectionVis = \UW\Services::GetNameSectionVis();
+$codeSite       = \UW\Services::GetCodeSite();
+$sectionVis     = \UW\Services::GetNameSectionVis();
+$arSiteParam    = \UW\Services::GetSiteParam(['NAME', 'PROPERTY_LOGO_VALUE', 'PROPERTY_CONTACTS_VALUE']);
+$colName        = $arSiteParam['NAME'];
+$colLogo        = $arSiteParam['PROPERTY_LOGO_VALUE'];
+$colContacts    = $arSiteParam['PROPERTY_CONTACTS_VALUE'];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -39,16 +43,12 @@ $sectionVis = \UW\Services::GetNameSectionVis();
 			<div class="wrapper">
 
 				<div class="head-info">
-					<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH."/include_areas/contacts.php", Array(), Array(
-			    		"MODE"     => "php",
-			   			"NAME"     => "Контакты"
-			   		 ));
-					?>
+					<? echo htmlspecialcharsback($colContacts['TEXT']) ?>
 				</div><!-- .head-info -->
 
 
-				<a href="/<?=$sectionVis?>/<?=$codeSite?>/" title="Главная страница Концертного оркестра Югры">
-					<div class="logo"></div>
+				<a href="/<?=$sectionVis?>/<?=$codeSite?>/" title="Главная страница - <?=$colName?>">
+					<div class="logo"><?=(intval($colLogo) < 1 ? $colName : '')?></div>
 				</a>
 
 						<div class="search-ktc-right">

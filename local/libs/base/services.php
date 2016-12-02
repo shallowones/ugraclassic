@@ -35,7 +35,7 @@ class Services
 
     /**
      * Получает параметр сайта
-     * @param string $paramCode
+     * @param mixed $paramCode
      * @return mixed
      */
     public static function GetSiteParam($paramCode)
@@ -44,11 +44,28 @@ class Services
 
         $arColl = \CIBlockElement::GetList(
             [],
-            ['CODE'=>self::GetCodeSite()],
-            false,false,['ID','NAME']
+            [
+                'IBLOCK_CODE' => 'collective',
+                'CODE' => self::GetCodeSite()
+            ],
+            false,false,
+            ['IBLOCK_ID','ID','NAME','PROPERTY_LOGO','PROPERTY_CONTACTS']
         )->GetNext();
 
-        return $arColl[$paramCode];
+        if(is_array($paramCode))
+        {
+            $arRes = [];
+            foreach ($paramCode as $code)
+            {
+                $arRes[$code] = $arColl[$code];
+            }
+
+            return $arRes;
+        }
+        else
+        {
+            return $arColl[$paramCode];
+        }
     }
 
     /**

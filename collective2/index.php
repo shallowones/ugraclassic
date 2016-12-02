@@ -2,9 +2,6 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Главная");
 
-use Bitrix\Main\Page\Asset;
-Asset::getInstance()->addCss("/collective/kontsertnyy-orkestr-yugry/index.css");
-
 $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_kontsertnyy-orkestr-yugry");
 $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_collective");
 $ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_kontsertnyy-orkestr-yugry");
