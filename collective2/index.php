@@ -5,6 +5,7 @@ $APPLICATION->SetTitle("Главная");
 $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_collective");
 $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_collective");
 $ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_collective");
+$ibArtistyID		=	\UW\IBBase::getIBIdByCode("artisty_collective");
 
 $colName 			= 	\UW\Services::GetSiteParam('NAME');
 $sectionVis 		= 	\UW\Services::GetNameSectionVis();
@@ -28,6 +29,7 @@ $sectionVis 		= 	\UW\Services::GetNameSectionVis();
 		"IB_NEWS" => $ibNewsID,
         "IB_EVENTS" => $ibEventsID,
         "IB_PHOTOGAL" => $ibPhotogalID,
+        "IB_ARTISTY" => $ibArtistyID,
 		"COL_NAME" => $colName,
 		"SEF_URL_TEMPLATES" => array(
 			"collective" => "#COLL_CODE#/",
