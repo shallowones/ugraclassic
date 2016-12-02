@@ -11,9 +11,9 @@ $arDefaultUrlTemplates404 = array(
     "news_detail" => "#COLL_CODE#/news/#ELEMENT_ID#/",
     "afisha" => "#COLL_CODE#/afisha/",
     "search" => "#COLL_CODE#/search/",
-    "photos" => "#USER_ID#/photos/",
-    "black_list" => "#USER_ID#/black-list/",
-    "visitors" => "#USER_ID#/visitors/",
+    "o_nas" => "#COLL_CODE#/o-nas/",
+    "photogal" => "#COLL_CODE#/o-nas/photogal/",
+    "photogal_detail" => "#COLL_CODE#/o-nas/photogal/#ELEMENT_ID#/",
     "posts" => "#USER_ID#/posts/",
     "share_success" => "#USER_ID#/share-success/",
     "edit" => "edit/",
@@ -34,7 +34,7 @@ $arDefaultVariableAliases = array(
 );
 
 $arComponentVariables = array(
-    "USER_ID",
+    "COLL_CODE",
 );
 
 if($arParams["SEF_MODE"] == "Y")
