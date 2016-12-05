@@ -16,6 +16,7 @@ $arDefaultUrlTemplates404 = array(
     "search" => "#COLL_CODE#/search/",
     "o_nas" => "#COLL_CODE#/o-nas/",
     "photogal" => "#COLL_CODE#/o-nas/photogal/",
+    "contacts" => "#COLL_CODE#/contacts/",
     "photogal_detail" => "#COLL_CODE#/o-nas/photogal/#ELEMENT_ID#/",
     "artisty" => "#COLL_CODE#/o-nas/artisty/",
     "documents" => "#COLL_CODE#/o-nas/documents/",
