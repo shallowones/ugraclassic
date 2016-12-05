@@ -31,6 +31,13 @@ $aMenuLinks = Array(
         ""
     ),
     Array(
+        "История",
+        $CODE_SITE."/o-nas/history/",
+        Array(),
+        Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
+        ""
+    ),
+    Array(
         "Руководство",
         $CODE_SITE."/o-nas/control/",
         Array(),
@@ -40,6 +47,13 @@ $aMenuLinks = Array(
     Array(
         "Видео",
         $CODE_SITE."/o-nas/video/",
+        Array(),
+        Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
+        ""
+    ),
+    Array(
+        "Вакансии",
+        $CODE_SITE."/o-nas/jobs/",
         Array(),
         Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""

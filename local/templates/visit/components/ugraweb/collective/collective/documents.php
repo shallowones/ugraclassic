@@ -4,8 +4,13 @@ $ibDocumentsID 		= 	\UW\IBBase::getIBIdByCode("documents_visits");
 
 $idColl         =   \UW\Services::GetCollectiveID($ibDocumentsID);
 
+$sectionHome    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/";
+$sectionOnas   =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/o-nas/";
+$sectionDocuments   =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/o-nas/documents/";
+
 $APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
-$APPLICATION->AddChainItem("Документация", $sectionNews);
+$APPLICATION->AddChainItem("О нас", $sectionOnas);
+$APPLICATION->AddChainItem("Документация", $sectionDocuments);
 ?>
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.list",
