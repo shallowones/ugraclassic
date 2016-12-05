@@ -12,7 +12,7 @@ $colContacts    = $arSiteParam['PROPERTY_CONTACTS_VALUE'];
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<title><?$APPLICATION->ShowTitle(false);?> - Концертный оркестр Югры</title>		
+		<title><?$APPLICATION->ShowTitle(false);?> - <?=$colName?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
@@ -71,7 +71,7 @@ $colContacts    = $arSiteParam['PROPERTY_CONTACTS_VALUE'];
 		"INPUT_ID" => "title-search-input",
 		"NUM_CATEGORIES" => "1",
 		"ORDER" => "date",
-		"PAGE" => "#SITE_DIR#collective/kontsertnyy-orkestr-yugry/search/",
+		"PAGE" => "#SITE_DIR#".$sectionVis."/".$codeSite."/search/",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PRICE_CODE" => array(
 		),

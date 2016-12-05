@@ -16,22 +16,15 @@
 }
 
 .afisha-list .afisha-info .info-1 {
-	width: 250px;
-	float: left;
-	margin-right: 40px;
-	margin-bottom: 20px;
+	margin-top: 30px;
 }
 
-.afisha-list .afisha-info .info-2 {
-	width: 250px;
-	float: left;
-}
 
 .afisha-list .preview-picture {
 	float: left;
-	//width: 265px;
+	width: 220px;
 	//height: 160px;
-	width: 30%;
+	//width: 30%;
     height: 100%;
 }
 
@@ -40,7 +33,7 @@
     font-weight: bold;
     font-size: 16px;
     margin-top: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
     line-height: 22px;
 }
 
@@ -51,36 +44,39 @@
 
 .afisha-list .afisha-name a:hover {
     text-decoration: none;
-    color: #daac4f;
+    color: #9b0029;
 }
 
 .afisha-list .afisha-date {
-	color: #272727;
-	font-size: 13px;
-	font-family: 'Roboto Condensed', sans-serif;
-	letter-spacing: 1.5px;
-	text-transform: uppercase;
-	line-height: 20px;
-}
-
-.afisha-list .afisha-date span {
 	color: #7f7e7e;
+    font-family: Arial;
+    font-size: 14px;
+    text-transform: uppercase;
+    float: left;
 }
 
+
+.afisha-list .afisha-text {
+    font-family: Arial;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.1px;
+    text-align: justify;
+}
 
 .afisha-list .afisha-age {
-	padding: 8px 0 0 0;
-    border: 1px solid #c8c8c8;
+	padding: 7px 0 0 0;
+    border: 1px solid #daac4f;
     border-radius: 30px;
-    width: 31px;
+    width: 26px;
     text-align: center;
-    height: 31px;
-    color: #9d9d9d;
-    font-size: 13px;
-    font-family: 'Roboto Condensed', sans-serif;
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    height: 26px;
+    color: #daac4f;
+    font-size: 11px;
+    font-family: Arial;
+    float: left;
+    margin-left: 25px;
+    margin-top: -7px;
 }
 
 .afisha-list .tickets-info {
@@ -93,7 +89,7 @@
 .afisha-list .tickets-info .buy-ticket {
 	width: 127px;
     height: 31px;
-    background: #daac4f;
+    background: #e64227;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
@@ -110,46 +106,64 @@
     cursor: pointer;
 }
 
-@media (min-width: 1400px) {
-    .afisha-list .afisha-info {
-        width: calc(100% - 380px);
+
+.afisha-list .ddmm {
+    float:left;
+    color: #daac4f;
+}
+
+.afisha-list .yyyy {
+    float:left;
+    margin-left: 7px;
+}
+
+.afisha-list .time {
+    float:left;
+    margin-left:25px;
+    color: #daac4f;
+}
+
+.afisha-list .hall {
+    float:left;
+    margin-left:7px;
+}
+
+
+
+@media (max-width: 1000px) and (min-width: 758px) {
+    .afisha-list .afisha-age {
+        float: right;
+    }
+
+    .afisha-list .hall {
+       float: initial;
+       margin-top: 23px; 
+       margin-left: 0;
     }
 }
 
+
 @media (max-width: 757px) {
+    .afisha-list .afisha-age {
+        float: right;
+    }
+
+    .afisha-list .hall {
+       float: initial;
+       margin-top: 23px; 
+       margin-left: 0;
+    }
+
     .afisha-list .preview-picture {
-        width: 100%;
         float: initial;
+        width: 100%;
     }
 
     .afisha-list .afisha-info {
         width: 100%;
-        float: initial;
         padding-left: 0;
-    }
-
-    .afisha-list .afisha-age {
-        top: 15px;
-        right: 15px;
-    }
-
-    .afisha-list .tickets-info {
-        position: initial;
-        text-align: left;
-        margin-top: 25px;
-    }
-
-    .afisha-list .afisha-info .info-1 {
-        margin-top: 15px;
         float: initial;
-    }
-
-    .afisha-list .afisha-info .info-2 {
-        float: initial;
-    }
-
-    .afisha-list .tickets-info .buy-ticket {
-        margin: 0 auto;
-        margin-top: 15px;
+        text-align: justify;
+        margin-top: 5px;
     }
 }

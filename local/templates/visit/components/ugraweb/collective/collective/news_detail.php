@@ -12,7 +12,7 @@ $APPLICATION->AddChainItem("Новости", $sectionNews);
     "bitrix:news.detail",
     "",
     Array(
-        "DISPLAY_DATE" => "N",
+        "DISPLAY_DATE" => "Y",
         "DISPLAY_NAME" => "N",
         "DISPLAY_PICTURE" => "N",
         "DISPLAY_PREVIEW_TEXT" => "Y",

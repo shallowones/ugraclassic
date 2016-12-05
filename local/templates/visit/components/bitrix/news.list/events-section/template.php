@@ -21,7 +21,7 @@ $this->setFrameMode(true);
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
-	<? $prev_img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>265, 'height'=>160), BX_RESIZE_IMAGE_EXACT, true);?>
+	<? $prev_img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>700, 'height'=>600), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
 
 	<div class="afisha-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
@@ -29,8 +29,7 @@ $this->setFrameMode(true);
 						class="preview-picture"
 						border="0"
 						src="<?=$prev_img["src"]?>"
-						width="<?=$prev_img["width"]?>"
-						height="<?=$prev_img["height"]?>"
+						width="220"
 						alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
 						title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
 						/></a>
@@ -45,52 +44,81 @@ $this->setFrameMode(true);
 				</div>
 			<?endif;?>
 
-
-			<?if(isset($arItem["DISPLAY_PROPERTIES"]["age"])):?>
-				<div class="afisha-age">
-					<?=$arItem["DISPLAY_PROPERTIES"]["age"]["DISPLAY_VALUE"]?>
-				</div>
-			<?endif;?>
-
-
-			<div class="info-1">
-				<?if(isset($arItem["DISPLAY_PROPERTIES"]["date"])):?>
-					<div class="afisha-date">
-						<span>Дата: </span>
+			<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
+					<div class="afisha-text">
 						<?
-						$date = ParseDateTime($arItem["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME);
-						$date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
-						echo $date;
-						?><br/>
-						<span>Время:</span>
-						<?
-						echo ConvertDateTime($arItem["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"],"HH:MI");
+						$mess = mb_substr($arItem["PREVIEW_TEXT"], 0, 330, 'UTF-8') . '...';
+						echo $mess;
 						?>
 					</div>
 				<?endif;?>
 
 
-				<?if(isset($arItem["DISPLAY_PROPERTIES"]["hall"])):?>
-					<div class="afisha-date">
-						<span>Место:</span> <?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
+			
+
+
+			<div class="info-1">
+				<div class="afisha-date">
+					<?if(isset($arItem["DISPLAY_PROPERTIES"]["date"])):?>
+					
+						
+						<?
+						$date = ParseDateTime($arItem["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME);
+						$date2 = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
+						echo "<div class='ddmm'>";
+						echo $date2;
+						echo "</div>";
+						?>
+
+						<?
+						if (strlen($date["YYYY"])==4){
+							echo "<div class='yyyy'>";
+							echo $date["YYYY"];
+							echo "</div>";
+						}
+						else{
+							$str = substr($date["YYYY"],0,-1);
+							echo "<div class='yyyy'>";
+							echo $str;
+							echo "</div>";
+						}
+						?>
+
+
+						
+						<?
+						$time = ConvertDateTime($arItem["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"],"HH:MI");
+						if ($time!="00:00") {
+							echo "<div class='time'>";
+							echo $time;
+							echo "</div>";
+						}
+						?>
+
+
+					
+					<?endif;?>
+
+					<?if(isset($arItem["DISPLAY_PROPERTIES"]["hall"])):?>
+						<div class="hall">
+							<?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
+						</div>
+					<?endif;?>
+
+				</div>
+
+
+				<?if(isset($arItem["DISPLAY_PROPERTIES"]["age"])):?>
+					<div class="afisha-age">
+						<?=$arItem["DISPLAY_PROPERTIES"]["age"]["DISPLAY_VALUE"]?>
 					</div>
-				<?endif;?>
+				<?endif;?> 
+
+				<div class="clrb"></div>
 
 			</div>
 			
-			<div class="info-2">
-				<?if(isset($arItem["DISPLAY_PROPERTIES"]["duration"])):?>
-					<div class="afisha-date">
-						<span>Продолжительность:</span> <?=$arItem["DISPLAY_PROPERTIES"]["duration"]["DISPLAY_VALUE"]?> минут
-					</div>
-				<?endif;?>
-
-				<?if(isset($arItem["DISPLAY_PROPERTIES"]["cost"])):?>
-					<div class="afisha-date">
-						<span>Цена билета:</span> <?=$arItem["DISPLAY_PROPERTIES"]["cost"]["DISPLAY_VALUE"]?> руб.
-					</div>
-				<?endif;?>
-			</div>
+			
 
 
 		</div>

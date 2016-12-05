@@ -10,7 +10,7 @@ $APPLICATION->AddChainItem("Афиша", $sectionEvents);
 
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.detail",
-    "events-service-complex-detail",
+    "events-detail",
     Array(
         "DISPLAY_DATE" => "N",
         "DISPLAY_NAME" => "N",
@@ -23,8 +23,17 @@ $APPLICATION->AddChainItem("Афиша", $sectionEvents);
         "ELEMENT_ID" => $elementID,
         "ELEMENT_CODE" => "",
         "CHECK_DATES" => "Y",
-        "FIELD_CODE" => array(),
-        "PROPERTY_CODE" => array('date'),
+        "FIELD_CODE" => array('PREVIEW_PICTURE'),
+        "PROPERTY_CODE" => array(
+            0 => "",
+            1 => "date",
+            2 => "hall",
+            3 => "duration",
+            4 => "cost",
+            5 => "info",
+            6 => "age",
+            7 => "",
+        ),
         "IBLOCK_URL" => "",
         "DETAIL_URL" => "",
         "SET_TITLE" => "Y",
