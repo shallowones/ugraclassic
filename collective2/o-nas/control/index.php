@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Руководство");
-$ibControlID 		= 	\UW\IBBase::getIBIdByCode("peoples_kontsertnyy-orkestr-yugry");
+$ibControlID 		= 	\UW\IBBase::getIBIdByCode("peoples_visits");
 ?>
 
 <?$APPLICATION->IncludeComponent(
