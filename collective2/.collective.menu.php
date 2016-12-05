@@ -17,6 +17,13 @@ $aMenuLinks = Array(
         ""
     ),
     Array(
+        "Документация",
+        $CODE_SITE."/o-nas/documents/",
+        Array(),
+        Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
+        ""
+    ),
+    Array(
         "Артисты",
         $CODE_SITE."/o-nas/artisty/",
         Array(),
@@ -31,15 +38,15 @@ $aMenuLinks = Array(
         ""
     ),
     Array(
-        "Фотоотчеты",
-        $CODE_SITE."/o-nas/photogal/",
+        "Видео",
+        $CODE_SITE."/o-nas/video/",
         Array(),
         Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
     Array(
-        "Документация",
-        $CODE_SITE."/o-nas/documents/",
+        "Фотоотчеты",
+        $CODE_SITE."/o-nas/photogal/",
         Array(),
         Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
