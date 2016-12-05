@@ -17,8 +17,22 @@ $aMenuLinks = Array(
         ""
     ),
     Array(
+        "Документация",
+        $CODE_SITE."/o-nas/documents/",
+        Array(),
+        Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
+        ""
+    ),
+    Array(
         "Артисты",
         $CODE_SITE."/o-nas/artisty/",
+        Array(),
+        Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
+        ""
+    ),
+    Array(
+        "История",
+        $CODE_SITE."/o-nas/history/",
         Array(),
         Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
@@ -38,8 +52,8 @@ $aMenuLinks = Array(
         ""
     ),
     Array(
-        "Документация",
-        $CODE_SITE."/o-nas/documents/",
+        "Вакансии",
+        $CODE_SITE."/o-nas/jobs/",
         Array(),
         Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
