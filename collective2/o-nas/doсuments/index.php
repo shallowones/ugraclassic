@@ -1,10 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Документация");
-$ibDocumentsID 		= 	\UW\IBBase::getIBIdByCode("documents_kontsertnyy-orkestr-yugry");
+$ibDocumentsID 		= 	\UW\IBBase::getIBIdByCode("documents_visits");
 ?><?$APPLICATION->IncludeComponent("bitrix:news.list", "documents", Array(
 	"COMPONENT_TEMPLATE" => ".default",
-		"IBLOCK_TYPE" => "documents",	// Тип информационного блока (используется только для проверки)
 		"IBLOCK_ID" => $ibDocumentsID,	// Код информационного блока
 		"NEWS_COUNT" => "20",	// Количество новостей на странице
 		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
