@@ -3,10 +3,12 @@
 $ibControlID 		= 	\UW\IBBase::getIBIdByCode("peoples_visits");
 $idColl         =   \UW\Services::GetCollectiveID($ibControlID );
 $detailControl     =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/o-nas/control/#ELEMENT_ID#/";
-$sectionHome    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/o-nas/";
+$sectionHome    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/";
+$sectionOnas    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/o-nas/";
 $sectionControl    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/o-nas/control/";
 
 $APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
+$APPLICATION->AddChainItem("О нас", $sectionOnas);
 $APPLICATION->AddChainItem("Руководство", $sectionControl);
 ?>
 
