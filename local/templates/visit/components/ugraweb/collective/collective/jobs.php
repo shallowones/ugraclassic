@@ -7,5 +7,6 @@ $sectionJobs   =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/o
 $APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
 $APPLICATION->AddChainItem("О нас", $sectionOnas);
 $APPLICATION->AddChainItem("Вакансии", $sectionJobs);
+$APPLICATION->SetTitle("Вакансии");
 
 echo 'Раздел находится на стадии наполнения.';

@@ -7,5 +7,6 @@ $sectionHistory   =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']
 $APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
 $APPLICATION->AddChainItem("О нас", $sectionOnas);
 $APPLICATION->AddChainItem("История", $sectionHistory);
+$APPLICATION->SetTitle("История");
 
 echo 'Раздел находится на стадии наполнения.';
