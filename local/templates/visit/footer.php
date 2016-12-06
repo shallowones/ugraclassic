@@ -42,7 +42,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		<div class="wrapper">
 
 		<div class="group-name">
-            <?=$colName?>
+            <?=$colFtrName?>
 		</div>
 
 		</div><!-- .wrapper -->

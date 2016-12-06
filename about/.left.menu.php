@@ -43,15 +43,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Концертные залы", 
+		"Схемы концертных залов", 
 		"/about/halls/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Солисты", 
-		"/about/soloists/", 
 		Array(), 
 		Array(), 
 		"" 

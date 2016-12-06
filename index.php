@@ -540,9 +540,8 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 	</div><!-- calendar line -->
 */?>
 
-<!--	<div class="events-box"> <!-- calendar line -->-->
+<!--	<div class="events-box">-->
 <!--		<div class="wrapper">-->
-<!---->
 <!--		<h1>МЕРОПРИЯТИЯ ПО РЕГИОНУ</h1>-->
 <!---->
 <!--		--><?//$APPLICATION->IncludeComponent("bitrix:news.list", "slider-events-region", array(
@@ -611,8 +610,8 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 //			"ACTIVE_COMPONENT" => "Y"
 //			)
 //		);?>
-<!--		</div><!-- .wrapper -->-->
-<!--	</div><!-- .calendar line -->-->
+<!--		</div>-->
+<!--	</div>-->
 
 
 	<div class="uk-today-box"> <!-- UK today -->
@@ -795,12 +794,14 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
                         <!-- VK Widget -->
                         <div id="vk_groups"></div>
                         <script type="text/javascript">
-                            VK.Widgets.Group("vk_groups", {mode: 3, width: "600"}, 8121061);
+                            VK.Widgets.Group("vk_groups", {mode: 4, width: "600", height: "430"}, 8121061);
                         </script>
                     </td>
                     <td style="padding-left: 20px; vertical-align: top;">
-                        <!-- Горизонтальная ориентация -->
-                        <iframe src='/local/libs/inwidget/index.php?width=600&inline=7&view=14&toolbar=false' scrolling='no' frameborder='no' style='border:none;width:600px;height:295px;overflow:hidden;'></iframe>
+                        <?/*<!-- Горизонтальная ориентация -->
+                        <iframe src='/local/libs/inwidget/index.php?width=600&inline=7&view=14&toolbar=false' scrolling='no' frameborder='no' style='border:none;width:600px;height:295px;overflow:hidden;'></iframe>*/?>
+                        <!-- Крупные preview -->
+                        <iframe src='/local/libs/inwidget/index.php?width=600&inline=3&view=9&toolbar=false&preview=large' scrolling='no' frameborder='no' style='border:none;width:600px;height:430px;overflow:hidden;'></iframe>
                     </td>
                 </tr>
             </table>

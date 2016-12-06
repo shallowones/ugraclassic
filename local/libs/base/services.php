@@ -49,7 +49,7 @@ class Services
                 'CODE' => self::GetCodeSite()
             ],
             false,false,
-            ['IBLOCK_ID','ID','NAME','PROPERTY_LOGO','PROPERTY_CONTACTS']
+            ['IBLOCK_ID','ID','NAME','PROPERTY_LOGO','PROPERTY_CONTACTS','PROPERTY_FOOTER_NAME']
         )->GetNext();
 
         if(is_array($paramCode))
