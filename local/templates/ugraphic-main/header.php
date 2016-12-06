@@ -16,8 +16,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			Asset::getInstance()->addCss("https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic");
 
 			Asset::getInstance()->addJs("https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js");
-			Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/js/jquery.selectBox.css");
-			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jquery.selectBox.js");
 
 			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jQuery.equalHeights.js");
 
@@ -38,12 +36,12 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 		<div id="header">
 			<div class="wrapper">
-				<a href="/" title="Главная страница КТЦ «Югра-Классик»">
+				<a href="/" title="Главная страница КТЦ «Югра-Классик»" class="ktc-logo">
 					<div class="logo"></div>
 				</a>
 
 				<div class="head-info">
-					<div>
+					<div class="head-1">
 						<?/*<div class="social">
 							<a href="https://www.facebook.com/pages/Концертно-театральный-Центр-Югра-Классик/439242576105852" title="">
 								<div class="fb"></div>
@@ -60,24 +58,28 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 							<a href="https://www.youtube.com/channel/UC3YYsQ9U0QZUIXsFpucu32A/videos" title="">
 								<div class="yt"></div>
 							</a>
-						</div><!-- .social -->*/?>
+						</div><!-- .social -->
 
 						<div class="contact">
-							<div class="spec-version">
-								<a href="#">Версия для слабовидящих</a>
-							</div>
-							<span class="cont-name1">Приемная:</span> <span class="phone-one">8 3467 <b>352-535</b></span> <br/>
-							<span class="cont-name2">Касса:</span> <span class="phone-two">8 3467 <b>352-550</b></span>
-						</div><!-- .contact -->
-
-						<div class="login-panel">
-							<a href="/">Вход</a>
-							<a href="/">Регистрация</a>
-						</div><!-- .login-panel -->
-
+							<span class="cont-name1">Приемная:</span> <br><span class="phone-one">8 3467 <b>352-535</b></span> <br/>
+							<span class="cont-name2">Касса:</span> <br><span class="phone-two">8 3467 <b>352-550</b></span>
+						</div><!-- .contact -->*/?>
+                        <div class="conts">
+                            <div class="conts__item">
+                                <div class="dsc">Приемная:</div>
+                                <div class="nmb">8 3467 <span>325-535</span></div>
+                            </div>
+                            <div class="conts__item">
+                                <div class="dsc">Касса:</div>
+                                <div class="nmb">8 3467 <span>325-550</span></div>
+                            </div>
+                        </div>
 					</div>
 
-					<div>
+					<div class="head-2">
+                        <div class="spec-version">
+                            <a href="#">Версия для слабовидящих</a>
+                        </div>
 						<div class="search-head">
 							<?$APPLICATION->IncludeComponent(
 								"bitrix:search.title",
@@ -137,8 +139,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				</div><!-- .wrapper -->
 			</div><!-- .menu-head -->
 
-		</div><!-- #header -->		
-	
+		</div><!-- #header -->
+
 		<?if ($APPLICATION->GetCurPage() != "/index.php"):?>
 			<div class="main-container"> 
 				<div class="row">

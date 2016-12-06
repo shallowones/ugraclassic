@@ -5,7 +5,7 @@
 <nav class="clearfix">
 	<a href="#" id="pull"></a>
 
-<ul id="top-menu">
+<ul class="top-menu" id="top-menu-1">
 
 <div class="search-menu">
 	<?$APPLICATION->IncludeComponent(
@@ -84,6 +84,7 @@ foreach($arResult as $arItem):?>
 
 </ul>
 <div class="menu-clear-left"></div>
-
+                <ul class="t-menu"></ul>
+                <div class="menu-clear-left"></div>
 </nav>
 <?endif?>

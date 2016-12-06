@@ -62,9 +62,25 @@ $( document ).ready( function() {
         $('.categories__item > input').each(function() {
             $(this).remove();
         });
+
         $('.dates__item').find('input').each(function () {
             $(this).val('');
         });
+
+        $('.first > input').val('');
+        $('.third > select').val('');
+    });
+
+    $('.filter-buttons .rset > a').on('click', function() {
+        $('.categories__item > input').each(function() {
+            $(this).remove();
+        });
+
+        $('.dates__item').find('input').each(function () {
+            $(this).val('');
+        });
+        $('select').val('');
+        $('.timetable-block').slideUp();
     });
 
     /*$(window).resize(function() {
@@ -74,4 +90,90 @@ $( document ).ready( function() {
     //$('select').selectBox();
 
 
+    /*$(window).resize(function() {
+        var topMenu = '';
+        topMenu = rememberTopMenu('#top-menu-1');
+        if (window.matchMedia('(max-width: 1399px)').matches &&
+            window.matchMedia('(min-width: 1000px)').matches) {
+            editTopMenu(4);
+        } else {
+            if (window.matchMedia('(max-width: 1000px)').matches &&
+                window.matchMedia('(min-width: 757px)').matches) {
+                // подставляем число пунктов для первого меню, остальные уйдут во второе скрытое меню
+                editTopMenu(3);
+            } else {
+                $('#top-menu-1 > li').each(function () {
+                    $(this).remove();
+                });
+                $('#top-menu-1').append(topMenu);
+            }
+        }
+    });*/
+
+
+    // высчитваем верхнее меню
+    if (window.matchMedia('(max-width: 1000px)').matches && window.matchMedia('(min-width: 757px)').matches) {
+        // подставляем число пунктов для первого меню, остальные уйдут во второе скрытое меню
+        editTopMenu(3);
+    }
+    if (window.matchMedia('(max-width: 1399px)').matches && window.matchMedia('(min-width: 1000px)').matches) {
+        editTopMenu(4);
+    }
+
+    function editTopMenu(countMenuItem) {
+        var count = 0;
+        var arLI = [];
+        var topMenu = '.top-menu';
+        $(topMenu + '> li').each(function (index, element) {
+            if (index > countMenuItem) {
+                arLI[count] = '<li>' + $(element).html() + '</li>';
+                count++;
+                $(this).remove();
+            }
+        });
+        $(topMenu).append('<li class="t-more"></li>');
+        if ($(arLI).length) {
+            var newMenu = $('.t-menu');
+            newMenu.addClass('top-menu');
+            newMenu.attr('id', 'top-menu-2');
+            $(arLI).each(function (index, element) {
+                newMenu.append(element);
+            });
+        }
+
+        // подсчитаем высоту панели Bitrix
+        var panel = $('#panel');
+        var heightPanel = panel.height();
+
+        // выравняем свайпер меню второго уровня с учетом высоты панели Bitrix
+        var rightCont = $('.col-right-cont');
+        var heightRightCont = parseInt(rightCont.css('top'));
+        rightCont.css('top', heightRightCont + heightPanel);
+
+        $('.t-more').on('click', function () {
+            var header = $('#header');
+            var heightHeader = header.height();
+            var menuHead = $('.menu-head');
+            var heightMenuHead = menuHead.height();
+
+            heightRightCont = parseInt(rightCont.css('top'));
+
+            if ($(this).hasClass('act')) {
+                $(this).removeClass('act');
+                header.stop().animate({height: heightHeader - 50}, 400);
+                menuHead.stop().animate({height: heightMenuHead - 50}, 400);
+                rightCont.stop().animate({top: heightRightCont - 50}, 400);
+            } else {
+                $(this).addClass('act');
+                header.stop().animate({height: heightHeader + 50}, 400);
+                menuHead.stop().animate({height: heightMenuHead + 50}, 400);
+                rightCont.stop().animate({top: heightRightCont + 50}, 400);
+            }
+            $('#top-menu-2').slideToggle();
+        });
+    }
+
+    function rememberTopMenu(str) {
+        return $(str).html();
+    }
 });

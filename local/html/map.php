@@ -1,8 +1,8 @@
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Контакты");
+$APPLICATION->SetTitle("Гастрольня карта");
 ?>
 
-    <form method="post" action="#" enctype="multipart/form-data" class="tours">
+    <form method="get" enctype="multipart/form-data" class="tours">
         <div class="tours__item">
             <label for="group">Коллективы</label>
             <select name="group" id="group">
@@ -37,8 +37,187 @@ $APPLICATION->SetTitle("Контакты");
             </ul>
         </div>
         <div class="filter-buttons">
-            <div class="reset"><a href="#">Сбросить фильтр</a></div>
-            <input type="button" value="Применить">
+            <div class="rset"><a href="javascript:void(0)">Сбросить</a></div>
+            <input type="submit" value="Применить">
         </div>
     </form>
+
+    <div class="ev-map">
+        <img src="<? echo SITE_TEMPLATE_PATH . '/img/Yugra_Subdivisions.png' ?>">
+    </div>
+
+    <div class="timetable-block">
+        <h2 class="h2">Расписание</h2>
+        <div class="label-name">Сортировать:</div>
+        <ul class="categories">
+            <li class="categories__item">
+                По коллективам
+                <input type="hidden" value="" name="CATEGORIES[]" title="">
+            </li>
+            <li class="categories__item cat-active">
+                По дате
+                <input type="hidden" value="" name="CATEGORIES[]" title="">
+            </li>
+        </ul>
+        <ul class="timetable">
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/27.png' ?>">
+                    </div>
+                    <div class="executor">Симфонический оркестр</div>
+                    <div class="t-name">Органная фантазия</div>
+                    <div class="t-desc">
+                        <div class="d-place">12 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/28.png' ?>">
+                    </div>
+                    <div class="executor">Сибирь-брасс</div>
+                    <div class="t-name">Времена года</div>
+                    <div class="t-desc">
+                        <div class="d-place">15 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/27.png' ?>">
+                    </div>
+                    <div class="executor">Симфонический оркестр</div>
+                    <div class="t-name">Органная фантазия</div>
+                    <div class="t-desc">
+                        <div class="d-place">12 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/28.png' ?>">
+                    </div>
+                    <div class="executor">Сибирь-брасс</div>
+                    <div class="t-name">Времена года</div>
+                    <div class="t-desc">
+                        <div class="d-place">15 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="timetable-block">
+        <h2 class="h2">Расписание</h2>
+        <div class="label-name">Сортировать:</div>
+        <ul class="categories">
+            <li class="categories__item cat-active">
+                По коллективам
+                <input type="hidden" value="" name="CATEGORIES[]" title="">
+            </li>
+            <li class="categories__item">
+                По дате
+                <input type="hidden" value="" name="CATEGORIES[]" title="">
+            </li>
+        </ul>
+        <div class="label-group">Симфонический оркестр</div>
+        <ul class="timetable">
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/27.png' ?>">
+                    </div>
+                    <div class="executor">Симфонический оркестр</div>
+                    <div class="t-name">Органная фантазия</div>
+                    <div class="t-desc">
+                        <div class="d-place">12 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/28.png' ?>">
+                    </div>
+                    <div class="executor">Сибирь-брасс</div>
+                    <div class="t-name">Времена года</div>
+                    <div class="t-desc">
+                        <div class="d-place">15 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/27.png' ?>">
+                    </div>
+                    <div class="executor">Симфонический оркестр</div>
+                    <div class="t-name">Органная фантазия</div>
+                    <div class="t-desc">
+                        <div class="d-place">12 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="more-block">
+            <a href="#">Показать еще</a>
+        </div>
+
+        <div class="label-group">Сибирь-брасс</div>
+        <ul class="timetable">
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/27.png' ?>">
+                    </div>
+                    <div class="executor">Симфонический оркестр</div>
+                    <div class="t-name">Органная фантазия</div>
+                    <div class="t-desc">
+                        <div class="d-place">12 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/28.png' ?>">
+                    </div>
+                    <div class="executor">Сибирь-брасс</div>
+                    <div class="t-name">Времена года</div>
+                    <div class="t-desc">
+                        <div class="d-place">15 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+            <li class="timetable__item">
+                <a href="#">
+                    <div class="t-img">
+                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/27.png' ?>">
+                    </div>
+                    <div class="executor">Симфонический оркестр</div>
+                    <div class="t-name">Органная фантазия</div>
+                    <div class="t-desc">
+                        <div class="d-place">12 сентября, органный зал</div>
+                        <div class="age">12+</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="more-block">
+            <a href="#">Показать еще</a>
+        </div>
+    </div>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

@@ -59,6 +59,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 		</div><!-- .wrapper -->
 	</div><!-- #footer -->
+
     <!-- Rating@Mail.ru counter -->
     <script type="text/javascript">
         var _tmr = window._tmr || (window._tmr = []);

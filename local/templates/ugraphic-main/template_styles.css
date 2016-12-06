@@ -558,7 +558,6 @@ h1
     clear: both;
 }
 
-
 .main-container
 {
     //padding-right: 15px;
@@ -612,6 +611,13 @@ h1
     width: 1000px;
     margin: 0 auto;
     padding: 0 35px;
+    /*display: flex;
+    align-items: flex-end;*/
+    height: 100%;
+}
+
+.ktc-logo {
+
 }
 
 #header
@@ -637,7 +643,20 @@ h1
 
 .head-info
 {
-    float: right;
+    /*float: right;
+    width: 65%;*/
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: flex-start;
+    padding-left: 150px;
+}
+
+.head-1 {
+    padding-top: 50px;
+}
+.head-2 {
+    padding-top: 20px;
 }
 
 .social
@@ -708,6 +727,30 @@ h1
 .social .yt:hover
 {
     background-position: -42px -16px;
+}
+
+.conts {
+    display: flex;
+}
+.conts__item {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #777777;
+}
+.conts__item:first-child {
+    margin-right: 30px;
+}
+.dsc {
+    margin-bottom: 7px;
+}
+.nmb {
+    font-size: 18px;
+}
+.nmb > span {
+    font-weight: bold;
+    color: #d0cfcf;
 }
 
 .contact
@@ -847,6 +890,8 @@ h1
     min-height: 325px;
 
     background: #272727;
+
+    /*margin-top: auto;*/
 }
 
 #footer .wrapper {
@@ -924,6 +969,10 @@ h1
     #footer .copyright {
         left: 655px;
     }
+    .head-info
+    {
+        padding-left: 60px;
+    }
 }
 
 @media (min-width: 758px) and (max-width: 1000px) {
@@ -934,6 +983,7 @@ h1
     .wrapper {
         width: 690px;
         padding: 0 15px;
+        position: relative;
     }
 
     .main-container {
@@ -947,7 +997,7 @@ h1
     }
 
     .search-head {
-        margin-top: 23px;
+        margin-top: 25px;
         width: 157px;
     }  
 
@@ -957,8 +1007,7 @@ h1
     }
 
     .head-info .contact {
-        margin: 8px 0 5px 0;
-        margin-left: -155px;
+        margin: 8px 0 5px -155px;
     }
 
     .social {
@@ -1016,6 +1065,25 @@ h1
     }
 
 
+    .head-info
+    {
+        padding-left: 30px;
+    }
+    .head-1 {
+        padding-top: 20px;
+    }
+    .conts {
+        flex-direction: column;
+    }
+    .conts__item:first-child {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .spec-version {
+        font-size: 11px;
+        position: absolute;
+        right: 15px;
+    }
 
     #footer {
         padding-bottom: 30px;
@@ -1152,15 +1220,15 @@ h1
         right: 0;
     }
 
-    #top-menu {
+    .top-menu {
     	background: #272727;
     }
 
-    #top-menu li {
+    .top-menu li {
         background: #272727;
     }
 
-    #top-menu a {
+    .top-menu a {
         text-align: left;
     }
 

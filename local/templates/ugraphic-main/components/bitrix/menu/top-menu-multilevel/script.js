@@ -1,6 +1,6 @@
 $(function() {
 	var pull 		= $('#pull');
-		menu 		= $('nav #top-menu');
+		menu 		= $('nav .top-menu');
 		menuHeight	= menu.height();
 
 	$(pull).on('click', function(e) {
@@ -15,7 +15,7 @@ $(function() {
 		};
 	});
 
-	$('#top-menu li a').click(function() {
+	$('.top-menu li a').on('click', function() {
 		if ($(this).siblings("ul.falls").is(":hidden")){
 			event.preventDefault();
 			$(this).siblings("ul.falls").show();
