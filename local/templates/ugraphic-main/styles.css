@@ -166,6 +166,9 @@
 }
 .tape-news h1 {
     text-align: left;
+    font-size: 24px;
+    letter-spacing: 2.5px;
+    line-height: 30px;
 }
 .list__item {
     display: flex;
@@ -1088,6 +1091,7 @@ p.unmar {
     font-size: 16px;
     padding-left: 5px;
     padding-bottom: 2px;
+    background: transparent;
 }
 .first > .label-name, .third > .label-name {
     margin-right: 10px;
@@ -1106,6 +1110,7 @@ p.unmar {
     color: #272727;
     font-weight: bold;
     font-size: 16px;
+    background: transparent;
 }
 @media screen and (max-width: 1400px) {
     .first {

@@ -8,11 +8,22 @@
         // событие в календаре
         var $event = $('.events-item_day_event');
         var eventActiveClass = 'events-item_day_active';
+
+        var template_2 = '' +
+                '<div class="event-popup__item-2">' +
+                '   <div class="event-popup__img"><img src="{{img}}"></div>' +
+                '   <div class="event-popup__desc">' +
+                    '   <div class="event-popup__time-2">{{time}}</div>' +
+                    '   <div class="event-popup-title-2"><a href="{{link}}" class="event-popup__link">{{title}}</a></div>' +
+                '   </div>' +
+                '</div>';
+
         var template = '' +
-            '<div class="event-popup__item">' +
-            '   <div class="event-popup__time">{{time}}</div>' +
-            '   <div class="event-popup-title"><a href="{{link}}" class="event-popup__link">{{title}}</a></div>' +
-            '</div>';
+                '<div class="event-popup__item">' +
+                '   <div class="event-popup__time">{{time}}</div>' +
+                '   <div class="event-popup-title"><a href="{{link}}" class="event-popup__link">{{title}}</a></div>' +
+                '</div>';
+
 
         function removePopup () {
             $popup.remove();
@@ -66,10 +77,26 @@
             }
 
             events.forEach(function (event) {
-                items += template
-                    .replace('{{time}}', event.time)
-                    .replace('{{link}}', event.link || '#')
-                    .replace('{{title}}', event.title);
+                // картинки должны присутствовать только на десктопных версиях, то есть на всех экранах выше 1024px
+                if (window.matchMedia('(max-width: 1024px)').matches) {
+                    items += template
+                        .replace('{{time}}', event.time)
+                        .replace('{{link}}', event.link || '#')
+                        .replace('{{title}}', event.title);
+                } else {
+                    if (event.img != null) {
+                        items += template_2
+                            .replace('{{time}}', event.time)
+                            .replace('{{link}}', event.link || '#')
+                            .replace('{{title}}', event.title)
+                            .replace('{{img}}', event.img);
+                    } else {
+                        items += template
+                            .replace('{{time}}', event.time)
+                            .replace('{{link}}', event.link || '#')
+                            .replace('{{title}}', event.title);
+                    }
+                }
             });
 
             // получаем координаты где отображать попап

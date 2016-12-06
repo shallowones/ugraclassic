@@ -186,7 +186,7 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 
     <div class="tape-news" style="width: 1313px; margin: 0 auto;padding: 20px 35px;">
         <div class="news-one">
-            <h1>Новости</h1>
+            <h1>Новости<br>КТЦ "Югра-Классик"</h1>
             <?$APPLICATION->IncludeComponent(
                 "bitrix:news.list",
                 "news-col-index",
@@ -255,7 +255,7 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
             );?>
         </div>
         <div class="news-two">
-            <h1>Культура Югры</h1>
+            <h1>Новости<br>культуры Югры</h1>
             <?$APPLICATION->IncludeComponent(
                 "bitrix:news.list",
                 "news-col-index",

@@ -38,7 +38,8 @@ $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar.css');
 
                                 'time' => $arEvent['date_event_format'],
                                 'title' => $arEvent['name'],
-                                'link' => $arEvent['url']
+                                'link' => $arEvent['url'],
+                                'img' => $arEvent['picture']['src_small']
                             ];
                         }
                     }

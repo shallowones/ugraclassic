@@ -1,4 +1,4 @@
-$( document ).ready( function() {
+$(document).ready(function () {
     // календарь фильтра
     var calendar = $('.dates__item');
     calendar.on('click', function () {
@@ -11,7 +11,7 @@ $( document ).ready( function() {
         });
     });
 
-    Date.prototype.daysInMonth = function(year, month) {
+    Date.prototype.daysInMonth = function (year, month) {
         return (new Date(year, month, 0)).getDate();
     };
 
@@ -20,13 +20,13 @@ $( document ).ready( function() {
         var value = $(this).attr('value');
         if (parentID == 'sections') {
             var input = $('<input/>', {
-                'value' : value,
-                'type' : 'hidden',
-                'name' : parentID
+                'value': value,
+                'type': 'hidden',
+                'name': parentID
             });
-            $('#' + parentID + ' .categories__item').each(function() {
+            $('#' + parentID + ' .categories__item').each(function () {
                 $(this).removeClass('cat-active');
-                $(this).find('input').each(function() {
+                $(this).find('input').each(function () {
                     $(this).remove();
                 })
             });
@@ -42,24 +42,24 @@ $( document ).ready( function() {
 
     calendar.on('change', function () {
         var parentID = '#months';
-        $(parentID + ' .categories__item').each(function() {
+        $(parentID + ' .categories__item').each(function () {
             $(this).removeClass('cat-active');
-            $(this).find('input').each(function() {
+            $(this).find('input').each(function () {
                 $(this).remove();
             })
         });
         $(this).attr("value", $(this).val());
     });
 
-    $('.filter-buttons .reset > a').on('click', function() {
-        $('.categories__item').each(function() {
+    $('.filter-buttons .reset > a').on('click', function () {
+        $('.categories__item').each(function () {
             if ($(this).attr("id") == 'cat-all') {
                 $(this).addClass('cat-active');
             } else {
                 $(this).removeClass('cat-active');
             }
         });
-        $('.categories__item > input').each(function() {
+        $('.categories__item > input').each(function () {
             $(this).remove();
         });
 
@@ -71,8 +71,8 @@ $( document ).ready( function() {
         $('.third > select').val('');
     });
 
-    $('.filter-buttons .rset > a').on('click', function() {
-        $('.categories__item > input').each(function() {
+    $('.filter-buttons .rset > a').on('click', function () {
+        $('.categories__item > input').each(function () {
             $(this).remove();
         });
 
@@ -84,30 +84,31 @@ $( document ).ready( function() {
     });
 
     /*$(window).resize(function() {
-        console.log($(this).width());
-    });*/
+     console.log($(this).width());
+     });*/
 
     //$('select').selectBox();
 
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - работает при ресайзе, но очень задерживает работу!
+    /*$(window).resize(function () {
+        var bool = true;
 
-    /*$(window).resize(function() {
-        var topMenu = '';
-        topMenu = rememberTopMenu('#top-menu-1');
-        if (window.matchMedia('(max-width: 1399px)').matches &&
-            window.matchMedia('(min-width: 1000px)').matches) {
-            editTopMenu(4);
-        } else {
+        if (bool) {
             if (window.matchMedia('(max-width: 1000px)').matches &&
                 window.matchMedia('(min-width: 757px)').matches) {
-                // подставляем число пунктов для первого меню, остальные уйдут во второе скрытое меню
                 editTopMenu(3);
+                bool = true;
             } else {
                 $('#top-menu-1 > li').each(function () {
-                    $(this).remove();
+                    if ($(this).css('display') == 'none') {
+                        $(this).css({display: 'list-item'});
+                    }
                 });
-                $('#top-menu-1').append(topMenu);
+                $('.t-more').remove();
+                bool = false;
             }
         }
+
     });*/
 
 
@@ -116,9 +117,9 @@ $( document ).ready( function() {
         // подставляем число пунктов для первого меню, остальные уйдут во второе скрытое меню
         editTopMenu(3);
     }
-    if (window.matchMedia('(max-width: 1399px)').matches && window.matchMedia('(min-width: 1000px)').matches) {
-        editTopMenu(4);
-    }
+    /*if (window.matchMedia('(max-width: 1399px)').matches && window.matchMedia('(min-width: 1000px)').matches) {
+     editTopMenu(4);
+     }*/
 
     function editTopMenu(countMenuItem) {
         var count = 0;
@@ -128,7 +129,7 @@ $( document ).ready( function() {
             if (index > countMenuItem) {
                 arLI[count] = '<li>' + $(element).html() + '</li>';
                 count++;
-                $(this).remove();
+                $(this).css({display: 'none'});
             }
         });
         $(topMenu).append('<li class="t-more"></li>');
@@ -171,9 +172,5 @@ $( document ).ready( function() {
             }
             $('#top-menu-2').slideToggle();
         });
-    }
-
-    function rememberTopMenu(str) {
-        return $(str).html();
     }
 });
