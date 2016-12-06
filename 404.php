@@ -11,7 +11,7 @@ $APPLICATION->SetTitle("404 Страница не найдена");?>
 
 <style type="text/css">
 	body {
-		background: #1e1e1e url(img/404bg.jpg) no-repeat center center;
+		background: #1e1e1e url(<?=SITE_TEMPLATE_PATH?>/img/404bg.jpg) no-repeat center center;
 		background-position-y: 174px;
 	}
 
