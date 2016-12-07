@@ -8,13 +8,6 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Правила для аккредитованных СМИ", 
-		"/mediacenter/ruleaccreditation/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
 		"Наша команда", 
 		"/mediacenter/team/", 
 		Array(), 
