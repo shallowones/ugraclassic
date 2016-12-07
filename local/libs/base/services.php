@@ -101,20 +101,28 @@ class Services
     /**
      * Непосредственно дублирование новостей
      * @param $arFields
+     * @param $pictureOld
+     * @param $section_id
      */
-    public static function DuplicateNews($arFields)
+    public static function DuplicateNews($arFields, $pictureOld = 0, $section_id = 0)
     {
         $arIB = \CIBlock::GetList([],['TYPE'=>'news', 'CODE'=>'news'])->GetNext()['ID'];
 
         $obEl = new \CIBlockElement;
 
-        $obEl->Add([
+        $picture = ($arFields['PREVIEW_PICTURE']['error']==0 ? $arFields['PREVIEW_PICTURE'] : $pictureOld);
+        if(!is_array($picture) && $picture > 0)
+        {
+            $picture = \CFile::MakeFileArray($picture);
+        }
+
+        $newID = $obEl->Add([
             'IBLOCK_ID' => $arIB['ID'],
             'NAME' => $arFields['NAME'],
             'ACTIVE' => 'N',
             'IBLOCK_SECTION_ID' => false,
             'DATE_ACTIVE_FROM' => $arFields['ACTIVE_FROM'],
-            'PREVIEW_PICTURE' => $arFields['PREVIEW_PICTURE'],
+            'PREVIEW_PICTURE' => $picture,
             'PREVIEW_TEXT' => $arFields['PREVIEW_TEXT'],
             'PREVIEW_TEXT_TYPE' => $arFields['PREVIEW_TEXT_TYPE'],
             'DETAIL_TEXT' => $arFields['DETAIL_TEXT'],
@@ -122,11 +130,21 @@ class Services
 
         ]);
 
+        $link = 'http://'.$_SERVER['SERVER_NAME'].'/bitrix/admin/iblock_element_edit.php?IBLOCK_ID='.$arIB['ID'].'&type=news&ID='.$newID.'&lang=ru&find_section_section=0&WF=Y';
+        if($newID > 0)
+        {
+            if($section_id > 0)
+            {
+                $arSection = \CIBlockSection::GetByID($section_id)->GetNext();
 
-        /*\UW\SystemBase::debug($obEl->LAST_ERROR);
-        \UW\SystemBase::debug($arIB);
-        \UW\SystemBase::debug($arFields);
-        die();*/
+                $arEvent = [
+                    'NAME' => $arFields['NAME'],
+                    'COLLECTIVE_NAME' => $arSection['NAME'],
+                    'NEWS_LINK' => $link
+                ];
+                \CEvent::SendImmediate('NOTICE_DUPLICATE_NEWS','s1',$arEvent);
+            }
+        }
     }
 
     /**
@@ -177,7 +195,7 @@ class Services
         {
             if(self::IsCheckedDuplicateNews($arFields))
             {
-                self::DuplicateNews($arFields);
+                self::DuplicateNews($arFields, 0, $arFields['IBLOCK_SECTION'][0]);
             }
         }
     }
@@ -202,18 +220,33 @@ class Services
                     'IBLOCK_ID',
                     'ID',
                     'NAME',
+                    'PREVIEW_PICTURE',
                     'PROPERTY_DUPLICATE_NEWS'
                 ]
             )->GetNext();
 
             if($arOldEl['ID'])
             {
+                $boolChecked = self::IsCheckedDuplicateNews($arFields);
+
+                // Если была установлена и сняли, выдаем сообщение
                 if(
-                    $arOldEl['PROPERTY_DUPLICATE_NEWS_VALUE'] != 'Да' &&
-                    self::IsCheckedDuplicateNews($arFields)
+                    $arOldEl['PROPERTY_DUPLICATE_NEWS_VALUE'] == 'Да' &&
+                    !$boolChecked
                 )
                 {
-                    self::DuplicateNews($arFields);
+                    global $APPLICATION;
+                    $APPLICATION->ThrowException('Нельзя снять галочку Разместить новость на главной КТЦ "Югра-Классик"!');
+                    return false;
+                }
+
+                // Если первый раз устанволена, дублируем новость
+                if(
+                    $arOldEl['PROPERTY_DUPLICATE_NEWS_VALUE'] != 'Да' &&
+                    $boolChecked
+                )
+                {
+                    self::DuplicateNews($arFields, $arOldEl['PREVIEW_PICTURE'], $arFields['IBLOCK_SECTION'][0]);
                 }
             }
         }
