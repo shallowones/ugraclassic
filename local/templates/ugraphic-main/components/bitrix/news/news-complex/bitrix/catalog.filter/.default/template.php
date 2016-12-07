@@ -15,7 +15,6 @@ $this->setFrameMode(true);
 
 <form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" method="get" action="<? echo $arResult["FORM_ACTION"] ?>"
       enctype="multipart/form-data" class="filter-form">
-    <?// if($APPLICATION->GetCurDir() != '/news/newsculture/'): ?>
     <div class="first-line">
         <div class="label-name">Категория:</div>
         <ul class="categories" id="sections">
@@ -37,7 +36,6 @@ $this->setFrameMode(true);
             <? endforeach; ?>
         </ul>
     </div>
-    <?// endif; ?>
     <div class="second-line">
         <div class="label-name">Дата:</div>
         <ul class="dates">
