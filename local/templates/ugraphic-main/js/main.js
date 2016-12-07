@@ -91,26 +91,25 @@ $(document).ready(function () {
 
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - работает при ресайзе, но очень задерживает работу!
     /*$(window).resize(function () {
-        var bool = true;
+     var bool = true;
 
-        if (bool) {
-            if (window.matchMedia('(max-width: 1000px)').matches &&
-                window.matchMedia('(min-width: 757px)').matches) {
-                editTopMenu(3);
-                bool = true;
-            } else {
-                $('#top-menu-1 > li').each(function () {
-                    if ($(this).css('display') == 'none') {
-                        $(this).css({display: 'list-item'});
-                    }
-                });
-                $('.t-more').remove();
-                bool = false;
-            }
-        }
+     if (bool) {
+     if (window.matchMedia('(max-width: 1000px)').matches &&
+     window.matchMedia('(min-width: 757px)').matches) {
+     editTopMenu(3);
+     bool = true;
+     } else {
+     $('#top-menu-1 > li').each(function () {
+     if ($(this).css('display') == 'none') {
+     $(this).css({display: 'list-item'});
+     }
+     });
+     $('.t-more').remove();
+     bool = false;
+     }
+     }
 
-    });*/
-
+     });*/
 
     // высчитваем верхнее меню
     if (window.matchMedia('(max-width: 1000px)').matches && window.matchMedia('(min-width: 757px)').matches) {
@@ -173,4 +172,28 @@ $(document).ready(function () {
             $('#top-menu-2').slideToggle();
         });
     }
+
+    // вставляем контакты в шапку сайта на мобильной версии сайта
+    $('.conts-hidden').append($('.head-1').html());
+
+    var magIcon = $('.magnifier-icon');
+    $('.magnifier').on('click', function () {
+        if (!magIcon.hasClass('act')) {
+            console.log('213213');
+            magIcon.addClass('act');
+            $('#pull').stop().animate({opacity: '0'}, 400);
+            $('.cross').stop().animate({opacity: '1'});
+            $('.search-menu').slideDown();
+        }
+    });
+
+    $('.cross').on('click', function () {
+        if (magIcon.hasClass('act')) {
+            magIcon.removeClass('act');
+            $('#pull').stop().animate({opacity: '1'}, 400);
+            $('.cross').stop().animate({opacity: '0'});
+            $('.search-menu').slideUp();
+        }
+    });
+
 });

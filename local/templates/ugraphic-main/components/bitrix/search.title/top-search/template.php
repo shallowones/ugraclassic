@@ -28,7 +28,10 @@ if($arParams["SHOW_INPUT"] !== "N"):?>
 <div id="<?echo $CONTAINER_ID?>" class="bx-searchtitle">
 	<form action="<?echo $arResult["FORM_ACTION"]?>">
 		<div class="bx-input-group">
-			<input id="<?echo $INPUT_ID?>" type="text" name="q" value="<?=htmlspecialcharsbx($_REQUEST["q"])?>" autocomplete="off" class="bx-form-control" placeholder="ПОИСК"/>
+			<a href="javascript:void(0)" class="cross">
+                <div class="cross-icon"></div>
+            </a>
+            <input id="<?echo $INPUT_ID?>" type="text" name="q" value="<?=htmlspecialcharsbx($_REQUEST["q"])?>" autocomplete="off" class="bx-form-control" placeholder="ПОИСК"/>
 			<span class="bx-input-group-btn">
 				<button class="btn btn-default" type="submit" name="s"><i class="fa fa-search"></i></button>
 			</span>

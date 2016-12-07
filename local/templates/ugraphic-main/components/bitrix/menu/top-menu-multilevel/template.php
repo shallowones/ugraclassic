@@ -3,37 +3,11 @@
 <?if (!empty($arResult)):?>
 
 <nav class="clearfix">
-	<a href="#" id="pull"></a>
+	<a href="#" id="pull">
+        <div class="nav-icon"></div>
+    </a>
 
 <ul class="top-menu" id="top-menu-1">
-
-<div class="search-menu">
-	<?$APPLICATION->IncludeComponent(
-		"bitrix:search.title",
-		"top-search",
-		Array(
-			"CATEGORY_0" => "",
-			"CATEGORY_0_TITLE" => "",
-			"CHECK_DATES" => "N",
-			"COMPONENT_TEMPLATE" => "visual",
-			"CONTAINER_ID" => "title-search",
-			"CONVERT_CURRENCY" => "N",
-			"INPUT_ID" => "title-search-input",
-			"NUM_CATEGORIES" => "1",
-			"ORDER" => "date",
-			"PAGE" => "#SITE_DIR#search/index.php",
-			"PREVIEW_TRUNCATE_LEN" => "",
-			"PRICE_CODE" => "",
-			"PRICE_VAT_INCLUDE" => "Y",
-			"SHOW_INPUT" => "Y",
-			"SHOW_OTHERS" => "N",
-			"SHOW_PREVIEW" => "Y",
-			"TOP_COUNT" => "5",
-			"USE_LANGUAGE_GUESS" => "Y"
-		)
-	);?>
-</div><!-- .search-head -->
-
 <?
 $previousLevel = 0;
 foreach($arResult as $arItem):?>

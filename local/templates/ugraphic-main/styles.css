@@ -1201,3 +1201,25 @@ p.unmar {
     height: 49px;
     width: 50px;
 }
+.conts-hidden {
+    display: none;
+    width: 100%;
+    height: 80px;
+    background: #303030;
+    padding: 25px 20px;
+}
+.cross {
+    position: absolute;
+    top: 27px;
+    left: 0;
+    z-index: 3;
+    opacity: 0;
+}
+.cross-icon {
+    background: url(img/cross.png) no-repeat 0 0;
+    width: 26px;
+    height: 26px;
+}
+.cross:hover > .cross-icon {
+    background-position: -36px 0;
+}

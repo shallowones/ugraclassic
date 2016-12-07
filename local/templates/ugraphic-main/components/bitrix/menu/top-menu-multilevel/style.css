@@ -227,7 +227,7 @@ div.menu-clear-left
 
 
 
-@media (max-width : 750px) {
+@media (max-width: 750px) {
 	nav {
 		height: auto;
 	}
@@ -260,7 +260,7 @@ div.menu-clear-left
 		position: relative;
 	}
 
-	nav a#pull:after {
+	/*nav a#pull:after {
 		content:"";
 		background: url('img/nav-icon.png') no-repeat;
 		width: 32px;
@@ -268,7 +268,7 @@ div.menu-clear-left
 		display: inline-block;
 		position: absolute;
 		left: 25px;
-	}
+	}*/
 
 	.selected{
 		background: none;
@@ -285,7 +285,7 @@ div.menu-clear-left
 	}
 
 	.top-menu {
-		top: 35px;
+		top: 115px;
 		background: #fff;
 		z-index: 100;
 		position: relative;

@@ -1101,6 +1101,10 @@ h1
        position: relative;
     }
 
+    .conts-hidden {
+        display: none;
+    }
+
 }
 
 @media (max-width: 757px) {
@@ -1150,15 +1154,16 @@ h1
     }
 
     .col-right-cont {
-        position: absolute;
+        /*position: absolute;
         width: 100%;
         top: 92px;
-        left: 0;
+        left: 0;*/
+        display: none;
     }
 
-    .search-menu {
+    /*.search-menu {
     	display: initial;
-    }
+    }*/
 
     .logo {
         width: 72px;
@@ -1193,6 +1198,42 @@ h1
 
     .user-icon:hover {
     	background-position: -28px 0;
+    }
+
+    .magnifier-icon {
+        background: url(img/magnifier.png) no-repeat 0 0;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        right: 25px;
+        top: 28px;
+        z-index: 2;
+    }
+
+    .magnifier-icon:hover {
+        background-position: -42px 0;
+    }
+
+    .magnifier-icon.act {
+        background-position: -42px 0;
+    }
+
+    .nav-icon {
+        background: url(img/nav-icon.png) no-repeat 0 0;
+        width: 32px;
+        height: 20px;
+        position: absolute;
+        left: 25px;
+        top: 3px;
+        z-index: 2;
+    }
+
+    .nav-icon:hover {
+        background-position: -42px 0;
+    }
+
+    .nav-icon.act {
+        background-position: -42px 0;
     }
 
     #footer {
@@ -1347,4 +1388,29 @@ h1
         padding: 0;
     }
 
+    .conts-hidden {
+        display: block;
+    }
+
+    .conts {
+        justify-content: center;
+    }
+
+}
+@media (max-width: 400px) {
+    .conts-hidden {
+        padding: 25px 10px;
+    }
+    .conts {
+        justify-content: space-around;
+    }
+    .conts__item:first-child {
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 757px) {
+    .cross {
+        display: none;
+    }
 }

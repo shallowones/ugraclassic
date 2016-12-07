@@ -109,10 +109,36 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 					</div>
 				</div><!-- .head-info -->
 
-				<a href="/"><div class="user-icon"></div></a>
+				<a href="javascript:void(0)" class="magnifier"><div class="magnifier-icon"></div></a>
 
 				<div class="clrb"></div>
 
+                <div class="search-menu">
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:search.title",
+                        "top-search",
+                        Array(
+                            "CATEGORY_0" => "",
+                            "CATEGORY_0_TITLE" => "",
+                            "CHECK_DATES" => "N",
+                            "COMPONENT_TEMPLATE" => "visual",
+                            "CONTAINER_ID" => "title-search",
+                            "CONVERT_CURRENCY" => "N",
+                            "INPUT_ID" => "title-search-input",
+                            "NUM_CATEGORIES" => "1",
+                            "ORDER" => "date",
+                            "PAGE" => "#SITE_DIR#search/index.php",
+                            "PREVIEW_TRUNCATE_LEN" => "",
+                            "PRICE_CODE" => "",
+                            "PRICE_VAT_INCLUDE" => "Y",
+                            "SHOW_INPUT" => "Y",
+                            "SHOW_OTHERS" => "N",
+                            "SHOW_PREVIEW" => "Y",
+                            "TOP_COUNT" => "5",
+                            "USE_LANGUAGE_GUESS" => "Y"
+                        )
+                    );?>
+                </div><!-- .search-head -->
 			</div><!-- .wrapper -->
 
 			<div class="menu-head">
@@ -140,6 +166,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			</div><!-- .menu-head -->
 
 		</div><!-- #header -->
+        <div class="conts-hidden"></div>
 
 		<?if ($APPLICATION->GetCurPage() != "/index.php"):?>
 			<div class="main-container"> 
