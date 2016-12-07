@@ -55,10 +55,12 @@ $this->setFrameMode(true);
 			$GLOBALS[$arParams["FILTER_NAME"]]['SECTION_ID'] = $_GET['sections'];
 		}
 		if (!empty($_GET['date_start'])) {
-			$GLOBALS[$arParams["FILTER_NAME"]]['>=PROPERTY_date'] = FormatDate('Y-m-d', MakeTimeStamp($_GET['date_start']));
+			$GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_FROM'] = trim(htmlspecialcharsEx($_GET['date_start']));
 		}
 		if (!empty($_GET['date_end'])) {
-			$GLOBALS[$arParams["FILTER_NAME"]]['<=PROPERTY_date'] = FormatDate('Y-m-d', MakeTimeStamp($_GET['date_end']));
+            $arDateTo = explode('.', trim(htmlspecialcharsEx($_GET['date_end'])));
+            $mDateTo = mktime(0,0,0, intval($arDateTo[1]),intval($arDateTo[0])+1,intval($arDateTo[2]));
+			$GLOBALS[$arParams["FILTER_NAME"]]['<=DATE_ACTIVE_FROM'] = date('d.m.Y', $mDateTo);
 		}
 	}
 ?>

@@ -14,6 +14,9 @@ $ib3DpanaramID		=	\UW\IBBase::getIBIdByCode("3d-pannapams");
 $ibRegionEventsID	=	\UW\IBBase::getIBIdByCode("events-regions");
 $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 
+$GLOBALS['FLT_EVENTS_LIST'] = [
+    '>=DATE_ACTIVE_FROM' => date('d.m.Y')
+];
 ?>
 <div class="content">
 	<div class="promo-slider">
@@ -38,7 +41,7 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "N",
-		"CHECK_DATES" => "Y",
+		"CHECK_DATES" => "N",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -121,10 +124,10 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 		"CACHE_GROUPS" => "N",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
+		"CHECK_DATES" => "N",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "N",
-		"DISPLAY_DATE" => "N",
+		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "N",
@@ -133,7 +136,7 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 			0 => "",
 			1 => "",
 		),
-		"FILTER_NAME" => "",
+		"FILTER_NAME" => "FLT_EVENTS_LIST",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => $ibEventsID,
 		"IBLOCK_TYPE" => "afisha",
@@ -167,7 +170,7 @@ $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 		"SHOW_404" => "N",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"COMPONENT_TEMPLATE" => "slider-events"
 	),

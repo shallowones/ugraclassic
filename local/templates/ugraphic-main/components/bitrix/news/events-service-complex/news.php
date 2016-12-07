@@ -52,6 +52,16 @@ $this->setFrameMode(true);
 ?>
 <br />
 <?endif?>
+<?
+if($APPLICATION->GetCurDir() == '/events/official_events/')
+{
+    $GLOBALS['FLT_EVENTS_LIST'] = [
+        '=PROPERTY_location' => 26,
+        '!PROPERTY_location' => false,
+        '>=DATE_ACTIVE_FROM' => date('d.m.Y')
+    ];
+}
+?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
@@ -99,7 +109,7 @@ $this->setFrameMode(true);
 		"ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
 		"USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
 		"GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
-		"FILTER_NAME" => $arParams["FILTER_NAME"],
+		"FILTER_NAME" => 'FLT_EVENTS_LIST',
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
 	),

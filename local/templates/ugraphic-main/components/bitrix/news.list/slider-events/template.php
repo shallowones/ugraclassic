@@ -41,15 +41,10 @@ $this->setFrameMode(true);
 				<?endif?>
 
 				<div class="events-info">
-					<?if(is_array($arItem["DISPLAY_PROPERTIES"]["date"])):?>
-						<div class="events-slider-date">
-							<?
-							$date = ParseDateTime($arItem["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME);
-							$date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
-							echo $date;
-						?>
-						</div>
-					<?endif;?>
+                    <?if($arParams["DISPLAY_DATE"]!="N" && $arItem["DISPLAY_ACTIVE_FROM"]):?>
+                        <? $arDate = explode(' ', $arItem["DISPLAY_ACTIVE_FROM"]); ?>
+                        <div class="events-slider-date"><?echo $arDate[0].' '.$arDate[1]?></div>
+                    <?endif?>
 
 					<?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
 						

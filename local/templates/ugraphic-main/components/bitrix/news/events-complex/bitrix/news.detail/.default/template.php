@@ -39,17 +39,17 @@ $this->setFrameMode(true);
 		<?endif?>
 	<div class="afisha-info">
 		<div class="info-1">
-			<?if(isset($arResult["DISPLAY_PROPERTIES"]["date"])):?>
+			<?if(isset($arResult["ACTIVE_FROM"])):?>
 				<div class="afisha-date">
 					<span>Дата: </span>
 					<?
-					$date = ParseDateTime($arResult["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME);
+					$date = ParseDateTime($arResult["ACTIVE_FROM"], FORMAT_DATETIME);
 					$date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
 					echo $date;
 					?><br/>
 					<span>Время:</span>
 					<?
-					echo ConvertDateTime($arResult["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"],"HH:MI");
+					echo ConvertDateTime($arResult["ACTIVE_FROM"],"HH:MI");
 					?>
 				</div>
 			<?endif;?>

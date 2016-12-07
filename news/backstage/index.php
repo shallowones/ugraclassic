@@ -31,7 +31,7 @@ $ibNewsBID		=	\UW\IBBase::getIBIdByCode("news-inter");
 		"DETAIL_PROPERTY_CODE" => array(0=>"",1=>"date",2=>"",),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "N",
+		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "N",
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",

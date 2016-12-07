@@ -3,7 +3,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("SHOW_RIGHT_COL", "N");
 $APPLICATION->SetTitle("Афиша");
 
-$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");?>
+$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
+?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"events-complex", 
@@ -20,7 +21,7 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");?>
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
+		"CHECK_DATES" => "N",
 		"COMPONENT_TEMPLATE" => "events-complex",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
@@ -42,7 +43,7 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");?>
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "N",
+		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "N",
@@ -51,7 +52,7 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");?>
 			0 => "",
 			1 => "",
 		),
-		"FILTER_NAME" => "",
+		"FILTER_NAME" => "FLT_EVENTS_LIST",
 		"FILTER_PROPERTY_CODE" => array(
 			0 => "date",
 			1 => "",
@@ -91,7 +92,7 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");?>
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "PROPERTY_DATE",
+		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
