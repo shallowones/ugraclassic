@@ -97,4 +97,125 @@ class Services
         $bytes /= pow(1024, $pow);
         return round($bytes, $precision) . ' ' . $units[$pow];
     }
+
+    /**
+     * Непосредственно дублирование новостей
+     * @param $arFields
+     */
+    public static function DuplicateNews($arFields)
+    {
+        $arIB = \CIBlock::GetList([],['TYPE'=>'news', 'CODE'=>'news'])->GetNext()['ID'];
+
+        $obEl = new \CIBlockElement;
+
+        $obEl->Add([
+            'IBLOCK_ID' => $arIB['ID'],
+            'NAME' => $arFields['NAME'],
+            'ACTIVE' => 'N',
+            'IBLOCK_SECTION_ID' => false,
+            'DATE_ACTIVE_FROM' => $arFields['ACTIVE_FROM'],
+            'PREVIEW_PICTURE' => $arFields['PREVIEW_PICTURE'],
+            'PREVIEW_TEXT' => $arFields['PREVIEW_TEXT'],
+            'PREVIEW_TEXT_TYPE' => $arFields['PREVIEW_TEXT_TYPE'],
+            'DETAIL_TEXT' => $arFields['DETAIL_TEXT'],
+            'DETAIL_TEXT_TYPE' => $arFields['DETAIL_TEXT_TYPE']
+
+        ]);
+
+
+        /*\UW\SystemBase::debug($obEl->LAST_ERROR);
+        \UW\SystemBase::debug($arIB);
+        \UW\SystemBase::debug($arFields);
+        die();*/
+    }
+
+    /**
+     * Непосредственно проверка галочки дублирования новости
+     * @param $arFields
+     * @return boolean
+     */
+    public static function IsCheckedDuplicateNews($arFields)
+    {
+        $result = false;
+
+        $arProp = \CIBlockProperty::GetList(
+            [], ["IBLOCK_ID"=>$arFields['IBLOCK_ID'],'CODE'=>'DUPLICATE_NEWS']
+        )->GetNext();
+        if($arProp['ID'])
+        {
+            $arEnum = \CIBlockPropertyEnum::GetList(
+                [],
+                [
+                    "IBLOCK_ID"=>$arFields['IBLOCK_ID'],
+                    "CODE"=>"DUPLICATE_NEWS",
+                    "XML_ID"=>'DUPLICATE_NEWS_OK'
+                ]
+            )->GetNext();
+            if($arEnum['ID'])
+            {
+                foreach ($arFields['PROPERTY_VALUES'][$arProp['ID']] as $arVal)
+                {
+                    if($arVal['VALUE'] == $arEnum['ID'])
+                    {
+                        $result = true;
+                    }
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * До создания элемента просто проверяем на то установлена ли галочка
+     * @param $arFields
+     */
+    public static function CheckDuplicateNewsForAdd(&$arFields)
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+        if($arFields['IBLOCK_ID'] == \CIBlock::GetList([],['CODE'=>'news_collective'])->GetNext()['ID'])
+        {
+            if(self::IsCheckedDuplicateNews($arFields))
+            {
+                self::DuplicateNews($arFields);
+            }
+        }
+    }
+
+    /**
+     * До обновления элеменгта проверяем на то установлена ли галочка впервые
+     * @param $arFields
+     */
+    public static function CheckDuplicateNewsForUpd(&$arFields)
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+        if($arFields['IBLOCK_ID'] == \CIBlock::GetList([],['CODE'=>'news_collective'])->GetNext()['ID'])
+        {
+            $arOldEl = \CIBlockElement::GetList(
+                [],
+                [
+                    'IBLOCK_ID'=>$arFields['IBLOCK_ID'],
+                    'ID'=>$arFields['ID']
+                ],
+                false,false,
+                [
+                    'IBLOCK_ID',
+                    'ID',
+                    'NAME',
+                    'PROPERTY_DUPLICATE_NEWS'
+                ]
+            )->GetNext();
+
+            if($arOldEl['ID'])
+            {
+                if(
+                    $arOldEl['PROPERTY_DUPLICATE_NEWS_VALUE'] != 'Да' &&
+                    self::IsCheckedDuplicateNews($arFields)
+                )
+                {
+                    self::DuplicateNews($arFields);
+                }
+            }
+        }
+    }
 }

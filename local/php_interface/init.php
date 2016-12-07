@@ -21,3 +21,7 @@ $arEvents = [];
  * Примеры в /local/libs/base/examples/register.events.php
  */
 \UW\SystemBase::registerHandlers($arEvents);
+
+
+AddEventHandler("iblock", "OnBeforeIBlockElementAdd", Array("UW\Services", "CheckDuplicateNewsForAdd"));
+AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\Services", "CheckDuplicateNewsForUpd"));
