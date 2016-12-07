@@ -34,6 +34,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Обратная связь", 
+		"/feedback/", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>
