@@ -36,7 +36,7 @@ $ibNewsID		=	\UW\IBBase::getIBIdByCode("news_culture");
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "N",
+		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "N",
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",

@@ -21,13 +21,13 @@ $this->setFrameMode(true);
 				
 				<div class="info-box">
 					<div class="date">
-						<?if(is_array($arResult["ITEMS"][0]["DISPLAY_PROPERTIES"]["date"])):?>
+						<?if($arResult["ITEMS"][0]["DISPLAY_ACTIVE_FROM"]):?>
 						<?
-									$date = ParseDateTime($arResult["ITEMS"][0]["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME);
+									$date = ParseDateTime($arResult["ITEMS"][0]["DISPLAY_ACTIVE_FROM"], FORMAT_DATETIME);
 									$date2 = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
 
 									echo $date2;?><?
-									$time = ConvertDateTime($arResult["ITEMS"][0]["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"],"HH:MI");
+									$time = ConvertDateTime($arResult["ITEMS"][0]["DISPLAY_ACTIVE_FROM"],"HH:MI");
 									if ($time!="00:00") {
 										echo ", ";
 										echo $time;
@@ -68,16 +68,16 @@ $this->setFrameMode(true);
 				
 				<div class="info-box">
 					<div class="date">
-						<?if(is_array($arResult["ITEMS"][1]["DISPLAY_PROPERTIES"]["date"])):?>
+						<?if($arResult["ITEMS"][1]["DISPLAY_ACTIVE_FROM"]):?>
 						<?
-									$date = ParseDateTime($arResult["ITEMS"][1]["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME);
+									$date = ParseDateTime($arResult["ITEMS"][1]["DISPLAY_ACTIVE_FROM"], FORMAT_DATETIME);
 									$date2 = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
 
 									echo $date2;
 						?>
 
 						<?
-									$time = ConvertDateTime($arResult["ITEMS"][1]["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"],"HH:MI");
+									$time = ConvertDateTime($arResult["ITEMS"][1]["DISPLAY_ACTIVE_FROM"],"HH:MI");
 									if ($time!="00:00") {
 										echo $time;
 									}
@@ -118,16 +118,16 @@ $this->setFrameMode(true);
 				
 				<div class="info-box">
 					<div class="date">
-						<?if(is_array($arResult["ITEMS"][2]["DISPLAY_PROPERTIES"]["date"])):?>
+						<?if($arResult["ITEMS"][2]["DISPLAY_ACTIVE_FROM"]):?>
 						<?
-									$date = ParseDateTime($arResult["ITEMS"][2]["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME);
+									$date = ParseDateTime($arResult["ITEMS"][2]["DISPLAY_ACTIVE_FROM"], FORMAT_DATETIME);
 									$date2 = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
 
 									echo $date2;
 						?>
 
 						<?
-									$time = ConvertDateTime($arResult["ITEMS"][2]["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"],"HH:MI");
+									$time = ConvertDateTime($arResult["ITEMS"][2]["DISPLAY_ACTIVE_FROM"],"HH:MI");
 									if ($time!="00:00") {
 										echo $time;
 									}

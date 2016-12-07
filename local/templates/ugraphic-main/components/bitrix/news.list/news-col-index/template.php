@@ -29,9 +29,9 @@ $this->setFrameMode(true);
             <?endif?>
         </div>
         <div class="list-text">
-            <?if(is_array($arItem["DISPLAY_PROPERTIES"]["date"])):?>
+            <?if($arItem["ACTIVE_FROM"]):?>
                 <div class="date">
-                    <?$date = ParseDateTime($arItem["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME); $date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S")); echo $date;?>
+                    <?$date = ParseDateTime($arItem["ACTIVE_FROM"], FORMAT_DATETIME); $date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S")); echo $date;?>
                 </div>
             <?endif;?>
             <?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>

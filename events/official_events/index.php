@@ -3,12 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Спецпроекты");
 
 $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
-?>
-<?$specialFilter = array( 
-					array(
-						array("PROPERTY_LOCATION" => 25), 
-					)
-				);  
+
 $APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"events-service-complex", 
@@ -25,7 +20,7 @@ $APPLICATION->IncludeComponent(
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
+		"CHECK_DATES" => "N",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
@@ -46,7 +41,7 @@ $APPLICATION->IncludeComponent(
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "N",
+		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "N",
@@ -87,7 +82,7 @@ $APPLICATION->IncludeComponent(
 		"SHOW_404" => "N",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "N",
@@ -98,7 +93,7 @@ $APPLICATION->IncludeComponent(
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => "events-service-complex",
-		"FILTER_NAME" => "specialFilter",
+		"FILTER_NAME" => "FLT_EVENTS_LIST",
 		"FILTER_FIELD_CODE" => array(
 			0 => "",
 			1 => "",

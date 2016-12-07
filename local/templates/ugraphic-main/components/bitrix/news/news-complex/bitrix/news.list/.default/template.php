@@ -39,9 +39,9 @@ $this->setFrameMode(true);
 
 		<div class="news-info">
 
-			<?if(is_array($arItem["DISPLAY_PROPERTIES"]["date"])):?>
+			<?if($arItem["ACTIVE_FROM"]):?>
 				<div class="news-date">
-					<?$date = ParseDateTime($arItem["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME); $date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S")); echo $date;?>
+					<?$date = ParseDateTime($arItem["ACTIVE_FROM"], FORMAT_DATETIME); $date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S")); echo $date;?>
 				</div>
 			<?endif;?>
 

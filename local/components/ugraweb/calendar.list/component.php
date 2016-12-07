@@ -42,14 +42,14 @@ $arEvents = Array();
 $mCurDate = MakeTimeStamp($cCurDate);
 $arSort = Array("PROPERTY_date"=>"asc");
 
-$arSelect = Array("IBLOCK_ID","ID","NAME","DETAIL_PAGE_URL");
+$arSelect = Array("IBLOCK_ID","ID","NAME","DETAIL_PAGE_URL","DATE_ACTIVE_FROM");
 
 // Фильтр	
 $arFilter=Array(
 	"IBLOCK_ID"=>1,
 	"ACTIVE"=>"Y",
 );
-$arFilter[">=PROPERTY_date_VALUE"] = date($DB->DateFormatToPHP(CLang::GetDateFormat("SHORT")), $mCurDate);
+$arFilter[">=DATE_ACTIVE_FROM"] = date($DB->DateFormatToPHP(CLang::GetDateFormat("SHORT")), $mCurDate);
 
 
 // Запрос
@@ -58,16 +58,14 @@ $rsEvents=CIBlockElement::GetList($arSort, $arFilter, false, Array("nTopCount" =
 while($obEvents = $rsEvents->GetNextElement())
 {
     $arFields = $obEvents->GetFields();
-    $arProps = $obEvents->GetProperties();
-    $arDate = explode(" ", $arProps['date']['VALUE']);
-
+    $arDate = explode(" ", $arFields['DATE_ACTIVE_FROM']);
     $cTime = explode(":", $arDate[1]);
     $cNameDay = FormatDate("l", MakeTimeStamp($arDate[0]));
     $cNameDay = ToLower($cNameDay);
 
     $arEvents[$arDate[0]][] = Array(
         "id" => $arFields["ID"],
-        "date" => $arProps['date']['VALUE'],
+        "date" => $arFields['DATE_ACTIVE_FROM'],
         "name" => $arFields["NAME"],
         "date_event_format" => ($cTime[0].":".$cTime[1]),
         "url" => $arFields["DETAIL_PAGE_URL"],

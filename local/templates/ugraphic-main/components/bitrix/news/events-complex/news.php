@@ -61,6 +61,14 @@ else if($arParams["USE_FILTER"]=="Y"):?>
 ?>
 <br />
 <?endif?>
+<?
+if($APPLICATION->GetCurDir() == '/events/')
+{
+    $GLOBALS['FLT_EVENTS_LIST'] = [
+        '>=DATE_ACTIVE_FROM' => date('d.m.Y')
+    ];
+}
+?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
@@ -108,7 +116,7 @@ else if($arParams["USE_FILTER"]=="Y"):?>
 		"ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
 		"USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
 		"GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
-		"FILTER_NAME" => $arParams["FILTER_NAME"],
+		"FILTER_NAME" => 'FLT_EVENTS_LIST',
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
 	),
