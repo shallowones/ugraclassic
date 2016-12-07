@@ -135,6 +135,7 @@ class Services
         {
             if($section_id > 0)
             {
+
                 $arSection = \CIBlockSection::GetByID($section_id)->GetNext();
 
                 $arEvent = [
@@ -142,6 +143,7 @@ class Services
                     'COLLECTIVE_NAME' => $arSection['NAME'],
                     'NEWS_LINK' => $link
                 ];
+
                 \CEvent::SendImmediate('NOTICE_DUPLICATE_NEWS','s1',$arEvent);
             }
         }
