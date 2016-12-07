@@ -112,15 +112,6 @@ $APPLICATION->SetTitle("Обратная связь");
                         </ul>
                     </div>
                 </a>
-                <div class="afisha-ticket">
-                    <div class="tick">
-                        <div class="tick-1"><span>Цена билета:</span></div>
-                        <div class="tick-2">от 1800 до 5500 руб.</div>
-                    </div>
-                    <div class="tick">
-                        <a href="#">Купить билет онлайн</a>
-                    </div>
-                </div>
                 <div class="age">12+</div>
             </div>
         </div>
