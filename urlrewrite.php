@@ -391,10 +391,10 @@ $arUrlRewrite = array(
         "PATH" => "/news/backstage/index.php",
     ),
     array(
-        "CONDITION" => "#^/events/photo/#",
+        "CONDITION" => "#^/news/photo/#",
         "RULE" => "",
         "ID" => "bitrix:news",
-        "PATH" => "/events/photo/index.php",
+        "PATH" => "/news/photo/index.php",
     ),
     array(
         "CONDITION" => "#^/collective2/#",
