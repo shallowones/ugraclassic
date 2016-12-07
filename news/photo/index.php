@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Фотоотчет");
+$APPLICATION->SetTitle("Фотоотчеты");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news",
 	"photogal",
@@ -33,6 +33,9 @@ $APPLICATION->SetTitle("Фотоотчет");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
+		"FILTER_FIELD_CODE" => array("NAME","DATE_ACTIVE_FROM","DATE_ACTIVE_TO",""),
+		"FILTER_NAME" => "",
+		"FILTER_PROPERTY_CODE" => array("",""),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "7",
 		"IBLOCK_TYPE" => "photo",
@@ -64,7 +67,7 @@ $APPLICATION->SetTitle("Фотоотчет");
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_PERMISSIONS" => "N",
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",
