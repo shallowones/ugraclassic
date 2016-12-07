@@ -201,7 +201,7 @@ $(document).ready(function () {
        $(this).slideUp();
     });
 
-    $('input.err').keyup(function () {
+    $('.err').keyup(function () {
         $(this).removeClass('err');
     });
 
