@@ -1341,7 +1341,7 @@ p.unmar {
     background: white;
     color: #daac4f;
 }
-input.err {
+input.err, textarea.err {
     border-bottom-color: #d14c4c;
 }
 @media screen and (max-width: 1000px) {
