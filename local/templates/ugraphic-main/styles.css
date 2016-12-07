@@ -1223,3 +1223,172 @@ p.unmar {
 .cross:hover > .cross-icon {
     background-position: -36px 0;
 }
+/* ------------------------------------------------------------------------------------------------- FEEDBACK */
+.feedback-form {
+    width: 100%;
+    padding: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #8a8989;
+    line-height: 30px;
+}
+.feedback-desc {
+    font-family: 'Noto Serif', serif;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-style: italic;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.feedback-mess {
+    position: relative;
+    pointer-events: none;
+    width: 100%;
+    padding: 5px 0;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.feedback-mess::after {
+    content: '';
+    cursor: pointer;
+    pointer-events: all;
+    background: url('img/cross-white.png') no-repeat 0 0;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 20px;
+    top: 12px;
+}
+.feedback-mess.ok {
+    background: #469639;
+}
+.feedback-mess.error {
+    background: #d14c4c;
+}
+.f-line {
+    display: flex;
+    margin-bottom: 20px;
+}
+.f-row {
+    width: 50%;
+}
+.f-row:first-child {
+    margin-right: 20px;
+}
+.feedback-form label {
+    display: block;
+    font-weight: normal;
+    margin: 0;
+}
+.req {
+    color: #d14c4c;
+    font-weight: bold;
+}
+.f-row > input, .s-line > textarea, .feedback-cod > input {
+    font-family: 'Noto Serif', serif;
+    font-size: 16px;
+    color: #272727;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 3px solid #b5b3b3;
+    width: 100%;
+}
+.s-line {
+    margin-bottom: 20px;
+}
+.s-line > textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.t-line {
+    display: flex;
+    justify-content: space-between;
+}
+.cap-block {
+    display: flex;
+    height: 50px;
+    align-items: flex-end;
+}
+.feedback-captcha {
+    margin-right: 20px;
+}
+.feedback-cod {
+    width: 135px;
+}
+.feedback-cod > input {}
+.feedback-button {
+    width: 132px;
+}
+.feedback-button > input {
+    border: 1px solid #daac4f;
+    color: white;
+    font-weight: bold;
+    background: #daac4f;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+}
+.feedback-button > input:hover {
+    background: white;
+    color: #daac4f;
+}
+input.err {
+    border-bottom-color: #d14c4c;
+}
+@media screen and (max-width: 1000px) {
+    .feedback-form {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media screen and (max-width: 757px) {
+    .f-line {
+        display: block;
+    }
+    .f-row {
+        width: 100%;
+    }
+    .f-row:first-child {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 580px) {
+    .feedback-form {
+        line-height: 25px;
+    }
+    .feedback-desc {
+        font-size: 14px;
+    }
+    .t-line {
+        display: block;
+    }
+    .cap-block {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .feedback-button {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 350px) {
+    .feedback-cod > label {
+        font-size: 10px;
+    }
+    .feedback-mess {
+        font-size: 12px;
+    }
+    .feedback-mess::after {
+        right: 10px;
+        top: 9px;
+    }
+}

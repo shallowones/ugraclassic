@@ -196,4 +196,13 @@ $(document).ready(function () {
         }
     });
 
+    // удаление оповещений по нажатию на крестик (форма обратной связи)
+    $('.feedback-mess').on('click', function () {
+       $(this).slideUp();
+    });
+
+    $('input.err').keyup(function () {
+        $(this).removeClass('err');
+    });
+
 });
