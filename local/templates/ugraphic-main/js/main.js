@@ -18,6 +18,9 @@ $(document).ready(function () {
     $('.categories__item').on('click', function () {
         var parentID = $(this).parent().attr("id");
         var value = $(this).attr('value');
+        var dateStart = $('#date_start');
+        var dateEnd = $('#date_end');
+        var countDaysOfMonth = '';
         if (parentID == 'sections') {
             var input = $('<input/>', {
                 'value': value,
@@ -33,10 +36,48 @@ $(document).ready(function () {
             $(this).addClass('cat-active');
             $(this).append(input);
         } else if (parentID == 'months') {
-            $('#date_start').val('01.' + value);
+            dateStart.val('01.' + value);
             var arDate = value.split('.');
-            var countDaysOfMonth = new Date().daysInMonth(arDate[1], arDate[0]);
-            $('#date_end').val(countDaysOfMonth + '.' + value);
+            countDaysOfMonth = new Date().daysInMonth(arDate[1], arDate[0]);
+            dateEnd.val(countDaysOfMonth + '.' + value);
+        } else if (parentID == 'days') {
+            var date = new Date(),
+                day = date.getDate(),
+                month = date.getMonth() + 1,
+                year = date.getFullYear(),
+                tomorrow = day + 1;
+            switch(value) {
+                case 'today':
+                    if (day.toString().length == 1) {
+                        day = '0' + day.toString();
+                    }
+                    dateStart.val(day + '.' + month + '.'+ year);
+                    break;
+                case 'tomorrow':
+                    if (tomorrow.toString().length == 1) {
+                        tomorrow = '0' + tomorrow.toString();
+                    }
+                    dateStart.val(tomorrow + '.' + month + '.'+ year);
+                    break;
+                case 'week':
+                    // получаем текущую неделю
+                    var weekStartDay = day - date.getDay() + 1;
+                    var weekEndDay = day + (7 - date.getDay());
+                    if (weekStartDay.toString().length == 1) {
+                        weekStartDay = '0' + weekStartDay.toString();
+                    }
+                    if (weekEndDay.toString().length == 1) {
+                        weekEndDay = '0' + weekEndDay.toString();
+                    }
+                    dateStart.val(weekStartDay + '.' + month + '.'+ year);
+                    dateEnd.val(weekEndDay + '.' + month + '.'+ year);
+                    break;
+                case 'month':
+                    // получим количество дней в месяце
+                    countDaysOfMonth = new Date().daysInMonth(year, month);
+                    dateStart.val('01.' + month + '.'+ year);
+                    dateEnd.val(countDaysOfMonth + '.' + month + '.'+ year);
+            }
         }
     });
 

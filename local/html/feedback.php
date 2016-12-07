@@ -1,5 +1,5 @@
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Обратная связь");
+$APPLICATION->SetTitle("Афиша");
 ?>
 
     <form method="get" action="#" enctype="multipart/form-data" class="feedback-form">
@@ -42,6 +42,5 @@ $APPLICATION->SetTitle("Обратная связь");
             </div>
         </div>
     </form>
-
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
