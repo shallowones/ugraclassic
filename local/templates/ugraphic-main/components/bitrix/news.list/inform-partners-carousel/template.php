@@ -30,31 +30,35 @@ $this->setFrameMode(true);
 <script>
     var owl = $('#panaram3d-partner2');
     owl.owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        dots : true,
-        autoplay : false,
-        autoplayTimeout : 15000,
-        autoplayHoverPause : true,
-        smartSpeed : 500,
-        navText : ["<i></i>","<i></i>"],
-        responsive:{
-            0:{
-                items:2,
-                mouseDrag : true,
+        //loop: true,
+        nav: true,
+        margin: 10,
+        dots: true,
+        autoplay: false,
+        autoplayTimeout: 15000,
+        autoplayHoverPause: true,
+        smartSpeed: 500,
+        navText: ["<i></i>", "<i></i>"],
+        responsive: {
+            0: {
+                items: 1,
+                mouseDrag: false
             },
-            758:{
-                items:3,
-                mouseDrag : true,
+            500: {
+                items: 2,
+                mouseDrag: false
             },
-            1000:{
-                items:4,
-                mouseDrag : false,
+            680: {
+                items: 3,
+                mouseDrag: false
             },
-            1400:{
-                items:5,
-                mouseDrag : false,
+            1000: {
+                items: 4,
+                mouseDrag: false
+            },
+            1400: {
+                items: 6,
+                mouseDrag: false
             }
         }
     });

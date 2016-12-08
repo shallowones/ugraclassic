@@ -819,7 +819,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                 );?>
 
 
-                <h1>ИНФОРМАЦИОННЫЕ ПАРТНЕРЫ</h1>
+                <h1 class="m-top30">ИНФОРМАЦИОННЫЕ ПАРТНЕРЫ</h1>
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:news.list",
                     "inform-partners-carousel",

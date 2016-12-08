@@ -53,12 +53,18 @@
 }
 
 .slider-partner__item {
-	display: flex;
-	height: 170px;
+	/*display: flex;
+	height: 170px;*/
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
 }
 .owl-carousel .owl-item .slider-partner__item img {
 	display: initial;
-	max-width: 100%;
+	/*max-width: 100%;
 	width: auto;
-	margin: auto;
+	margin: auto;*/
+}
+.panaram3d-box {
+	padding: 0 54px;
 }
