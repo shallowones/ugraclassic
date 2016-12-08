@@ -54,7 +54,7 @@ $this->setFrameMode(true);
                 mouseDrag : false,
             },
             1400:{
-                items:6,
+                items:5,
                 mouseDrag : false,
             }
         }

@@ -54,6 +54,7 @@
 
 .slider-partner__item {
 	display: flex;
+	height: 170px;
 }
 .owl-carousel .owl-item .slider-partner__item img {
 	display: initial;
