@@ -52,7 +52,7 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
 			0 => "",
 			1 => "",
 		),
-		"FILTER_NAME" => "FLT_EVENTS_LIST",
+		"FILTER_NAME" => "arrFilter",
 		"FILTER_PROPERTY_CODE" => array(
 			0 => "date",
 			1 => "",

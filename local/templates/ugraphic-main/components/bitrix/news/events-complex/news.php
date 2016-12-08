@@ -31,17 +31,14 @@ $this->setFrameMode(true);
 );?>
 <br />
 <?endif?>
-<? 
-/*
-!!! ALARM !!! 
-Г О В Н О К О Д
-Захардкодил фильтр в шаблоне компонента ибо ничего лучше не придумал, чтоб и news использовать для ЧПУ и фильтр был гибким
-!!! ALARM !!!	
-*/
-if ($arParams["USE_DATE_FILTER"]=="Y"){
+<?
+/*if ($arParams["USE_DATE_FILTER"]=="Y"){
 	$arParams["FILTER_NAME"] = "dateFilter";
 }
-else if($arParams["USE_FILTER"]=="Y"):?>
+else if($arParams["USE_FILTER"]=="Y"):*/
+
+// фильтр переписан ниже, компонент находится только для шаблона
+?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.filter",
 	"",
@@ -58,17 +55,23 @@ else if($arParams["USE_FILTER"]=="Y"):?>
 	),
 	$component
 );
-?>
-<br />
-<?endif?>
-<?
+if (!empty($_GET['set_filter'])) {
+    if (!empty($_GET['date_start'])) {
+        $GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_FROM'] = trim(htmlspecialcharsEx($_GET['date_start']));
+    }
+    if (!empty($_GET['date_end'])) {
+        $arDateTo = explode('.', trim(htmlspecialcharsEx($_GET['date_end'])));
+        $mDateTo = mktime(0,0,0, intval($arDateTo[1]),intval($arDateTo[0])+1,intval($arDateTo[2]));
+        $GLOBALS[$arParams["FILTER_NAME"]]['<=DATE_ACTIVE_FROM'] = date('d.m.Y', $mDateTo);
+    }
+}
 if($APPLICATION->GetCurDir() == '/events/')
 {
-    $GLOBALS['FLT_EVENTS_LIST'] = [
-        '>=DATE_ACTIVE_FROM' => date('d.m.Y')
-    ];
+    $GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_FROM'] = date('d.m.Y');
 }
 ?>
+<br />
+<?//endif?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
@@ -116,7 +119,7 @@ if($APPLICATION->GetCurDir() == '/events/')
 		"ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
 		"USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
 		"GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
-		"FILTER_NAME" => 'FLT_EVENTS_LIST',
+		"FILTER_NAME" => $arParams["FILTER_NAME"],
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
 	),
