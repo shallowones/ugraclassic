@@ -67,19 +67,19 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 14px;
-    border: 2px solid #d1c2ab;
+    border: 2px solid #506f8f;
     padding-top: 9px;
     font-family: Arial;
     font-weight: bold;
     text-decoration: none;
-    color: #d1c2ab;
+    color: #506f8f;
     margin: 0 auto;
     margin-top: 25px;
 }
 
 .news-index .all-news:hover {
-    color: #9b0029 !important;
-    border: 2px solid #9b0029;
+    color: white;
+	background: #506f8f;
     text-decoration: none;
 }
 

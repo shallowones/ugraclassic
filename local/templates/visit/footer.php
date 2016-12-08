@@ -40,10 +40,19 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 	<div id="footer">
 		<div class="wrapper">
+            <div class="footer-flex">
+                <div class="group-name">
+                    <?=$colFtrName?>
+                </div>
+                <div class="footer-counter">
+                    <img src="<? echo SITE_TEMPLATE_PATH . '/styles/solisti-ktc-yugraclassic/img/counter.png' ?>">
+                </div>
+                <div class="footer-ugraweb">
+                    Разработка и поддержка —
+                    <br><a href="http://ugraweb.ru/">Югорские Интернет Решения</a>
+                </div>
+            </div>
 
-		<div class="group-name">
-            <?=$colFtrName?>
-		</div>
 
 		</div><!-- .wrapper -->
 	</div><!-- #footer -->
