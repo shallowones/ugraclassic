@@ -842,8 +842,8 @@ h1
 
 @media (min-width: 758px) and (max-width: 1000px) {
     .logo {
-        zoom: 0.8;
-        top: 40px;
+        zoom: 0.5;
+        top: 70px;
     }
     .wrapper {
         width: 690px;
@@ -859,10 +859,15 @@ h1
 
     .search-head {
         margin-top: 7px;
+        width: 170px;
     }
 
     .head-info .contact {
         margin:20px 0 5px 0;
+    }
+
+    .bx-searchtitle .bx-input-group .bx-form-control {
+        padding-left: 12px;
     }
 
 }
@@ -870,7 +875,7 @@ h1
 @media (max-width: 757px) {
     .logo {
         zoom: 0.8;
-        top: 25px;
+        top: 45px;
     }
 
     .search-head{
@@ -1317,15 +1322,11 @@ nav a#pull {
         display: inline-block;
         position: absolute;
         left: 25px;
-        top: 34px;
+        top: 45px;
     }
 
     .selected{
         background: none;
-    }
-
-    #top-menu {
-        font-size: 16px;
     }
 
     nav li {
@@ -1339,10 +1340,11 @@ nav a#pull {
 
     #top-menu {
         top: 80px;
-        background: #e5e5e5;
+        background: #506f8f;
         z-index: 100;
         position: relative;
         padding-bottom: 10px;
+        font-size: 16px;
     }
 
     #top-menu li li {
@@ -1365,6 +1367,7 @@ nav a#pull {
     #top-menu li .falls li a {
         font-size: 14px;
         padding-left: 20px;
+        color: #fff;
     }
 
     #top-menu li li {
@@ -1381,45 +1384,52 @@ nav a#pull {
 
     #top-menu a {
         padding: 10px 0px;
+        text-align: left;
     }
 
     /*Root items*/
     #top-menu li a.root-item {
-        color: #000;
+        color: #fff;
     }
 
     /*Root menu selected*/
     #top-menu li a.root-item-selected {
-        color:#9b0029;
-        background: #d5d5d5;
-        font-weight:bold;
+        color: #fff;
+        background: #4a6480;
+        font-weight: bold;
     }
 
 
     #top-menu li a.root-item-selected:hover {
-        color: #9b0029;
+        color: #fff;
     }
 
     /*Root items: hover*/
     #top-menu li:hover a.root-item, #top-menu li.jshover a.root-item
     {
-        color:#9b0029;
+        color:#fff;
     }
 
     #top-menu li a.root-item-selected:hover {
-        color: #9b0029;
+        color: #fff;
+        font-weight: bold;
     }
 
     /*Root items: hover*/
     #top-menu li:hover a.root-item-selected, #top-menu li.jshover a.root-item-selected
     {
-        color:#9b0029;
+        color:#fff;
+        font-weight: bold;
     }
 
 
     /*Child-items selected*/
     #top-menu li.item-selected a {
-        color: #9b0029 !important;
+        color: #fff !important;
+    }
+
+    #top-menu a:hover {
+        font-weight: bold;
     }
 
 
@@ -1600,11 +1610,14 @@ span.mobile{
         vertical-align: middle;
         display: table-cell;
         border: 0;
-        background: #333f47;
+        background: #fff;
         border-radius: 30px;
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
 
+    }
+    .bx-searchtitle .bx-input-group .bx-form-control {
+        height: 40px;
     }
     .bx-searchtitle span.mobile .fa{
         font-size: 20px;
@@ -1651,7 +1664,12 @@ span.mobile{
 
 
 }
-
+@media (max-width: 560px) {
+    .logo {
+        zoom: 0.5;
+        top: 90px;
+    }
+}
 
 /* INDEX */
 
@@ -1816,4 +1834,10 @@ span.mobile{
 
 .doc-excel, .doc-docx, .doc-powerp, .doc-img, .doc-pdf, .doc-rar, .doc-none {
     background-color: #506f8f;
+}
+@media screen and (max-width: 400px) {
+    .logo {
+        zoom: 0.45;
+        top: 35px;
+    }
 }
