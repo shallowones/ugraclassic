@@ -12,123 +12,74 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<? if(isset($arResult["DISPLAY_PROPERTIES"]["sub_header"])): ?>
+    <div class="afisha-detail__top"><?=$arResult["DISPLAY_PROPERTIES"]["sub_header"]['DISPLAY_VALUE']?></div>
+<? endif; ?>
 <div class="afisha-detail">
-
-		<?if($arResult["DETAIL_PICTURE"]!=""):?>
-			<? $detail_img = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"], array('width'=>305, 'height'=>430), BX_RESIZE_IMAGE_PROPORTIONAL_EXT, true);?>
-			<img
-				border="0"
-				src="<?=$detail_img["src"]?>"
-				width="<?=$detail_img["width"]?>"
-				height="<?=$detail_img["height"]?>"
-				alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"
-				title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
-				class="preview-picture"
-				/>
-		<?else:?>
-			<? $detail_img = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"], array('width'=>305, 'height'=>430), BX_RESIZE_IMAGE_PROPORTIONAL_EXT, true);?>
-			<img
-				border="0"
-				src="<?=$detail_img["src"]?>"
-				width="<?=$detail_img["width"]?>"
-				height="<?=$detail_img["height"]?>"
-				alt="<?=$arResult["PREVIEW_PICTURE"]["ALT"]?>"
-				title="<?=$arResult["PREVIEW_PICTURE"]["TITLE"]?>"
-				class="preview-picture"
-				/>
-		<?endif?>
-	<div class="afisha-info">
-		<div class="info-1">
-			<?if(isset($arResult["ACTIVE_FROM"])):?>
-				<div class="afisha-date">
-					<span>Дата: </span>
-					<?
-					$date = ParseDateTime($arResult["ACTIVE_FROM"], FORMAT_DATETIME);
-					$date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
-					echo $date;
-					?><br/>
-					<span>Время:</span>
-					<?
-					echo ConvertDateTime($arResult["ACTIVE_FROM"],"HH:MI");
-					?>
-				</div>
-			<?endif;?>
-
-
-			<?if(isset($arResult["DISPLAY_PROPERTIES"]["hall"])):?>
-				<div class="afisha-date">
-					<span>Место:</span> <?=$arResult["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
-				</div>
-			<?endif;?>
-
-		</div>
-		
-		<div class="info-2">
-			<?if(isset($arResult["DISPLAY_PROPERTIES"]["duration"])):?>
-				<div class="afisha-date">
-					<span>Продолжительность:</span> <?=$arResult["DISPLAY_PROPERTIES"]["duration"]["DISPLAY_VALUE"]?> минут
-				</div>
-			<?endif;?>
-
-			<?if(isset($arResult["DISPLAY_PROPERTIES"]["cost"])):?>
-				<div class="afisha-date">
-					<span>Цена билета:</span> <?=$arResult["DISPLAY_PROPERTIES"]["cost"]["DISPLAY_VALUE"]?> руб.
-				</div>
-			<?endif;?>
-		</div>
-
-
-		<div class="tickets-info">
-			<div class="afisha-date" style="margin-bottom: 35px;">
-				<span>Куплено:</span> 303 
-				<span style="margin-left: 25px;">Осталось:</span> 200
-			</div>
-
-			<?if(isset($arResult["DISPLAY_PROPERTIES"]["age"])):?>
-				<div class="afisha-age">
-					<?=$arResult["DISPLAY_PROPERTIES"]["age"]["DISPLAY_VALUE"]?>
-				</div>
-			<?endif;?>
-            <? if(strlen(trim($arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) > 0): ?>
-                <a href="<?=$arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>">
-                    <div class="buy-ticket">Купить билет</div>
-                </a>
-            <?endif;?>
-			<div class="clrb"></div>
-		</div>
-
-	</div>
-
-<div class="clrb"></div>
-
-	<?if(strlen($arResult["DETAIL_TEXT"])>0):?>
-		<div class="detail-text">
-			<?echo $arResult["DETAIL_TEXT"];?>
-		</div>
-	<?endif?>
-
-	<?
-	if(array_key_exists("USE_SHARE", $arParams) && $arParams["USE_SHARE"] == "Y")
-	{
-		?>
-		<div class="news-detail-share">
-			<noindex>
-			<?
-			$APPLICATION->IncludeComponent("bitrix:main.share", "", array(
-					"HANDLERS" => $arParams["SHARE_HANDLERS"],
-					"PAGE_URL" => $arResult["~DETAIL_PAGE_URL"],
-					"PAGE_TITLE" => $arResult["~NAME"],
-					"SHORTEN_URL_LOGIN" => $arParams["SHARE_SHORTEN_URL_LOGIN"],
-					"SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
-					"HIDE" => $arParams["SHARE_HIDE"],
-				),
-				$component,
-				array("HIDE_ICONS" => "Y")
-			);
-			?>
-			</noindex>
-		</div>
-		<?
-	}
-	?>
+    <div class="afisha-detail__img">
+        <?if($arResult["DETAIL_PICTURE"]!=""):?>
+            <? $detail_img = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"], array('width'=>305, 'height'=>430), BX_RESIZE_IMAGE_PROPORTIONAL_EXT, true);?>
+            <img
+                    border="0"
+                    src="<?=$detail_img["src"]?>"
+                    width="<?=$detail_img["width"]?>"
+                    height="<?=$detail_img["height"]?>"
+                    alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"
+                    title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
+            />
+        <?else:?>
+            <? $detail_img = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"], array('width'=>305, 'height'=>430), BX_RESIZE_IMAGE_PROPORTIONAL_EXT, true);?>
+            <img
+                    border="0"
+                    src="<?=$detail_img["src"]?>"
+                    width="<?=$detail_img["width"]?>"
+                    height="<?=$detail_img["height"]?>"
+                    alt="<?=$arResult["PREVIEW_PICTURE"]["ALT"]?>"
+                    title="<?=$arResult["PREVIEW_PICTURE"]["TITLE"]?>"
+            />
+        <?endif?>
+    </div>
+    <div class="afisha-detail__desc">
+        <div class="afisha-detail__header">
+            <ul class="afisha-w">
+                <?if(isset($arResult["ACTIVE_FROM"])):?>
+                    <?
+                    $date = ParseDateTime($arResult["ACTIVE_FROM"], FORMAT_DATETIME);
+                    $date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
+                    ?>
+                    <li class="afisha-w__item"><span>Дата:</span> <i class="orange"><?echo $date;?>, <?=ToLower(FormatDate("l", MakeTimeStamp($arResult["ACTIVE_FROM"])))?></i></li>
+                    <li class="afisha-w__item"><span>Время:</span> <?echo ConvertDateTime($arResult["ACTIVE_FROM"],"HH:MI");?></li>
+                <?endif?>
+                <?if(isset($arResult["DISPLAY_PROPERTIES"]["hall"])):?>
+                    <li class="afisha-w__item"><span>Место:</span> <?=$arResult["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?></li>
+                <?endif?>
+                <?if(isset($arResult["DISPLAY_PROPERTIES"]["info_reserv_ticket"])):?>
+                    <li class="afisha-w__item m-top20"><span>Информация и бронирование билетов:</span> <i
+                                class="number"><?=$arResult["DISPLAY_PROPERTIES"]["info_reserv_ticket"]["DISPLAY_VALUE"]?></i></li>
+                <?endif?>
+            </ul>
+            <div class="afisha-ticket">
+                <?if(isset($arResult["DISPLAY_PROPERTIES"]["cost"])):?>
+                    <div class="tick">
+                        <div class="tick-1"><span>Цена билета:</span></div>
+                        <div class="tick-2"><?=$arResult["DISPLAY_PROPERTIES"]["cost"]["DISPLAY_VALUE"]?></div>
+                    </div>
+                <?endif?>
+                <? if(strlen(trim($arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) > 0): ?>
+                    <div class="tick">
+                        <a href="<?=$arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>">Купить билет онлайн</a>
+                    </div>
+                <? endif; ?>
+            </div>
+            <?if(isset($arResult["DISPLAY_PROPERTIES"]["age"])):?>
+                <div class="age"><?=$arResult["DISPLAY_PROPERTIES"]["age"]["DISPLAY_VALUE"]?></div>
+            <?endif?>
+        </div>
+        <?if(strlen($arResult["DETAIL_TEXT"])>0):?>
+            <hr>
+            <div class="afisha-detail__text">
+                <?echo $arResult["DETAIL_TEXT"];?>
+            </div>
+        <?endif?>
+    </div>
 </div>

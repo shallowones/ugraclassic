@@ -40,6 +40,8 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
 			3 => "duration",
 			4 => "cost",
 			5 => "link_kassir",
+            6 => "sub_header",
+            7 => "info_reserv_ticket",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
