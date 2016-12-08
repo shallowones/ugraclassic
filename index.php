@@ -159,7 +159,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                             1 => "age",
                             2 => "date",
                             3 => "hall",
-                            4 => "",
+                            4 => "link_kassir",
                         ),
                         "SET_BROWSER_TITLE" => "N",
                         "SET_LAST_MODIFIED" => "N",

@@ -89,9 +89,11 @@ $this->setFrameMode(true);
 					<?=$arResult["DISPLAY_PROPERTIES"]["age"]["DISPLAY_VALUE"]?>
 				</div>
 			<?endif;?>
-			<a href="/">
-				<div class="buy-ticket">Купить билет</div>
-			</a>
+            <? if(strlen(trim($arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) > 0): ?>
+                <a href="<?=$arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>">
+                    <div class="buy-ticket">Купить билет</div>
+                </a>
+            <?endif;?>
 			<div class="clrb"></div>
 		</div>
 
