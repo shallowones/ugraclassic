@@ -52,11 +52,27 @@ $this->setFrameMode(true);
                     $date = ParseDateTime($arResult["ACTIVE_FROM"], FORMAT_DATETIME);
                     $date = intval($date["DD"])." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
                     ?>
-                    <li class="afisha-w__item"><span>Дата:</span> <i class="orange"><?echo $date;?>, <?=ToLower(FormatDate("l", MakeTimeStamp($arResult["ACTIVE_FROM"])))?></i></li>
+                    <li class="afisha-w__item"><span>Дата:</span> <i class="orange">
+                        <? if(is_array($arResult["DISPLAY_PROPERTIES"]["date_text"])): ?>
+                            <?=$arResult["DISPLAY_PROPERTIES"]["date_text"]["DISPLAY_VALUE"]?>
+                        <? else: ?>
+                            <?
+                            $date = ParseDateTime($arResult["ACTIVE_FROM"], FORMAT_DATETIME);
+                            $date = intval($date["DD"])." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
+                            ?>
+                            <?echo $date;?>, <?=ToLower(FormatDate("l", MakeTimeStamp($arResult["ACTIVE_FROM"])))?>
+                        <? endif; ?>
+                    </i></li>
                     <li class="afisha-w__item"><span>Время:</span> <?echo ConvertDateTime($arResult["ACTIVE_FROM"],"HH:MI");?></li>
                 <?endif?>
                 <?if(isset($arResult["DISPLAY_PROPERTIES"]["hall"])):?>
-                    <li class="afisha-w__item"><span>Место:</span> <?=$arResult["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?></li>
+                    <li class="afisha-w__item"><span>Место:</span>
+                        <? if(is_array($arResult["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"])): ?>
+                            <?=implode(', ', $arResult["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"])?>
+                        <? else: ?>
+                            <?=$arResult["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
+                        <? endif; ?>
+                    </li>
                 <?endif?>
                 <?if(isset($arResult["DISPLAY_PROPERTIES"]["info_reserv_ticket"])):?>
                     <li class="afisha-w__item m-top20"><span>Информация и бронирование билетов:</span> <i

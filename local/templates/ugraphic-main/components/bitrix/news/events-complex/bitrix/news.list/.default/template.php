@@ -45,15 +45,27 @@ $this->setFrameMode(true);
                     <h3><?echo $arItem["NAME"]?></h3>
                     <ul class="afisha-w">
                         <?if(isset($arItem["ACTIVE_FROM"])):?>
-                            <?
-                            $date = ParseDateTime($arItem["ACTIVE_FROM"], FORMAT_DATETIME);
-                            $date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
-                            ?>
-                            <li class="afisha-w__item"><span>Дата:</span> <?echo $date;?></li>
+                            <li class="afisha-w__item"><span>Дата:</span>
+                                <? if(is_array($arItem["DISPLAY_PROPERTIES"]["date_text"])): ?>
+                                    <?=$arItem["DISPLAY_PROPERTIES"]["date_text"]["DISPLAY_VALUE"]?>
+                                <? else: ?>
+                                    <?
+                                    $date = ParseDateTime($arItem["ACTIVE_FROM"], FORMAT_DATETIME);
+                                    $date = intval($date["DD"])." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
+                                    echo $date;
+                                    ?>
+                                <? endif; ?>
+                            </li>
                             <li class="afisha-w__item"><span>Время:</span> <?echo ConvertDateTime($arItem["ACTIVE_FROM"],"HH:MI");?></li>
                         <?endif;?>
                         <?if(isset($arItem["DISPLAY_PROPERTIES"]["hall"])):?>
-                            <li class="afisha-w__item"><span>Место:</span> <?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?></li>
+                            <li class="afisha-w__item"><span>Место:</span>
+                                <? if(is_array($arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"])): ?>
+                                    <?=implode(', ', $arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"])?>
+                                <? else: ?>
+                                    <?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
+                                <? endif; ?>
+                            </li>
                         <?endif;?>
                     </ul>
                 </div>
@@ -79,6 +91,6 @@ $this->setFrameMode(true);
 <?endforeach;?>
 
 <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
-	<?=$arResult["NAV_STRING"]?>
+	<br /><?=$arResult["NAV_STRING"]?>
 <?endif;?>
 </div>

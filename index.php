@@ -149,7 +149,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                         "DISPLAY_TOP_PAGER" => "N",
                         "FIELD_CODE" => array(
                             0 => "",
-                            1 => "",
+                            1 => "ACTIVE_TO",
                         ),
                         "FILTER_NAME" => "FLT_EVENTS_LIST",
                         "HIDE_LINK_WHEN_NO_DETAIL" => "N",
@@ -175,6 +175,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                             2 => "date",
                             3 => "hall",
                             4 => "link_kassir",
+                            5 => "date_text",
                         ),
                         "SET_BROWSER_TITLE" => "N",
                         "SET_LAST_MODIFIED" => "N",
