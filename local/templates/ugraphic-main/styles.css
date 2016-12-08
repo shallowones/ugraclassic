@@ -1715,7 +1715,12 @@ input.err, textarea.err {
         margin-bottom: 0;
     }
     .ugraweb-block {
-        float: right;
-        margin-top: 10px;
+        margin-top: 20px;
+    }
+    .ugraweb {
+        margin: 0 auto;
+    }
+    .copyr-desc {
+        font-size: 13px;
     }
 }
