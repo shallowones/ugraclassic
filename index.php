@@ -1,9 +1,24 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+global $APPLICATION;
 $APPLICATION->SetTitle("Главная");
 
 use Bitrix\Main\Page\Asset;
-Asset::getInstance()->addCss("/index.css");
+
+$asset = Asset::getInstance();
+$asset->addCss("/index.css");
+$asset->addJs('//vk.com/js/api/openapi.js?136');
+$asset->addString(
+    '<script>' .
+    '   var v = VK.Widgets.Group("vk_groups", {' .
+    '       mode: 4,' .
+    '       width: "auto",' .
+    '       height: "430"' .
+    '   }, 8121061);' .
+    '</script>',
+    true,
+    \Bitrix\Main\Page\AssetLocation::AFTER_JS
+);
 
 $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
 $ibInformPartnersID	= 	\UW\IBBase::getIBIdByCode("inform_partners");
@@ -717,26 +732,19 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
         <div class="partners-box"> <!-- partners -->
             <div class="wrapper">
                 <h1 style="">МЫ В СОЦСЕТЯХ</h1>
-                <table style="display: block; margin: 0 auto; width: 1220px;">
-                    <tr>
-                        <td style="vertical-align: top;">
-                            <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
-
-                            <!-- VK Widget -->
-                            <div id="vk_groups"></div>
-                            <script type="text/javascript">
-                                VK.Widgets.Group("vk_groups", {mode: 4, width: "600", height: "430"}, 8121061);
-                            </script>
-                        </td>
-                        <td style="padding-left: 20px; vertical-align: top;">
-                            <?/*<!-- Горизонтальная ориентация -->
-                        <iframe src='/local/libs/inwidget/index.php?width=600&inline=7&view=14&toolbar=false' scrolling='no' frameborder='no' style='border:none;width:600px;height:295px;overflow:hidden;'></iframe>*/?>
-                            <!-- Крупные preview -->
-                            <iframe src='/local/libs/inwidget/index.php?width=600&inline=3&view=9&toolbar=false&preview=large' scrolling='no' frameborder='no' style='border:none;width:600px;height:430px;overflow:hidden;'></iframe>
-                        </td>
-                    </tr>
-                </table>
-                <br ><br >
+                <div class="social-widget">
+                    <div class="social-widget__item">
+                        <div id="vk_groups"></div>
+                    </div>
+                    <div class="social-widget__item">
+                        <iframe
+                            src='/local/libs/inwidget/index.php?width=600&inline=3&view=9&toolbar=false&preview=large'
+                            scrolling='no'
+                            frameborder='no'
+                            style='border:none; width:100%; height:430px; overflow:hidden;'
+                        ></iframe>
+                    </div>
+                </div>
             </div><!-- .wrapper -->
         </div><!-- 3d tour -->
 

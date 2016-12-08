@@ -21,7 +21,8 @@ $this->setFrameMode(true);
         $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
         ?>
         <a href="<?=$arItem["DISPLAY_PROPERTIES"]["URL"]["~VALUE"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>">
-            <div class="item-3d" id="<?=$this->GetEditAreaId($arItem['ID']);?>" style="background:url('<?=$slide["src"]?>') no-repeat center center;">
+            <div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="slider-partner__item">
+                <img src="<?= $slide["src"] ?>" alt="">
             </div>
         </a>
     <?endforeach;?>
@@ -41,19 +42,19 @@ $this->setFrameMode(true);
         navText : ["<i></i>","<i></i>"],
         responsive:{
             0:{
-                items:2,
-                mouseDrag : true,
-            },
-            758:{
                 items:3,
                 mouseDrag : true,
             },
-            1000:{
+            758:{
                 items:4,
+                mouseDrag : true,
+            },
+            1000:{
+                items:5,
                 mouseDrag : false,
             },
             1400:{
-                items:5,
+                items:6,
                 mouseDrag : false,
             }
         }

@@ -51,3 +51,13 @@
 	    width: 35%;
 	}
 }
+
+.slider-partner__item {
+	display: flex;
+}
+.owl-carousel .owl-item .slider-partner__item img {
+	display: initial;
+	max-width: 100%;
+	width: auto;
+	margin: auto;
+}

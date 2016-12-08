@@ -44,7 +44,7 @@ if(!is_object($inWidget->data)) die('<b style="color:red;">Cache file contains p
 				line-height:1px;
 			}
 			.widget {
-				width:<?php echo $inWidget->width; ?>px;
+				<?/*width:<?php echo $inWidget->width; ?>px;*/?>
 				border:1px solid #c3c3c3;
 				background:#f9f9f9;
 				border-radius: 5px 5px 5px 5px;
@@ -67,7 +67,7 @@ if(!is_object($inWidget->data)) die('<b style="color:red;">Cache file contains p
 			}
 			.widget .title .text {
 				float:left;
-				width: <?php echo ($inWidget->width-44); ?>px;
+				<?/*width: <?php echo ($inWidget->width-44); ?>px;*/?>
 				height:25px;
 				overflow:hidden;
 				margin:5px 0 0 0;

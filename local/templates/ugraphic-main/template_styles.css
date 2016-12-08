@@ -1414,3 +1414,10 @@ h1
         display: none;
     }
 }
+.social-widget {
+    display: flex;
+    justify-content: space-between;
+}
+.social-widget__item {
+    width: 49%;
+}
