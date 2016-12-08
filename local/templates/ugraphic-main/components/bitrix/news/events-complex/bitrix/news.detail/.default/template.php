@@ -28,7 +28,13 @@ $this->setFrameMode(true);
                     title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
             />
         <?else:?>
-            <? $detail_img = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"], array('width'=>305, 'height'=>430), BX_RESIZE_IMAGE_PROPORTIONAL_EXT, true);?>
+            <?
+            $detail_img = CFile::ResizeImageGet($arResult["PREVIEW_PICTURE"], array('width'=>305, 'height'=>430), BX_RESIZE_IMAGE_PROPORTIONAL_EXT, true);
+            if(!isset($detail_img["src"]))
+            {
+                $detail_img["src"] = SITE_TEMPLATE_PATH . '/img/no-photo-afishe.png';
+            }
+            ?>
             <img
                     border="0"
                     src="<?=$detail_img["src"]?>"
@@ -45,7 +51,7 @@ $this->setFrameMode(true);
                 <?if(isset($arResult["ACTIVE_FROM"])):?>
                     <?
                     $date = ParseDateTime($arResult["ACTIVE_FROM"], FORMAT_DATETIME);
-                    $date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
+                    $date = intval($date["DD"])." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
                     ?>
                     <li class="afisha-w__item"><span>Дата:</span> <i class="orange"><?echo $date;?>, <?=ToLower(FormatDate("l", MakeTimeStamp($arResult["ACTIVE_FROM"])))?></i></li>
                     <li class="afisha-w__item"><span>Время:</span> <?echo ConvertDateTime($arResult["ACTIVE_FROM"],"HH:MI");?></li>

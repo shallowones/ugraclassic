@@ -26,6 +26,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/fancyapps/jquery.fancybox.css");
 
 			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/main.js");
+
+            CJSCore::Init(array('date'));
 		?>
 		<?$APPLICATION->ShowHead();?>
 	</head>

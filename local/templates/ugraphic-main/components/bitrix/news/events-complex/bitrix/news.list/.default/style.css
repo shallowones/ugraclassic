@@ -1,3 +1,10 @@
+.afisha {
+    padding: 10px 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 /*.afisha-list {
 	width: 100%;
 }

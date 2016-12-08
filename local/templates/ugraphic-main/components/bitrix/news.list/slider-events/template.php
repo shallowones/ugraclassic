@@ -21,12 +21,18 @@ $this->setFrameMode(true);
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
 
-			<? $foto = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>306, 'height'=>185), BX_RESIZE_IMAGE_EXACT, true);?>
+			<?
+            $foto = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>306, 'height'=>185), BX_RESIZE_IMAGE_EXACT, true);
+            if(!isset($foto["src"]))
+            {
+                $foto["src"] = SITE_TEMPLATE_PATH . '/img/no-photo-afishe.png';
+            }
+            ?>
 			
 			<div class="columns">
 			<div class="item" class="owl-carousel owl-theme" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 
-				<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
+				<?if($arParams["DISPLAY_PICTURE"]!="N" && isset($foto["src"])):?>
 					<div class="photo">
 						<a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
 							<img class="preview_picture" border="0"

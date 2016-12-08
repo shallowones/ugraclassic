@@ -11,7 +11,7 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
 	array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "Y",
+		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "Y",
 		"AJAX_OPTION_JUMP" => "N",
