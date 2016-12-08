@@ -1689,3 +1689,33 @@ input.err, textarea.err {
         right: 10px;
     }
 }
+.copyr {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.copyr-desc {
+    color: #656565;
+    font-size: 14px;
+    line-height: 20px;
+}
+.ugraweb-block {}
+.ugraweb {
+    background: url('img/ugraweb.png') no-repeat 0 0;
+    width: 146px;
+    height: 44px;
+}
+.ugraweb-block > a:hover > .ugraweb {
+    background-position-x: -146px;
+}
+@media screen and (max-width: 540px) {
+    .copyr {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+    .ugraweb-block {
+        float: right;
+        margin-top: 10px;
+    }
+}

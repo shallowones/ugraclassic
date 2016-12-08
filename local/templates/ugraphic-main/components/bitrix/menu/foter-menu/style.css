@@ -97,13 +97,13 @@
 	.menu-sitemap-tree ul li:nth-child(4) {
 		position: absolute;
 	    right: 0;
-	    top: 80px;
+	    top: 140px;
 	}
 
 	.menu-sitemap-tree ul li:nth-child(5) {
 		position: absolute;
 	    right: 0;
-	    top: 110px;
+	    top: 180px;
 	}
 
 	.menu-sitemap-tree ul li ul li:nth-child(3) {
@@ -131,6 +131,8 @@
 	.menu-sitemap-tree li {
 	    width: 310px;
 	    float: initial;
+		display: inline-block;
+		vertical-align: top;
 	} 
 
 	.menu-sitemap-tree ul li {

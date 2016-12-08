@@ -50,13 +50,13 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				),
 				false
 			);?>
-
-			<div class="copyright">
-				© 2016 Концертно-театральный комплекс 
-				<br/>«Югра-Классик»
-				<br/>Все права защищены
-			</div>
-
+            <div class="copyr">
+                <div class="copyr-desc">
+                    © 2016 Концертно-театральный комплекс «Югра-Классик»
+                    <br/>Все права защищены
+                </div>
+                <div class="ugraweb-block"><a href="http://ugraweb.ru/"><div class="ugraweb"></div></a></div>
+            </div>
 		</div><!-- .wrapper -->
 	</div><!-- #footer -->
 

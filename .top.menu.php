@@ -8,7 +8,7 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Афиша", 
+		"События", 
 		"/events/", 
 		Array(), 
 		Array(), 

@@ -925,7 +925,7 @@ h1
 
     .main-container {
         width: 1313px;
-        padding-bottom: 390px;
+        padding-bottom: 440px;
     }
 
 	.col-left-cont{
@@ -953,7 +953,7 @@ h1
 
     .main-container {
         width: 1000px;
-        padding-bottom: 75px;
+        padding-bottom: 115px;
     }
 
     .ktc-photo {
@@ -988,7 +988,7 @@ h1
 
     .main-container {
         width: 690px;
-        padding-bottom: 75px !important;
+        padding-bottom: 115px !important;
         margin-top: 40px;
     }
 
@@ -1139,7 +1139,7 @@ h1
         width: 100%;
         min-width: 280px;
         padding: 0 20px;
-        padding-bottom: 75px !important;
+        padding-bottom: 115px !important;
         margin-top: 40px;
     }
 
