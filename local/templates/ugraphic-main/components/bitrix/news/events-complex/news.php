@@ -65,10 +65,19 @@ if (!empty($_GET['set_filter'])) {
         $GLOBALS[$arParams["FILTER_NAME"]]['<=DATE_ACTIVE_FROM'] = date('d.m.Y', $mDateTo);
     }
 }
-if($APPLICATION->GetCurDir() == '/events/')
+if(!strlen($_GET['date_start']) && !strlen($_GET['date_end']) && $APPLICATION->GetCurDir() == '/events/')
 {
     $GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_FROM'] = date('d.m.Y');
 }
+$arEnum = \CIBlockPropertyEnum::GetList(
+    [],
+    [
+        "IBLOCK_ID"=>$arParams["IBLOCK_ID"],
+        "CODE"=>"location",
+        "XML_ID"=>'office'
+    ]
+)->GetNext();
+$GLOBALS[$arParams["FILTER_NAME"]]['!PROPERTY_location'] = $arEnum['ID'];
 ?>
 <br />
 <?//endif?>

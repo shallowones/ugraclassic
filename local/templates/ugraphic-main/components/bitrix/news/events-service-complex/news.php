@@ -55,8 +55,17 @@ $this->setFrameMode(true);
 <?
 if($APPLICATION->GetCurDir() == '/events/official_events/')
 {
+    $arEnum = \CIBlockPropertyEnum::GetList(
+        [],
+        [
+            "IBLOCK_ID"=>$arParams["IBLOCK_ID"],
+            "CODE"=>"location",
+            "XML_ID"=>'office'
+        ]
+    )->GetNext();
+
     $GLOBALS['FLT_EVENTS_LIST'] = [
-        '=PROPERTY_location' => 26,
+        '=PROPERTY_location' => $arEnum['ID'],
         '!PROPERTY_location' => false,
         '>=DATE_ACTIVE_FROM' => date('d.m.Y')
     ];

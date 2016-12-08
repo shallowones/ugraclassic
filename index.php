@@ -29,8 +29,18 @@ $ib3DpanaramID		=	\UW\IBBase::getIBIdByCode("3d-pannapams");
 $ibRegionEventsID	=	\UW\IBBase::getIBIdByCode("events-regions");
 $ibPartnersID		=	\UW\IBBase::getIBIdByCode("partners");
 
+$arEnum = \CIBlockPropertyEnum::GetList(
+    [],
+    [
+        "IBLOCK_ID"=>$ibEventsID,
+        "CODE"=>"location",
+        "XML_ID"=>'office'
+    ]
+)->GetNext();
+
 $GLOBALS['FLT_EVENTS_LIST'] = [
-    '>=DATE_ACTIVE_FROM' => date('d.m.Y')
+    '>=DATE_ACTIVE_FROM' => date('d.m.Y'),
+    '!PROPERTY_location' => $arEnum['ID']
 ];
 ?>
     <div class="content">
