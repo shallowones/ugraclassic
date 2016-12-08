@@ -12,7 +12,11 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<? if(count($arResult["ITEMS"]) > 0): ?>
+<div class="events-block"> <!-- events-block -->
+    <div class="wrapper">
 
+        <h1>МЕРОПРИЯТИЯ</h1>
 <div class="events-slider-region">
 	<div id="owl-events-slider2" class="owl-carousel owl-theme">
 		<?foreach($arResult["ITEMS"] as $arItem):?>
@@ -85,7 +89,8 @@ $this->setFrameMode(true);
 	<a href="<?=$arParams["LINK_TO_NEWS"]?>" class="no-link"><div class="all-news">Все мероприятия</div><a>
 
 </div>
-
+    </div><!-- .wrapper -->
+</div><!-- .events-block -->
 
 
 
@@ -134,4 +139,4 @@ $this->setFrameMode(true);
 		onInitialized: setEqualHeight($("owl-events-slider2 div.owl-item > div"))
 	});
 </script>
-
+<? endif; ?>

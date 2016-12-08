@@ -12,7 +12,11 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<? if(count($arResult["ITEMS"]) > 0): ?>
+<div class="events-block"> <!-- events-block -->
+    <div class="wrapper">
 
+        <h1>Фотоотчет</h1>
 <div class="photogalereya-slider">
 	<div id="owl-photogalereya-slider" class="owl-carousel owl-theme">
 		<?foreach($arResult["ITEMS"] as $arItem):?>
@@ -36,7 +40,8 @@ $this->setFrameMode(true);
 		
 	</div>
 </div>
-
+    </div><!-- .wrapper -->
+</div><!-- .events-block -->
 
 <script>
 	var owl = $('#owl-photogalereya-slider');
@@ -55,3 +60,4 @@ $this->setFrameMode(true);
 		});
 
 </script>
+<? endif; ?>

@@ -99,6 +99,47 @@ class Services
     }
 
     /**
+     * Проверка на существование раздела сайта визитки и на наличие в нем контента
+     * @param $ibID
+     * @param $siteID int
+     * @return bool
+     */
+    public static function IsSectionVis($ibID, $siteID)
+    {
+        $result = false;
+
+        $arCollNews = \CIBlockSection::GetList(
+            [],
+            [
+                'IBLOCK_ID'=>$ibID,
+                '=UF_COLLECTIVE'=>$siteID,
+                'ACTIVE' => 'Y'
+            ]
+        )->GetNext();
+
+        if(isset($arCollNews['ID']))
+        {
+            $arEl = \CIBlockElement::GetList(
+                [],
+                [
+                    'IBLOCK_ID'=>$ibID,
+                    'SECTION_ID' => $arCollNews['ID'],
+                    'ACTIVE' => 'Y'
+                ],
+                false,
+                ['nTopCount' => 1],
+                ['ID']
+            )->GetNext();
+            if($arEl['ID'])
+            {
+                $result = true;
+            }
+        }
+
+        return $result;
+    }
+
+    /**
      * Непосредственно дублирование новостей
      * @param $arFields
      * @param $pictureOld

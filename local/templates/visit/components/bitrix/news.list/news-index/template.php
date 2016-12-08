@@ -12,6 +12,10 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<? if(count($arResult["ITEMS"]) > 0): ?>
+<div class="news-left-box">
+    <div class="wrapper">
+        <h1>НОВОСТИ</h1>
 <div class="news-index">
 <?foreach($arResult["ITEMS"] as $arItem):?>
 <?$pic = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>700, 'height'=>360), BX_RESIZE_IMAGE_EXACT, true);?>
@@ -65,3 +69,6 @@ $this->setFrameMode(true);
 		<div class="all-news">Все новости</div>
 	</a>
 </div>
+    </div>
+</div>
+<? endif; ?>
