@@ -44,7 +44,9 @@ $this->setFrameMode(true);
 				<div class="age">
 					<?=$arResult["ITEMS"][0]['DISPLAY_PROPERTIES']['age']['DISPLAY_VALUE']?>
 				</div>
-				<div class="buy-ticket">Купить билет</div>
+                <? if(strlen(trim($arResult["ITEMS"][0]['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) > 0): ?>
+                    <a href="<?=$arResult["ITEMS"][0]['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>" class="no-link"><div class="buy-ticket">Купить билет</div></a>
+                <? endif; ?>
 
 		</div>
 

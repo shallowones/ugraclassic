@@ -68,7 +68,9 @@ $this->setFrameMode(true);
 						</div>
 					<?endif;?>
 
-					<div class="buy-ticket">Купить билет</div>
+                    <? if(strlen(trim($arItem['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) > 0): ?>
+                        <a href="<?=$arItem['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>" class="no-link"><div class="buy-ticket">Купить билет</div></a>
+                    <? endif; ?>
 
 				</div>
 
