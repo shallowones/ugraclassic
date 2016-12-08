@@ -47,10 +47,14 @@ $this->setFrameMode(true);
 				<?endif?>
 
 				<div class="events-info">
-                    <?if($arParams["DISPLAY_DATE"]!="N" && $arItem["DISPLAY_ACTIVE_FROM"]):?>
-                        <? $arDate = explode(' ', $arItem["DISPLAY_ACTIVE_FROM"]); ?>
-                        <div class="events-slider-date"><?echo $arDate[0].' '.$arDate[1]?></div>
-                    <?endif?>
+                    <div class="events-slider-date">
+                        <? if(is_array($arItem["DISPLAY_PROPERTIES"]["date_text"])): ?>
+                            <?=$arItem["DISPLAY_PROPERTIES"]["date_text"]["DISPLAY_VALUE"]?>
+                        <? elseif($arParams["DISPLAY_DATE"]!="N" && $arItem["DISPLAY_ACTIVE_FROM"]): ?>
+                            <? $arDate = explode(' ', $arItem["DISPLAY_ACTIVE_FROM"]); ?>
+                            <?echo $arDate[0].' '.$arDate[1]?>
+                        <? endif; ?>
+                    </div>
 
 					<?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
 						
@@ -63,7 +67,11 @@ $this->setFrameMode(true);
 
 					<?if(is_array($arItem["DISPLAY_PROPERTIES"]["hall"])):?>
 						<div class="events-hall">
-							<?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
+                            <? if(is_array($arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"])): ?>
+							    <?=implode(', ', $arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"])?>
+                            <? else: ?>
+                                <?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
+                            <? endif; ?>
 						</div>
 					<?endif;?>
 
