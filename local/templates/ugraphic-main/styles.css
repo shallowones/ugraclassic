@@ -1535,10 +1535,14 @@ input.err, textarea.err {
     .afisha .tick-1 {
         display: block;
     }
+    .afisha .tick {
+        padding-bottom: 20px;
+    }
 }
 @media screen and (max-width: 757px) {
-    .tick {
+    .afisha .tick {
         display: block;
+        padding-bottom: 0;
     }
     .tick:first-child {
         margin-bottom: 20px;
@@ -1547,7 +1551,7 @@ input.err, textarea.err {
         display: inline-block;
     }
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 600px) {
     .afisha__item {
         display: block;
     }
@@ -1581,6 +1585,16 @@ input.err, textarea.err {
     }
     .afisha-ticket > .tick > a {
         margin-left: 0;
+    }
+    .dates__item {
+        display: block;
+    }
+    .dates__item:first-child {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .filter-form > .filter-buttons > .confirm {
+        margin-right: 10px;
     }
 }
 .m-top20 {
@@ -1666,5 +1680,9 @@ input.err, textarea.err {
     .afisha-detail__img {
         width: 100%;
         float: none;
+    }
+    .afisha-detail__header > .age {
+        top: 35px;
+        right: 10px;
     }
 }

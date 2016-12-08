@@ -1,5 +1,6 @@
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Обратная связь");
+CJSCore::Init(array('date'));
 ?>
 
     <form name="arrFilter_form" method="get" action="#" enctype="multipart/form-data" class="filter-form">

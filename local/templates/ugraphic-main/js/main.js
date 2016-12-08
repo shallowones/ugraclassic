@@ -52,12 +52,14 @@ $(document).ready(function () {
                         day = '0' + day.toString();
                     }
                     dateStart.val(day + '.' + month + '.'+ year);
+                    dateEnd.val('');
                     break;
                 case 'tomorrow':
                     if (tomorrow.toString().length == 1) {
                         tomorrow = '0' + tomorrow.toString();
                     }
                     dateStart.val(tomorrow + '.' + month + '.'+ year);
+                    dateEnd.val('');
                     break;
                 case 'week':
                     // получаем текущую неделю
