@@ -1388,9 +1388,9 @@ h1
         padding: 0;
     }
 
-    .conts-hidden {
+    /*.conts-hidden {
         display: block;
-    }
+    }*/
 
     .conts {
         justify-content: center;

@@ -5,7 +5,20 @@ $(function() {
 
 	$(pull).on('click', function(e) {
 		e.preventDefault();
-		menu.slideToggle();
+		var contsHidden = $('.conts-hidden');
+		console.log(contsHidden.css('display'));
+		if (contsHidden.css('display') == 'none') {
+            contsHidden.slideDown();
+            $(this).stop().animate({opacity: 1}, 400, function () {
+                menu.slideDown();
+            });
+		} else {
+            menu.slideUp();
+            $(this).stop().animate({opacity: 1}, 400, function () {
+                contsHidden.slideUp();
+            });
+		}
+
 		var navIcon = $('.nav-icon');
 		if (navIcon.hasClass('act')) {
             navIcon.removeClass('act');
