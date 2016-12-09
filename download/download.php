@@ -9,18 +9,11 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.ph
 
 use \Bitrix\Main\Loader;
 
-/**
- * Добавляет список стран с картинками со страницы http://ru.freeflagicons.com/buy/round_icon/
- * Class AddCountries
- * @package UW
- */
 class downloadPhoto
 {
 
         public static function download($id)
     {
-//        $photo = json_decode(self::PHOTO, true);
-//        $section = json_decode(self::SECTION, true);
         $photo = json_decode(file_get_contents('http://ugraclassic.ru/download/untitled.php'), true);
         $section = json_decode(file_get_contents('http://ugraclassic.ru/download/'), true);
 
