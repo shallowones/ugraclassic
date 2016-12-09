@@ -294,4 +294,142 @@ class Services
             }
         }
     }
+
+    /**
+     * Проверка на удаление элемента из промо-блока
+     * @param $ID
+     * @return boolean
+     */
+    public static function CheckDeletePromo($ID)
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+        $rsEl = \CIBlockElement::GetList(
+            [],
+            ['IBLOCK_CODE'=>'promo_block'],
+            false,false,
+            ['ID']
+        );
+        while ($arEl = $rsEl->GetNext())
+        {
+            $arPromo[] = $arEl['ID'];
+        }
+        if($arPromo)
+        {
+            if(in_array($ID, $arPromo))
+            {
+                global $APPLICATION;
+                $APPLICATION->throwException("Данный элемент нельзя удалить!");
+                return false;
+            }
+        }
+    }
+
+    /**
+     * Проверка на добавление элдемента в промо-блок
+     * @param $arFields
+     * @return boolean
+     */
+    public static function CheckAddPromo(&$arFields)
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+        if($arFields['IBLOCK_ID'] == \CIBlock::GetList([],['CODE'=>'promo_block'])->GetNext()['ID'])
+        {
+            global $APPLICATION;
+            $APPLICATION->throwException("В данном инфоблоке нельзя создать элемент!");
+            return false;
+        }
+    }
+
+    /**
+     * Проверка на редактирование элемента в промо-блоке
+     * @param $arFields
+     * @return boolean
+     */
+    public static function CheckEditPromo(&$arFields)
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+        if($arFields['IBLOCK_ID'] == \CIBlock::GetList([],['CODE'=>'promo_block'])->GetNext()['ID'])
+        {
+            $boolSelectOut = false;
+
+            $arProp = \CIBlockProperty::GetList(
+                [], ["IBLOCK_ID"=>$arFields['IBLOCK_ID'],'CODE'=>'SELECT_OUT']
+            )->GetNext();
+            if($arProp['ID'])
+            {
+                foreach ($arFields['PROPERTY_VALUES'][$arProp['ID']] as $arVal)
+                {
+                    if($arVal['VALUE'] > 0)
+                    {
+                        $boolSelectOut = true;
+                    }
+                }
+            }
+
+            $boolRelBanner = false;
+            $boolRelEvent = false;
+
+            $arProp = \CIBlockProperty::GetList(
+                [], ["IBLOCK_ID"=>$arFields['IBLOCK_ID'],'CODE'=>'RELATION_BANNER']
+            )->GetNext();
+            if($arProp['ID'])
+            {
+                foreach ($arFields['PROPERTY_VALUES'][$arProp['ID']] as $arVal)
+                {
+                    if($arVal['VALUE'] > 0)
+                    {
+                        $boolRelBanner = true;
+                    }
+                }
+            }
+            $arProp = \CIBlockProperty::GetList(
+                [], ["IBLOCK_ID"=>$arFields['IBLOCK_ID'],'CODE'=>'RELATION_EVENT']
+            )->GetNext();
+            if($arProp['ID'])
+            {
+                foreach ($arFields['PROPERTY_VALUES'][$arProp['ID']] as $arVal)
+                {
+                    if($arVal['VALUE'] > 0)
+                    {
+                        $boolRelEvent = true;
+                    }
+                }
+            }
+
+            $boolPrev = false;
+            $boolDetail = false;
+
+            if(isset($arFields['PREVIEW_PICTURE']))
+            {
+                $arPrev = $arFields['PREVIEW_PICTURE'];
+                $boolPrev = !empty($arPrev['name']) || ($arPrev['old_file'] > 0 && !isset($arPrev['del']));
+            }
+            if(isset($arFields['DETAIL_PICTURE']))
+            {
+                $arDetail = $arFields['DETAIL_PICTURE'];
+                $boolDetail = !empty($arDetail['name']) || ($arDetail['old_file'] > 0 && !isset($arDetail['del']));
+            }
+
+            if(!$boolPrev && !$boolDetail && !$boolRelBanner)
+            {
+                global $APPLICATION;
+                $APPLICATION->throwException("Должно быть загружено большое или маленькое изображение!");
+                return false;
+            }
+
+            if(!$boolRelEvent && !$boolRelBanner)
+            {
+                global $APPLICATION;
+                $APPLICATION->throwException("Обязательно должен быть привязан либо баннер, либо мероприятие!");
+                return false;
+            }
+
+            if(!$boolSelectOut)
+            {
+                global $APPLICATION;
+                $APPLICATION->throwException("Должен быть вбыран вывод мероприятия из афиши или промо-баннера!");
+                return false;
+            }
+        }
+    }
 }

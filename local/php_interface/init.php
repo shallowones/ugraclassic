@@ -22,8 +22,14 @@ $arEvents = [];
  */
 \UW\SystemBase::registerHandlers($arEvents);
 
+// для дублирования новостей коллективов
 AddEventHandler("iblock", "OnBeforeIBlockElementAdd", Array("UW\Services", "CheckDuplicateNewsForAdd"));
 AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\Services", "CheckDuplicateNewsForUpd"));
+
+// для промо-блока на главной
+AddEventHandler("iblock", "OnBeforeIBlockElementDelete", Array("UW\Services", "CheckDeletePromo"));
+AddEventHandler("iblock", "OnBeforeIBlockElementAdd", Array("UW\Services", "CheckAddPromo"));
+AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\Services", "CheckEditPromo"));
 
 /**
  * Распечатывает массивы

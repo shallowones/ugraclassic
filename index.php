@@ -20,6 +20,7 @@ $asset->addString(
     \Bitrix\Main\Page\AssetLocation::AFTER_JS
 );
 
+$ibPromoID 		    = 	\UW\IBBase::getIBIdByCode("promo_block");
 $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
 $ibInformPartnersID	= 	\UW\IBBase::getIBIdByCode("inform_partners");
 $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news");
@@ -53,7 +54,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                 );
                 $APPLICATION->IncludeComponent(
                     "bitrix:news.list",
-                    "slider-promo",
+                    "promo-block",
                     array(
                         "ACTIVE_DATE_FORMAT" => "d.m.Y",
                         "ADD_SECTIONS_CHAIN" => "Y",
@@ -75,13 +76,13 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                         "DISPLAY_PREVIEW_TEXT" => "Y",
                         "DISPLAY_TOP_PAGER" => "N",
                         "FIELD_CODE" => array(
-                            0 => "",
+                            0 => "DETAIL_PICTURE",
                             1 => "",
                         ),
                         "FILTER_NAME" => "promoFilter",
                         "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                        "IBLOCK_ID" => $ibEventsID,
-                        "IBLOCK_TYPE" => "afisha",
+                        "IBLOCK_ID" => $ibPromoID,
+                        "IBLOCK_TYPE" => "groups",
                         "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
                         "INCLUDE_SUBSECTIONS" => "Y",
                         "MESSAGE_404" => "",
@@ -97,11 +98,9 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                         "PARENT_SECTION_CODE" => "",
                         "PREVIEW_TRUNCATE_LEN" => "",
                         "PROPERTY_CODE" => array(
-                            0 => "",
-                            1 => "age",
-                            2 => "date",
-                            3 => "location",
-                            4 => "link_kassir",
+                            0 => "SELECT_OUT",
+                            1 => "RELATION_EVENT",
+                            2 => "RELATION_BANNER",
                         ),
                         "SET_BROWSER_TITLE" => "N",
                         "SET_LAST_MODIFIED" => "N",
@@ -114,7 +113,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                         "SORT_BY2" => "SORT",
                         "SORT_ORDER1" => "DESC",
                         "SORT_ORDER2" => "ASC",
-                        "COMPONENT_TEMPLATE" => "slider-promo",
+                        "COMPONENT_TEMPLATE" => "promo-block",
                         "TEMPLATE_THEME" => "blue",
                         "MEDIA_PROPERTY" => "",
                         "SLIDER_PROPERTY" => "",
