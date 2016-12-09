@@ -23,7 +23,7 @@ class downloadNews
         $res = [];
         $j = 0;
         $codes = self::in_ib($id);
-        array_splice($news, 30);
+        //array_splice($news, 30);
 
         foreach ($news as $i => $n) {
 
