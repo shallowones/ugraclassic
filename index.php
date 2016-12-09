@@ -188,7 +188,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
 
                 <?$APPLICATION->IncludeComponent('ugraweb:calendar.list','calendar-list',array('DAY_COUNT'=>120),false);?>
 
-        <?if($_SESSION['slow_vision'] == "N"){?>
+        <?if($_SESSION['slow_vision'] != "Y"){?>
         <div class="tape-news" style="width: 1313px; margin: 0 auto;padding: 20px 35px;">
             <?}?>
             <div class="news-one">
@@ -329,7 +329,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                     false
                 );?>
             </div>
-<?if($_SESSION['slow_vision'] == "N"){?>
+<?if($_SESSION['slow_vision'] != "Y"){?>
         </div>
         <?}
         $APPLICATION->IncludeComponent(
