@@ -11,15 +11,20 @@ use \Bitrix\Main\Loader;
 
 class downloadNews
 {
+    const IB_ID = 2;
 
-    public static function download($id)
+    public static function download()
     {
         $news = json_decode(file_get_contents('http://ugraclassic.ru/download/news.php'), true);
 
         $res = [];
-        $j = 1;
+        $j = 0;
+        $codes = self::in_ib(self::IB_ID);
+        //array_splice($news, 13);
+
         foreach ($news as $i => $n) {
-            if (($j >= $id)&&($j<$id*20)) {
+
+            if (!in_array($i, $codes)) {
                 $res[$i]['preview_picture'] = \CFile::MakeFileArray($n['preview_picture']);
                 $res[$i]['detail_picture'] = \CFile::MakeFileArray($n['detail_picture']);
                 $res[$i]['name'] = $n['name'];
@@ -27,10 +32,16 @@ class downloadNews
                 $res[$i]['preview_text'] = $n['preview_text'];
                 $res[$i]['date'] = $n['date'];
                 $res[$i]['id'] = $i;
+
+                $j++;
+                if (($j == 5)) {
+                    break;
+                }
             }
-            $j++;
         }
-        return self::load_ib($res);
+        $stat = (count($res)==0) ? 1 : 0;
+        self::load_ib($res);
+        return $stat;
     }
 
     private static function load_ib($arRes)
@@ -44,7 +55,7 @@ class downloadNews
         foreach ($arRes as $new) {
             $obEl = new \CIBlockElement;
             $newID[$i] = $obEl->Add(array(
-                'IBLOCK_ID' => 2,
+                'IBLOCK_ID' => self::IB_ID,
                 'NAME' => $new['name'],
                 'CODE' => 'news'.$new['id'],
                 'DATE_ACTIVE_FROM' => $new['date'],
@@ -59,5 +70,24 @@ class downloadNews
             $i++;
         }
         return $str;
+    }
+
+    private static function in_ib($ib_id)
+    {
+        $rsEl = \CIBlockElement::GetList(
+            array(),
+            array(
+                'IBLOCK_ID' => $ib_id,
+            ),
+            false,
+            false,
+            array('IBLOCK_ID', 'ID', 'CODE')
+        );
+        $res =[];
+        while ($ob = $rsEl->GetNextELEMENT()) {
+            $arF = $ob->GetFields();
+            $res[] = str_replace('news','',$arF['CODE']);
+        }
+        return $res;
     }
 }
