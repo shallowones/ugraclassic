@@ -1,10 +1,13 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?// form?>
 
-<?if(!empty($_GET["us"]) && !empty($_GET["key"])):?>
-
-	<p style='color:green;'><?=$arResult["US_MSG"]?></p>
-
+<?if(
+    ($_SESSION['SEND_SUBSCRIBE_CONFIRM'])
+):?>
+	<p style='color:green;'>
+        <?=$_SESSION['SEND_SUBSCRIBE_CONFIRM']?>
+    </p>
+    <? $_SESSION['SEND_SUBSCRIBE_CONFIRM'] = 0; ?>
 <?else:?>
 
 	<?// Вывод сообщение об успешной подписке?>

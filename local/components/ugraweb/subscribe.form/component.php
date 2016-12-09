@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && strlen($_POST["submit"]) > 0 && CModu
 		}
 		else
 		{
-            $arResult["Error"][] = 'Не удалось добавить подписчика';
+            $arResult["Error"][] = 'Не удалось добавить подписчика.';
 		}
 
         /*$CurDate = date("d.m.Y H:i:s");
@@ -113,6 +113,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && strlen($_POST["submit"]) > 0 && CModu
     }
 
 }
+
+// ?ID=5&CONFIRM_CODE=sRGZpYld
+// Подтвердить подписку
+if(intval($_GET["ID"]) > 0 && !empty($_GET["CONFIRM_CODE"]))
+{
+	$boolConfirm = false;
+
+    $ID = intval($_GET["ID"]);
+    $CONFIRM_CODE = trim(htmlspecialcharsEx($_GET["CONFIRM_CODE"]));
+    $subscr = new CSubscription;
+
+    $rsS = CSubscription::GetByID($ID);
+    if($arSubscr = $rsS->Fetch())
+	{
+		if($arSubscr['CONFIRM_CODE'] == $CONFIRM_CODE)
+		{
+            if($subscr->Update($ID, array("CONFIRMED"=>'Y')))
+			{
+                $boolConfirm = true;
+			}
+		}
+    }
+
+    if($boolConfirm)
+	{
+        $_SESSION['SEND_SUBSCRIBE_CONFIRM'] = "Вы успешно подтвердили подписку.";
+    }
+    else
+	{
+        $_SESSION['SEND_SUBSCRIBE_CONFIRM'] = "Не удалось подтвердить попдиску.";
+	}
+
+    LocalRedirect($APPLICATION->GetCurDir());
+}
+
 
 // Отписаться от новостей
 if(!empty($_GET["us"]) && !empty($_GET["key"]) && CModule::IncludeModule("iblock")):
