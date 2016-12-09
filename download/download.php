@@ -44,7 +44,7 @@ class downloadPhoto
             $newID[$i] = $obEl->Add(array(
                 'IBLOCK_ID' => 7,
                 'NAME' => $new['name'],
-                'CODE' => 'code'.$new['id'],
+                'CODE' => 'photo'.$new['id'],
                 'DATE_ACTIVE_FROM' => '01.01.'.(explode('.', $new['date'])[2]),
                 "PREVIEW_PICTURE" => \CFile::MakeFileArray($new['src']),
                 'PREVIEW_TEXT' => $new['description'],
