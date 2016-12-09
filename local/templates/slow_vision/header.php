@@ -56,8 +56,12 @@ CJSCore::Init();
         <header class="header">
             <section class="header-tool">
                 <div class="wrapper clearfix">
-                    <div class="tool-font"><span class="tool__label">Размер шрифта</span><a href="#" data-size="small" class="tool__size js-size tool__size_small">A</a><a href="#" data-size="normal" class="tool__size js-size tool__size_active">A</a><a href="#" data-size="big" class="tool__size js-size tool__size_big">A</a></div>
-                    <div class="tool-color"><span class="tool__label tool__label_color">Цвет сайта</span><a href="#" data-color="normal" class="tool__size js-color tool__color tool__color_active">Ц</a><a href="#" data-color="black" class="tool__size js-color tool__color tool__color_black">Ц</a><a href="#" data-color="blue" class="tool__size js-color tool__color tool__color_blue">Ц</a></div>
+                    <div class="tool-font"><span class="tool__label">Размер шрифта</span>
+                    <a href="#" data-size="small" class="tool__size js-size tool__size_small">A</a>
+                    <a href="#" data-size="normal" class="tool__size js-size">A</a>
+                    <a href="#" data-size="big" class="tool__size js-size tool__size_big">A</a></div>
+                    <div class="tool-color"><span class="tool__label tool__label_color">Цвет сайта</span>
+                    <a href="#" data-color="normal" class="tool__size js-color tool__color">Ц</a><a href="#" data-color="black" class="tool__size js-color tool__color tool__color_black">Ц</a><a href="#" data-color="blue" class="tool__size js-color tool__color tool__color_blue">Ц</a></div>
                     <div class="tool-eye"><a href="<?=$APPLICATION->GetCurDir()?>?slow_vision=N" class="tool__label tool__label_link">Обычная версия</a></div>
                 </div>
             </section>
