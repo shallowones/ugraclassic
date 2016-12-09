@@ -109,7 +109,7 @@ $this->setFrameMode(true);
 
 	var owl = $('#owl-events-slider2');
 	owl.owlCarousel({
-		loop : true,
+		//loop : true,
 		dots : false,
 		margin : 5,
 
