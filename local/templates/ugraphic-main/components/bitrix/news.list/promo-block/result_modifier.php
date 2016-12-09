@@ -101,7 +101,7 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
             }
 
             $arResult['ITEMS'][$key]['PROMO_DISPLAY'] = [
-                'NAME' => '',
+                'NAME' => $arFields['NAME'],
                 'DATE' => '',
                 'URL' => $arFields['CODE'],
                 'AGE' => '',
