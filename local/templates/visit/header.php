@@ -9,6 +9,7 @@ $colName        = $arSiteParam['NAME'];
 $colLogo        = $arSiteParam['PROPERTY_LOGO_VALUE'];
 $colContacts    = $arSiteParam['PROPERTY_CONTACTS_VALUE'];
 $colFtrName     = strlen($arSiteParam['PROPERTY_FOOTER_NAME_VALUE']) > 0 ? $arSiteParam['PROPERTY_FOOTER_NAME_VALUE'] : $colName;
+$_SESSION['slow_vision'] = "N";
 ?>
 <!DOCTYPE html>
 <html lang="ru">

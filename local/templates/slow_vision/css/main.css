@@ -185,7 +185,21 @@ sub {
 img {
   border: 0;
 }
-
+.uk-today-box{
+  display: none;
+}
+.virt-tour-box{
+  display: none;
+}
+.partners-box{
+  display: none;
+}
+.content{
+  height: 4150px;
+}
+.partners-box{
+  display: none;
+}
 .cont__item.soc {
   margin-right: 15px;
 }

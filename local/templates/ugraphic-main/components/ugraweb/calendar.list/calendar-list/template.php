@@ -15,7 +15,9 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/js/swiper/js/swiper.jquery.min.js');
 $asset->addCss(SITE_TEMPLATE_PATH . '/js/swiper/css/swiper.min.css');
 $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar.css');
 ?>
-
+<div class="calendar-line">
+    <div class="wrapper">
+        <h1>КАЛЕНДАРЬ СОБЫТИЙ</h1>
 <div class="events">
     <div class="swiper-container events-container">
         <div class="swiper-wrapper events-wrapper">
@@ -53,4 +55,5 @@ $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar.css');
     <div class="swiper-button-prev events-button events-button_prev"></div>
     <div class="swiper-button-next events-button events-button_next"></div>
 </div>
-
+    </div><!-- .wrapper -->
+</div><!-- .calendar line -->

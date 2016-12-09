@@ -34,8 +34,6 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
 ];
 ?>
     <div class="content">
-        <div class="promo-slider">
-            <div class="wrapper">
                 <? $promoFilter = array(
                     array(
                         array("PROPERTY_LOCATION" => 25), // В промо-блок
@@ -117,13 +115,8 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                         "ACTIVE_COMPONENT" => "Y"
                     )
                 );?>
-            </div><!-- .wrapper -->
-        </div><!-- .porno-slider -->
 
 
-        <div class="events-block">
-            <div class="wrapper">
-                <h1>МЕРОПРИЯТИЯ</h1>
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:news.list",
                     "slider-events",
@@ -191,18 +184,13 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                     ),
                     false
                 );?>
-            </div><!-- .wrapper -->
-        </div><!-- .events-block -->
 
-        <div class="calendar-line">
-            <div class="wrapper">
-                <h1>КАЛЕНДАРЬ СОБЫТИЙ</h1>
+
                 <?$APPLICATION->IncludeComponent('ugraweb:calendar.list','calendar-list',array('DAY_COUNT'=>120),false);?>
-            </div><!-- .wrapper -->
-        </div><!-- .calendar line -->
 
-
+        <?if($_SESSION['slow_vision'] == "N"){?>
         <div class="tape-news" style="width: 1313px; margin: 0 auto;padding: 20px 35px;">
+            <?}?>
             <div class="news-one">
                 <h1>Новости<br>КТЦ "Югра-Классик"</h1>
                 <?$APPLICATION->IncludeComponent(
@@ -341,8 +329,9 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                     false
                 );?>
             </div>
+<?if($_SESSION['slow_vision'] == "N"){?>
         </div>
-        <?
+        <?}
         $APPLICATION->IncludeComponent(
             "bitrix:news.list",
             "groups-horizantal-list",
