@@ -1,6 +1,10 @@
 <?
 if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
+if ($_REQUEST['slow_vision'] == "Y") {
+	$_SESSION['slow_vision'] = "Y";
+	LocalRedirect($CurDir);
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -80,7 +84,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 					<div class="head-2">
                         <div class="spec-version">
-                            <a href="#">Версия для слабовидящих</a>
+                            <a href="?slow_vision=Y">Версия для слабовидящих</a>
                         </div>
 						<div class="search-head">
 							<?$APPLICATION->IncludeComponent(

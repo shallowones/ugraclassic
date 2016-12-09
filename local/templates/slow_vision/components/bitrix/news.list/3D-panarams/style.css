@@ -1,0 +1,80 @@
+.item-3d{
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+	overflow: hidden;
+	height:175px;
+	width:100%;
+
+}
+
+.panaram3d-box .owl-dots {
+    width: 100%;
+    display: block;
+    text-align: center;
+    z-index: 5;
+    padding-bottom: 40px;
+}
+
+.panaram3d-box .owl-dot {
+    margin: 0px 6px;
+    margin-top: 25px;
+    width: 8px;
+    height: 8px;
+    background: #b1b1b1;
+    display: inline-block;
+    color:#585858;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.panaram3d-box .owl-dot.active {
+    background: #daac4f;
+}
+
+.panaram3d-box .owl-nav {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.panaram3d-box .owl-nav .owl-prev{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    left: -54px;
+}
+
+.panaram3d-box .owl-nav .owl-next{
+	height: 100%;
+    position: absolute;
+    width: 54px;
+    right: -54px;
+}
+
+
+.panaram3d-box .owl-nav .owl-prev i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) 0px 0 no-repeat;
+    position: absolute;
+    top: 30%;
+    bottom: 50%;
+}
+
+.panaram3d-box .owl-nav .owl-next i {
+    width: 20px;
+    height: 32px;
+    background: url(img/events-arrows.png) -20px 0 no-repeat;
+    position: absolute;
+    top: 30%;
+    bottom: 50%;
+    right: 0;
+}
+
+.panaram3d-box .owl-carousel .owl-stage-outer {
+	z-index: 100;
+}
