@@ -1,8 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 ?>
+<?//gg(json_decode(file_get_contents('http://ugraclassic.ru/download/news.php?id=9'), true))?>
     <a href="" title="Все" id="dow" class="tabs__btn active">Загрузить Фото</a> /
-    <a href="" title="Все" id="dow_news" class="tabs__btn active">Загрузить Новости КТЦ</a>
+    <a href="" title="Все" id="dow_news" class="tabs__btn active">Загрузить Новости КТЦ</a> /
+    <a href="" title="Все" id="dow_news_с" class="tabs__btn active">Загрузить Новости культуры Югры</a>
     <p id="data">
         <br><br>
     <script>
@@ -30,20 +32,48 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             });
         });
     </script>
+
+
+
+
         <script>
             $(function(){
                 $('#dow_news').click(function(e){
 
-                    var id = [1,2,3,4], i = 0;
+                    var i = 0;
                     (function updateInfo(i) {
-                        if (i == id.length) {
-                            return;
-                        }
                         $.ajax({
                             type: "POST",
                             url: "/download/download_news.php",
                             data: {
-                                "id": i*20,
+                                "id": 2,
+                            },
+                            dataType: "html"
+                        }).then(function(data) {
+                            if(data == 0) {
+                                $('#data').append('id ' + (i+1) + '(по 5 новостей),   ');
+                                updateInfo(i + 1);
+                            }
+                            if(data == 1){
+                                alert('Загрузка завершена!');
+                            }
+                        });
+                    })(0);
+                    e.preventDefault();
+                });
+            });
+        </script>
+        <script>
+            $(function(){
+                $('#dow_news_с').click(function(e){
+
+                    var i = 0;
+                    (function updateInfo(i) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/download/download_news.php",
+                            data: {
+                                "id": 73,
                             },
                             dataType: "html"
                         }).then(function(data) {
