@@ -11,27 +11,30 @@ use \Bitrix\Main\Loader;
 
 class downloadNews
 {
-    const IB_ID = 2;
-
-    public static function download()
+    public static function download($id)
     {
-        $news = json_decode(file_get_contents('http://ugraclassic.ru/download/news.php'), true);
+        if ($id == 2){
+            $old_id = 1;
+        }else{
+            $old_id = 9;
+        }
+        $news = json_decode(file_get_contents('http://ugraclassic.ru/download/news.php?id='.$old_id), true);
 
         $res = [];
         $j = 0;
-        $codes = self::in_ib(self::IB_ID);
-        //array_splice($news, 13);
+        $codes = self::in_ib($id);
+        array_splice($news, 30);
 
         foreach ($news as $i => $n) {
 
-            if (!in_array($i, $codes)) {
+            if (!in_array($n['id'], $codes)) {
                 $res[$i]['preview_picture'] = \CFile::MakeFileArray($n['preview_picture']);
                 $res[$i]['detail_picture'] = \CFile::MakeFileArray($n['detail_picture']);
                 $res[$i]['name'] = $n['name'];
                 $res[$i]['detail_text'] = $n['detail_text'];
                 $res[$i]['preview_text'] = $n['preview_text'];
                 $res[$i]['date'] = $n['date'];
-                $res[$i]['id'] = $i;
+                $res[$i]['id'] = $n['id'];
 
                 $j++;
                 if (($j == 5)) {
@@ -40,11 +43,11 @@ class downloadNews
             }
         }
         $stat = (count($res)==0) ? 1 : 0;
-        self::load_ib($res);
+        self::load_ib($res, $id);
         return $stat;
     }
 
-    private static function load_ib($arRes)
+    private static function load_ib($arRes, $id)
     {
         \CModule::IncludeModule('iblock');
 
@@ -55,7 +58,7 @@ class downloadNews
         foreach ($arRes as $new) {
             $obEl = new \CIBlockElement;
             $newID[$i] = $obEl->Add(array(
-                'IBLOCK_ID' => self::IB_ID,
+                'IBLOCK_ID' => $id,
                 'NAME' => $new['name'],
                 'CODE' => 'news'.$new['id'],
                 'DATE_ACTIVE_FROM' => $new['date'],
