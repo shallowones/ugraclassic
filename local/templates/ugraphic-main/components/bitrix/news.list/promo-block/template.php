@@ -13,6 +13,8 @@
 $this->setFrameMode(true);
 ?>
 <? if(count($arResult["ITEMS"]) > 0): ?>
+    <div class="promo-slider">
+        <div class="wrapper">
     <? if($arResult["ITEMS"][0]['PROMO_DISPLAY']): ?>
         <div id="slider-promo">
             <a href="<?=$arResult["ITEMS"][0]['PROMO_DISPLAY']["URL"];?>" alt="" title="">
@@ -126,4 +128,6 @@ $this->setFrameMode(true);
 
     </div><!-- .promo-right-col -->
     <? endif; ?>
+    </div><!-- .wrapper -->
+    </div><!-- .porno-slider -->
 <? endif; ?>
