@@ -1,4 +1,5 @@
 <?
+<<<<<<< HEAD
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     die();
 
@@ -9,6 +10,19 @@ $colName = $arSiteParam['NAME'];
 $colLogo = $arSiteParam['PROPERTY_LOGO_VALUE'];
 $colContacts = $arSiteParam['PROPERTY_CONTACTS_VALUE'];
 $colFtrName = strlen($arSiteParam['PROPERTY_FOOTER_NAME_VALUE']) > 0 ? $arSiteParam['PROPERTY_FOOTER_NAME_VALUE'] : $colName;
+=======
+if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
+	die();
+
+$codeSite       = \UW\Services::GetCodeSite();
+$sectionVis     = \UW\Services::GetNameSectionVis();
+$arSiteParam    = \UW\Services::GetSiteParam(['NAME', 'PROPERTY_LOGO_VALUE', 'PROPERTY_CONTACTS_VALUE', 'PROPERTY_FOOTER_NAME_VALUE']);
+$colName        = $arSiteParam['NAME'];
+$colLogo        = $arSiteParam['PROPERTY_LOGO_VALUE'];
+$colContacts    = $arSiteParam['PROPERTY_CONTACTS_VALUE'];
+$colFtrName     = strlen($arSiteParam['PROPERTY_FOOTER_NAME_VALUE']) > 0 ? $arSiteParam['PROPERTY_FOOTER_NAME_VALUE'] : $colName;
+$_SESSION['slow_vision'] = "N";
+>>>>>>> slow_vision
 ?>
     <!DOCTYPE html>
     <html lang="ru">

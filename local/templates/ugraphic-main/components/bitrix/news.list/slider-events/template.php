@@ -13,6 +13,9 @@
 $this->setFrameMode(true);
 ?>
 
+<div class="events-block">
+	<div class="wrapper">
+		<h1>МЕРОПРИЯТИЯ</h1>
 <div class="events-slider">
 	<div id="owl-events-slider" class="owl-carousel owl-theme">
 		<?foreach($arResult["ITEMS"] as $arItem):?>
@@ -151,3 +154,5 @@ $this->setFrameMode(true);
 		});
 
 </script>
+	</div><!-- .wrapper -->
+</div><!-- .events-block -->

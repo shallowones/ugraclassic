@@ -1,0 +1,105 @@
+.photoalbum-list {
+	
+}
+
+.photoalbum-list .photoalbum-item {
+	position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dfdddd;
+}
+
+.photoalbum-list .preview-picture {
+    //width: 32.259%;
+	width: 300px;
+    height: 100%;
+    float: left;
+    box-shadow: 4px 4px 0px #c1cdd6;
+}
+
+.photoalbum-list .photoalbum-info {
+	float: left;
+    width: calc(100% - 325px);
+    padding-left: 25px;
+}
+
+.photoalbum-list .photoalbum-name-text-box {
+	height: 183px;
+    overflow: hidden;
+    line-height: 22px;
+}
+
+.photoalbum-list .preview-text {
+	margin-top: 10px;
+    text-align: justify;
+}
+
+.photoalbum-list .photoalbum-name {
+    font-family: 'Noto Serif', serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    line-height: 22px;
+}
+
+.photoalbum-list .photoalbum-name a:link, .photoalbum-list .photoalbum-name a:visited, .photoalbum-list .photoalbum-name a:active {
+    text-decoration: none;
+    color: #272727;
+}
+
+.photoalbum-list .photoalbum-name a:hover {
+    text-decoration: none;
+    color: #daac4f;
+}
+
+.photoalbum-list .photoalbum-date-name {
+	color: #272727;
+	font-size: 13px;
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	line-height: 20px;
+	font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.photoalbum-list .photoalbum-date-name span {
+	color: #7f7e7e;
+}
+
+.photoalbum-list .photoalbum-date {
+    color: #272727;
+    font-size: 13px;
+    //font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 20px;
+    font-weight: normal;
+    position: absolute;
+    right: 25px;
+    top: 12px;
+}
+
+@media (max-width: 757px) {
+    .photoalbum-list .photoalbum-info {
+        width: 100%;
+        float: initial;
+        padding-left: 0px;
+    }
+
+    .photoalbum-list .preview-picture {
+        width: 100%;
+        float: initial;
+    }
+
+    .photoalbum-list .photoalbum-name-text-box {
+        height: initial;
+        overflow: initial;
+    }
+
+    .photoalbum-list .photoalbum-date {
+        position: initial;
+        margin-top: 25px;
+    }
+}

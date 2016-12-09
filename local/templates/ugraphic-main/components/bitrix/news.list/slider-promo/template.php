@@ -13,6 +13,8 @@
 
 $this->setFrameMode(true);
 ?>
+<div class="promo-slider">
+	<div class="wrapper">
 <div id="slider-promo">
 	<a href="<?=$arResult["ITEMS"][0]["~DETAIL_PAGE_URL"];?>" alt="<?=$arResult["ITEMS"][0]["NAME"]?>" title="<?=$arResult["ITEMS"][0]["NAME"]?>">
 		<div class="item">
@@ -165,3 +167,5 @@ $this->setFrameMode(true);
 
 
 </div><!-- .promo-right-col -->
+	</div><!-- .wrapper -->
+</div><!-- .porno-slider -->
