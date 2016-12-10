@@ -246,6 +246,7 @@ class Services
     /**
      * До обновления элеменгта проверяем на то установлена ли галочка впервые
      * @param $arFields
+     * @return boolean
      */
     public static function CheckDuplicateNewsForUpd(&$arFields)
     {
@@ -427,9 +428,37 @@ class Services
             if(!$boolSelectOut)
             {
                 global $APPLICATION;
-                $APPLICATION->throwException("Должен быть вбыран вывод мероприятия из афиши или промо-баннера!");
+                $APPLICATION->throwException("Должен быть выбран вывод мероприятия из афиши или промо-баннера!");
                 return false;
             }
         }
+    }
+
+    /**
+     * Возвращает хэш для отписки
+     * @param $email
+     * @return string
+     */
+    function GetMailHash($email)
+    {
+        return md5(md5($email) . 'svs_khmao_9351048');
+    }
+
+    /**
+     * Перед отправкой выпуска каждому конкретному подписчику подменяются маски - ID подписки и код, основанный на хеше
+     * @param $arFields
+     * @return mixed
+     */
+    function BeforePostingSendMailHandler($arFields)
+    {
+        \Bitrix\Main\Loader::includeModule('subscribe');
+
+        $rsSub = \CSubscription::GetByEmail($arFields["EMAIL"]);
+        $arSub = $rsSub->Fetch();
+
+        $arFields["BODY"] = str_replace("#MAIL_ID#", $arSub["ID"], $arFields["BODY"]);
+        $arFields["BODY"] = str_replace("#MAIL_MD5#", self::GetMailHash($arFields["EMAIL"]), $arFields["BODY"]);
+
+        return $arFields;
     }
 }

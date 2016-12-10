@@ -47,69 +47,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && strlen($_POST["submit"]) > 0 && CModu
 
         $subscr = new CSubscription;
 
-        $ID = $subscr->Add($arFields);
-        if($ID > 0)
-		{
+        $boolSuccess = false;
+        $arFindSubscr = CSubscription::GetList([],["EMAIL" => htmlspecialcharsEx($_POST["subscribe-email"])])->Fetch();
+        if($arFindSubscr['ID'])
+        {
+            $arUpd = [
+                "ACTIVE"=>'Y',
+                "RUB_ID" => $_POST['subscribe-rubric'],
+                "SEND_CONFIRM" => 'Y',
+                'CONFIRMED' => 'N'
+            ];
+            if($subscr->Update($arFindSubscr['ID'], $arUpd))
+            {
+                $boolSuccess = true;
+                CSubscription::ConfirmEvent($arFindSubscr['ID']);
+            }
+        }
+        else
+        {
+            $ID = $subscr->Add($arFields);
+            if($ID > 0)
+            {
+                $boolSuccess = true;
+            }
+        }
+        if($boolSuccess)
+        {
             $_SESSION['SEND_SUBSCRIBE_OK'] = "ok";
 
             // Делаем редирект, чтобы не осталось данных в post
             LocalRedirect($APPLICATION->GetCurDir());
-		}
-		else
-		{
+        }
+        else
+        {
             $arResult["Error"][] = 'Не удалось добавить подписчика.';
-		}
-
-        /*$CurDate = date("d.m.Y H:i:s");
-        $arFields = Array(
-            "IBLOCK_ID"      => 12,
-            "NAME"           => $_POST["subscribe-email"],
-            "CODE"			 => hash_hmac('md5', $CurDate, 'svskhmao'),
-            "DATE_ACTIVE_FROM"=> $CurDate,
-            "ACTIVE"         => "Y",
-        );
-
-        // Сохранение подписчика
-        $obNew = new CIBlockElement;
-        $bOk = false;
-        $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "ACTIVE");
-        $arFilter = Array("IBLOCK_ID" => 12, "=NAME" => $_POST["subscribe-email"]);
-        $rsSubscribers = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
-
-        // Если когда-то уже был подписан, то активируем
-        if($obSubscribers = $rsSubscribers->GetNextElement()):
-            $arField = $obSubscribers->GetFields();
-
-            if($arField["ACTIVE"] == "Y"):
-                $bOk = false;
-                $arResult["Error"][] = "<span style='color:red;'>Вы уже подписаны на рассылку</span>";
-            else:
-                if($rsSubscriber = $obNew->Update($arField["ID"], $arFields)):
-                    $bOk = true;
-                else:
-                    $bOk = false;
-                endif;
-            endif;
-
-        // Есди нет, то создаем новую запись подписчика
-        else:
-            if($new_id = $obNew->Add($arFields)):
-                $bOk = true;
-            else:
-                $bOk = false;
-            endif;
-        endif;
-
-        if($bOk):
-            $_SESSION['SEND_SUBSCRIBE_OK'] = "ok";
-
-            // Делаем редирект, чтобы не осталось данных в post
-            LocalRedirect(POST_FORM_ACTION_URI);
-        else:
-            $arResult["Error"][] = "<span style='color:red;'>Не удалось сохранить подписчика</span>";
-            $arResult["subscribe-email"] = $_POST["subscribe-email"];
-        endif;*/
-
+        }
     }
 
 }
@@ -150,29 +122,7 @@ if(intval($_GET["ID"]) > 0 && !empty($_GET["CONFIRM_CODE"]))
 
 
 // Отписаться от новостей
-if(!empty($_GET["us"]) && !empty($_GET["key"]) && CModule::IncludeModule("iblock")):
-	/*$arSelect = Array("ID", "NAME", "CODE", "DATE_ACTIVE_FROM");
-	$arFilter = Array("IBLOCK_ID" => 12, "ACTIVE" => "Y", "=CODE" => $_GET["key"]);
-	$rsSubscribers = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
-	if($obSubscribers = $rsSubscribers->GetNextElement()):  
-		$arFields = $obSubscribers->GetFields();
-		
-		$obSubscriber = new CIBlockElement;
-		$arUpdates = Array(
-			"IBLOCK_ID"      => 12,
-			"NAME"           => $arFields["NAME"],
-			"CODE"			 => $arFields["CODE"],
-			"DATE_ACTIVE_FROM"=> $arFields["DATE_ACTIVE_FROM"],
-			"ACTIVE"         => "N",			
-		);
-		
-		$rsSubscriber = $obSubscriber->Update($arFields["ID"], $arUpdates);
-		
-		$arResult["US_MSG"] = "Вы успешно отписаны от рассылки.";
-	else:
-		$arResult["US_MSG"] = "Не удалось отписаться от рысслки. Возможно вы уже отписаны от нее.";
-	endif;*/
-endif;
+// http://ugraclassic.probitrix.com/news/unsubscribe/
 
 
 $arOrder = Array("SORT"=>"ASC", "NAME"=>"ASC");

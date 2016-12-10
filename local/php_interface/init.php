@@ -31,6 +31,9 @@ AddEventHandler("iblock", "OnBeforeIBlockElementDelete", Array("UW\Services", "C
 AddEventHandler("iblock", "OnBeforeIBlockElementAdd", Array("UW\Services", "CheckAddPromo"));
 AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\Services", "CheckEditPromo"));
 
+// отписка от рассылки
+AddEventHandler("subscribe", "BeforePostingSendMail", array("UW\Services", "BeforePostingSendMailHandler"));
+
 /**
  * Распечатывает массивы
  * @param $var
