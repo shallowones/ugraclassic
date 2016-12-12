@@ -13,13 +13,13 @@ class downloadNews
 {
     public static function download($id)
     {
-        $size = Array(
-            'width' => 175,
-            'height' => 175
+        $size = array(
+            'width' => '175',
+            'height' => '175'
         );
-        if ($id == 2) {
+        if ($id == 2){
             $old_id = 1;
-        } else {
+        }else{
             $old_id = 9;
         }
         $news = json_decode(file_get_contents('http://ugraclassic.ru/download/news.php?id='.$old_id), true);
@@ -32,7 +32,10 @@ class downloadNews
         foreach ($news as $i => $n) {
 
             if (!in_array($n['id'], $codes)) {
-                $res[$i]['preview_picture'] = \CFile::ResizeImageGet(\CFile::MakeFileArray($n['preview_picture']), $size, BX_RESIZE_IMAGE_EXACT, true);
+                $img = \CFile::MakeFileArray($n['preview_picture']);
+                $fid = \CFile::SaveFile($img, 'tmp_img_from');
+                $image = \CFile::ResizeImageGet($fid, $size, BX_RESIZE_IMAGE_EXACT, true);
+                $res[$i]['preview_picture'] = \CFile::MakeFileArray($_SERVER['DOCUMENT_ROOT'] . $image['src']);
                 $res[$i]['detail_picture'] = \CFile::MakeFileArray($n['detail_picture']);
                 $res[$i]['name'] = $n['name'];
                 $res[$i]['detail_text'] = $n['detail_text'];

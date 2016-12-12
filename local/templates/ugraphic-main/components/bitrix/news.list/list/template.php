@@ -19,12 +19,12 @@ foreach ($arResult["ITEMS"] as $arItem) {
         echo $i . '/ '.$arItem["ID"].'<br>' . $arItem["DETAIL_TEXT"];
         preg_match_all('/fotootchety\/([0-9]+)\//', $arItem["DETAIL_TEXT"], $matches_c, PREG_PATTERN_ORDER);
         gg($matches_c);
-//        echo $i . ' ссылка<br>';
-//        $text = preg_replace('/<a href=\"(.+)\" .+/', '<a href="/news/photo/code'.$matches_c[1][0].'/">Фотоотчет</a>', $arItem["DETAIL_TEXT"]);
-//        echo ($text);
+        echo $i . ' ссылка<br>';
+        $text = preg_replace('/<a href=\"(.+)\" .+/', '<a href="/news/photo/photo'.$matches_c[1][0].'/">Фотоотчет</a>', $arItem["DETAIL_TEXT"]);
+        echo ($text);
 
-//        $el = new CIBlockElement;
-//        $res = $el->Update($arItem['ID'], ["DETAIL_TEXT"=>$text]);
+        $el = new CIBlockElement;
+        $res = $el->Update($arItem['ID'], ["DETAIL_TEXT"=>$text]);
     }
 } ?>
 
