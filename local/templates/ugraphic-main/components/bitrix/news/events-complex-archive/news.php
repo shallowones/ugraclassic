@@ -65,9 +65,9 @@ if (!empty($_GET['set_filter'])) {
         $GLOBALS[$arParams["FILTER_NAME"]]['<=DATE_ACTIVE_FROM'] = date('d.m.Y', $mDateTo);
     }
 }
-if((MakeTimeStamp($_GET['date_end']) < MakeTimeStamp(date('d.m.Y'))) || !strlen($_GET['date_end']))
+if(!strlen($_GET['date_start']) && !strlen($_GET['date_end']) && $APPLICATION->GetCurDir() == '/events/')
 {
-    $GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_TO'] = date('d.m.Y');
+    $GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_FROM'] = date('d.m.Y');
 }
 $arEnum = \CIBlockPropertyEnum::GetList(
     [],

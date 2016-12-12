@@ -3,6 +3,8 @@ namespace UW;
 
 class Services
 {
+    protected static $handlerDisallow = false;
+
     /**
      * Получат массив URL
      * @return string
@@ -460,5 +462,149 @@ class Services
         $arFields["BODY"] = str_replace("#MAIL_MD5#", self::GetMailHash($arFields["EMAIL"]), $arFields["BODY"]);
 
         return $arFields;
+    }
+
+    /**
+     * Копирование дат проведения для афишы
+     * @param $arFields
+     */
+    function CopyDatesAfisha(&$arFields)
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+        if($arFields['IBLOCK_ID'] == \CIBlock::GetList([],['CODE'=>'events'])->GetNext()['ID'])
+        {
+            if (self::$handlerDisallow)
+                return;
+
+            self::$handlerDisallow = true;
+
+            $obEl = \CIBlockElement::GetList(
+                [],
+                ['IBLOCK_ID' => $arFields['IBLOCK_ID'], 'ID' => $arFields['ID']],
+                false,false,
+                ['IBLOCK_ID', 'ID', 'NAME', 'DATE_ACTIVE_FROM', 'DATE_ACTIVE_TO']
+            )->GetNextElement();
+
+            $arEl = $obEl->GetFields();
+            $arEl['PROPS'] = $obEl->GetProperties();
+
+            if($arEl['ID'])
+            {
+                $obEl = new \CIBlockElement;
+
+                // Если дата окончания пустая, то заполняем датйо начала
+                if(strlen(trim($arEl['DATE_ACTIVE_TO'])) < 1)
+                {
+                    $obEl->Update(
+                        $arEl['ID'],
+                        [
+                            'DATE_ACTIVE_TO' => $arEl['DATE_ACTIVE_FROM']
+                        ]
+                    );
+                    $arEl['DATE_ACTIVE_TO'] = $arEl['DATE_ACTIVE_FROM'];
+                }
+
+                $mDateFrom = date('Y-m-d H:i:s', MakeTimeStamp($arEl['DATE_ACTIVE_FROM']));
+                $mDateTo = date('Y-m-d H:i:s', MakeTimeStamp($arEl['DATE_ACTIVE_TO']));
+
+                // Заполняем множественное совйство "Дата(ы) проведения для календаря"
+                // св-во заполнено
+                if(is_array($arEl['PROPS']['dates']['VALUE']) && count($arEl['PROPS']['dates']['VALUE']) > 0)
+                {
+                    $keyProp1 = $arEl['PROPS']['dates']['PROPERTY_VALUE_ID'][0];
+                    if(isset($arEl['PROPS']['dates']['PROPERTY_VALUE_ID'][1]))
+                    {
+                        $keyProp2 = $arEl['PROPS']['dates']['PROPERTY_VALUE_ID'][1];
+                    }
+                    else
+                    {
+                        $keyProp2 = 0;
+                    }
+
+                    // есть две даты для заполнения
+                    if($arEl['DATE_ACTIVE_FROM'] != $arEl['DATE_ACTIVE_TO'])
+                    {
+                        $arUpd = [
+                            $keyProp1 => $mDateFrom,
+                            $keyProp2 => $mDateTo
+                        ];
+                        foreach ($arEl['PROPS']['dates']['PROPERTY_VALUE_ID'] as $k => $val)
+                        {
+                            if($k > 1)
+                            {
+                                $arUpd[$val] =
+                                    date('Y-m-d H:i:s', MakeTimeStamp($arEl['PROPS']['dates']['VALUE'][$k]));
+                            }
+                        }
+
+                        \CIBlockElement::SetPropertyValuesEx(
+                            $arEl['ID'],
+                            $arFields['IBLOCK_ID'],
+                            [
+                                'dates' => $arUpd
+                            ]
+                        );
+                    }
+                    // есть только одна дата
+                    else
+                    {
+                        $arUpd = [
+                            $keyProp1 => $mDateFrom,
+                        ];
+                        foreach ($arEl['PROPS']['dates']['PROPERTY_VALUE_ID'] as $k => $val)
+                        {
+                            if($k > 0)
+                            {
+                                $arUpd[$val] =
+                                    date('Y-m-d H:i:s', MakeTimeStamp($arEl['PROPS']['dates']['VALUE'][$k]));
+                            }
+                        }
+
+                        \CIBlockElement::SetPropertyValuesEx(
+                            $arEl['ID'],
+                            $arFields['IBLOCK_ID'],
+                            [
+                                'dates' => $arUpd
+                            ]
+                        );
+                    }
+                }
+                else
+                // св-во пустое
+                {
+                    // есть две даты для заполнения
+                    if($arEl['DATE_ACTIVE_FROM'] != $arEl['DATE_ACTIVE_TO'])
+                    {
+                        \CIBlockElement::SetPropertyValuesEx(
+                            $arEl['ID'],
+                            $arFields['IBLOCK_ID'],
+                            [
+                                'dates' => [
+                                    0 => $mDateFrom,
+                                    1 => $mDateTo,
+                                ]
+                            ]
+                        );
+                    }
+                    // есть только одна дата
+                    else
+                    {
+                        \CIBlockElement::SetPropertyValuesEx(
+                            $arEl['ID'],
+                            $arFields['IBLOCK_ID'],
+                            [
+                                'dates' => [0 => $mDateFrom]
+                            ]
+                        );
+                    }
+                }
+
+                //gg($arEl);
+            }
+
+            self::$handlerDisallow = false;
+
+            //die();
+        }
     }
 }

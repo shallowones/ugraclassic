@@ -12,12 +12,14 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <?if($arParams["USE_RSS"]=="Y"):?>
 	<?
+	$rss_url = CComponentEngine::makePathFromTemplate($arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss_section"], array_map("urlencode", $arResult["VARIABLES"]));
 	if(method_exists($APPLICATION, 'addheadstring'))
-		$APPLICATION->AddHeadString('<link rel="alternate" type="application/rss+xml" title="'.$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"].'" href="'.$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"].'" />');
+		$APPLICATION->AddHeadString('<link rel="alternate" type="application/rss+xml" title="'.$rss_url.'" href="'.$rss_url.'" />');
 	?>
-	<a href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"]?>" title="rss" target="_self"><img alt="RSS" src="<?=$templateFolder?>/images/gif-light/feed-icon-16x16.gif" border="0" align="right" /></a>
+	<a href="<?=$rss_url?>" title="rss" target="_self"><img alt="RSS" src="<?=$templateFolder?>/images/gif-light/feed-icon-16x16.gif" border="0" align="right" /></a>
 <?endif?>
 
 <?if($arParams["USE_SEARCH"]=="Y"):?>
@@ -31,14 +33,7 @@ $this->setFrameMode(true);
 );?>
 <br />
 <?endif?>
-<?
-/*if ($arParams["USE_DATE_FILTER"]=="Y"){
-	$arParams["FILTER_NAME"] = "dateFilter";
-}
-else if($arParams["USE_FILTER"]=="Y"):*/
-
-// фильтр переписан ниже, компонент находится только для шаблона
-?>
+<?if($arParams["USE_FILTER"]=="Y"):?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.filter",
 	"",
@@ -55,32 +50,9 @@ else if($arParams["USE_FILTER"]=="Y"):*/
 	),
 	$component
 );
-if (!empty($_GET['set_filter'])) {
-    if (!empty($_GET['date_start'])) {
-        $GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_FROM'] = trim(htmlspecialcharsEx($_GET['date_start']));
-    }
-    if (!empty($_GET['date_end'])) {
-        $arDateTo = explode('.', trim(htmlspecialcharsEx($_GET['date_end'])));
-        $mDateTo = mktime(0,0,0, intval($arDateTo[1]),intval($arDateTo[0])+1,intval($arDateTo[2]));
-        $GLOBALS[$arParams["FILTER_NAME"]]['<=DATE_ACTIVE_FROM'] = date('d.m.Y', $mDateTo);
-    }
-}
-if((MakeTimeStamp($_GET['date_end']) < MakeTimeStamp(date('d.m.Y'))) || !strlen($_GET['date_end']))
-{
-    $GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_TO'] = date('d.m.Y');
-}
-$arEnum = \CIBlockPropertyEnum::GetList(
-    [],
-    [
-        "IBLOCK_ID"=>$arParams["IBLOCK_ID"],
-        "CODE"=>"location",
-        "XML_ID"=>'office'
-    ]
-)->GetNext();
-$GLOBALS[$arParams["FILTER_NAME"]]['!PROPERTY_location'] = $arEnum['ID'];
 ?>
 <br />
-<?//endif?>
+<?endif?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
@@ -94,9 +66,6 @@ $GLOBALS[$arParams["FILTER_NAME"]]['!PROPERTY_location'] = $arEnum['ID'];
 		"SORT_ORDER2" => $arParams["SORT_ORDER2"],
 		"FIELD_CODE" => $arParams["LIST_FIELD_CODE"],
 		"PROPERTY_CODE" => $arParams["LIST_PROPERTY_CODE"],
-		"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["detail"],
-		"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
-		"IBLOCK_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"],
 		"DISPLAY_PANEL" => $arParams["DISPLAY_PANEL"],
 		"SET_TITLE" => $arParams["SET_TITLE"],
 		"SET_LAST_MODIFIED" => $arParams["SET_LAST_MODIFIED"],
@@ -105,6 +74,7 @@ $GLOBALS[$arParams["FILTER_NAME"]]['!PROPERTY_location'] = $arEnum['ID'];
 		"SHOW_404" => $arParams["SHOW_404"],
 		"FILE_404" => $arParams["FILE_404"],
 		"INCLUDE_IBLOCK_INTO_CHAIN" => $arParams["INCLUDE_IBLOCK_INTO_CHAIN"],
+		"ADD_SECTIONS_CHAIN" => $arParams["ADD_SECTIONS_CHAIN"],
 		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
 		"CACHE_TIME" => $arParams["CACHE_TIME"],
 		"CACHE_FILTER" => $arParams["CACHE_FILTER"],
@@ -131,6 +101,12 @@ $GLOBALS[$arParams["FILTER_NAME"]]['!PROPERTY_location'] = $arEnum['ID'];
 		"FILTER_NAME" => $arParams["FILTER_NAME"],
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
+
+		"PARENT_SECTION" => $arResult["VARIABLES"]["SECTION_ID"],
+		"PARENT_SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
+		"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["detail"],
+		"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
+		"IBLOCK_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"],
 	),
 	$component
 );?>
