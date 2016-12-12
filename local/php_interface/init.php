@@ -34,6 +34,10 @@ AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\Services", "C
 // отписка от рассылки
 AddEventHandler("subscribe", "BeforePostingSendMail", array("UW\Services", "BeforePostingSendMailHandler"));
 
+// копирование дат проведения в афише
+AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "CopyDatesAfisha"));
+AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "CopyDatesAfisha"));
+
 /**
  * Распечатывает массивы
  * @param $var

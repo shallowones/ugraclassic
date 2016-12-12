@@ -25,6 +25,13 @@ $this->setFrameMode(true);
                 <input type="text" value="<? if ($_GET['date_end']) echo $_GET['date_end'] ?>" name="date_end" id="date_end" title="">
             </li>
         </ul>
+        <ul class="categories" id="months">
+            <? foreach ($arResult['MONTHS'] as $arMonth): ?>
+                <li class="categories__item" value="<? echo $arMonth['DATE'] ?>">
+                    <? echo $arMonth['NAME'] ?>
+                </li>
+            <? endforeach; ?>
+        </ul>
     </div>
     <div class="filter-buttons">
         <div class="confirm">
