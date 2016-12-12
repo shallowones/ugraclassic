@@ -661,28 +661,37 @@ p.unmar {
     padding: 40px;
     font-family: 'Roboto Condensed', sans-serif;
     position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+.navigation {
+    width: 30%;
+    text-align: left;
+}
+.tours > .ev-map {
+    width: 70%;
 }
 .tours__item {
-    display: inline-block;
-    margin: 0 10px;
-    vertical-align: top;
-    width: 30%
+    margin-bottom: 20px;
 }
 .tours__item > .dates {
     margin-top: 13px;
     margin-right: 0;
     display: flex;
+    justify-content: space-between;
 }
 .tours__item > .dates > .dates__item {
-    margin: 0 20px 0 0;
+    margin: 0;
+    width: 47%;
 }
 .tours__item > label {
     display: block;
     margin-bottom: 5px;
     text-transform: uppercase;
     color: #7f7e7e;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-size: 13px;
+    font-weight: normal;
 }
 .tours__item > select {
     font-size: 16px;
@@ -701,36 +710,75 @@ p.unmar {
 .tours__item > select > option {
     background: #f3f3f3;
 }
-.tours > .filter-buttons {
+.tours > .navigation > .filter-buttons {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 1px;
-    text-align: right;
-    margin: 30px 135px 0 0 ;
+    display: flex;
+    justify-content: space-around;
 }
-.tours > .filter-buttons > input[type='submit'] {
+.tours > .navigation > .filter-buttons > input[type='submit'] {
     text-transform: uppercase;
     color: white;
     border: 1px solid #daac4f;
     background: #daac4f;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border-radius: 22px;
+    letter-spacing: 1px;
 }
-.tours > .filter-buttons > input[type='submit']:hover {
+.tours > .navigation > .filter-buttons > input[type='submit']:hover {
     color: #daac4f;
     background: white;
     transition: 0.2s;
 }
-.tours > .filter-buttons > .rset {
+.tours > .navigation > .filter-buttons > .rset {
     padding: 10px 20px;
     display: inline-block;
 }
-.tours > .filter-buttons > .rset > a {
+.tours > .navigation > .filter-buttons > .rset > a {
     color: #898888;
 }
-.tours > .filter-buttons > .rset > a:hover {
+.tours > .navigation > .filter-buttons > .rset > a:hover {
     text-decoration: underline;
+}
+.tours .dates__item > input[type="text"] {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+.tours .ms-container {
+    width: 100%;
+    margin-top: 15px;
+}
+.tours .ms-container .ms-list {
+    height: 160px;
+}
+.tours .ms-container .ms-selectable li.ms-elem-selectable {
+    border: none;
+    font-family: 'Noto Serif', serif;
+    line-height: 22px;
+    position: relative;
+    padding: 5px 35px;
+}
+.tours .ms-container .ms-selectable li.ms-hover {
+    background-color: #f8f8f8;
+    color: #272727;
+}
+.tours .gray, .tours .pull-right.ms-elem-selected {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: 16px;
+    height: 16px;
+}
+.tours .gray {
+    background: url(img/select.png) no-repeat 0 0;
+    z-index: 1;
+}
+.tours .pull-right.ms-elem-selected {
+    background: url(img/select.png) no-repeat -16px 0;
+    z-index: 2;
 }
 @media screen and (max-width: 1400px) {
     .tours > .filter-buttons {
@@ -739,29 +787,53 @@ p.unmar {
 }
 @media screen and (max-width: 1000px) {
     .tours {
-        padding: 40px 10px 10px;
-    }
-    .tours__item {
-        margin: 0 20px 30px 0;
-        width: 47%;
-    }
-    .tours__item:nth-child(2) {
-        margin-right: 0;
-    }
-    .tours__item:nth-child(3) {
+        padding: 40px 0 20px;
         display: block;
-        margin: 0;
+    }
+    .navigation {
         width: 100%;
     }
-    .tours > .filter-buttons {
-        position: absolute;
-        right: 15px;
-        bottom: 7px;
+    .tours__item {
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
+    .tours__item > .dates {
+        justify-content: space-between;
+    }
+    .tours__item > .dates > .dates__item {
+        width: 40%;
+        margin-right: 30px;
+    }
+    .tours__item:nth-child(3) {
+        width: 58%;
+        display: inline-block;
+    }
+    .tours > .navigation > .filter-buttons {
+        width: 41%;
+        display: inline-block;
+        text-align: right;
+    }
+    .tours > .navigation > .filter-buttons > input[type='submit'] {
+        padding: 10px 20px;
+    }
+    .tours > .navigation > .filter-buttons > .rset {
+        padding: 10px 5px;
+    }
+    .tours > .ev-map {
+        width: 100%;
     }
 }
 @media screen and (max-width: 600px) {
-    .tours > .filter-buttons {
-        position: static;
+    .tours > .navigation > .filter-buttons {
+        display: block;
+        width: 100%;
+    }
+    .tours__item:nth-child(3) {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .tours > .ev-map {
+        display: none;
     }
 }
 @media screen and (max-width: 465px) {
@@ -769,16 +841,20 @@ p.unmar {
         display: block;
         width: 100%;
     }
+    .tours__item > .dates > .dates__item {
+        width: 50%;
+        margin: 0 10px 0 0 ;
+    }
 }
 @media screen and (max-width: 350px) {
     .tours__item > .dates > .dates__item {
-        margin-bottom: 20px;
-        margin-right: 10px;
+        margin-bottom: 15px;
     }
     .tours__item > .dates > .dates__item > input[type="text"] {
         width: 75px;
         font-size: 14px;
         margin: 0 0 0 4px;
+        text-align: left;
     }
     .tours__item > .dates > .dates__item:first-child::before,
     .tours__item > .dates > .dates__item:last-child::before {
@@ -789,7 +865,7 @@ p.unmar {
     .tours__item > .dates > .dates__item:last-child::after {
         bottom: 4px;
     }
-    .tours > .filter-buttons {
+    .tours > .navigation > .filter-buttons {
         margin: 0;
         text-align: left;
     }
@@ -836,6 +912,7 @@ p.unmar {
     margin-left: 5px;
     margin-bottom: 20px;
     vertical-align: top;
+    max-width: 380px;
 }
 .timetable__item > a {
     color: #272727;
@@ -863,6 +940,7 @@ p.unmar {
     letter-spacing: normal;
     margin-left: 20px;
     font-weight: bold;
+    min-height: 32px;
 }
 .t-desc {
     display: flex;
@@ -872,7 +950,10 @@ p.unmar {
     color: #7f7e7e;
     margin: 25px 20px;
 }
-.d-place {}
+.d-place {
+    width: 85%;
+    min-height: 26px;
+}
 .age {
     padding: 8px 0 0 0;
     border: 1px solid;

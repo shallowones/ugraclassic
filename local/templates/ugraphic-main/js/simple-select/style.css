@@ -1,0 +1,101 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+  background: -webkit-linear-gradient(right, #8e9eab, #eef2f3);
+  background: linear-gradient(to left, #8e9eab, #eef2f3);
+}
+
+body {
+  margin: 10% auto;
+  text-align: center;
+  font-size: 12px;
+}
+
+.select {
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 100%;
+  color: #272727;
+  vertical-align: middle;
+  text-align: left;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+  font-family: 'Noto Serif', serif;
+  line-height: 22px;
+  border-bottom: 3px solid #b5b3b3;
+}
+.select .placeholder {
+  position: relative;
+  display: block;
+  background-color: transparent;
+  z-index: 1;
+  padding: 3px 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.select .placeholder:hover {
+  /*background: #34383c;*/
+}
+.select .placeholder:after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-family: 'FontAwesome';
+  content: '\f078';
+  z-index: 10;
+  color: #9c9c9c;
+}
+.select.is-open .placeholder:after {
+  content: '\f077';
+}
+.select.is-open ul {
+  display: block;
+}
+.select.select--white .placeholder {
+  background: #fff;
+  color: #999;
+}
+.select.select--white .placeholder:hover {
+  background: #fafafa;
+}
+.select ul {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 5px 0 0 0;
+  padding: 0;
+  z-index: 100;
+  max-height: 210px;
+  border: 1px solid #cecece;
+}
+.select ul li {
+  display: block;
+  text-align: left;
+  padding: 5px 20px;
+  color: #272727;
+  cursor: pointer;
+}
+.select ul li:hover {
+  background: #daac4f;
+  color: #fff;
+}
+.select ul li:first-child {
+  padding: 0;
+}
