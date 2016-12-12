@@ -46,19 +46,19 @@ $(document).ready(function () {
                 month = date.getMonth() + 1,
                 year = date.getFullYear(),
                 tomorrow = day + 1;
-            switch(value) {
+            switch (value) {
                 case 'today':
                     if (day.toString().length == 1) {
                         day = '0' + day.toString();
                     }
-                    dateStart.val(day + '.' + month + '.'+ year);
+                    dateStart.val(day + '.' + month + '.' + year);
                     dateEnd.val('');
                     break;
                 case 'tomorrow':
                     if (tomorrow.toString().length == 1) {
                         tomorrow = '0' + tomorrow.toString();
                     }
-                    dateStart.val(tomorrow + '.' + month + '.'+ year);
+                    dateStart.val(tomorrow + '.' + month + '.' + year);
                     dateEnd.val('');
                     break;
                 case 'week':
@@ -71,14 +71,14 @@ $(document).ready(function () {
                     if (weekEndDay.toString().length == 1) {
                         weekEndDay = '0' + weekEndDay.toString();
                     }
-                    dateStart.val(weekStartDay + '.' + month + '.'+ year);
-                    dateEnd.val(weekEndDay + '.' + month + '.'+ year);
+                    dateStart.val(weekStartDay + '.' + month + '.' + year);
+                    dateEnd.val(weekEndDay + '.' + month + '.' + year);
                     break;
                 case 'month':
                     // получим количество дней в месяце
                     countDaysOfMonth = new Date().daysInMonth(year, month);
-                    dateStart.val('01.' + month + '.'+ year);
-                    dateEnd.val(countDaysOfMonth + '.' + month + '.'+ year);
+                    dateStart.val('01.' + month + '.' + year);
+                    dateEnd.val(countDaysOfMonth + '.' + month + '.' + year);
             }
         }
     });
@@ -126,14 +126,17 @@ $(document).ready(function () {
         $('.timetable-block').slideUp();
 
         $('.ms-elem-selectable.ms-selected').each(function () {
-           $(this).find('.pull-right.ms-elem-selected').each(function () {
-              $(this).css({display: 'none'});
-           });
+            $(this).find('.pull-right.ms-elem-selected').each(function () {
+                $(this).css({display: 'none'});
+            });
             $(this).removeClass('ms-selected');
         });
 
+        $('.select > .placeholder').text('Выберите коллектив');
+        $('.select > input[type=hidden]').attr('value', '');
+
         $('#public-methods').selectMultiple('deselect_all');
-            return false;
+        return false;
     });
 
     /*$(window).resize(function() {
@@ -251,7 +254,7 @@ $(document).ready(function () {
 
     // удаление оповещений по нажатию на крестик (форма обратной связи)
     $('.feedback-mess').on('click', function () {
-       $(this).slideUp();
+        $(this).slideUp();
     });
 
     $('.err').keyup(function () {
@@ -261,17 +264,25 @@ $(document).ready(function () {
     // мульти-селект
     $('#municipality').selectMultiple();
 
-    $('.select').on('click','.placeholder',function(){
+    $('.select').on('click', '.placeholder', function () {
         var parent = $(this).closest('.select');
-        if ( ! parent.hasClass('is-open')){
+        if (!parent.hasClass('is-open')) {
             parent.addClass('is-open');
             $('.select.is-open').not(parent).removeClass('is-open');
-        }else{
+        } else {
             parent.removeClass('is-open');
         }
-    }).on('click','ul>li',function(){
+    }).on('click', 'ul>li', function () {
         var parent = $(this).closest('.select');
-        parent.removeClass('is-open').find('.placeholder').text( $(this).text() );
-        parent.find('input[type=hidden]').attr('value', $(this).attr('data-value') );
+        parent.removeClass('is-open').find('.placeholder').text($(this).text());
+        parent.find('input[type=hidden]').attr('value', $(this).attr('data-value'));
+    });
+
+    $('.select > ul > li').each(function () {
+       console.log($(this).attr('data-selected'));
+       if ($(this).attr('data-selected') == 'selected') {
+           $('.select > .placeholder').text($(this).text());
+           $('.select > input[type=hidden]').attr('value', $(this).attr('data-value'));
+       }
     });
 });

@@ -726,6 +726,7 @@ p.unmar {
     padding: 10px 25px;
     border-radius: 22px;
     letter-spacing: 1px;
+    outline: none;
 }
 .tours > .navigation > .filter-buttons > input[type='submit']:hover {
     color: #daac4f;
