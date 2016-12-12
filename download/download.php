@@ -16,17 +16,12 @@ class downloadPhoto
     {
         $photo = json_decode(file_get_contents('http://ugraclassic.ru/download/untitled.php'), true);
         $section = json_decode(file_get_contents('http://ugraclassic.ru/download/'), true);
-
         $res = [];
-            $j = 1;
         foreach ($section as $i => $sec) {
-            if (($j >= $id)&&($j<$id*10)) {
                 foreach ($photo[$sec['id']] as $p) {
                     $section[$i]['files'][] = \CFile::MakeFileArray($p);
                 }
                 $res[] = $section[$i];
-            }
-            $j++;
         }
         return self::load_ib($res);
     }
@@ -57,3 +52,4 @@ class downloadPhoto
         return $str;
     }
 }
+    echo downloadPhoto::download(1);
