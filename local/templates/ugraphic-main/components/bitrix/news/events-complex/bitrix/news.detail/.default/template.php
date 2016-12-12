@@ -75,11 +75,11 @@ $this->setFrameMode(true);
                     <li class="afisha-w__item m-top20"><span>Информация и бронирование билетов:</span> <i
                                 class="number"><?=$arResult["DISPLAY_PROPERTIES"]["info_reserv_ticket"]["DISPLAY_VALUE"]?></i></li>
                 <?endif?>
-                <? if(strlen(trim($arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) < 1 && isset($arResult["DISPLAY_PROPERTIES"]["cost"])): ?>
+                <? if($arResult['DISPLAY_PROPERTIES']['buy_ticket']['VALUE'] != 'Да' && isset($arResult["DISPLAY_PROPERTIES"]["cost"])): ?>
                     <li class="afisha-w__item"><span>Цена билета:</span> <?=$arResult["DISPLAY_PROPERTIES"]["cost"]["DISPLAY_VALUE"]?></li>
                 <? endif; ?>
             </ul>
-            <? if(strlen(trim($arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) > 0): ?>
+            <? if($arResult['DISPLAY_PROPERTIES']['buy_ticket']['VALUE'] == 'Да' && !strlen($arParams["BACK_URL"])): ?>
                 <div class="afisha-ticket">
                     <?if(isset($arResult["DISPLAY_PROPERTIES"]["cost"])):?>
                         <div class="tick">
@@ -88,7 +88,7 @@ $this->setFrameMode(true);
                         </div>
                     <?endif?>
                     <div class="tick">
-                        <a href="<?=$arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>">Купить билет онлайн</a>
+                        <a href="javascript:void();" onclick="kassirWidget.summon({url:'https://hm.kassir.ru/kassirwidget/ro?key=ff01bc2d-7012-9f23-e03c-cf3e49f87b30'})">Купить билет онлайн</a>
                     </div>
                 </div>
             <? endif; ?>
