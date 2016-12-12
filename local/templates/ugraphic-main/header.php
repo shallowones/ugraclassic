@@ -19,6 +19,7 @@ if ($_REQUEST['slow_vision'] == "Y") {
 			Asset::getInstance()->addCss("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic");
 			Asset::getInstance()->addCss("https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic");
 
+            Asset::getInstance()->addJs("https://hm.kassir.ru/start.js");
 			Asset::getInstance()->addJs("https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js");
 
 			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jQuery.equalHeights.js");

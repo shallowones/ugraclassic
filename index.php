@@ -40,7 +40,7 @@ $arEnum = \CIBlockPropertyEnum::GetList(
 )->GetNext();
 
 $GLOBALS['FLT_EVENTS_LIST'] = [
-    '>=DATE_ACTIVE_FROM' => date('d.m.Y'),
+    '>=DATE_ACTIVE_TO' => date('d.m.Y'),
     '!PROPERTY_location' => $arEnum['ID']
 ];
 ?>
@@ -172,6 +172,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                             3 => "hall",
                             4 => "link_kassir",
                             5 => "date_text",
+                            6 => "buy_ticket"
                         ),
                         "SET_BROWSER_TITLE" => "N",
                         "SET_LAST_MODIFIED" => "N",

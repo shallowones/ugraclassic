@@ -1,4 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("SHOW_RIGHT_COL", "N");
 $APPLICATION->SetTitle("Архив афиши");
-?>Text here....<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+?>
+<? $APPLICATION->IncludeComponent('ugraweb:wrapper.component','events-archive',[],false); ?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
