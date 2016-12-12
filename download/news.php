@@ -28,7 +28,7 @@ class downloadNews
         foreach ($news as $i => $n) {
 
             if (!in_array($n['id'], $codes)) {
-                $res[$i]['preview_picture'] = \CFile::MakeFileArray($n['preview_picture']);
+                $res[$i]['preview_picture'] = CFile::ResizeImageGet(\CFile::MakeFileArray($n['preview_picture']), ['width'=>175, 'height'=>175], BX_RESIZE_IMAGE_EXACT, true);
                 $res[$i]['detail_picture'] = \CFile::MakeFileArray($n['detail_picture']);
                 $res[$i]['name'] = $n['name'];
                 $res[$i]['detail_text'] = $n['detail_text'];
