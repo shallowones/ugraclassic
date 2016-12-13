@@ -23,15 +23,21 @@ class downloadAfisha
 
         $res = [];
         $j = 0;
-        $codes = self::in_ib(1);
-        gg($codes);
+        //$codes = self::in_ib(1);
+        //gg($codes);
 //        array_splice($afisha, 20);
 
         foreach ($afisha as $i => $n) {
 
-            $code = self::rus2translit($n['name']) . '_' . $n['id'];
+            $j++;
+            if (($j > 350 && $j <= 400)) {
 
-            if (!in_array($code, $codes)) {
+
+            //$code = self::rus2translit($n['name']) . '_' . $n['id'];
+            $code = ToLower(self::rus2translit($n['name']) . '_' . date('dmY', MakeTimeStamp(self::date_check($n['date_to']))));
+            $code = preg_replace('/[^a-zA-Z0-9-]/', '-', $code);
+
+           // if (!in_array($code, $codes)) {
                 $res[$i]['id'] = $n['id'];
                 $res[$i]['name'] = $n['name'];
                 $res[$i]['sub_header'] = $n['sub_text'];
@@ -48,7 +54,10 @@ class downloadAfisha
                 $res[$i]['real_picture'] = \CFile::MakeFileArray($_SERVER['DOCUMENT_ROOT'] . $image['src']);
 
                 $res[$i]['detail_text'] = $n['detail_text'];
+
                 $res[$i]['code'] = $code;
+
+
                 $res[$i]['preview_text'] = $n['preview_text'];
                 $res[$i]['hall'] = self::halls($n['hall']);
                 $res[$i]['age'] = self::age($n['age']);
@@ -57,14 +66,26 @@ class downloadAfisha
                 }
 
                 //обработка дат
-                if ($n['date_from'] && $n['date_to']) {
+                if(is_array($n['dates']) && count($n['dates']) > 0)
+                {
+                    $total = count($n['dates']);
+                    $res[$i]['date_from'] = self::date_check($n['dates'][0]);
+                    $res[$i]['date_to'] = self::date_check($n['dates'][$total-1]);
+                }
+                else
+                {
+                    $res[$i]['date_from'] = self::date_check($n['date_to']);
+                    $res[$i]['date_to'] = self::date_check($n['date_to']);
+                }
+
+                /*if ($n['date_from'] && $n['date_to']) {
                     $res[$i]['date_from'] = self::date_check($n['date_from']);
                     $res[$i]['date_to'] = self::date_check($n['date_to']);
                 } elseif ($n['date_to']) {
                     $res[$i]['date_from'] = $res[$i]['date_to'] = self::date_check($n['date_to']);
                 } elseif ($n['date_from']) {
                     $res[$i]['date_from'] = $res[$i]['date_to'] = self::date_check($n['date_from']);
-                }
+                }*/
                 foreach ($n['dates'] as $d) {
                     $res[$i]['dates'][] = self::date_check($d);
                 }
@@ -72,11 +93,10 @@ class downloadAfisha
 
                 gg($res[$i]);
 
-                $j++;
-//                if (($j == 5)) {
-//                    break;
-//                }
+
             }
+
+            //}
         }
         $stat = (count($res)==0) ? 1 : 0;
         $str = self::load_ib($res, 1);
@@ -266,8 +286,8 @@ class downloadAfisha
         return strtr($string, $converter);
     }
 }
-$s = true;
+/*$s = true;
  {
     $s = downloadAfisha::download(0);
     echo $s;
-}
+}*/

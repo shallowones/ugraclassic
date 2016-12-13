@@ -63,6 +63,7 @@ $this->setFrameMode(true);
     <? if($arResult["ITEMS"][1]['PROMO_DISPLAY'] || $arResult["ITEMS"][2]['PROMO_DISPLAY']): ?>
     <div class="promo-right-col">
         <? if($arResult["ITEMS"][1]['PROMO_DISPLAY']): ?>
+        <a href="<?=$arResult["ITEMS"][1]['PROMO_DISPLAY']["URL"];?>" alt="" title="" style="display: block;">
             <div class="promo-right-item">
                 <div class="slider-info">
                     <div class="info-box">
@@ -92,9 +93,11 @@ $this->setFrameMode(true);
                     />
                 <? endif; ?>
             </div>
+        </a>
         <? endif; ?>
 
         <? if($arResult["ITEMS"][2]['PROMO_DISPLAY']): ?>
+        <a href="<?=$arResult["ITEMS"][2]['PROMO_DISPLAY']["URL"];?>" alt="" title="" style="display: block;">
             <div class="promo-right-item">
                 <div class="slider-info">
                     <div class="info-box">
@@ -124,6 +127,7 @@ $this->setFrameMode(true);
                     />
                 <? endif; ?>
             </div>
+        </a>
         <? endif; ?>
 
     </div><!-- .promo-right-col -->
