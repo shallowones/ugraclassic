@@ -10,6 +10,27 @@
 /** @global CMain $APPLICATION */
 $this->setFrameMode(true);
 
+// подключаем необходимые файлы
+use Bitrix\Main\Page\Asset;
+
+$arPage = [
+    'CSS' => [
+        SITE_TEMPLATE_PATH . "/js/select-multiple/select-multiple.css",
+        SITE_TEMPLATE_PATH . "/js/simple-select/style.css",
+    ],
+    'JS' => [
+        SITE_TEMPLATE_PATH . "/js/select-multiple/jquery.select-multiple.js",
+        SITE_TEMPLATE_PATH . "/js/simple-select/index.js",
+        SITE_TEMPLATE_PATH . "/js/maphilight-master/jquery.maphilight.min.js",
+        SITE_TEMPLATE_PATH . "/js/animatescroll.js-master/animatescroll.min.js"
+    ]
+];
+foreach ($arPage['JS'] as $arJS) {
+    Asset::getInstance()->addJs($arJS);
+}
+foreach ($arPage['CSS'] as $arCSS) {
+    Asset::getInstance()->addCss($arCSS);
+}
 if (!CModule::IncludeModule("iblock"))
     return;
 
@@ -57,66 +78,72 @@ if (!empty($_GET['set_filter'])) {
 }
 ?>
 
-<form method="get" enctype="multipart/form-data" class="tours">
-    <div class="navigation">
-        <div class="tours__item">
-            <label for="collective">Коллективы</label>
-            <div class="select">
-                <span class="placeholder">Выберите коллектив</span>
-                <ul>
-                    <? foreach ($arListCollectives as $arCollective): ?>
-                        <? if ($_GET['collective'] == $arCollective['ID']): ?>
-                            <li data-value="<? echo $arCollective['ID'] ?>" data-selected="selected">
-                                <? echo $arCollective['NAME'] ?>
-                            </li>
+    <form method="get" enctype="multipart/form-data" class="tours">
+        <div class="navigation">
+            <div class="tours__item">
+                <label for="collective">Коллективы</label>
+                <div class="select">
+                    <span class="placeholder">Выберите коллектив</span>
+                    <ul>
+                        <? foreach ($arListCollectives as $arCollective): ?>
+                            <? if ($_GET['collective'] == $arCollective['ID']): ?>
+                                <li data-value="<? echo $arCollective['ID'] ?>" data-selected="selected">
+                                    <? echo $arCollective['NAME'] ?>
+                                </li>
                             <? else: ?>
-                            <li data-value="<? echo $arCollective['ID'] ?>">
-                                <? echo $arCollective['NAME'] ?>
-                            </li>
+                                <li data-value="<? echo $arCollective['ID'] ?>">
+                                    <? echo $arCollective['NAME'] ?>
+                                </li>
+                            <? endif; ?>
+                        <? endforeach; ?>
+                    </ul>
+                    <input type="hidden" name="collective">
+                </div>
+            </div>
+            <div class="tours__item">
+                <label for="municipality">Муниципальное образование</label>
+                <select name="municipality[]" id="municipality" multiple>
+                    <? foreach ($arListMunicipality as $arMunicipality): ?>
+                        <? if (in_array($arMunicipality['ID'], $_GET['municipality'])): ?>
+                            <option value="<? echo $arMunicipality['ID'] ?>" selected>
+                                <? echo $arMunicipality['NAME'] ?>
+                            </option>
+                        <? else: ?>
+                            <option value="<? echo $arMunicipality['ID'] ?>">
+                                <? echo $arMunicipality['NAME'] ?>
+                            </option>
                         <? endif; ?>
                     <? endforeach; ?>
+                </select>
+            </div>
+            <div class="tours__item">
+                <label for="dates">Дата</label>
+                <ul class="dates">
+                    <li class="dates__item">
+                        <input type="text" value="<? if (!empty($_GET['date_start'])) echo $_GET['date_start'] ?>"
+                               name="date_start" id="date_start" title="">
+                    </li>
+                    <li class="dates__item">
+                        <input type="text" value="<? if (!empty($_GET['date_end'])) echo $_GET['date_end'] ?>"
+                               name="date_end" id="date_end" title="">
+                    </li>
                 </ul>
-                <input type="hidden" name="collective">
+            </div>
+            <div class="filter-buttons">
+                <input type="submit" name="set_filter" value="Применить">
+                <div class="rset" id='deselect-all'><a href="javascript:void(0)">Сбросить</a></div>
             </div>
         </div>
-        <div class="tours__item">
-            <label for="municipality">Муниципальное образование</label>
-            <select name="municipality[]" id="municipality" multiple>
-                <? foreach ($arListMunicipality as $arMunicipality): ?>
-                    <? if (in_array($arMunicipality['ID'], $_GET['municipality'])): ?>
-                        <option value="<? echo $arMunicipality['ID'] ?>" selected>
-                            <? echo $arMunicipality['NAME'] ?>
-                        </option>
-                    <? else: ?>
-                        <option value="<? echo $arMunicipality['ID'] ?>">
-                            <? echo $arMunicipality['NAME'] ?>
-                        </option>
-                    <? endif; ?>
-                <? endforeach; ?>
-            </select>
+        <div class="ev-map">
+            <? $APPLICATION->IncludeComponent("bitrix:main.include",
+                "",
+                array(
+                    "PATH" => $componentPath . "/include/map.php",
+                    "AREA_FILE_SHOW" => "file"
+                )
+            ); ?>
         </div>
-        <div class="tours__item">
-            <label for="dates">Дата</label>
-            <ul class="dates">
-                <li class="dates__item">
-                    <input type="text" value="<? if (!empty($_GET['date_start'])) echo $_GET['date_start'] ?>"
-                           name="date_start" id="date_start" title="">
-                </li>
-                <li class="dates__item">
-                    <input type="text" value="<? if (!empty($_GET['date_end'])) echo $_GET['date_end'] ?>"
-                           name="date_end" id="date_end" title="">
-                </li>
-            </ul>
-        </div>
-        <div class="filter-buttons">
-            <input type="submit" name="set_filter" value="Применить">
-            <div class="rset" id='deselect-all'><a href="javascript:void(0)">Сбросить</a></div>
-        </div>
-    </div>
-    <div class="ev-map">
-        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/30.png' ?>">
-    </div>
-</form>
+    </form>
 
 <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",

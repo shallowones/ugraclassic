@@ -123,7 +123,7 @@ $(document).ready(function () {
             $(this).val('');
         });
         $('select').val('');
-        $('.timetable-block').slideUp();
+        //$('.timetable-block').slideUp();
 
         $('.ms-elem-selectable.ms-selected').each(function () {
             $(this).find('.pull-right.ms-elem-selected').each(function () {
@@ -134,6 +134,12 @@ $(document).ready(function () {
 
         $('.select > .placeholder').text('Выберите коллектив');
         $('.select > input[type=hidden]').attr('value', '');
+
+        $('map area').each(function () {
+            var data = $(this).mouseout().data('maphilight') || {};
+            data.alwaysOn = false;
+            $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+        });
 
         $('#public-methods').selectMultiple('deselect_all');
         return false;
@@ -272,17 +278,233 @@ $(document).ready(function () {
         } else {
             parent.removeClass('is-open');
         }
-    }).on('click', 'ul>li', function () {
+    }).on('click', 'ul > li', function () {
         var parent = $(this).closest('.select');
         parent.removeClass('is-open').find('.placeholder').text($(this).text());
         parent.find('input[type=hidden]').attr('value', $(this).attr('data-value'));
     });
 
     $('.select > ul > li').each(function () {
-       console.log($(this).attr('data-selected'));
-       if ($(this).attr('data-selected') == 'selected') {
-           $('.select > .placeholder').text($(this).text());
-           $('.select > input[type=hidden]').attr('value', $(this).attr('data-value'));
-       }
+        if ($(this).attr('data-selected') == 'selected') {
+            $('.select > .placeholder').text($(this).text());
+            $('.select > input[type=hidden]').attr('value', $(this).attr('data-value'));
+        }
     });
+
+
+    // ГАСТРОЛЬНАЯ КАРТА
+    function move(e, b, r)	//для получения координат мышки
+    {
+        e = e || window.event;
+        if (e.pageX == null && e.clientX != null) {
+            var html = document.documentElement;
+            var body = document.body;
+            e.pageX = e.clientX + (html && html.scrollLeft || body && body.scrollLeft || 0) - (html.clientLeft || 0);
+            e.pageY = e.clientY + (html && html.scrollTop || body && body.scrollTop || 0) - (html.clientTop || 0)
+        }
+        //устанавливаем тултип на уровне мышки
+        var tool = $('.tool');
+        tool.css('left', e.pageX + 15 + r + 'px');
+        tool.css('top', e.pageY + 15 - b + 'px');
+    }
+
+    function out() {
+        document.body.removeChild(tooltips);
+    }
+
+    var MAP = $('map area');
+    MAP.hover(function () {
+        $(".tool").remove();
+    });
+
+    function over(tip)	//функция при наведении
+    {
+        $('').appendTo('body').html(name);
+        move(0, 0, 0);
+    }
+
+    // по клику работаем с фильтром
+    MAP.on('click', function (e) {
+
+        e.preventDefault();
+        var data = $(this).mouseout().data('maphilight') || {};
+        data.alwaysOn = !data.alwaysOn;
+        $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+
+        var municipality = $('#municipality');
+        var arrActive = [];
+        var count = 0;
+
+        // отключаем все активные
+        // municipality.selectMultiple('deselect_all');
+        var findSTR = $(this).attr('title');
+        var spanOfList = $('.ms-list > li > span');
+        var newSTR = '';
+        switch (findSTR) {
+            case ('Ханты-Мансийский район'):
+                newSTR = 'Ханты-Мансийск';
+                municipality.find('option').each(function () {
+                    if ($(this).text().indexOf(newSTR) !== -1) {
+                        arrActive[count] = $(this).attr('value');
+                        count++;
+                        spanOfList.each(function () {
+                            if ($(this).text().indexOf(newSTR) !== -1 && data.alwaysOn) {
+                                $(this).parent().animatescroll({
+                                    element: $(this).parent().parent()
+                                });
+                                return false;
+                            }
+                        });
+                    }
+                });
+                break;
+            case ('Сургутский район'):
+                newSTR = 'Сургут';
+                municipality.find('option').each(function () {
+                    if ($(this).text().indexOf(newSTR) !== -1 || $(this).text().indexOf('Когалым') !== -1) {
+                        arrActive[count] = $(this).attr('value');
+                        count++;
+                        spanOfList.each(function () {
+                            if ($(this).text().indexOf(newSTR) !== -1 && data.alwaysOn) {
+                                $(this).parent().animatescroll({
+                                    element: $(this).parent().parent()
+                                });
+                                return false;
+                            }
+                        });
+                    }
+                });
+                break;
+            case ('Нефтеюганский район'):
+                newSTR = 'Нефтеюганск';
+                municipality.find('option').each(function () {
+                    if ($(this).text().indexOf(newSTR) !== -1 || $(this).text().indexOf('Пыть-ях') !== -1) {
+                        arrActive[count] = $(this).attr('value');
+                        count++;
+                        spanOfList.each(function () {
+                            if ($(this).text().indexOf(newSTR) !== -1 && data.alwaysOn) {
+                                $(this).parent().animatescroll({
+                                    element: $(this).parent().parent()
+                                });
+                                return false;
+                            }
+                        });
+                    }
+                });
+                break;
+            case ('Нижневартовский район'):
+                newSTR = 'Нижневартовск';
+                municipality.find('option').each(function () {
+                    if ($(this).text().indexOf(newSTR) !== -1 || $(this).text().indexOf('Лангепас') !== -1
+                        || $(this).text().indexOf('Мегион') !== -1 || $(this).text().indexOf('Радужный') !== -1
+                        || $(this).text().indexOf('Покачи') !== -1) {
+                        arrActive[count] = $(this).attr('value');
+                        count++;
+                        spanOfList.each(function () {
+                            if ($(this).text().indexOf(newSTR) !== -1 && data.alwaysOn) {
+                                $(this).parent().animatescroll({
+                                    element: $(this).parent().parent()
+                                });
+                                return false;
+                            }
+                        });
+                    }
+                });
+                break;
+            case ('Кондинский район'):
+                newSTR = 'Урай';
+                municipality.find('option').each(function () {
+                    if ($(this).text().indexOf('Кондинский район') !== -1 || $(this).text().indexOf(newSTR) !== -1) {
+                        arrActive[count] = $(this).attr('value');
+                        count++;
+                        spanOfList.each(function () {
+                            if ($(this).text().indexOf(newSTR) !== -1 && data.alwaysOn) {
+                                $(this).parent().animatescroll({
+                                    element: $(this).parent().parent()
+                                });
+                                return false;
+                            }
+                        });
+                    }
+                });
+                break;
+            case ('Советский район'):
+                newSTR = 'Югорск';
+                municipality.find('option').each(function () {
+                    if ($(this).text().indexOf('Советский район') !== -1 || $(this).text().indexOf(newSTR) !== -1) {
+                        arrActive[count] = $(this).attr('value');
+                        count++;
+                        spanOfList.each(function () {
+                            if ($(this).text().indexOf(newSTR) !== -1 && data.alwaysOn) {
+                                $(this).parent().animatescroll({
+                                    element: $(this).parent().parent()
+                                });
+                                return false;
+                            }
+                        });
+                    }
+                });
+                break;
+            case ('Октябрьский район'):
+                newSTR = 'Нягань';
+                municipality.find('option').each(function () {
+                    if ($(this).text().indexOf('Октябрьский район') !== -1 || $(this).text().indexOf(newSTR) !== -1) {
+                        arrActive[count] = $(this).attr('value');
+                        count++;
+                        spanOfList.each(function () {
+                            if ($(this).text().indexOf(newSTR) !== -1 && data.alwaysOn) {
+                                $(this).parent().animatescroll({
+                                    element: $(this).parent().parent()
+                                });
+                                return false;
+                            }
+                        });
+                    }
+                });
+                break;
+            case ('Белоярский район'):
+                municipality.find('option').each(function () {
+                    if ($(this).text().indexOf(findSTR) !== -1) {
+                        arrActive[count] = $(this).attr('value');
+                        count++;
+                        spanOfList.each(function () {
+                            if ($(this).text().indexOf(findSTR) !== -1 && data.alwaysOn) {
+                                $(this).parent().animatescroll({
+                                    element: $(this).parent().parent()
+                                });
+                                return false;
+                            }
+                        });
+                    }
+                });
+                break;
+            case ('Березовский район'):
+                municipality.find('option').each(function () {
+                    if ($(this).text().indexOf(findSTR) !== -1) {
+                        arrActive[count] = $(this).attr('value');
+                        count++;
+                        spanOfList.each(function () {
+                            if ($(this).text().indexOf(findSTR) !== -1 && data.alwaysOn) {
+                                $(this).parent().animatescroll({
+                                    element: $(this).parent().parent()
+                                });
+                                return false;
+                            }
+                        });
+                    }
+                });
+                break;
+        }
+        municipality.selectMultiple('select', arrActive);
+    });
+
+    $('.mapq').maphilight({
+        strokeColor: '4a4639',
+        fillColor: 'daac4f',
+        fillOpacity: 0.5,
+        strokeWidth: 2
+    });
+
+    // скролим фильтр для просмотра результатов
+    //$('.timetable-block').animatescroll();
 });

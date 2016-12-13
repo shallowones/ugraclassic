@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Гастрольная карта");
 ?><?$APPLICATION->IncludeComponent(
-	"ugraweb:wrapper.component",
+	"ugraweb:map.component",
 	"",
 	Array(
 		"IBLOCK_ID" => "81",

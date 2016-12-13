@@ -29,12 +29,6 @@ if ($_REQUEST['slow_vision'] == "Y") {
 			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/fancyapps/jquery.fancybox.pack.js");
 			Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/fancyapps/jquery.fancybox.css");
 
-            Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/select-multiple/jquery.select-multiple.js");
-            Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/js/select-multiple/select-multiple.css");
-
-            Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/simple-select/index.js");
-            Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/js/simple-select/style.css");
-
 			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/main.js");
 
             CJSCore::Init(array('date'));
