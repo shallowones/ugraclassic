@@ -245,9 +245,7 @@
     transition: 0.2s;
     text-decoration: none;
 }
-.groups {
-    width: 100%;
-}
+.groups {}
 .groups__item {
     width: 226px;
     height: 200px;
@@ -268,7 +266,9 @@
 .groups__item > a {
     height: 100%;
 }
-.groups__item > a > img {}
+.groups__item > a > img {
+    width: 100%;
+}
 .groups__item > a > h2 {
     font-size: 16px;
     position: absolute;
@@ -1860,4 +1860,108 @@ input.err, textarea.err {
 .mapq {
     background-size: cover;
     background-repeat: no-repeat !important;
+}
+/* ------------------------------------------------------------------------------------------------- SUBSCRIPTION */
+.subscription-desc {
+    width: 100%;
+    line-height: 22px;
+}
+.subscription-form {
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    font-size: 13px;
+    background: #f8f8f8;
+    margin: 20px auto 0;
+    width: 320px;
+    padding: 20px 20px 1px;
+}
+.subscription-err {
+    color: #e35151;
+    margin-bottom: 20px;
+}
+.s-col {
+    margin-bottom: 20px;
+}
+.s-col > label {
+    font-weight: normal;
+    color: #7f7e7e;
+    display: block;
+    margin-bottom: 5px;
+}
+.s-col > input {
+    font-family: 'Noto Serif', serif;
+    font-size: 16px;
+    color: #272727;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 3px solid #b5b3b3;
+    width: 100%;
+    padding: 0 0 3px 2px;
+}
+.s-col > input.err {
+    border-bottom-color: #e35151;
+}
+.s-col .ms-container {
+    width: 100%;
+    margin-top: 10px;
+}
+.s-col .ms-container .ms-list {
+    height: 70px;
+}
+.s-col .ms-container .ms-selectable li.ms-elem-selectable {
+    border: none;
+    font-family: 'Noto Serif', serif;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #272727;
+    line-height: 22px;
+    position: relative;
+    padding: 5px 35px;
+}
+.s-col .ms-container .ms-selectable li.ms-hover {
+    background-color: #f8f8f8;
+    color: #272727;
+}
+.s-col .gray, .s-col .pull-right.ms-elem-selected {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: 16px;
+    height: 16px;
+}
+.s-col .gray {
+    background: url(img/select.png) no-repeat 0 0;
+    z-index: 1;
+}
+.s-col .pull-right.ms-elem-selected {
+    background: url(img/select.png) no-repeat -16px 0;
+    z-index: 2;
+}
+.subscription-form > .filter-buttons {
+    text-align: center;
+}
+.subscription-form > .filter-buttons > input[type='submit'] {
+    text-transform: uppercase;
+    color: white;
+    border: 1px solid #daac4f;
+    background: #daac4f;
+    padding: 10px 25px;
+    border-radius: 22px;
+    letter-spacing: 1px;
+    outline: none;
+}
+.subscription-form > .filter-buttons > input[type='submit']:hover {
+    color: #daac4f;
+    background: white;
+    transition: 0.2s;
+}
+@media screen and (max-width: 360px) {
+    .subscription-form {
+        width: 100%;
+    }
+    .s-col .ms-container .ms-list {
+        height: 100px;
+    }
 }
