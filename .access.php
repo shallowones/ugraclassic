@@ -1,4 +1,16 @@
 <?
+$PERM["sitemap.php"]["5"]="W";
+$PERM["index.php"]["5"]="W";
+$PERM[".top.menu.php"]["5"]="W";
+$PERM["upload"]["5"]="W";
+$PERM["news"]["5"]="W";
+$PERM["mediacenter"]["5"]="W";
+$PERM["map"]["5"]="W";
+$PERM["includes"]["5"]="W";
+$PERM["feedback"]["5"]="W";
+$PERM["events"]["5"]="W";
+$PERM["contacts"]["5"]="W";
+$PERM["about"]["5"]="W";
 $PERM["desktop_app"]["*"]="R";
 $PERM["/"]["*"]="R";
 ?>
