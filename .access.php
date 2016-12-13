@@ -1,4 +1,5 @@
 <?
+$PERM["collective2"]["6"]="W";
 $PERM["sitemap.php"]["5"]="W";
 $PERM["index.php"]["5"]="W";
 $PERM[".top.menu.php"]["5"]="W";
