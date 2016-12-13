@@ -664,7 +664,7 @@ class Services
         $findStr = '';
         if(in_array($edit_dou, $arGroups))
         {
-            $arS = \CIBlockSection::GetList([],['IBLOCK_CODE'=>'artisty_collective','CODE'=>'coll_simfon_ork'],false,['NAME'],false)->GetNext();
+            $arS = \CIBlockSection::GetList([],['IBLOCK_CODE'=>'artisty_collective','CODE'=>'coll_duh_ork'],false,['NAME'],false)->GetNext();
             $findStr = $arS['NAME'];
         }
 
