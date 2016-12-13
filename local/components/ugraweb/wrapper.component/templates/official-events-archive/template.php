@@ -119,10 +119,9 @@ $arEnum = \CIBlockPropertyEnum::GetList(
 )->GetNext();
 $GLOBALS['FLT_EVENTS_LIST']['=PROPERTY_location'] = $arEnum['ID'];
 $GLOBALS['FLT_EVENTS_LIST']['!PROPERTY_location'] = false;
-gg($GLOBALS['FLT_EVENTS_LIST']);
 ?>
 <br>
-<p><h4><a href="/events/official_events/">Предстоящие события</a></h4></p>
+<p><h4><a href="/events/official_events/">Предстоящие спецпроекты</a></h4></p>
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "events-archive",

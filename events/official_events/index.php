@@ -93,7 +93,7 @@ $APPLICATION->IncludeComponent(
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_PERMISSIONS" => "N",
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",
@@ -101,7 +101,7 @@ $APPLICATION->IncludeComponent(
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => "events-service-complex",
-		"FILTER_NAME" => "FLT_EVENTS_LIST",
+		"FILTER_NAME" => "arrFilter",
 		"FILTER_FIELD_CODE" => array(
 			0 => "",
 			1 => "",

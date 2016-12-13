@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -12,33 +12,29 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get">
-	<?foreach($arResult["ITEMS"] as $arItem):
-		if(array_key_exists("HIDDEN", $arItem)):
-			echo $arItem["INPUT"];
-		endif;
-	endforeach;?>
-	<table class="data-table" cellspacing="0" cellpadding="2">
-	<thead>
-		<tr>
-			<td colspan="2" align="center"><?=GetMessage("IBLOCK_FILTER_TITLE")?></td>
-		</tr>
-	</thead>
-	<tbody>
-		<?foreach($arResult["ITEMS"] as $arItem):?>
-			<?if(!array_key_exists("HIDDEN", $arItem)):?>
-				<tr>
-					<td valign="top"><?=$arItem["NAME"]?>:</td>
-					<td valign="top"><?=$arItem["INPUT"]?></td>
-				</tr>
-			<?endif?>
-		<?endforeach;?>
-	</tbody>
-	<tfoot>
-		<tr>
-			<td colspan="2">
-				<input type="submit" name="set_filter" value="<?=GetMessage("IBLOCK_SET_FILTER")?>" /><input type="hidden" name="set_filter" value="Y" />&nbsp;&nbsp;<input type="submit" name="del_filter" value="<?=GetMessage("IBLOCK_DEL_FILTER")?>" /></td>
-		</tr>
-	</tfoot>
-	</table>
+
+<form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" method="get" action="<? echo $arResult["FORM_ACTION"] ?>"
+      enctype="multipart/form-data" class="filter-form">
+    <div class="second-line">
+        <div class="label-name">Дата:</div>
+        <ul class="dates">
+            <li class="dates__item">
+                <input type="text" value="<? if ($_GET['date_start']) echo $_GET['date_start'] ?>" name="date_start" id="date_start" title="">
+            </li>
+            <li class="dates__item">
+                <input type="text" value="<? if ($_GET['date_end']) echo $_GET['date_end'] ?>" name="date_end" id="date_end" title="">
+            </li>
+        </ul>
+        <ul class="categories" id="months">
+            <li class="js_preset_week" data-preset="this_week">Эта неделя</li>
+            <li class="js_preset_week" data-preset="this_month">Этот месяц</li>
+            <li class="js_preset_week" data-preset="next_month">Следующий месяц</li>
+        </ul>
+    </div>
+    <div class="filter-buttons">
+        <div class="confirm">
+            <input type="submit" name="set_filter" value="Применить">
+        </div>
+        <div class="reset"><a href="javascript:void(0)">Сбросить фильтр</a></div>
+    </div>
 </form>

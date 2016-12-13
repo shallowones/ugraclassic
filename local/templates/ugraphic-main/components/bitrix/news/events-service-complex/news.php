@@ -32,7 +32,7 @@ $this->setFrameMode(true);
 );?>
 <br />
 <?endif?>
-<?if($arParams["USE_FILTER"]=="Y"):?>
+<? // фильтр переписан ниже, компонент находится только для шаблона ?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.filter",
 	"",
@@ -49,9 +49,45 @@ $this->setFrameMode(true);
 	),
 	$component
 );
+
+if (!empty($_GET['set_filter'])) {
+
+    if (!empty($_GET['date_start']) && !empty($_GET['date_end']))
+    {
+        $dateStart = trim(htmlspecialcharsEx($_GET['date_start']));
+
+        $arDateTo = explode('.', trim(htmlspecialcharsEx($_GET['date_end'])));
+        $mDateTo = mktime(0, 0, 0, intval($arDateTo[1]), intval($arDateTo[0]) + 1, intval($arDateTo[2]));
+        $dateTo = date('d.m.Y', $mDateTo);
+
+        $GLOBALS[$arParams["FILTER_NAME"]][] = [
+            'LOGIC' => 'OR',
+            // слева
+            [
+                '>=DATE_ACTIVE_FROM' => $dateStart,
+                '<=DATE_ACTIVE_FROM' => $dateTo,
+            ],
+            // справа
+            [
+                '>=DATE_ACTIVE_TO' => $dateStart,
+                '<=DATE_ACTIVE_TO' => $dateTo,
+            ],
+            // внутри
+            [
+                '<=DATE_ACTIVE_FROM' => $dateStart,
+                '>=DATE_ACTIVE_TO' => $dateTo,
+            ],
+        ];
+    }
+}
+if((MakeTimeStamp($_GET['date_end']) < MakeTimeStamp(date('d.m.Y'))) || !strlen($_GET['date_end']))
+{
+    $GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_TO'] = date('d.m.Y');
+}
+
 ?>
+
 <br />
-<?endif?>
 <?
 if($APPLICATION->GetCurDir() == '/events/official_events/')
 {
@@ -64,14 +100,11 @@ if($APPLICATION->GetCurDir() == '/events/official_events/')
         ]
     )->GetNext();
 
-    $GLOBALS['FLT_EVENTS_LIST'] = [
-        '=PROPERTY_location' => $arEnum['ID'],
-        '!PROPERTY_location' => false,
-        '>=DATE_ACTIVE_TO' => date('d.m.Y')
-    ];
+    $GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_location'] = $arEnum['ID'];
+    $GLOBALS[$arParams["FILTER_NAME"]]['!PROPERTY_location'] = false;
 }
 ?>
-<p><h4><a href="/events/official_events/archive/">Прошедшие события</a></h4></p>
+<p><h4><a href="/events/official_events/archive/">Прошедшие спецпроекты</a></h4></p>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
@@ -119,7 +152,7 @@ if($APPLICATION->GetCurDir() == '/events/official_events/')
 		"ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
 		"USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
 		"GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
-		"FILTER_NAME" => 'FLT_EVENTS_LIST',
+		"FILTER_NAME" => $arParams["FILTER_NAME"],
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
 	),
