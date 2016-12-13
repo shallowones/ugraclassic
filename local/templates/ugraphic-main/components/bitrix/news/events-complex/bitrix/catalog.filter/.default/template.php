@@ -25,6 +25,11 @@ $this->setFrameMode(true);
                 <input type="text" value="<? if ($_GET['date_end']) echo $_GET['date_end'] ?>" name="date_end" id="date_end" title="">
             </li>
         </ul>
+        <ul class="categories" id="months">
+            <li class="js_preset_week" data-preset="this_week">Эта неделя</li>
+            <li class="js_preset_week" data-preset="this_month">Этот месяц</li>
+            <li class="js_preset_week" data-preset="next_month">Следующий месяц</li>
+        </ul>
     </div>
     <div class="filter-buttons">
         <div class="confirm">

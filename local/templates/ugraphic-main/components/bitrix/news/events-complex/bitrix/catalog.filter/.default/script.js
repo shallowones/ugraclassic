@@ -8,11 +8,13 @@ $(function () {
        $.get(
            "/local/templates/ugraphic-main/components/bitrix/news/events-complex/ajax.preset.php",
            {
-               'preset': preset,
+               'preset': preset
            },
            function(data){
                var string = JSON.parse(data);
 
+               dateStart.val(string.dateStart);
+               dateEnd.val(string.dateEnd);
            }
        );
 
