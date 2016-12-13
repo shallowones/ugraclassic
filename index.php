@@ -43,6 +43,7 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
     '>=DATE_ACTIVE_TO' => date('d.m.Y'),
     '!PROPERTY_location' => $arEnum['ID']
 ];
+//--
 ?>
     <div class="content">
         <? $APPLICATION->IncludeComponent(
