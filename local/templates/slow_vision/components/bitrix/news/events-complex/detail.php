@@ -11,7 +11,30 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+$back_link = trim(htmlspecialcharsbx($_GET['back_url_arch']));
 ?>
+<? if(strlen($back_link)): ?>
+    <style>
+        .afisha-detail .afisha-detail__img img {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray; /* IE 6-9 */
+        }
+
+        .afisha-detail .afisha-detail__img img:hover {
+            -webkit-filter: none;
+            -moz-filter: none;
+            -ms-filter: none;
+            -o-filter: none;
+            filter: none;
+            filter: none; /* IE 6-9 */
+        }
+    </style>
+    <? $APPLICATION->AddChainItem('Архив афиши', '/events/archive/') ?>
+<? endif; ?>
 <?$ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"",
@@ -61,11 +84,24 @@ $this->setFrameMode(true);
 		"SHARE_HANDLERS" => $arParams["SHARE_HANDLERS"],
 		"SHARE_SHORTEN_URL_LOGIN" => $arParams["SHARE_SHORTEN_URL_LOGIN"],
 		"SHARE_SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
-		"ADD_ELEMENT_CHAIN" => (isset($arParams["ADD_ELEMENT_CHAIN"]) ? $arParams["ADD_ELEMENT_CHAIN"] : '')
+		"ADD_ELEMENT_CHAIN" => (isset($arParams["ADD_ELEMENT_CHAIN"]) ? $arParams["ADD_ELEMENT_CHAIN"] : ''),
+        "BACK_URL" => $back_link
 	),
 	$component
 );?>
-<p><a href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"]?>">Вернуться к списку</a></p>
+<br clear="all">
+<?
+if(strlen($back_link))
+{
+    $back_link = $back_link;
+}
+else
+{
+    $back_link = $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"];
+}
+?>
+
+<p><a href="<?=$back_link?>"><?=GetMessage("T_NEWS_DETAIL_BACK")?></a></p>
 <?if($arParams["USE_RATING"]=="Y" && $ElementID):?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:iblock.vote",

@@ -1,0 +1,11 @@
+.js_preset_week {
+    border-radius: 16px;
+    color: #daac4f;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Roboto Condensed",sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 11px 14px;
+    text-transform: uppercase;
+}

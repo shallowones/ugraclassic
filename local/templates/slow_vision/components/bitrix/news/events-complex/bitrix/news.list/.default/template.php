@@ -12,49 +12,53 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="afisha">
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
-	<?
-    $prev_img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>265, 'height'=>160), BX_RESIZE_IMAGE_EXACT, true);
-    if(!isset($prev_img["src"]))
-    {
-        $prev_img["src"] = SITE_TEMPLATE_PATH . '/img/no-photo-afishe.png';
-    }
-    ?>
-
     <div class="afisha__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
         <div class="afisha-info">
+            <a href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
                 <div class="afisha-desc">
-                    <a href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
-                    <h3><?echo $arItem["NAME"].'  '.$arItem["DISPLAY_PROPERTIES"]["age"]["DISPLAY_VALUE"]?></h3>
-                    </a>
-                    <ul class="afisha-w">
+                    <h3><?echo $arItem["NAME"]?>
+                        <?if(isset($arItem["DISPLAY_PROPERTIES"]["age"])):?>
+                            <?=$arItem["DISPLAY_PROPERTIES"]["age"]["DISPLAY_VALUE"]?>
+                        <?endif;?>
+                    </h3>
                         <?if(isset($arItem["ACTIVE_FROM"])):?>
-                            <?
-                            $date = ParseDateTime($arItem["ACTIVE_FROM"], FORMAT_DATETIME);
-                            $date = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
-                            ?>
-                            <li class="afisha-w__item"><span>Дата:</span> <?echo $date;?></li>
-                            <li class="afisha-w__item"><span>Время:</span> <?echo ConvertDateTime($arItem["ACTIVE_FROM"],"HH:MI");?></li>
+                            <span>Дата:</span>
+                                <? if(is_array($arItem["DISPLAY_PROPERTIES"]["date_text"])): ?>
+                                    <?=$arItem["DISPLAY_PROPERTIES"]["date_text"]["DISPLAY_VALUE"]?>
+                                <? else: ?>
+                                    <?
+                                    $date = ParseDateTime($arItem["ACTIVE_FROM"], FORMAT_DATETIME);
+                                    $date = intval($date["DD"])." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
+                                    echo $date;
+                                    ?>
+                                <? endif; ?><br>
+                            <span>Время:</span> <?echo ConvertDateTime($arItem["ACTIVE_FROM"],"HH:MI");?><br>
                         <?endif;?>
                         <?if(isset($arItem["DISPLAY_PROPERTIES"]["hall"])):?>
-                            <li class="afisha-w__item"><span>Место:</span> <?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?></li>
-                        <?endif;?>
-                    </ul>
+                            <span>Место:</span>
+                                <? if(is_array($arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"])): ?>
+                                    <?=implode(', ', $arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"])?>
+                                <? else: ?>
+                                    <?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
+                                <? endif; ?>
+                        <br><?endif;?>
                 </div>
+            </a>
             <div class="afisha-ticket">
                 <?if(isset($arItem["DISPLAY_PROPERTIES"]["cost"])):?>
                     <div class="tick">
-                        Цена билета: <?=$arItem["DISPLAY_PROPERTIES"]["cost"]["DISPLAY_VALUE"]?>
+                        <span>Цена билета:</span>
+                        <?=$arItem["DISPLAY_PROPERTIES"]["cost"]["DISPLAY_VALUE"]?>
                     </div>
                 <? endif; ?>
-                <? if(strlen(trim($arItem['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) > 0): ?>
+                <? if($arItem['DISPLAY_PROPERTIES']['buy_ticket']['VALUE'] == 'Да'): ?>
                     <div class="tick">
-                        <a href="<?=$arItem['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>">Купить билет онлайн</a>
+                        <a href="javascript:void();" onclick="kassirWidget.summon({url:'https://hm.kassir.ru/kassirwidget/ro?key=ff01bc2d-7012-9f23-e03c-cf3e49f87b30'})">Купить билет онлайн</a>
                     </div>
                 <? endif; ?>
             </div>
@@ -63,6 +67,5 @@ $this->setFrameMode(true);
 <?endforeach;?>
 
 <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
-	<?=$arResult["NAV_STRING"]?>
+	<br /><?=$arResult["NAV_STRING"]?>
 <?endif;?>
-</div>
