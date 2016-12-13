@@ -67,10 +67,11 @@ if($APPLICATION->GetCurDir() == '/events/official_events/')
     $GLOBALS['FLT_EVENTS_LIST'] = [
         '=PROPERTY_location' => $arEnum['ID'],
         '!PROPERTY_location' => false,
-        '>=DATE_ACTIVE_FROM' => date('d.m.Y')
+        '>=DATE_ACTIVE_TO' => date('d.m.Y')
     ];
 }
 ?>
+<p><h4><a href="/events/official_events/archive/">Прошедшие события</a></h4></p>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
