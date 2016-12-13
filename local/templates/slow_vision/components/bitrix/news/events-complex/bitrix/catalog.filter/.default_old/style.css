@@ -1,0 +1,90 @@
+.filter-datepicker-box {
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    color: #7f7e7e;
+    letter-spacing: 1px;
+    float: left;
+}
+
+.date-picker {
+    display: inline-block;
+    border-bottom: 3px solid #7f7e7e;
+    margin-right: 20px;
+}
+.date-picker:hover {
+    cursor: pointer;
+    border-color: #daac4f;
+    color: #daac4f;
+}
+
+.date-picker input[type="text"] {
+    background: none !important;
+    border: none !important;
+    color: #272727;
+    width: 80px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 6px;
+}
+
+.date-picker:hover input[type="text"] {
+    color: #daac4f;
+}
+
+.picker-ico {
+    width: 18px;
+    height: 13px;
+    background: url(img/calendar-icon.png) 0 0 no-repeat;
+    display: inline-block;
+}
+
+.datefilter_point {
+	float: left;
+	margin: 0 15px;
+    display: block;
+    color: #272727;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 23px;
+    font-size: 14px;
+    border-bottom: 1px solid #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+}	
+
+
+a .datefilter_point {
+	color: #daac4f;
+}
+
+a:hover > .datefilter_point {
+    border-bottom: 1px solid rgb(218, 172, 79);
+}
+
+@media (min-width: 758px) and (max-width: 1000px) {
+    .filter-datepicker-box {
+        margin-bottom: 20px;
+        float: none;
+        clear: both;
+    } 
+
+    .datefilter_point{
+        margin: 0 47px;
+    }
+    .first-datefilter {margin-left: 0;}
+    .last-datefilter {margin-right: 0;}
+}
+@media (max-width: 757px) {
+    .filter-datepicker-box {
+        margin-bottom: 20px;
+        float: none;
+        clear: both;
+    }
+
+    .datefilter_point{
+        margin: 0 18px;
+    }
+    .first-datefilter {margin-left: 0;}
+    .last-datefilter {margin-right: 0;}
+}
