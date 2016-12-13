@@ -35,47 +35,15 @@ AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\Services", "C
 AddEventHandler("subscribe", "BeforePostingSendMail", array("UW\Services", "BeforePostingSendMailHandler"));
 
 // копирование дат проведения в Афише
-//AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "CopyDatesAfisha"));
-//AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "CopyDatesAfisha"));
+AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "CopyDatesAfisha"));
+AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "CopyDatesAfisha"));
 
 // добавляем к символьному коду ID элемента (для Афиши)
-//AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "AddIdForCode"));
-//AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "AddIdForCode"));
+AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "AddIdForCode"));
+AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "AddIdForCode"));
 
-AddEventHandler("main", "OnBuildGlobalMenu", "ASDOnBuildGlobalMenu");
-function ASDOnBuildGlobalMenu(&$aGlobalMenu, &$aModuleMenu)
-{
-    global $USER;
-    $arGroups = $USER->GetUserGroupArray();
-    $edit_dou = \UW\Services::GetGroupByCode('edit_dou');
-
-    $findStr = '';
-    if(in_array($edit_dou, $arGroups))
-    {
-        $findStr = 'Духовой оркестр Югры';
-    }
-
-    if(
-        in_array($edit_dou, $arGroups)
-    )
-    {
-        foreach ($aModuleMenu as $k => $v) {
-
-            if ($v["parent_menu"] == "global_menu_content" && $v["items_id"] == "menu_iblock_/site_visit")
-            {
-                foreach ($v["items"] as $i4 => $aMenu4) {
-                    foreach ($aMenu4["items"] as $i5 => $aMenu5)
-                    {
-                        if(strpos($aMenu5['text'], $findStr) === false)
-                        {
-                            unset($aModuleMenu[$k]["items"][$i4]["items"][$i5]);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+// скрываем разделы в меню в админке
+AddEventHandler("main", "OnBuildGlobalMenu", Array("UW\Services", "ASDOnBuildGlobalMenu"));
 
 /**
  * Распечатывает массивы

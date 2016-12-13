@@ -649,4 +649,44 @@ class Services
         $arGroups = $rsGroups->Fetch();
         return  $arGroups['ID'];
     }
+
+    /**
+     * Скрывает разделы
+     * @param $aGlobalMenu
+     * @param $aModuleMenu
+     */
+    public static function ASDOnBuildGlobalMenu(&$aGlobalMenu, &$aModuleMenu)
+    {
+        global $USER;
+        $arGroups = $USER->GetUserGroupArray();
+        $edit_dou = self::GetGroupByCode('edit_dou');
+
+        $findStr = '';
+        if(in_array($edit_dou, $arGroups))
+        {
+            $arS = \CIBlockSection::GetList([],['IBLOCK_CODE'=>'artisty_collective','CODE'=>'coll_simfon_ork'],false,['NAME'],false)->GetNext();
+            $findStr = $arS['NAME'];
+        }
+
+        if(
+        in_array($edit_dou, $arGroups)
+        )
+        {
+            foreach ($aModuleMenu as $k => $v) {
+
+                if ($v["parent_menu"] == "global_menu_content" && $v["items_id"] == "menu_iblock_/site_visit")
+                {
+                    foreach ($v["items"] as $i4 => $aMenu4) {
+                        foreach ($aMenu4["items"] as $i5 => $aMenu5)
+                        {
+                            if(strpos($aMenu5['text'], $findStr) === false)
+                            {
+                                unset($aModuleMenu[$k]["items"][$i4]["items"][$i5]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
