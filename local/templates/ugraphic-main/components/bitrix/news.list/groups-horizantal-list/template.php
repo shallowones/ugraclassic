@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 
-<div class="groups" style="width: 1313px; margin: 0 auto;padding: 20px 35px;">
+<div class="groups wrapper" style="padding-bottom: 30px">
     <h1><? echo $arResult['NAME'] ?></h1>
     <? foreach ($arResult["ITEMS"] as $arItem): ?>
         <?

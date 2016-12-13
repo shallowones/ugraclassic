@@ -269,6 +269,7 @@ $(document).ready(function () {
 
     // мульти-селект
     $('#municipality').selectMultiple();
+    $('#rubric').selectMultiple();
 
     $('.select').on('click', '.placeholder', function () {
         var parent = $(this).closest('.select');
