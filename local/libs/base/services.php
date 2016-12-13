@@ -637,4 +637,16 @@ class Services
             self::$handlerCodeDisallow = false;
         }
     }
+
+    /**
+     * Возвращает группу по символьному идентификатору
+     * @param $code
+     * @return mixed
+     */
+    public static function GetGroupByCode ($code)
+    {
+        $rsGroups = \CGroup::GetList ($by = "c_sort", $order = "asc", Array ("STRING_ID" => $code));
+        $arGroups = $rsGroups->Fetch();
+        return  $arGroups['ID'];
+    }
 }
