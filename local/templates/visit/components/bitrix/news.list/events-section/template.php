@@ -53,10 +53,6 @@ $this->setFrameMode(true);
 					</div>
 				<?endif;?>
 
-
-			
-
-
 			<div class="info-1">
 				<div class="afisha-date">
 					<?if(isset($arItem["DISPLAY_PROPERTIES"]["date"])):?>
@@ -99,11 +95,15 @@ $this->setFrameMode(true);
 					
 					<?endif;?>
 
-					<?if(isset($arItem["DISPLAY_PROPERTIES"]["hall"])):?>
-						<div class="hall">
-							<?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
-						</div>
-					<?endif;?>
+                    <div class="hall">
+                        <? echo $arItem['PROPERTIES']['municipality']['VALUE']; ?>
+                        <? if ($arItem['PROPERTIES']['locality']['VALUE']):
+                            echo ', ' . $arItem['PROPERTIES']['locality']['VALUE'];
+                        endif; ?>
+                        <? if ($arItem['DISPLAY_PROPERTIES']['hall']['VALUE']):
+                            echo ', ' . $arItem['DISPLAY_PROPERTIES']['hall']['VALUE'];
+                        endif; ?>
+                    </div>
 
 				</div>
 

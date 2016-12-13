@@ -139,6 +139,11 @@ $(document).ready(function () {
             var data = $(this).mouseout().data('maphilight') || {};
             data.alwaysOn = false;
             $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+
+            $(this).removeAttr('data-selected');
+            $('.map-map').find('input[type=hidden]').each(function () {
+                $(this).remove();
+            });
         });
 
         $('#public-methods').selectMultiple('deselect_all');

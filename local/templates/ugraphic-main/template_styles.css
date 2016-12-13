@@ -993,6 +993,9 @@ a:hover > .soc-vk, a:hover > .soc-insta {
     {
         padding-left: 60px;
     }
+    .tours > .ev-map {
+        margin-left: 30px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1000px) {

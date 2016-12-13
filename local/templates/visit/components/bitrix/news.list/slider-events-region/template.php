@@ -65,9 +65,9 @@ $this->setFrameMode(true);
 
                         <div class="events-hall-block">
                             <div class="events-hall">
-                            <? echo str_replace(' ', '', $arItem['PROPERTIES']['municipality']['VALUE']); ?>
+                            <? echo $arItem['PROPERTIES']['municipality']['VALUE']; ?>
                             <? if ($arItem['PROPERTIES']['locality']['VALUE']):
-                                echo ', ' . $arItem['PROPERTIES']['locality']['VALUE'] . ', ';
+                                echo ', ' . $arItem['PROPERTIES']['locality']['VALUE'];
                             endif; ?>
                             <? if ($arItem['DISPLAY_PROPERTIES']['hall']['VALUE']):
                                 echo ', ' . $arItem['DISPLAY_PROPERTIES']['hall']['VALUE'];

@@ -76,7 +76,7 @@ $this->setFrameMode(true);
 						<span>Место проведения:</span>
                         <? echo $arResult['PROPERTIES']['municipality']['VALUE']; ?>
                         <? if ($arResult['PROPERTIES']['locality']['VALUE']):
-                            echo ', ' . $arResult['PROPERTIES']['locality']['VALUE'] . ', ';
+                            echo ', ' . $arResult['PROPERTIES']['locality']['VALUE'];
                         endif; ?>
                         <? if ($arResult['DISPLAY_PROPERTIES']['hall']['VALUE']):
                             echo ', ' . $arResult['DISPLAY_PROPERTIES']['hall']['VALUE'];
