@@ -35,12 +35,12 @@ AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\Services", "C
 AddEventHandler("subscribe", "BeforePostingSendMail", array("UW\Services", "BeforePostingSendMailHandler"));
 
 // копирование дат проведения в Афише
-AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "CopyDatesAfisha"));
-AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "CopyDatesAfisha"));
+//AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "CopyDatesAfisha"));
+//AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "CopyDatesAfisha"));
 
 // добавляем к символьному коду ID элемента (для Афиши)
-AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "AddIdForCode"));
-AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "AddIdForCode"));
+//AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "AddIdForCode"));
+//AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "AddIdForCode"));
 
 /**
  * Распечатывает массивы
