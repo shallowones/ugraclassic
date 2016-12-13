@@ -56,13 +56,33 @@ else if($arParams["USE_FILTER"]=="Y"):*/
 	$component
 );
 if (!empty($_GET['set_filter'])) {
-    if (!empty($_GET['date_start'])) {
-        $GLOBALS[$arParams["FILTER_NAME"]]['>=DATE_ACTIVE_FROM'] = trim(htmlspecialcharsEx($_GET['date_start']));
-    }
-    if (!empty($_GET['date_end'])) {
+
+    if (!empty($_GET['date_start']) && !empty($_GET['date_end']))
+    {
+        $dateStart = trim(htmlspecialcharsEx($_GET['date_start']));
+
         $arDateTo = explode('.', trim(htmlspecialcharsEx($_GET['date_end'])));
-        $mDateTo = mktime(0,0,0, intval($arDateTo[1]),intval($arDateTo[0])+1,intval($arDateTo[2]));
-        $GLOBALS[$arParams["FILTER_NAME"]]['<=DATE_ACTIVE_FROM'] = date('d.m.Y', $mDateTo);
+        $mDateTo = mktime(0, 0, 0, intval($arDateTo[1]), intval($arDateTo[0]) + 1, intval($arDateTo[2]));
+        $dateTo = date('d.m.Y', $mDateTo);
+
+        $GLOBALS[$arParams["FILTER_NAME"]][] = [
+            'LOGIC' => 'OR',
+            // слева
+            [
+                '>=DATE_ACTIVE_FROM' => $dateStart,
+                '<=DATE_ACTIVE_FROM' => $dateTo,
+            ],
+            // справа
+            [
+                '>=DATE_ACTIVE_TO' => $dateStart,
+                '<=DATE_ACTIVE_TO' => $dateTo,
+            ],
+            // внутри
+            [
+                '<=DATE_ACTIVE_FROM' => $dateStart,
+                '>=DATE_ACTIVE_TO' => $dateTo,
+            ],
+        ];
     }
 }
 if((MakeTimeStamp($_GET['date_end']) < MakeTimeStamp(date('d.m.Y'))) || !strlen($_GET['date_end']))
@@ -79,8 +99,9 @@ $arEnum = \CIBlockPropertyEnum::GetList(
 )->GetNext();
 $GLOBALS[$arParams["FILTER_NAME"]]['!PROPERTY_location'] = $arEnum['ID'];
 ?>
-<br />
 <?//endif?>
+<br>
+<p><h4><a href="/events/archive/">Прошедшие события</a></h4></p>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",

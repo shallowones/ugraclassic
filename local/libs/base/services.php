@@ -4,6 +4,7 @@ namespace UW;
 class Services
 {
     protected static $handlerDisallow = false;
+    protected static $handlerCodeDisallow = false;
 
     /**
      * Получат массив URL
@@ -605,6 +606,35 @@ class Services
             self::$handlerDisallow = false;
 
             //die();
+        }
+    }
+
+    /**
+     * Добавляем к символьному коду ID элемента
+     * @param $arFields
+     */
+    function AddIdForCode(&$arFields)
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+        if($arFields['IBLOCK_ID'] == \CIBlock::GetList([],['CODE'=>'events'])->GetNext()['ID'])
+        {
+            if (self::$handlerCodeDisallow)
+                return;
+
+            self::$handlerCodeDisallow = true;
+
+            if(stripos($arFields['CODE'], $arFields['ID']) === false)
+            {
+                $obEl = new \CIBlockElement;
+                $obEl->Update(
+                    $arFields['ID'],
+                    [
+                        'CODE' => $arFields['CODE'] . '-' . $arFields['ID']
+                    ]
+                );
+            }
+
+            self::$handlerCodeDisallow = false;
         }
     }
 }

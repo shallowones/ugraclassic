@@ -43,6 +43,7 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
             6 => "sub_header",
             7 => "info_reserv_ticket",
             8 => "date_text",
+            9 => "buy_ticket"
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -77,6 +78,7 @@ $ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events");
 			4 => "cost",
 			5 => "link_kassir",
             6 => "date_text",
+            7 => "buy_ticket"
 		),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",

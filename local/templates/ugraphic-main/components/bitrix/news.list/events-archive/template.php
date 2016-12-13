@@ -77,9 +77,9 @@ $this->setFrameMode(true);
                         <div class="tick-2"><?=$arItem["DISPLAY_PROPERTIES"]["cost"]["DISPLAY_VALUE"]?></div>
                     </div>
                 <? endif; ?>
-                <? if($arItem['DISPLAY_PROPERTIES']['buy_ticket']['VALUE'] == 'Да'): ?>
+                <? if(strlen(trim($arItem['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) > 0): ?>
                     <div class="tick">
-                        <a href="javascript:void();" onclick="kassirWidget.summon({url:'https://hm.kassir.ru/kassirwidget/ro?key=ff01bc2d-7012-9f23-e03c-cf3e49f87b30'})">Купить билет онлайн</a>
+                        <a href="<?=$arItem['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>">Купить билет онлайн</a>
                     </div>
                 <? endif; ?>
             </div>
