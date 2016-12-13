@@ -7,6 +7,10 @@
         <div class="nav-icon"></div>
     </a>
 
+
+    <div class="mobile-menu">
+
+        <div class="conts-hidden"></div>
 <ul class="top-menu" id="top-menu-1">
 <?
 $previousLevel = 0;
@@ -57,8 +61,10 @@ foreach($arResult as $arItem):?>
 <?endif?>
 
 </ul>
-<div class="menu-clear-left"></div>
+<?/*<div class="menu-clear-left"></div>
                 <ul class="t-menu"></ul>
-                <div class="menu-clear-left"></div>
+                <div class="menu-clear-left"></div>*/?>
+    </div>
 </nav>
+
 <?endif?>

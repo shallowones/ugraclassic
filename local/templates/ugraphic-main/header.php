@@ -30,6 +30,9 @@ if ($_REQUEST['slow_vision'] == "Y") {
 			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/fancyapps/jquery.fancybox.pack.js");
 			Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/fancyapps/jquery.fancybox.css");
 
+            Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/select-multiple/jquery.select-multiple.js");
+            Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/js/select-multiple/select-multiple.css");
+
 			Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/main.js");
 
             CJSCore::Init(array('date'));
@@ -79,6 +82,15 @@ if ($_REQUEST['slow_vision'] == "Y") {
                             <div class="conts__item">
                                 <div class="dsc">Касса:</div>
                                 <div class="nmb">8 3467 <span>325-550</span></div>
+                            </div>
+                            <div class="conts__item soc">
+                                <div class="dsc">Соцсети:</div>
+                                <a href="https://vk.com/club8121061">
+                                    <div class="soc-vk"></div>
+                                </a>
+                                <a href="https://www.instagram.com/explore/locations/217530984/">
+                                    <div class="soc-insta"></div>
+                                </a>
                             </div>
                         </div>
 					</div>
@@ -173,7 +185,6 @@ if ($_REQUEST['slow_vision'] == "Y") {
 			</div><!-- .menu-head -->
 
 		</div><!-- #header -->
-        <div class="conts-hidden"></div>
 
 		<?if ($APPLICATION->GetCurPage() != "/index.php"):?>
 			<div class="main-container"> 

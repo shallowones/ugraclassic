@@ -193,7 +193,7 @@ div.menu-clear-left
 }
 
 
-@media (max-width: 1000px) and (min-width: 758px) {
+@media (max-width: 1000px) and (min-width: 768px) {
 	.top-menu li a.root-item {
 		padding: 16px 19px 17px 19px;
 	}
@@ -227,7 +227,7 @@ div.menu-clear-left
 
 
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
 	nav {
 		height: auto;
 	}
@@ -285,7 +285,7 @@ div.menu-clear-left
 	}
 
 	.top-menu {
-		top: 115px;
+		/*top: 115px;*/
 		background: #fff;
 		z-index: 100;
 		position: relative;
@@ -388,8 +388,9 @@ div.menu-clear-left
 	}
 
 	nav a#pull {
-		width: 32px;
-		float: left;
+		/*width: 32px;
+		float: left;*/
+		top: -57px;
 	}
 
 

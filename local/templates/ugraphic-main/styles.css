@@ -631,7 +631,7 @@ p.unmar {
     text-decoration: none;
 }
 
-@media (max-width: 757px) {
+@media (max-width: 768px) {
     .news-complex .news-item {
         margin-bottom: 20px;
         padding-bottom: 15px;
