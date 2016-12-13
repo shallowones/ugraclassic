@@ -35,6 +35,11 @@ $this->setFrameMode(true);
                                 <div class="age"><? echo $arItem['PROPERTIES']['age']['VALUE'] ?></div>
                             <? endif; ?>
                         </div>
+                        <? if (!empty($arItem['PROPERTIES']['hall']['VALUE'])): ?>
+                            <div class="t-desc" style="margin: 10px 20px">
+                                <div class="d-place"><? echo $arItem['PROPERTIES']['hall']['VALUE'] ?></div>
+                            </div>
+                        <? endif; ?>
                     </a>
                 </li>
             <? endforeach; ?>

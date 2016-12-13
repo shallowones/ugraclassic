@@ -72,12 +72,16 @@ $this->setFrameMode(true);
 					
 				<?endif;?>
 
-
-				<?if(isset($arResult["DISPLAY_PROPERTIES"]["hall"])):?>
 					<div class="afisha-date">
-						<span>Место проведения:</span><?=$arResult["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
+						<span>Место проведения:</span>
+                        <? echo $arResult['PROPERTIES']['municipality']['VALUE']; ?>
+                        <? if ($arResult['PROPERTIES']['locality']['VALUE']):
+                            echo ', ' . $arResult['PROPERTIES']['locality']['VALUE'] . ', ';
+                        endif; ?>
+                        <? if ($arResult['DISPLAY_PROPERTIES']['hall']['VALUE']):
+                            echo ', ' . $arResult['DISPLAY_PROPERTIES']['hall']['VALUE'];
+                        endif; ?>
 					</div>
-				<?endif;?>
 
 				<?if(isset($arResult["DISPLAY_PROPERTIES"]["duration"])):?>
 					<div class="afisha-date">

@@ -63,13 +63,17 @@ $this->setFrameMode(true);
 							</div>
 						<?endif;?>
 
-						<?if(is_array($arItem["DISPLAY_PROPERTIES"]["hall"])):?>
-							<div class="events-hall-block">
-							<div class="events-hall">
-								<?=$arItem["DISPLAY_PROPERTIES"]["hall"]["DISPLAY_VALUE"]?>
-							</div>
-							</div>
-						<?endif;?>
+                        <div class="events-hall-block">
+                            <div class="events-hall">
+                            <? echo str_replace(' ', '', $arItem['PROPERTIES']['municipality']['VALUE']); ?>
+                            <? if ($arItem['PROPERTIES']['locality']['VALUE']):
+                                echo ', ' . $arItem['PROPERTIES']['locality']['VALUE'] . ', ';
+                            endif; ?>
+                            <? if ($arItem['DISPLAY_PROPERTIES']['hall']['VALUE']):
+                                echo ', ' . $arItem['DISPLAY_PROPERTIES']['hall']['VALUE'];
+                            endif; ?>
+                            </div>
+                        </div>
 
 
 						<?if(is_array($arItem["DISPLAY_PROPERTIES"]["age"])):?>

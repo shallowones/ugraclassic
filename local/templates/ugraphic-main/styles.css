@@ -938,7 +938,7 @@ p.unmar {
     justify-content: space-between;
     align-items: center;
     color: #7f7e7e;
-    margin: 25px 20px;
+    margin: 25px 20px 10px;
 }
 .d-place {
     width: 85%;
