@@ -64,12 +64,10 @@
 
 .afisha-detail .afisha-age {
 	padding: 5px 0 0 0 !important;
-    border: 1px solid #daac4f;
     border-radius: 30px;
     width: 26px !important;
     text-align: center;
     height: 26px !important;
-    color: #daac4f !important;
     font-size: 11px;
     font-family: Arial;
 }

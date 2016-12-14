@@ -665,8 +665,6 @@ h1 {
     padding-top: 30px;
     width: 100%;
     height: 90px;
-    border-bottom: 10px solid #333;
-    background: #272727;
     color: #fff;
     font-size: 14px;
     font-family: Arial;
@@ -757,7 +755,6 @@ h1 {
 
     .menu-head {
         position: initial;
-        background: #fff;
         height: initial;
         padding-bottom: 20px;
     }
