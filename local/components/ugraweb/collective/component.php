@@ -12,6 +12,7 @@ $arDefaultUrlTemplates404 = array(
     "news_detail" => "#COLL_CODE#/news/#ELEMENT_ID#/",
     "control_detail" => "#COLL_CODE#/o-nas/control/#ELEMENT_ID#/",
     "afisha" => "#COLL_CODE#/afisha/",
+    "afisha_archive" => "#COLL_CODE#/afisha_archive/",
     "afisha_detail" => "#COLL_CODE#/afisha/#ELEMENT_ID#/",
     "search" => "#COLL_CODE#/search/",
     "o_nas" => "#COLL_CODE#/o-nas/",

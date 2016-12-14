@@ -39,11 +39,15 @@ $this->setFrameMode(true);
 	<div class="afisha-info-box" style="float:left;">
 		<div class="afisha-info">
 			<div class="info-1">
-				<?if(isset($arResult["DISPLAY_PROPERTIES"]["date"])):?>
 					
 					<div class="afisha-date">
 						<span>Дата мероприятия:</span><?
-						$date = ParseDateTime($arResult["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME);
+						if ($_GET['archive'] == 'Y') {
+							$date = ParseDateTime($arResult["ACTIVE_TO"], FORMAT_DATETIME);
+						}else{
+							$date = ParseDateTime($arResult["ACTIVE_FROM"], FORMAT_DATETIME);
+
+						}
 						$date1 = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
 						if (strlen($date["YYYY"])==4){
 								$date2 =$date["YYYY"];
@@ -69,8 +73,6 @@ $this->setFrameMode(true);
 
 						}
 					?>
-					
-				<?endif;?>
 
 					<div class="afisha-date">
 						<span>Место проведения:</span>

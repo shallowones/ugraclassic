@@ -21,11 +21,19 @@ $this->setFrameMode(true);
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
-	<? $prev_img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>700, 'height'=>600), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
+	<?
+
+	if($_GET['archive']=='Y'){$img = CFile::GetPath($arItem["PREVIEW_PICTURE"]);}
+	echo $img;
+	$prev_img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>700, 'height'=>600), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+	$prev_img = CFile::ResizeImageGet($img, array('width'=>700, 'height'=>600), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+	?>
 
 	<div class="afisha-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
-				<a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img
+
+				<a href="<?if($arParams["ARCHIVE"]){echo $arItem["DETAIL_PAGE_URL"].'?archive=Y';}else{echo $arItem["DETAIL_PAGE_URL"];}?>">
+					<img
 						class="preview-picture"
 						border="0"
 						src="<?=$prev_img["src"]?>"
@@ -38,7 +46,7 @@ $this->setFrameMode(true);
 		<div class="afisha-info">
 			<?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
 				<div class="afisha-name">
-					<a href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
+					<a href="<?if($arParams["ARCHIVE"]){echo $arItem["DETAIL_PAGE_URL"].'?archive=Y';}else{echo $arItem["DETAIL_PAGE_URL"];}?>">
 						<?echo $arItem["NAME"]?>
 					</a>
 				</div>
@@ -55,11 +63,13 @@ $this->setFrameMode(true);
 
 			<div class="info-1">
 				<div class="afisha-date">
-					<?if(isset($arItem["DISPLAY_PROPERTIES"]["date"])):?>
-					
+					<?if ($arParams['ARCHIVE'] == 'Y') {
+						$date = ParseDateTime($arItem["ACTIVE_TO"], FORMAT_DATETIME);
+					}else{
+						$date = ParseDateTime($arItem["ACTIVE_FROM"], FORMAT_DATETIME);
+					}?>
 						
 						<?
-						$date = ParseDateTime($arItem["DISPLAY_PROPERTIES"]["date"]["DISPLAY_VALUE"], FORMAT_DATETIME);
 						$date2 = $date["DD"]." ".ToLower(GetMessage("MONTH_".intval($date["MM"])."_S"));
 						echo "<div class='ddmm'>";
 						echo $date2;
@@ -90,10 +100,6 @@ $this->setFrameMode(true);
 							echo "</div>";
 						}
 						?>
-
-
-					
-					<?endif;?>
 
                     <div class="hall">
                         <? echo $arItem['PROPERTIES']['municipality']['VALUE']; ?>
