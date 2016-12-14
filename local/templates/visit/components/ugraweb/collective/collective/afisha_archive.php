@@ -6,6 +6,7 @@ $sectionEventsArchive    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL
 $sectionEventsNew    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/";
 
 $APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
+$APPLICATION->AddChainItem('Афиша', "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/");
 $APPLICATION->AddChainItem("Архив афиши");
 ?>
     <h4><a href="<?=$sectionEventsNew?>">Предстоящие события</a></h4><br>
@@ -90,4 +91,6 @@ $APPLICATION->IncludeComponent(
     array(
         "ACTIVE_COMPONENT" => "Y"
     )
-);?>
+);
+
+$APPLICATION->SetTitle("Архив афиши");?>
