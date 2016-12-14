@@ -55,7 +55,7 @@ $this->setFrameMode(true);
         Все новости
     </div>
 </a>
-<a href="#" class="all-tape-news">
+<a href="/news/subscribe/" class="all-tape-news">
     <div class="all">
         Подписаться
     </div>
