@@ -1,6 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?// form?>
-
+	<div class="subscription-desc">
+		После заполнения формы на указанный Вами адрес электронной почты придет письмо с подтверждением подписки.
+	</div>
 <?if(
     ($_SESSION['SEND_SUBSCRIBE_CONFIRM'])
 ):?>
@@ -17,26 +19,38 @@
 	<?endif;?>
 
 
-	<?// Вывод ошибок, если есть
-	if (count($arResult["Error"]) > 0): ?>
-		<p style="color: red;"><? echo implode("<br />", $arResult["Error"]); ?></p>
-	<? endif; ?>
+
 
 	<?// Вывод формы для подписки?>
-	<form action="<?=POST_FORM_ACTION_URI?>" method="post">
-		E-MAIL:<br />
-		<input type="text" size="30" name="subscribe-email" value="<?=$arResult["subscribe-email"]?>"><br />
-        <br />
-        <p>РУБРИКИ:</p>
-        <? foreach ($arResult["RUBRIC_LIST"] as $arRubric): ?>
-            <input
-                    type="checkbox"
-                    name="subscribe-rubric[]"
-                    value="<?=$arRubric['ID']?>"
-                    <? if(in_array($arRubric['ID'], $arResult["'subscribe-rubric"])) echo 'checked'; ?>
-            > <?=$arRubric['NAME']?><br />
-        <? endforeach; ?>
-		<input style="margin-top:10px;" type="submit" name="submit" value="Подписаться">
+	<form action="<?=POST_FORM_ACTION_URI?>" method="post" class="subscription-form"><?// Вывод ошибок, если есть
+		if (count($arResult["Error"]) > 0): ?>
+			<div class="subscription-err"><? echo implode("<br />", $arResult["Error"]); ?></div>
+		<? endif; ?>
+		<div class="s-col">
+			<label for="email">E-mail: <span class="req">*</span></label>
+			<input type="text" size="30" <?if(strpos($arResult["Error"][0], 'E-MAIL')){?>class="err"<?}?>name="subscribe-email" value="<?=$arResult["subscribe-email"]?>">
+		</div>
+		<div class="s-col">
+			<label for="rubric">Рубрики: <span class="req">*</span></label>
+			<select name="subscribe-rubric[]" id="rubric" multiple>
+	<? foreach ($arResult["RUBRIC_LIST"] as $arRubric){ ?>
+				<option value="<?=$arRubric['ID']?>" <? if(in_array($arRubric['ID'], $arResult["'subscribe-rubric"])) echo 'selected="selected"'; ?>
+						><?=$arRubric['NAME']?></option>
+		<?}?>
+			</select>
+		</div>
+
+<!--		<div class="s-col">-->
+<!--			<label for="rubric">Рубрики: <span class="req">*</span></label>-->
+<!--        --><?// foreach ($arResult["RUBRIC_LIST"] as $arRubric): ?>
+<!--            <input type="checkbox" name="subscribe-rubric[]" value="--><?//=$arRubric['ID']?><!--"-->
+<!--				--><?// if(in_array($arRubric['ID'], $arResult["'subscribe-rubric"])) echo 'checked'; ?>
+<!--            > --><?//=$arRubric['NAME']?><!--<br />-->
+<!--        --><?// endforeach; ?>
+<!--			</div>-->
+		<div class="filter-buttons">
+			<input type="submit" name="submit" value="Подписаться">
+		</div>
 	</form>
 	
 <?endif?>
