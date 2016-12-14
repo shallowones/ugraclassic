@@ -36,10 +36,17 @@ $(document).ready(function () {
             $(this).addClass('cat-active');
             $(this).append(input);
         } else if (parentID == 'months') {
+            var r = new Date();
+            var rmonth = r.getMonth() + 1;
+            var rday = r.getDate() - 1;
             dateStart.val('01.' + value);
             var arDate = value.split('.');
             countDaysOfMonth = new Date().daysInMonth(arDate[1], arDate[0]);
-            dateEnd.val(countDaysOfMonth + '.' + value);
+            if (arDate[0] == rmonth){
+                dateEnd.val(rday + '.' + value);
+            }else {
+                dateEnd.val(countDaysOfMonth + '.' + value);
+            }
         } else if (parentID == 'days') {
             var date = new Date(),
                 day = date.getDate(),
