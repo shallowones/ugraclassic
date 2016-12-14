@@ -1,20 +1,28 @@
+
 #header {
-    background: #38817a none repeat scroll 0 0;
+    background: #227fbc;
     height: 120px;
     position: relative;
     width: 100%;
 }
 
-.logo
-{
-    width: 241px;
-    height: 59px;
-    top: 13px;
+@font-face {
+    font-family: 'FiraSans'; /* Имя шрифта */
+    src: url(font/FiraSans-BoldItalic.otf); /* Путь к файлу со шрифтом */
+}
+
+.logo {
+    width: 413px;
+    height: 62px;
+    top: 16px;
     position: absolute;
     margin: 0 auto;
     left: 0;
     right: 0;
     z-index: 1;
+    font-family: 'FiraSans';
+    font-size: 52px;
+    color: #fff;
 }
 
 .head-info .social div {
@@ -59,7 +67,6 @@
     position: absolute;
     bottom: 11px;
     width: 100%;
-//height: 22px;
 }
 
 /* ----------------------------------------------------------------------------------------------------- ЦВЕТ КНОПОК */
@@ -69,19 +76,19 @@
 }
 
 .events-slider-region .all-news:hover {
-    color: #2e353a !important;
-    border: 2px solid #2e353a;
+    color: #227fbc !important;
+    border: 2px solid #227fbc;
     background: transparent;
 }
 
 .news-index .all-news {
-    border: 2px solid #aad0c8;
-    color: #aad0c8;
+    border: 2px solid #fff;
+    color: #fff;
 }
 
 .news-index .all-news:hover {
-    color: #2e353a !important;
-    border: 2px solid #2e353a;
+    color: #227fbc !important;
+    border: 2px solid #227fbc;
     background: transparent;
 }
 
@@ -102,12 +109,12 @@
 }
 
 .footer-ugraweb > a {
-    color: #aad0c8;
+    color: #fff;
     font-weight: bold;
 }
 
 .footer-ugraweb > a:hover {
-    color: #aad0c8;
+    color: #fff;
 }
 
 /*----------------------------------------------------------------------------------------- СТИЛИ С КОМПОНЕНТА MENU */
@@ -139,7 +146,7 @@
 
 /*Root items*/
 #top-menu li a.root-item {
-    color:#c0d2d0;
+    color: #bcd2e6;
 }
 
 /*Root menu selected*/
@@ -200,7 +207,7 @@
     z-index:500;
     height:auto;
     width: 160px;
-    background: #38817a url(img/menu-ul-top.png) no-repeat center top;
+    background: #227fbc url(img/menu-ul-top.png) no-repeat center top;
     padding-top:7px;
     margin-left: -2.2%;
 }
@@ -212,7 +219,7 @@
 {
     width:100%;
     padding: 0 25px;
-    background: #2b6963;
+    background: #236d9e;
     padding-bottom: 9px;
     line-height: 22px;
 }
@@ -248,7 +255,7 @@
 #top-menu li:hover li:hover li:hover li:hover li:hover li a,
 #top-menu li.jshover li.jshover li.jshover li.jshover li.jshover li a
 {
-    color:#c0d2d0;
+    color: #fff;
 }
 
 
@@ -309,9 +316,6 @@ div.menu-clear-left
 {
     clear:left;
 }
-
-
-
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -352,7 +356,7 @@ nav a {
     text-align: left;
 }
 nav li a {
-    color:#aeb2b5;
+    color:#fff;
 }
 nav li:last-child a {
 
@@ -433,7 +437,7 @@ nav a#pull {
 
     #top-menu {
         top: 80px;
-        background: #2b6963;
+        background: #227fbc;
         z-index: 100;
         position: relative;
         padding-bottom: 10px;
@@ -479,13 +483,13 @@ nav a#pull {
 
     /*Root items*/
     #top-menu li a.root-item {
-        color: #c0d2d0;
+        color: #fff;
     }
 
     /*Root menu selected*/
     #top-menu li a.root-item-selected {
         color:#fff;
-        background: #154c47;
+        background: #227fbc;
         font-weight:bold;
     }
 
@@ -550,8 +554,8 @@ nav a#pull {
     height: 40px;
     padding: 6px 12px 7px 12px;
     line-height: 1.42857143;
-    color: #bfcdcc;
-    background: #356f69;
+    color: #a7c5d8;
+    background: #236d9e;
     border: 0;
     border-right: none;
     outline: none;
@@ -574,7 +578,7 @@ nav a#pull {
     vertical-align: middle;
     display: table-cell;
     border: 0;
-    background: #356f69;
+    background: #236d9e;
     border-radius: 30px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -589,7 +593,7 @@ nav a#pull {
     padding: 4px 12px 5px 12px;
     font-size: 16px;
     line-height: 1.42857143;
-    color: #bfcdcc;
+    color: #a7c5d8;
     background: initial !important;
     outline: none !important;
 }
@@ -672,8 +676,8 @@ div.title-search-result td.title-search-price span {
 span.mobile{
     display: none;
 }
-.bx-form-control:focus ~ .bx-input-group-btn .fa-search {color: #36454f;}
-.bx-form-control:focus ~ .mobile .fa-search {color: #36454f}
+.bx-form-control:focus ~ .bx-input-group-btn .fa-search {color: #236d9e;}
+.bx-form-control:focus ~ .mobile .fa-search {color: #236d9e}
 
 .bx-form-control:focus {
     background: #fff !important;
@@ -683,9 +687,18 @@ span.mobile{
     background: #fff !important;
 }
 
-@media (max-width: 757px){
+@media (max-width: 1000px) and (min-width: 758px) {
+    .logo {
+        zoom: 0.6;
+        top: 40px;
+    }
+    .bx-searchtitle .bx-input-group {
+        width: 174px;
+        float: right;
+    }
+}
 
-
+@media (max-width: 757px) {
     .bx-searchtitle .bx-input-group-btn{display: none;}
     input.mobile{display: none !important;}
     .bx-searchtitle span.mobile{
@@ -704,7 +717,7 @@ span.mobile{
     }
     .bx-searchtitle span.mobile .fa{
         font-size: 20px;
-        color: #afcdca;
+        color: #7f7e7e;
     }
     .bx-searchtitle span.mobile i{
         position: relative;
@@ -718,6 +731,10 @@ span.mobile{
         border-radius: 30px;
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
+    }
+
+    .bx-searchtitle .bx-input-group {
+        border: none;
     }
 
     .bx-form-control:focus ~ .bx-searchtitle span.mobile i {
@@ -734,8 +751,9 @@ span.mobile{
         right: 19px;
         top: 1px;
     }
+
     .bx-searchtitle .bx-input-group .bx-form-control {
-        background: #333f47;
+        background: #fff;
     }
     .bx-searchtitle .bx-input-group .bx-form-control:focus ~ .bx-searchtitle span.mobile {
         background: #fff;
@@ -743,17 +761,16 @@ span.mobile{
 
     .bx-searchtitle span.mobile i {
         background: initial;
+        z-index: 100;
     }
-}
-@media screen and (max-width: 400px){
     .logo {
-        background-size: 150px !important;
-        background-position: 43px !important;
+        zoom: 0.5;
+        top: 70px;
     }
 }
 #footer {
-    border-bottom: 10px solid #2e353a;
-    background: #2e353a;
+    border-bottom: 10px solid #227fbc;
+    background: #227fbc;
 }
 /*-------------------------------------------------------------------------------- СТИЛИ С КОМПОНЕНТА SEARCH.TITLE */
 /* ---------------------------------------------------------------------------------------------------------------- */
@@ -761,7 +778,7 @@ span.mobile{
 
 /* -------------------------------------------------------------------------------- СТИЛИ БЛОКА МЕРОПРИЯТИЙ И ФОТО НА ГЛАВНОЙ */
 .events-block {
-    background: #fff9ed none repeat scroll 0 0;
+    background: #edf8ff none repeat scroll 0 0;
     padding-bottom: 40px;
     padding-top: 42px;
     width: 100%;
@@ -773,7 +790,7 @@ span.mobile{
 
 /* -------------------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.list - documents */
 .doc-list a {
-    color: #2c82bb !important;
+    color: #227fbc !important;
 }
 
 .doc-list a:hover {
@@ -781,8 +798,8 @@ span.mobile{
 }
 
 .doc-excel, .doc-docx, .doc-powerp, .doc-img, .doc-pdf, .doc-rar, .doc-none{
-    background: #afcdca url(img/doc.png) no-repeat;
-    color:#fff;
+    background: #227fbc url(img/doc.png) no-repeat;
+    color: #fff;
     font-family: Arial;
     font-weight: bold;
     font-size: 12px;
@@ -815,7 +832,7 @@ span.mobile{
 /* ------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news - events-service-complex */
 .afisha-list .afisha-name a:hover {
     text-decoration: none;
-    color: #aad0c8;
+    color: #227fbc;
 }
 
 
@@ -835,34 +852,34 @@ span.mobile{
     background: #daac4f;
 }
 .events-slider-region .events-name a:hover {
-    color: #aad0c8;
+    color: #227fbc;
 }
 .events-slider-region .events-age {
-    border: 1px solid #aad0c8;
-    color: #aad0c8;
+    border: 1px solid #227fbc;
+    color: #227fbc;
 }
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 /* ------------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.list - news-index */
 .news-index .news-name a:hover, .news-name a:active {
-    color: #2e353a;
+    color: #227fbc;
 }
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.list - photogalereya */
 .photogalereya-slider .owl-dot.active {
-    background: #aad0c8;
+    background: #227fbc;
 }
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.detail - events-detail */
 .afisha-detail .afisha-age {
-    border: 1px solid #aad0c8;
-    color: #aad0c8 !important;
+    border: 1px solid #227fbc;
+    color: #227fbc !important;
 }
 /* ---------------------------------------------------------------------------------------------------------------- */
 @media (max-width: 757px) {
     .menu-head {
-        background: #38817a;
+        background: #227fbc;
     }
 }

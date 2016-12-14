@@ -1,5 +1,5 @@
 #header {
-    background: #38817a none repeat scroll 0 0;
+    background: #212121;
     height: 120px;
     position: relative;
     width: 100%;
@@ -7,8 +7,8 @@
 
 .logo
 {
-    width: 241px;
-    height: 59px;
+    width: 409px;
+    height: 54px;
     top: 13px;
     position: absolute;
     margin: 0 auto;
@@ -47,7 +47,7 @@
     font-size: 20px;
     float: left;
     margin: 35px 0 10px 0;
-    color: #afcdca;
+    color: #8f959a;
 }
 
 .head-info .contact span {
@@ -59,7 +59,6 @@
     position: absolute;
     bottom: 11px;
     width: 100%;
-//height: 22px;
 }
 
 /* ----------------------------------------------------------------------------------------------------- ЦВЕТ КНОПОК */
@@ -139,7 +138,7 @@
 
 /*Root items*/
 #top-menu li a.root-item {
-    color:#c0d2d0;
+    color: #aeb2b5;
 }
 
 /*Root menu selected*/
@@ -200,7 +199,7 @@
     z-index:500;
     height:auto;
     width: 160px;
-    background: #38817a url(img/menu-ul-top.png) no-repeat center top;
+    background: #272727 url(img/menu-ul-top.png) no-repeat center top;
     padding-top:7px;
     margin-left: -2.2%;
 }
@@ -212,7 +211,7 @@
 {
     width:100%;
     padding: 0 25px;
-    background: #2b6963;
+    background: #272727;
     padding-bottom: 9px;
     line-height: 22px;
 }
@@ -248,7 +247,7 @@
 #top-menu li:hover li:hover li:hover li:hover li:hover li a,
 #top-menu li.jshover li.jshover li.jshover li.jshover li.jshover li a
 {
-    color:#c0d2d0;
+    color: #fff;
 }
 
 
@@ -309,9 +308,6 @@ div.menu-clear-left
 {
     clear:left;
 }
-
-
-
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -433,7 +429,7 @@ nav a#pull {
 
     #top-menu {
         top: 80px;
-        background: #2b6963;
+        background: #212121;
         z-index: 100;
         position: relative;
         padding-bottom: 10px;
@@ -479,7 +475,7 @@ nav a#pull {
 
     /*Root items*/
     #top-menu li a.root-item {
-        color: #c0d2d0;
+        color: #fff;
     }
 
     /*Root menu selected*/
@@ -538,6 +534,7 @@ nav a#pull {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    border: 1px solid #383838;
 }
 
 .bx-searchtitle .bx-input-group .bx-form-control {
@@ -550,8 +547,8 @@ nav a#pull {
     height: 40px;
     padding: 6px 12px 7px 12px;
     line-height: 1.42857143;
-    color: #bfcdcc;
-    background: #356f69;
+    color: #8f959a;
+    background: #272727;
     border: 0;
     border-right: none;
     outline: none;
@@ -574,7 +571,7 @@ nav a#pull {
     vertical-align: middle;
     display: table-cell;
     border: 0;
-    background: #356f69;
+    background: #272727;
     border-radius: 30px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -683,9 +680,18 @@ span.mobile{
     background: #fff !important;
 }
 
-@media (max-width: 757px){
+@media (max-width: 1000px) and (min-width: 758px) {
+    .logo {
+        zoom: 0.6;
+        top: 40px;
+    }
+    .bx-searchtitle .bx-input-group {
+        width: 174px;
+        float: right;
+    }
+}
 
-
+@media (max-width: 757px) {
     .bx-searchtitle .bx-input-group-btn{display: none;}
     input.mobile{display: none !important;}
     .bx-searchtitle span.mobile{
@@ -704,7 +710,7 @@ span.mobile{
     }
     .bx-searchtitle span.mobile .fa{
         font-size: 20px;
-        color: #afcdca;
+        color: #7f7e7e;
     }
     .bx-searchtitle span.mobile i{
         position: relative;
@@ -718,6 +724,10 @@ span.mobile{
         border-radius: 30px;
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
+    }
+
+    .bx-searchtitle .bx-input-group {
+        border: none;
     }
 
     .bx-form-control:focus ~ .bx-searchtitle span.mobile i {
@@ -734,8 +744,9 @@ span.mobile{
         right: 19px;
         top: 1px;
     }
+
     .bx-searchtitle .bx-input-group .bx-form-control {
-        background: #333f47;
+        background: #fff;
     }
     .bx-searchtitle .bx-input-group .bx-form-control:focus ~ .bx-searchtitle span.mobile {
         background: #fff;
@@ -743,17 +754,16 @@ span.mobile{
 
     .bx-searchtitle span.mobile i {
         background: initial;
+        z-index: 100;
     }
-}
-@media screen and (max-width: 400px){
     .logo {
-        background-size: 150px !important;
-        background-position: 43px !important;
+        zoom: 0.5;
+        top: 70px;
     }
 }
 #footer {
-    border-bottom: 10px solid #2e353a;
-    background: #2e353a;
+    border-bottom: 10px solid #212121;
+    background: #212121;
 }
 /*-------------------------------------------------------------------------------- СТИЛИ С КОМПОНЕНТА SEARCH.TITLE */
 /* ---------------------------------------------------------------------------------------------------------------- */
@@ -781,8 +791,8 @@ span.mobile{
 }
 
 .doc-excel, .doc-docx, .doc-powerp, .doc-img, .doc-pdf, .doc-rar, .doc-none{
-    background: #afcdca url(img/doc.png) no-repeat;
-    color:#fff;
+    background: #212121 url(img/doc.png) no-repeat;
+    color: #fff;
     font-family: Arial;
     font-weight: bold;
     font-size: 12px;
@@ -835,11 +845,11 @@ span.mobile{
     background: #daac4f;
 }
 .events-slider-region .events-name a:hover {
-    color: #aad0c8;
+    color: #212121;
 }
 .events-slider-region .events-age {
-    border: 1px solid #aad0c8;
-    color: #aad0c8;
+    border: 1px solid #212121;
+    color: #212121;
 }
 /* ---------------------------------------------------------------------------------------------------------------- */
 
@@ -851,18 +861,18 @@ span.mobile{
 
 /* ---------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.list - photogalereya */
 .photogalereya-slider .owl-dot.active {
-    background: #aad0c8;
+    background: #212121;
 }
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.detail - events-detail */
 .afisha-detail .afisha-age {
-    border: 1px solid #aad0c8;
-    color: #aad0c8 !important;
+    border: 1px solid #212121;
+    color: #212121 !important;
 }
 /* ---------------------------------------------------------------------------------------------------------------- */
 @media (max-width: 757px) {
     .menu-head {
-        background: #38817a;
+        background: #212121;
     }
 }
