@@ -14,7 +14,6 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    background: url(img/logo.png) no-repeat;
     z-index: 1;
 }
 
@@ -65,29 +64,28 @@
 
 /* ----------------------------------------------------------------------------------------------------- ЦВЕТ КНОПОК */
 .events-slider-region .all-news {
-    border: 2px solid #daac4f;
-    color: #daac4f;
-
+    border: 2px solid #aad0c8;
+    color: #aad0c8;
 }
 
 .events-slider-region .all-news:hover {
-    color: #9b0029 !important;
-    border: 2px solid #9b0029;
+    color: #2e353a !important;
+    border: 2px solid #2e353a;
     background: transparent;
 }
 
 .news-index .all-news {
-    border: 2px solid #daac4f;
-    color: #daac4f;
+    border: 2px solid #aad0c8;
+    color: #aad0c8;
 }
 
 .news-index .all-news:hover {
-    color: #9b0029 !important;
-    border: 2px solid #9b0029;
+    color: #2e353a !important;
+    border: 2px solid #2e353a;
     background: transparent;
 }
 
-/* ----------------------------------------------------------------------------------------------------- ЦВЕТ КНОПОК */
+/* ----------------------------------------------------------------------------------------------------------------- */
 .footer-flex {
     display: flex;
     justify-content: space-between;
@@ -104,12 +102,12 @@
 }
 
 .footer-ugraweb > a {
-    color: #daac4f;
+    color: #aad0c8;
     font-weight: bold;
 }
 
 .footer-ugraweb > a:hover {
-    color: #daac4f;
+    color: #aad0c8;
 }
 
 /*----------------------------------------------------------------------------------------- СТИЛИ С КОМПОНЕНТА MENU */
@@ -604,7 +602,6 @@ div.title-search-result {
     border:1px solid #c6c6c6;
     display:none;
     overflow:hidden;
-    z-index:#9b9b9b;
     min-width: 370px;
     margin-top:-3px;
 }
@@ -748,10 +745,12 @@ span.mobile{
 
 
 }
+#footer {
+    border-bottom: 10px solid #2e353a;
+    background: #2e353a;
+}
 /*-------------------------------------------------------------------------------- СТИЛИ С КОМПОНЕНТА SEARCH.TITLE */
 /* ---------------------------------------------------------------------------------------------------------------- */
-
-
 
 
 /* -------------------------------------------------------------------------------- СТИЛИ БЛОКА МЕРОПРИЯТИЙ И ФОТО НА ГЛАВНОЙ */
@@ -776,7 +775,7 @@ span.mobile{
 }
 
 .doc-excel, .doc-docx, .doc-powerp, .doc-img, .doc-pdf, .doc-rar, .doc-none{
-    background: #e64227 url(img/doc.png) no-repeat;
+    background: #afcdca url(img/doc.png) no-repeat;
     color:#fff;
     font-family: Arial;
     font-weight: bold;
@@ -807,10 +806,10 @@ span.mobile{
 
 
 
-/* -------------------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news - events-service-complex */
+/* ------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news - events-service-complex */
 .afisha-list .afisha-name a:hover {
     text-decoration: none;
-    color: #e64227;
+    color: #aad0c8;
 }
 
 
@@ -818,7 +817,46 @@ span.mobile{
     background: #fff9ed;
     padding: 30px 20px 1px 30px;
 }
-/*-------------------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news - events-service-complex */
+/*------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news - events-service-complex */
 /* ---------------------------------------------------------------------------------------------------------------- */
 
+/* ---------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.list - slider-events-region */
+.events-slider-region .owl-dot {
+    background: #b1b1b1;
+    color:#585858;
+}
+.events-slider-region .owl-dot.active {
+    background: #daac4f;
+}
+.events-slider-region .events-name a:hover {
+    color: #aad0c8;
+}
+.events-slider-region .events-age {
+    border: 1px solid #aad0c8;
+    color: #aad0c8;
+}
+/* ---------------------------------------------------------------------------------------------------------------- */
 
+/* ------------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.list - news-index */
+.news-index .news-name a:hover, .news-name a:active {
+    color: #2e353a;
+}
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.list - photogalereya */
+.photogalereya-slider .owl-dot.active {
+    background: #aad0c8;
+}
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.detail - events-detail */
+.afisha-detail .afisha-age {
+    border: 1px solid #aad0c8;
+    color: #aad0c8 !important;
+}
+/* ---------------------------------------------------------------------------------------------------------------- */
+@media (max-width: 757px) {
+    .menu-head {
+        background: #38817a;
+    }
+}

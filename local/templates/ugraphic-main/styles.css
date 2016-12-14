@@ -2054,26 +2054,24 @@ a:hover > .promo__item > .promo-desc, a:hover > .promo__item > .age {
     bottom: 10px;
     left: 10px;
 }
-.promo-block > .swiper-container {
-    display: none;
-}
-.swiper-container {
+.promo-block .swiper-container {
     width: 100%;
     height: 100%;
+    display: none;
 }
-.swiper-slide {
+.promo-block .swiper-slide {
     font-size: 18px;
     width: 688px;
 }
-.swiper-pagination {
+.promo-block .swiper-pagination {
     position: static;
     margin-top: 25px;
 }
-.swiper-pagination-bullet {
+.promo-block .swiper-pagination-bullet {
     opacity: 1;
     background: #b1b1b1;
 }
-.swiper-pagination-bullet-active {
+.promo-block .swiper-pagination-bullet-active {
     background: #daac4f;
 }
 

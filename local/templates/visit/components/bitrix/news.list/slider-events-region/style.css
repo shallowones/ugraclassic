@@ -31,10 +31,6 @@
     border-radius: 30px;
 }
 
-.events-slider-region .owl-dot.active {
-    background: #daac4f;
-}
-
 .events-slider-region .events-photo {
     width: 306px;
     height: 185px;
@@ -62,7 +58,6 @@
 
 .events-slider-region .events-name a:hover {
     text-decoration: none;
-    color: #9b0029;
 }
 
 .events-slider-region .events-hall-block {
@@ -100,12 +95,10 @@
 
 .events-slider-region .events-age {
     padding: 8px 0 0 0;
-    border: 1px solid #daac4f;
     border-radius: 30px;
     width: 31px;
     text-align: center;
     height: 31px;
-    color: #daac4f;
     font-size: 13px;
     font-family: 'Arial', sans-serif;
     position: absolute;
@@ -164,7 +157,7 @@
 .events-slider-region .owl-nav .owl-prev i {
     width: 20px;
     height: 32px;
-    background: url(img/events-arrows.png) 0px 0 no-repeat;
+    background: url(img/events-arrows.png) 0 0 no-repeat;
     position: absolute;
     top: 37%;
     bottom: 50%;

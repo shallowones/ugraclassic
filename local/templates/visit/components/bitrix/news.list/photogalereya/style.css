@@ -33,8 +33,7 @@
 }
 
 .photogalereya-slider .owl-dot {
-    margin: 0px 6px;
-    margin-top: 25px;
+    margin: 25px 6px 0;
     width: 8px;
     height: 8px;
     background: #b1b1b1;
@@ -44,10 +43,6 @@
     position: relative;
     font-size: 16px;
     border-radius: 30px;
-}
-
-.photogalereya-slider .owl-dot.active {
-    background: #daac4f;
 }
 
  .photogalereya-slider .owl-nav {
@@ -75,10 +70,10 @@
 .photogalereya-slider .owl-nav .owl-prev i {
     width: 20px;
     height: 32px;
-    background: url(img/events-arrows.png) 0px 0 no-repeat;
+    background: url(img/events-arrows.png) 0 0 no-repeat;
     position: absolute;
     top: 40%;
-    bottom: 0%;
+    bottom: 0;
 }
 
 .photogalereya-slider .owl-nav .owl-next i {
@@ -87,7 +82,7 @@
     background: url(img/events-arrows.png) -20px 0 no-repeat;
     position: absolute;
     top: 40%;
-    bottom: 0%;
+    bottom: 0;
     right: 0;
 }
 
