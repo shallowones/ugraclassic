@@ -296,4 +296,14 @@ $(document).ready(function () {
             $('.select > input[type=hidden]').attr('value', $(this).attr('data-value'));
         }
     });
+
+
+    // свайпер на главной
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        spaceBetween: 10,
+        loop: true
+    });
 });

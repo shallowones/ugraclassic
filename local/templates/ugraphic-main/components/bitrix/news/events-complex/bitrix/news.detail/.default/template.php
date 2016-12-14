@@ -18,7 +18,7 @@ $this->setFrameMode(true);
 <div class="afisha-detail">
     <div class="afisha-detail__img">
         <?if($arResult["DETAIL_PICTURE"]!=""):?>
-            <? $detail_img = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"], array('width'=>305, 'height'=>430), BX_RESIZE_IMAGE_PROPORTIONAL_EXT, true);?>
+            <? $detail_img = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"], array('width'=>300, 'height'=>'auto'), BX_RESIZE_IMAGE_PROPORTIONAL_EXT, true);?>
             <img
                     border="0"
                     src="<?=$detail_img["src"]?>"
