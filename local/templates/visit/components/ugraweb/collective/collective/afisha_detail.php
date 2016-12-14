@@ -10,6 +10,9 @@ if ($_GET['archive']) {
     $sectionEvents = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/";
 }
 $APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
+if ($_GET['archive']) {
+    $APPLICATION->AddChainItem('Афиша', "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/");
+}
 $APPLICATION->AddChainItem($name, $sectionEvents);
 ?>
 
