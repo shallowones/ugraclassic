@@ -1967,7 +1967,9 @@ input.err, textarea.err {
     }
 }
 /* ------------------------------------------------------------------------------------------------------- PROMO */
-.promo-block {}
+.promo-block.wrapper {
+    padding-top: 15px;
+}
 .promo-container {
     display: flex;
     justify-content: space-between;
