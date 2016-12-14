@@ -2,10 +2,15 @@
 
 $elementID      =   $arResult['VARIABLES']['ELEMENT_ID'];
 $sectionHome    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/";
-$sectionEvents    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/";
-
+if ($_GET['archive']) {
+    $name = 'Архив афиши';
+    $sectionEvents = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha_archive/";
+}else{
+    $name = 'Афиша';
+    $sectionEvents = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/";
+}
 $APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
-$APPLICATION->AddChainItem("Афиша", $sectionEvents);
+$APPLICATION->AddChainItem($name, $sectionEvents);
 ?>
 
 <?$APPLICATION->IncludeComponent(
@@ -22,8 +27,8 @@ $APPLICATION->AddChainItem("Афиша", $sectionEvents);
         "IBLOCK_ID" => $arParams['IB_EVENTS'],
         "ELEMENT_ID" => $elementID,
         "ELEMENT_CODE" => "",
-        "CHECK_DATES" => "Y",
-        "FIELD_CODE" => array('PREVIEW_PICTURE'),
+        "CHECK_DATES" => "N",
+        "FIELD_CODE" => array('PREVIEW_PICTURE', 'ACTIVE_TO'),
         "PROPERTY_CODE" => array(
             0 => "",
             1 => "date",
