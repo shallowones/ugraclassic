@@ -27,7 +27,7 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
                 {
                     $PICTURE_SWIPER = CFile::ResizeImageGet(
                         $arItem["DETAIL_PICTURE"],
-                        array('width'=>306, 'height'=>204),
+                        array('width'=>688, 'height'=>458),
                         BX_RESIZE_IMAGE_EXACT, true
                     );
 
@@ -42,7 +42,7 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
                 {
                     $PICTURE_SWIPER = CFile::ResizeImageGet(
                         $arItem["PREVIEW_PICTURE"],
-                        array('width'=>306, 'height'=>204),
+                        array('width'=>688, 'height'=>458),
                         BX_RESIZE_IMAGE_EXACT, true
                     );
 
@@ -60,7 +60,7 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
                 {
                     $PICTURE_SWIPER = CFile::ResizeImageGet(
                         $arItem["PREVIEW_PICTURE"],
-                        array('width'=>306, 'height'=>204),
+                        array('width'=>688, 'height'=>458),
                         BX_RESIZE_IMAGE_EXACT, true
                     );
 
@@ -75,7 +75,7 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
                 {
                     $PICTURE_SWIPER = CFile::ResizeImageGet(
                         $arItem["DETAIL_PICTURE"],
-                        array('width'=>306, 'height'=>204),
+                        array('width'=>688, 'height'=>458),
                         BX_RESIZE_IMAGE_EXACT, true
                     );
 
@@ -128,8 +128,8 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
             }
 
             $PICTURE_SWIPER = CFile::ResizeImageGet(
-                $arItem["PREVIEW_PICTURE"],
-                array('width'=>306, 'height'=>204),
+                $arFields["PREVIEW_PICTURE"],
+                array('width'=>688, 'height'=>458),
                 BX_RESIZE_IMAGE_EXACT, true
             );
 

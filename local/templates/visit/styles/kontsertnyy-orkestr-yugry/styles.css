@@ -797,3 +797,17 @@ span.mobile {
 }
 
 /*-------------------------------------------------------------------------------- СТИЛИ С КОМПОНЕНТА SEARCH.TITLE */
+
+
+#footer {
+    background: #2e353a none repeat scroll 0 0;
+    border-bottom: 10px solid #333;
+    bottom: 0;
+    color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    height: 90px;
+    padding-top: 30px;
+    position: absolute;
+    width: 100%;
+}

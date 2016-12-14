@@ -5,9 +5,9 @@ $APPLICATION->SetTitle("Главная");
 use Bitrix\Main\Page\Asset;
 Asset::getInstance()->addCss("/collective/kontsertnyy-orkestr-yugry/index.css");
 
-$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_kontsertnyy-orkestr-yugry");
+/*$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_kontsertnyy-orkestr-yugry");
 $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_kontsertnyy-orkestr-yugry");
-$ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_kontsertnyy-orkestr-yugry");
+$ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_kontsertnyy-orkestr-yugry");*/
 
 
 ?>
