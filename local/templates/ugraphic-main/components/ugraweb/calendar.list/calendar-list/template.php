@@ -11,8 +11,8 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 <?
 use Bitrix\Main\Page\Asset;
 $asset = Asset::getInstance();
-$asset->addJs(SITE_TEMPLATE_PATH . '/js/swiper/js/swiper.jquery.min.js');
-$asset->addCss(SITE_TEMPLATE_PATH . '/js/swiper/css/swiper.min.css');
+//$asset->addJs(SITE_TEMPLATE_PATH . '/js/swiper/js/swiper.jquery.min.js');
+//$asset->addCss(SITE_TEMPLATE_PATH . '/js/swiper/css/swiper.min.css');
 $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar.css');
 ?>
 <div class="calendar-line">

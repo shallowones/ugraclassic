@@ -40,7 +40,8 @@
             slidesPerView: 'auto',
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
-            onSliderMove: removePopup
+            onSliderMove: removePopup,
+            pagination: false
         });
 
         // убиваем попап при клике вне его области
