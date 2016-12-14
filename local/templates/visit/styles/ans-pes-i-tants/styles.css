@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'PlayfairDisplay'; /* Имя шрифта */
+    src: url(font/PlayfairDisplay-BoldItalic.ttf); /* Путь к файлу со шрифтом */
+}
+
 #header {
     background: #f2635f none repeat scroll 0 0;
     height: 120px;
@@ -25,15 +30,15 @@
 }
 
 .to-back {
-    background: url(img/back.png) no-repeat;
-    padding-left: 26px;
-    color: #bbbbbb;
-    font-weight: bold;
-    font-size: 14px;
-    text-decoration: none;
-    font-family: Arial;
+    background: rgba(0, 0, 0, 0) url("img/back.png") no-repeat scroll 0 0;
+    color: #facac9;
     float: right;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
     margin-top: 20px;
+    padding-left: 26px;
+    text-decoration: none;
 }
 
 @media (max-width: 757px) {
@@ -45,11 +50,11 @@
 }
 
 .head-info .contact {
+    color: #fac1bf;
+    float: left;
     font-family: Arial;
     font-size: 20px;
-    float: left;
-    margin: 35px 0 10px 0;
-    color: #afcdca;
+    margin: 35px 0 10px;
 }
 
 .head-info .contact span {
@@ -66,8 +71,8 @@
 
 /* ----------------------------------------------------------------------------------------------------- ЦВЕТ КНОПОК */
 .events-slider-region .all-news {
-    border: 2px solid #aad0c8;
-    color: #aad0c8;
+    border: 2px solid #e5c5c4;
+    color: #e5c5c4;
 }
 
 .events-slider-region .all-news:hover {
@@ -77,8 +82,8 @@
 }
 
 .news-index .all-news {
-    border: 2px solid #aad0c8;
-    color: #aad0c8;
+    border: 2px solid #e5c5c4;
+    color: #e5c5c4;
 }
 
 .news-index .all-news:hover {
@@ -141,7 +146,7 @@
 
 /*Root items*/
 #top-menu li a.root-item {
-    color:#c0d2d0;
+    color:#facac9;
 }
 
 /*Root menu selected*/
@@ -179,21 +184,6 @@
 }
 
 
-
-/*Sub-menu box*/
-/*#top-menu li .falls {
-	position:absolute;
-	top:auto;
-	display:none;
-	z-index:500;
-	height:auto;
-	width: 160px;
-    background: #fff url(img/menu-ul-top.png) no-repeat center top;
-    padding-top:7px;
-    margin-left: -2.2%;
-}
-*/
-
 #top-menu li .falls {
 
     position:absolute;
@@ -202,7 +192,7 @@
     z-index:500;
     height:auto;
     width: 160px;
-    background: #38817a url(img/menu-ul-top.png) no-repeat center top;
+    background: #f2635f url(img/menu-ul-top.png) no-repeat center top;
     padding-top:7px;
     margin-left: -2.2%;
 }
@@ -214,7 +204,7 @@
 {
     width:100%;
     padding: 0 25px;
-    background: #2b6963;
+    background: #d95955;
     padding-bottom: 9px;
     line-height: 22px;
 }
@@ -250,7 +240,7 @@
 #top-menu li:hover li:hover li:hover li:hover li:hover li a,
 #top-menu li.jshover li.jshover li.jshover li.jshover li.jshover li a
 {
-    color:#c0d2d0;
+    color:#facac9;
 }
 
 
@@ -435,7 +425,7 @@ nav a#pull {
 
     #top-menu {
         top: 80px;
-        background: #2b6963;
+        background: #d95955;
         z-index: 100;
         position: relative;
         padding-bottom: 10px;
@@ -481,13 +471,13 @@ nav a#pull {
 
     /*Root items*/
     #top-menu li a.root-item {
-        color: #c0d2d0;
+        color: #facac9;
     }
 
     /*Root menu selected*/
     #top-menu li a.root-item-selected {
         color:#fff;
-        background: #154c47;
+        background: #9e4341;
         font-weight:bold;
     }
 
@@ -552,8 +542,8 @@ nav a#pull {
     height: 34px;
     padding: 6px 12px 7px 12px;
     line-height: 1.42857143;
-    color: #bfcdcc;
-    background: #356f69;
+    color: #fac1bf;
+    background: #d95955;
     border: 0;
     border-right: none;
     outline: none;
@@ -576,7 +566,7 @@ nav a#pull {
     vertical-align: middle;
     display: table-cell;
     border: 0;
-    background: #356f69;
+    background: #d95955;
     border-radius: 30px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -591,7 +581,7 @@ nav a#pull {
     padding: 4px 12px 5px 12px;
     font-size: 16px;
     line-height: 1.42857143;
-    color: #bfcdcc;
+    color: #fac1bf;
     background: initial !important;
     outline: none !important;
 }
@@ -604,6 +594,7 @@ div.title-search-result {
     border:1px solid #c6c6c6;
     display:none;
     overflow:hidden;
+    z-index:#9b9b9b;
     min-width: 370px;
     margin-top:-3px;
 }
@@ -696,7 +687,7 @@ span.mobile{
         vertical-align: middle;
         display: table-cell;
         border: 0;
-        background: #333f47;
+        background: #d95955;
         border-radius: 30px;
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
@@ -704,7 +695,7 @@ span.mobile{
     }
     .bx-searchtitle span.mobile .fa{
         font-size: 20px;
-        color: #afcdca;
+        color: #fac1bf;
     }
     .bx-searchtitle span.mobile i{
         position: relative;
@@ -757,7 +748,7 @@ span.mobile{
 
 /* -------------------------------------------------------------------------------- СТИЛИ БЛОКА МЕРОПРИЯТИЙ И ФОТО НА ГЛАВНОЙ */
 .events-block {
-    background: #fff9ed none repeat scroll 0 0;
+    background: #fff7f7 none repeat scroll 0 0;
     padding-bottom: 40px;
     padding-top: 42px;
     width: 100%;
