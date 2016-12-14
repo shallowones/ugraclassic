@@ -22,16 +22,13 @@ $this->setFrameMode(true);
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
 	<?
-
-	if($_GET['archive']=='Y'){$img = CFile::GetPath($arItem["PREVIEW_PICTURE"]);}
-	echo $img;
 	$prev_img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>700, 'height'=>600), BX_RESIZE_IMAGE_PROPORTIONAL, true);
-	$prev_img = CFile::ResizeImageGet($img, array('width'=>700, 'height'=>600), BX_RESIZE_IMAGE_PROPORTIONAL, true);
 	?>
 
 	<div class="afisha-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
 
+			<?if ($arParams['ARCHIVE'] == 'Y'){echo '<div class="afisha-detail__img">';}?>
 				<a href="<?if($arParams["ARCHIVE"]){echo $arItem["DETAIL_PAGE_URL"].'?archive=Y';}else{echo $arItem["DETAIL_PAGE_URL"];}?>">
 					<img
 						class="preview-picture"
@@ -41,6 +38,8 @@ $this->setFrameMode(true);
 						alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
 						title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
 						/></a>
+
+			<?if ($arParams['ARCHIVE'] == 'Y'){echo '</div>';}?>
 		<?endif?>
 
 		<div class="afisha-info">

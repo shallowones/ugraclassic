@@ -13,6 +13,7 @@
 $this->setFrameMode(true);
 ?>
 <div class="afisha-detail">
+	<?if ($_GET['archive'] == 'Y'){echo '<div class="afisha-detail__img">';}?>
 
 		<?if($arResult["DETAIL_PICTURE"]!=""):?>
 			<? $detail_img = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"], array('width'=>700, 'height'=>600), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
@@ -35,7 +36,7 @@ $this->setFrameMode(true);
 				class="preview-picture"
 				/>
 		<?endif?>
-
+	<?if ($_GET['archive'] == 'Y'){echo '</div>';}?>
 	<div class="afisha-info-box" style="float:left;">
 		<div class="afisha-info">
 			<div class="info-1">

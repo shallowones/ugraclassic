@@ -3,12 +3,14 @@
 $elementID      =   $arResult['VARIABLES']['ELEMENT_ID'];
 $sectionHome    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/";
 if ($_GET['archive']) {
+    $name = 'Архив афиши';
     $sectionEvents = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha_archive/";
 }else{
+    $name = 'Афиша';
     $sectionEvents = "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/";
 }
 $APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
-$APPLICATION->AddChainItem("Афиша", $sectionEvents);
+$APPLICATION->AddChainItem($name, $sectionEvents);
 ?>
 
 <?$APPLICATION->IncludeComponent(
