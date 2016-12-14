@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Афиша");
-$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_mlada");
+//$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_mlada");
 ?>
 <?
 $APPLICATION->IncludeComponent(

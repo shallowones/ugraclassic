@@ -5,9 +5,9 @@ $APPLICATION->SetTitle("Главная");
 use Bitrix\Main\Page\Asset;
 Asset::getInstance()->addCss("/collective/mlada/index.css");
 
-$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_mlada");
+/*$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_mlada");
 $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_mlada");
-$ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_mlada");
+$ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_mlada");*/
 
 
 ?>

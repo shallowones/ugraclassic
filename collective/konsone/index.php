@@ -5,9 +5,9 @@ $APPLICATION->SetTitle("Главная");
 use Bitrix\Main\Page\Asset;
 Asset::getInstance()->addCss("/collective/konsone/index.css");
 
-$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_konsone");
+/*$ibEventsID 		= 	\UW\IBBase::getIBIdByCode("events_konsone");
 $ibNewsID 			= 	\UW\IBBase::getIBIdByCode("news_konsone");
-$ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_konsone");
+$ibPhotogalID		=	\UW\IBBase::getIBIdByCode("photogal_konsone");*/
 
 
 ?>
