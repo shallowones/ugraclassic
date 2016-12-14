@@ -20,10 +20,17 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
             }
 
             $PICTURE = [];
+            $PICTURE_SWIPER = [];
             if($key == 0)
             {
                 if(is_array($arItem["DETAIL_PICTURE"]))
                 {
+                    $PICTURE_SWIPER = CFile::ResizeImageGet(
+                        $arItem["DETAIL_PICTURE"],
+                        array('width'=>306, 'height'=>204),
+                        BX_RESIZE_IMAGE_EXACT, true
+                    );
+
                     $mini_img = CFile::ResizeImageGet(
                         $arItem["DETAIL_PICTURE"],
                         array('width'=>820, 'height'=>546),
@@ -33,6 +40,12 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
                 }
                 else
                 {
+                    $PICTURE_SWIPER = CFile::ResizeImageGet(
+                        $arItem["PREVIEW_PICTURE"],
+                        array('width'=>306, 'height'=>204),
+                        BX_RESIZE_IMAGE_EXACT, true
+                    );
+
                     $mini_img = CFile::ResizeImageGet(
                         $arItem["PREVIEW_PICTURE"],
                         array('width'=>820, 'height'=>546),
@@ -45,6 +58,12 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
             {
                 if(is_array($arItem["PREVIEW_PICTURE"]))
                 {
+                    $PICTURE_SWIPER = CFile::ResizeImageGet(
+                        $arItem["PREVIEW_PICTURE"],
+                        array('width'=>306, 'height'=>204),
+                        BX_RESIZE_IMAGE_EXACT, true
+                    );
+
                     $mini_img = CFile::ResizeImageGet(
                         $arItem["PREVIEW_PICTURE"],
                         array('width'=>413, 'height'=>268),
@@ -54,6 +73,12 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
                 }
                 else
                 {
+                    $PICTURE_SWIPER = CFile::ResizeImageGet(
+                        $arItem["DETAIL_PICTURE"],
+                        array('width'=>306, 'height'=>204),
+                        BX_RESIZE_IMAGE_EXACT, true
+                    );
+
                     $mini_img = CFile::ResizeImageGet(
                         $arItem["DETAIL_PICTURE"],
                         array('width'=>413, 'height'=>268),
@@ -69,6 +94,7 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
                 'URL' => $arFields['DETAIL_PAGE_URL'],
                 'AGE' => $arProps['age']['VALUE'],
                 'PICTURE' => $PICTURE,
+                'PICTURE_SWIPER' => $PICTURE_SWIPER,
                 'LINK_KASSIR' => $arProps['link_kassir']['VALUE']
             ];
         }
@@ -81,6 +107,7 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
             $arFields = $obEl->GetFields();
 
             $PICTURE = [];
+            $PICTURE_SWIPER = [];
             if($key == 0)
             {
                 $mini_img = CFile::ResizeImageGet(
@@ -100,12 +127,19 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
                 $PICTURE = $mini_img;
             }
 
+            $PICTURE_SWIPER = CFile::ResizeImageGet(
+                $arItem["PREVIEW_PICTURE"],
+                array('width'=>306, 'height'=>204),
+                BX_RESIZE_IMAGE_EXACT, true
+            );
+
             $arResult['ITEMS'][$key]['PROMO_DISPLAY'] = [
                 'NAME' => $arFields['NAME'],
                 'DATE' => '',
                 'URL' => $arFields['CODE'],
                 'AGE' => '',
                 'PICTURE' => $PICTURE,
+                'PICTURE_SWIPER' => $PICTURE_SWIPER,
                 'LINK_KASSIR' => ''
             ];
         }

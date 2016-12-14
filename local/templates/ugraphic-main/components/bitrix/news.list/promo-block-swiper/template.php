@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -12,151 +12,139 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<? if(count($arResult["ITEMS"]) > 0): ?>
+<? if (count($arResult["ITEMS"]) > 0): ?>
     <div class="promo-block wrapper">
         <div class="promo-container">
+            <? if ($arResult["ITEMS"][0]['PROMO_DISPLAY']): ?>
+                <div class="promo-first">
+                    <a href="<?= $arResult["ITEMS"][0]['PROMO_DISPLAY']["URL"]; ?>">
+                        <div class="promo__item">
+                            <? if (is_array($arResult["ITEMS"][0]['PROMO_DISPLAY']['PICTURE'])): ?>
+                                <div class="promo-img">
+                                    <img
+                                            src="<?= $arResult["ITEMS"][0]['PROMO_DISPLAY']['PICTURE']["src"] ?>"
+                                            width="<?= $arResult["ITEMS"][0]['PROMO_DISPLAY']['PICTURE']["width"] ?>"
+                                            height="<?= $arResult["ITEMS"][0]['PROMO_DISPLAY']['PICTURE']["height"] ?>"
+                                    />
+                                </div>
+                            <? endif; ?>
+                            <div class="promo-wrap"></div>
+                            <div class="promo-desc">
+                                <? if (!empty($arResult["ITEMS"][0]['PROMO_DISPLAY']['DATE'])): ?>
+                                    <div class="promo-date"><?= $arResult["ITEMS"][0]['PROMO_DISPLAY']['DATE'] ?></div>
+                                <? endif; ?>
+                                <? if (!empty($arResult["ITEMS"][0]['PROMO_DISPLAY']['NAME'])): ?>
+                                    <div class="promo-name"><?= $arResult["ITEMS"][0]['PROMO_DISPLAY']['NAME'] ?></div>
+                                <? endif; ?>
+                            </div>
+                            <? if (!empty($arResult["ITEMS"][0]['PROMO_DISPLAY']['AGE'])): ?>
+                                <div class="age"><?= $arResult["ITEMS"][0]['PROMO_DISPLAY']['AGE'] ?></div>
+                            <? endif; ?>
+                        </div>
+                    </a>
+                </div>
+            <? endif; ?>
 
-            <div class="promo-first">
-                <a href="#">
-                    <div class="promo__item">
-                        <div class="promo-img">
-                            <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+            <? if ($arResult["ITEMS"][1]['PROMO_DISPLAY'] || $arResult["ITEMS"][2]['PROMO_DISPLAY']): ?>
+                <div class="promo-second">
+                    <? if ($arResult["ITEMS"][1]['PROMO_DISPLAY']): ?>
+                        <div class="promo-second-line">
+                            <a href="<?= $arResult["ITEMS"][1]['PROMO_DISPLAY']["URL"]; ?>">
+                                <div class="promo__item">
+                                    <? if (is_array($arResult["ITEMS"][1]['PROMO_DISPLAY']['PICTURE'])): ?>
+                                        <div class="promo-img">
+                                            <img
+                                                    src="<?= $arResult["ITEMS"][1]['PROMO_DISPLAY']['PICTURE']["src"] ?>"
+                                                    width="<?= $arResult["ITEMS"][1]['PROMO_DISPLAY']['PICTURE']["width"] ?>"
+                                                    height="<?= $arResult["ITEMS"][1]['PROMO_DISPLAY']['PICTURE']["height"] ?>"
+                                            />
+                                        </div>
+                                    <? endif; ?>
+                                    <div class="promo-wrap"></div>
+                                    <div class="promo-desc">
+                                        <? if (!empty($arResult["ITEMS"][1]['PROMO_DISPLAY']['DATE'])): ?>
+                                            <div class="promo-date"><?= $arResult["ITEMS"][1]['PROMO_DISPLAY']['DATE'] ?></div>
+                                        <? endif; ?>
+                                        <? if (!empty($arResult["ITEMS"][1]['PROMO_DISPLAY']['NAME'])): ?>
+                                            <div class="promo-name"><?= $arResult["ITEMS"][1]['PROMO_DISPLAY']['NAME'] ?></div>
+                                        <? endif; ?>
+                                    </div>
+                                    <? if (!empty($arResult["ITEMS"][1]['PROMO_DISPLAY']['AGE'])): ?>
+                                        <div class="age"><?= $arResult["ITEMS"][1]['PROMO_DISPLAY']['AGE'] ?></div>
+                                    <? endif; ?>
+                                </div>
+                            </a>
                         </div>
-                        <div class="promo-wrap"></div>
-                        <div class="promo-desc">
-                            <div class="promo-date">24 декабря, 20:00</div>
-                            <div class="promo-name">Балет Игоря Моисеева</div>
+                    <? endif; ?>
+                    <? if ($arResult["ITEMS"][2]['PROMO_DISPLAY']): ?>
+                        <div class="promo-second-line">
+                            <a href="<?= $arResult["ITEMS"][2]['PROMO_DISPLAY']["URL"]; ?>">
+                                <div class="promo__item">
+                                    <? if (is_array($arResult["ITEMS"][2]['PROMO_DISPLAY']['PICTURE'])): ?>
+                                        <div class="promo-img">
+                                            <img
+                                                    src="<?= $arResult["ITEMS"][2]['PROMO_DISPLAY']['PICTURE']["src"] ?>"
+                                                    width="<?= $arResult["ITEMS"][2]['PROMO_DISPLAY']['PICTURE']["width"] ?>"
+                                                    height="<?= $arResult["ITEMS"][2]['PROMO_DISPLAY']['PICTURE']["height"] ?>"
+                                            />
+                                        </div>
+                                    <? endif; ?>
+                                    <div class="promo-wrap"></div>
+                                    <div class="promo-desc">
+                                        <? if (!empty($arResult["ITEMS"][2]['PROMO_DISPLAY']['DATE'])): ?>
+                                            <div class="promo-date"><?= $arResult["ITEMS"][2]['PROMO_DISPLAY']['DATE'] ?></div>
+                                        <? endif; ?>
+                                        <? if (!empty($arResult["ITEMS"][2]['PROMO_DISPLAY']['NAME'])): ?>
+                                            <div class="promo-name"><?= $arResult["ITEMS"][2]['PROMO_DISPLAY']['NAME'] ?></div>
+                                        <? endif; ?>
+                                    </div>
+                                    <? if (!empty($arResult["ITEMS"][2]['PROMO_DISPLAY']['AGE'])): ?>
+                                        <div class="age"><?= $arResult["ITEMS"][2]['PROMO_DISPLAY']['AGE'] ?></div>
+                                    <? endif; ?>
+                                </div>
+                            </a>
                         </div>
-                        <div class="age">6+</div>
-                    </div>
-                </a>
+                    <? endif; ?>
+                </div>
+            <? endif; ?>
+        </div>
+
+        <div class="swiper-container"> <!-- hide -->
+            <div class="swiper-wrapper">
+                <? foreach ($arResult["ITEMS"] as $arItem): ?>
+                    <? if ($arItem['PROMO_DISPLAY']): ?>
+                        <div class="swiper-slide">
+                            <a href="<?= $arItem['PROMO_DISPLAY']["URL"] ?>">
+                                <div class="promo__item">
+                                    <? if (is_array($arItem['PROMO_DISPLAY']['PICTURE_SWIPER'])): ?>
+                                        <div class="promo-img">
+                                            <img
+                                                    src="<?= $arItem['PROMO_DISPLAY']['PICTURE_SWIPER']["src"] ?>"
+                                                    width="<?= $arItem['PROMO_DISPLAY']['PICTURE_SWIPER']["width"] ?>"
+                                                    height="<?= $arItem['PROMO_DISPLAY']['PICTURE_SWIPER']["height"] ?>"
+                                            />
+                                        </div>
+                                    <? endif; ?>
+                                    <div class="promo-wrap"></div>
+                                    <div class="promo-desc">
+                                        <? if (!empty($arItem['PROMO_DISPLAY']['DATE'])): ?>
+                                            <div class="promo-date"><?= $arItem['PROMO_DISPLAY']['DATE'] ?></div>
+                                        <? endif; ?>
+                                        <? if (!empty($arItem['PROMO_DISPLAY']['NAME'])): ?>
+                                            <div class="promo-name"><?= $arItem['PROMO_DISPLAY']['NAME'] ?></div>
+                                        <? endif; ?>
+                                    </div>
+                                    <? if (!empty($arItem['PROMO_DISPLAY']['AGE'])): ?>
+                                        <div class="age"><?= $arItem['PROMO_DISPLAY']['AGE'] ?></div>
+                                    <? endif; ?>
+                                </div>
+                            </a>
+                        </div>
+                    <? endif; ?>
+                <? endforeach; ?>
             </div>
-
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
         </div>
     </div>
-<? endif; ?>
-
-
-<? if(count($arResult["ITEMS"]) > 0): ?>
-    <div class="promo-slider">
-        <div class="wrapper">
-    <? if($arResult["ITEMS"][0]['PROMO_DISPLAY']): ?>
-        <div id="slider-promo">
-            <a href="<?=$arResult["ITEMS"][0]['PROMO_DISPLAY']["URL"];?>" alt="" title="">
-                <div class="item">
-
-                <div class="slider-info">
-
-                        <div class="info-box">
-                            <? if(!empty($arResult["ITEMS"][0]['PROMO_DISPLAY']['DATE'])): ?>
-                                <div class="date">
-                                    <?=$arResult["ITEMS"][0]['PROMO_DISPLAY']['DATE']?>
-                                </div>
-                            <? endif; ?>
-
-                            <? if(!empty($arResult["ITEMS"][0]['PROMO_DISPLAY']['NAME'])): ?>
-                                <div class="name">
-                                    <?=$arResult["ITEMS"][0]['PROMO_DISPLAY']['NAME']?>
-                                </div>
-                            <? endif; ?>
-                        </div>
-
-                        <? if(!empty($arResult["ITEMS"][0]['PROMO_DISPLAY']['AGE'])): ?>
-                            <div class="age">
-                                <?=$arResult["ITEMS"][0]['PROMO_DISPLAY']['AGE']?>
-                            </div>
-                        <? endif; ?>
-                        <? if(strlen(trim($arResult["ITEMS"][0]['PROMO_DISPLAY']['LINK_KASSIR'])) > 0): ?>
-                            <a href="<?=$arResult["ITEMS"][0]['PROMO_DISPLAY']['LINK_KASSIR']?>" class="no-link"><div class="buy-ticket">Купить билет</div></a>
-                        <? endif; ?>
-
-                </div>
-
-                <div class="mask-1"></div>
-                    <? if(is_array($arResult["ITEMS"][0]['PROMO_DISPLAY']['PICTURE'])): ?>
-                        <img 	class="img-box"
-                                src="<?=$arResult["ITEMS"][0]['PROMO_DISPLAY']['PICTURE']["src"]?>"
-                                width="<?=$arResult["ITEMS"][0]['PROMO_DISPLAY']['PICTURE']["width"]?>"
-                                height="<?=$arResult["ITEMS"][0]['PROMO_DISPLAY']['PICTURE']["height"]?>"
-                                 />
-                    <? endif; ?>
-                </div>
-            </a>
-        </div>
-    <? endif; ?>
-
-    <? if($arResult["ITEMS"][1]['PROMO_DISPLAY'] || $arResult["ITEMS"][2]['PROMO_DISPLAY']): ?>
-    <div class="promo-right-col">
-        <? if($arResult["ITEMS"][1]['PROMO_DISPLAY']): ?>
-        <a href="<?=$arResult["ITEMS"][1]['PROMO_DISPLAY']["URL"];?>" alt="" title="" style="display: block;">
-            <div class="promo-right-item">
-                <div class="slider-info">
-                    <div class="info-box">
-                        <? if(!empty($arResult["ITEMS"][1]['PROMO_DISPLAY']['DATE'])): ?>
-                            <div class="date">
-                                <?=$arResult["ITEMS"][1]['PROMO_DISPLAY']['DATE']?>
-                            </div>
-                        <? endif; ?>
-                        <? if(!empty($arResult["ITEMS"][1]['PROMO_DISPLAY']['NAME'])): ?>
-                            <div class="name">
-                                <?=$arResult["ITEMS"][1]['PROMO_DISPLAY']['NAME']?>
-                            </div>
-                        <? endif; ?>
-                    </div>
-                    <? if(!empty($arResult["ITEMS"][1]['PROMO_DISPLAY']['AGE'])): ?>
-                        <div class="age">
-                            <?=$arResult["ITEMS"][1]['PROMO_DISPLAY']['AGE']?>
-                        </div>
-                    <? endif; ?>
-                </div>
-                <div class="mask-2-3"></div>
-                <? if(is_array($arResult["ITEMS"][1]['PROMO_DISPLAY']['PICTURE'])): ?>
-                    <img 	class="img-right"
-                            src="<?=$arResult["ITEMS"][1]['PROMO_DISPLAY']['PICTURE']["src"]?>"
-                            width="<?=$arResult["ITEMS"][1]['PROMO_DISPLAY']['PICTURE']["width"]?>"
-                            height="<?=$arResult["ITEMS"][1]['PROMO_DISPLAY']['PICTURE']["height"]?>"
-                    />
-                <? endif; ?>
-            </div>
-        </a>
-        <? endif; ?>
-
-        <? if($arResult["ITEMS"][2]['PROMO_DISPLAY']): ?>
-        <a href="<?=$arResult["ITEMS"][2]['PROMO_DISPLAY']["URL"];?>" alt="" title="" style="display: block;">
-            <div class="promo-right-item">
-                <div class="slider-info">
-                    <div class="info-box">
-                        <? if(!empty($arResult["ITEMS"][2]['PROMO_DISPLAY']['DATE'])): ?>
-                            <div class="date">
-                                <?=$arResult["ITEMS"][2]['PROMO_DISPLAY']['DATE']?>
-                            </div>
-                        <? endif; ?>
-                        <? if(!empty($arResult["ITEMS"][2]['PROMO_DISPLAY']['NAME'])): ?>
-                            <div class="name">
-                                <?=$arResult["ITEMS"][2]['PROMO_DISPLAY']['NAME']?>
-                            </div>
-                        <? endif; ?>
-                    </div>
-                    <? if(!empty($arResult["ITEMS"][2]['PROMO_DISPLAY']['AGE'])): ?>
-                        <div class="age">
-                            <?=$arResult["ITEMS"][2]['PROMO_DISPLAY']['AGE']?>
-                        </div>
-                    <? endif; ?>
-                </div>
-                <div class="mask-2-3"></div>
-                <? if(is_array($arResult["ITEMS"][2]['PROMO_DISPLAY']['PICTURE'])): ?>
-                    <img 	class="img-right"
-                            src="<?=$arResult["ITEMS"][2]['PROMO_DISPLAY']['PICTURE']["src"]?>"
-                            width="<?=$arResult["ITEMS"][2]['PROMO_DISPLAY']['PICTURE']["width"]?>"
-                            height="<?=$arResult["ITEMS"][2]['PROMO_DISPLAY']['PICTURE']["height"]?>"
-                    />
-                <? endif; ?>
-            </div>
-        </a>
-        <? endif; ?>
-
-    </div><!-- .promo-right-col -->
-    <? endif; ?>
-    </div><!-- .wrapper -->
-    </div><!-- .porno-slider -->
 <? endif; ?>

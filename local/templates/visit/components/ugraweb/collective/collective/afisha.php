@@ -2,12 +2,15 @@
 
 $elementID      =   $arResult['VARIABLES']['ELEMENT_ID'];
 $sectionHome    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/";
-$sectionEvents    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/";
+$sectionEventsArchive    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha_archive/";
+$sectionEventsNew    =   "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/";
+
 
 $APPLICATION->AddChainItem($arParams['COL_NAME'], $sectionHome);
 $APPLICATION->AddChainItem("Афиша");
 ?>
 
+    <h4><a href="<?=$sectionEventsArchive?>">Прошедшие события</a></h4><br>
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "events-section",
@@ -74,7 +77,7 @@ $APPLICATION->AddChainItem("Афиша");
         "SHOW_404" => "N",
         "SORT_BY1" => "ACTIVE_FROM",
         "SORT_BY2" => "SORT",
-        "SORT_ORDER1" => "DESC",
+        "SORT_ORDER1" => "ASC",
         "SORT_ORDER2" => "ASC",
         "COMPONENT_TEMPLATE" => "events-service-complex-list",
         "LINK_TO_NEWS" => "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/"
