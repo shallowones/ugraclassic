@@ -71,5 +71,5 @@ function gG($var, $mode = 0, $str = 'Var', $die = 0)
             fclose($handle);
             break;
     }
-
 }
+
