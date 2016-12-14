@@ -1514,6 +1514,7 @@ a:hover > .soc-vk, a:hover > .soc-insta {
         width: 100%;
         position: relative;
         top: -22px;
+        z-index: 100;
     }
     .conts-hidden {
         display: block;

@@ -25,7 +25,7 @@ $this->setFrameMode(true);
 			?>
 
 			<?
-            $foto = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>306, 'height'=>185), BX_RESIZE_IMAGE_EXACT, true);
+            $foto = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>306, 'height'=>204), BX_RESIZE_IMAGE_EXACT, true);
             if(!isset($foto["src"]))
             {
                 $foto["src"] = SITE_TEMPLATE_PATH . '/img/no-photo-afishe.png';
@@ -140,19 +140,19 @@ $this->setFrameMode(true);
 			responsive:{
 				0:{
 					items:1,
-					mouseDrag : true,
+					mouseDrag : true
 				},
-				758:{
+				620:{
 					items:2,
-					mouseDrag : true,
+					mouseDrag : true
 				},
         		1000:{
             		items:3,
-            		mouseDrag : false,
+            		mouseDrag : false
         		},
         		1400:{
             		items:4,
-            		mouseDrag : false,
+            		mouseDrag : false
         		}
 			}
 		});
