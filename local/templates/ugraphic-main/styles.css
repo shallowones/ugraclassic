@@ -1994,18 +1994,25 @@ input.err, textarea.err {
     position: absolute;
     top: 0;
     left: 0;
-    background: #272727;
-    opacity: 0.5;
+    opacity: 0.7;
     width: 100%;
     height: 100%;
+    background: transparent;
+    background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 24%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(24%, rgba(0, 0, 0, 0.1)));
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 24%);
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 24%);
+    background: -ms-linear-gradient(bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 24%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 24%);
 }
 /*a:hover > .promo__item > .promo-wrap {
     opacity: 0.2;
     transition: 0.2s;
 }*/
-/*a:hover > .promo__item > .promo-desc, a:hover > .promo__item > .age {
-    color: #fff;
-}*/
+a:hover > .promo__item > .promo-desc > .promo-name, a:hover > .promo__item > .age {
+    color: #daac4f;
+    transition: 0.2s;
+}
 .promo-desc {
     position: absolute;
     bottom: 20px;

@@ -304,7 +304,7 @@ $(document).ready(function () {
         }
     });
 
-    var promo = $('.promo-first, .promo-second-line, .swip-container');
+    /*var promo = $('.promo-first, .promo-second-line, .swip-container');
     promo.mouseover(function () {
         $(this).find('.promo-wrap').stop().animate({
             opacity: 0.2
@@ -314,6 +314,6 @@ $(document).ready(function () {
         $(this).find('.promo-wrap').stop().animate({
             opacity: 0.5
         }, 200);
-    });
+    });*/
 
 });
