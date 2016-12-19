@@ -10,22 +10,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 <?
 use Bitrix\Main\Page\Asset;
 $asset = Asset::getInstance();
-
-if (strtoupper($_REQUEST['c2']) == 'Y') {
-    $_SESSION['calendar_css'] = 'c2';
-} elseif (strtoupper($_REQUEST['c3']) == 'Y') {
-    $_SESSION['calendar_css'] = 'c3';
-} elseif (strtoupper($_REQUEST['c1']) == 'Y') {
-    $_SESSION['calendar_css'] = 'c1';
-}
-
-if ($_SESSION['calendar_css'] == 'c2') {
-    $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar2.css');
-} elseif ($_SESSION['calendar_css'] == 'c3') {
-    $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar3.css');
-} else {
-    $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar.css');
-}
+$asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar2.css');
 ?>
 <div class="calendar-line">
     <div class="wrapper">
