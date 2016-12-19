@@ -50,8 +50,8 @@ $this->setFrameMode(true);
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
                     <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next" id="promo_button_next"></div>
+                    <div class="swiper-button-prev" id="promo_button_prev"></div>
                 <? endif; ?>
             </div>
         </div>
@@ -135,8 +135,8 @@ $this->setFrameMode(true);
         pagination: '.swiper-pagination',
         slidesPerView: 1,
         paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+        nextButton: '#promo_button_next',
+        prevButton: '#promo_button_prev',
         spaceBetween: 10,
         loop: true,
         autoplay: 2500,

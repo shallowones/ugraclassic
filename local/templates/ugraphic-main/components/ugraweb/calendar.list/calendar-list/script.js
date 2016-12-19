@@ -38,8 +38,8 @@
         // инициализация swiper
         $('.swiper-container').swiper({
             slidesPerView: 'auto',
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
+            nextButton: '#calendar_button_next',
+            prevButton: '#calendar_button_prev',
             onSliderMove: removePopup,
             pagination: false
         });

@@ -52,8 +52,8 @@ $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar2.css');
         </div>
     </div>
 
-    <div class="swiper-button-prev events-button events-button_prev"></div>
-    <div class="swiper-button-next events-button events-button_next"></div>
+    <div class="swiper-button-prev events-button events-button_prev" id="calendar_button_prev"></div>
+    <div class="swiper-button-next events-button events-button_next" id="calendar_button_next"></div>
 </div>
     </div><!-- .wrapper -->
 </div><!-- .calendar line -->
