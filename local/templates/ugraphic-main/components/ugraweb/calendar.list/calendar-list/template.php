@@ -13,7 +13,22 @@ use Bitrix\Main\Page\Asset;
 $asset = Asset::getInstance();
 //$asset->addJs(SITE_TEMPLATE_PATH . '/js/swiper/js/swiper.jquery.min.js');
 //$asset->addCss(SITE_TEMPLATE_PATH . '/js/swiper/css/swiper.min.css');
-$asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar.css');
+
+if (strtoupper($_REQUEST['c2']) == 'Y') {
+    $_SESSION['calendar_css'] = 'c2';
+} elseif (strtoupper($_REQUEST['c3']) == 'Y') {
+    $_SESSION['calendar_css'] = 'c3';
+} elseif (strtoupper($_REQUEST['c1']) == 'Y') {
+    $_SESSION['calendar_css'] = 'c1';
+}
+
+if ($_SESSION['calendar_css'] == 'c2') {
+    $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar2.css');
+} elseif ($_SESSION['calendar_css'] == 'c3') {
+    $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar3.css');
+} else {
+    $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar.css');
+}
 ?>
 <div class="calendar-line">
     <div class="wrapper">
@@ -28,7 +43,7 @@ $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar.css');
                         <div class="events-item events-item_month"><?=FormatDate("f",MakeTimeStamp($arDay['date']))?></div>
                     </div>
                 <? endif; ?>
-                <div class="swiper-slide events-slide">
+                <div class="swiper-slide events-slide <? if (isset($arDay["events"])): ?>has-event<?endif;?>">
                     <?
                     $bE = isset($arDay["events"]);
                     if($bE)
@@ -46,6 +61,9 @@ $asset->addCss(SITE_TEMPLATE_PATH . '/css/events-calendar.css');
                         }
                     }
                     ?>
+                    <? if ($bE): ?>
+                        <div class="event-border"></div>
+                    <? endif; ?>
                     <div class="events-item events-item_day <?if($bE) echo 'events-item_day_event';?>" <? if($bE): ?>data-events="<?= htmlspecialchars(json_encode($event)); ?>"<? endif; ?>><b><?=$arDay['day']?></b> <?=$arDay['day_name']?></div>
                 </div>
             <? endforeach; ?>

@@ -44,17 +44,17 @@
             pagination: false
         });
 
-        // убиваем попап при клике вне его области
-        $(this).on("click", function(e) {
+        // убиваем попап при наведении курсора вне его области
+        $(this).mouseout(function(e) {
             var $target = $(e.target);
-            // убиваем попап если клинкули не по нему или не по событию
+            // убиваем попап если навели курсор не на него или не на событие
             if ($target.closest($event).length === 0 && $target.closest($popup).length === 0) {
                 removePopup();
             }
         });
 
-        // показываем попап по клику на событие
-        $event.click(function (e) {
+        // показываем попап при наведении курсора на событие
+        $event.mouseover(function (e) {
             var $this = $(this);
             /** @var {Array} events список событий*/
             var events;
@@ -102,7 +102,7 @@
 
             // получаем координаты где отображать попап
             offset = $this.offset();
-            offset.top += $this.height() + 1;
+            offset.top += $this.height();
 
             $popup
                 .html(items)
