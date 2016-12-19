@@ -6,13 +6,10 @@
  */
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 	die();
-//echo "<pre>"; print_r($arResult); echo "</pre>";
 ?>
 <?
 use Bitrix\Main\Page\Asset;
 $asset = Asset::getInstance();
-//$asset->addJs(SITE_TEMPLATE_PATH . '/js/swiper/js/swiper.jquery.min.js');
-//$asset->addCss(SITE_TEMPLATE_PATH . '/js/swiper/css/swiper.min.css');
 
 if (strtoupper($_REQUEST['c2']) == 'Y') {
     $_SESSION['calendar_css'] = 'c2';

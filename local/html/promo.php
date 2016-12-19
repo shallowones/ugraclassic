@@ -1,27 +1,64 @@
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Обратная связь");
-use Bitrix\Main\Page\Asset;
-
-Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/js/swiper/css/swiper.min.css");
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/swiper/js/swiper.jquery.min.js");
 ?>
 
-    <div class="promo-block wrapper">
+    <div class="promo-block <? /*wrapper*/ ?>">
         <div class="promo-container">
             <div class="promo-first">
-                <a href="#">
-                    <div class="promo__item">
-                        <div class="promo-img">
-                            <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+                <div class="promo-swip-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="promo__item">
+                                    <div class="promo-img">
+                                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+                                    </div>
+                                    <div class="promo-wrap"></div>
+                                    <div class="promo-desc">
+                                        <div class="promo-date">24 декабря, 20:00</div>
+                                        <div class="promo-name">Балет Игоря Моисеева</div>
+                                    </div>
+                                    <div class="age">6+</div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="promo-wrap"></div>
-                        <div class="promo-desc">
-                            <div class="promo-date">24 декабря, 20:00</div>
-                            <div class="promo-name">Балет Игоря Моисеева</div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="promo__item">
+                                    <div class="promo-img">
+                                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+                                    </div>
+                                    <div class="promo-wrap"></div>
+                                    <div class="promo-desc">
+                                        <div class="promo-date">24 декабря, 20:00</div>
+                                        <div class="promo-name">Балет Игоря Моисеева</div>
+                                    </div>
+                                    <div class="age">6+</div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="age">6+</div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="promo__item">
+                                    <div class="promo-img">
+                                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+                                    </div>
+                                    <div class="promo-wrap"></div>
+                                    <div class="promo-desc">
+                                        <div class="promo-date">24 декабря, 20:00</div>
+                                        <div class="promo-name">Балет Игоря Моисеева</div>
+                                    </div>
+                                    <div class="age">6+</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </a>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
             </div>
             <div class="promo-second">
                 <div class="promo-second-line">
@@ -56,7 +93,7 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/swiper/js/swiper.jquery.mi
                 </div>
             </div>
         </div>
-        <div class="swiper-container"> <!-- hide -->
+        <div class="swip-container"> <!-- hide -->
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <a href="#">
@@ -108,5 +145,31 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/swiper/js/swiper.jquery.mi
             <div class="swiper-pagination"></div>
         </div>
     </div>
+
+    <script type="application/javascript">
+        // свайпер на главной
+        $('.swip-container').swiper({
+            pagination: '.swiper-pagination',
+            slidesPerView: 'auto',
+            paginationClickable: true,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: 2500,
+            autoplayDisableOnInteraction: false
+        });
+
+        $('.promo-swip-container').swiper({
+            pagination: '.swiper-pagination',
+            slidesPerView: 1,
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 10,
+            loop: true,
+            autoplay: 2500,
+            autoplayDisableOnInteraction: false
+        });
+
+    </script>
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

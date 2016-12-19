@@ -1999,12 +1999,13 @@ input.err, textarea.err {
     width: 100%;
     height: 100%;
 }
-a:hover > .promo__item > .promo-wrap {
+/*a:hover > .promo__item > .promo-wrap {
     opacity: 0.2;
-}
-a:hover > .promo__item > .promo-desc, a:hover > .promo__item > .age {
+    transition: 0.2s;
+}*/
+/*a:hover > .promo__item > .promo-desc, a:hover > .promo__item > .age {
     color: #fff;
-}
+}*/
 .promo-desc {
     position: absolute;
     bottom: 20px;
@@ -2071,6 +2072,28 @@ a:hover > .promo__item > .promo-desc, a:hover > .promo__item > .age {
     position: static;
     margin-top: 25px;
 }
+.promo-block .promo-swip-container .swiper-pagination {
+    position: absolute;
+}
+.promo-block .promo-swip-container .swiper-button-next,
+.promo-block .promo-swip-container .swiper-button-prev {
+    top: 22px;
+    right: 0;
+    width: 15%;
+    height: 100%;
+    opacity: 0;
+}
+.promo-block .promo-swip-container .swiper-button-next:hover,
+.promo-block .promo-swip-container .swiper-button-prev:hover {
+    opacity: 1;
+    transition: 0.2s;
+}
+.promo-block .promo-swip-container .swiper-button-prev {
+    background: url(/local/templates/ugraphic-main/components/bitrix/news.list/promo-block-swiper/img/left-arrow.png) no-repeat 50%;
+}
+.promo-block .promo-swip-container .swiper-button-next {
+    background: url(/local/templates/ugraphic-main/components/bitrix/news.list/promo-block-swiper/img/right-arrow.png) no-repeat 50%;
+}
 .promo-block .swiper-pagination-bullet {
     opacity: 1;
     background: #b1b1b1;
@@ -2079,16 +2102,29 @@ a:hover > .promo__item > .promo-desc, a:hover > .promo__item > .age {
     background: #daac4f;
 }
 
+.promo-swip-container {
+    overflow: hidden;
+    height: 100%;
+}
+
 @media (max-width: 1399px) {
+    .promo-first {
+        width: 610px;
+        height: 406px;
+    }
+    .promo-second-line {
+        width: 304px;
+        height: 197px;
+    }
+}
+
+@media (max-width: 1000px) {
     .promo-block > .promo-container {
         display: none;
     }
     .promo-block > .swip-container {
         display: block;
     }
-}
-
-@media (max-width: 1000px) {
     .promo-block .promo-slide {
         width: 420px;
     }
