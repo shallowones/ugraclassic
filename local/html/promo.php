@@ -26,7 +26,7 @@ $APPLICATION->SetTitle("Обратная связь");
                             <a href="#">
                                 <div class="promo__item">
                                     <div class="promo-img">
-                                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+                                        <img src="/upload/resize_cache/iblock/25a/820_546_2/25a9154108b9fb1b315952de21d6e1a7.jpg">
                                     </div>
                                     <div class="promo-wrap"></div>
                                     <div class="promo-desc">
@@ -41,7 +41,7 @@ $APPLICATION->SetTitle("Обратная связь");
                             <a href="#">
                                 <div class="promo__item">
                                     <div class="promo-img">
-                                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+                                        <img src="/upload/resize_cache/iblock/5a8/820_546_2/5a80833f3c10cd49c7a543b467b9ac05.jpg">
                                     </div>
                                     <div class="promo-wrap"></div>
                                     <div class="promo-desc">
@@ -100,6 +100,36 @@ $APPLICATION->SetTitle("Обратная связь");
                         <div class="promo__item">
                             <div class="promo-img">
                                 <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+                            </div>
+                            <div class="promo-wrap"></div>
+                            <div class="promo-desc">
+                                <div class="promo-date">24 декабря, 20:00</div>
+                                <div class="promo-name">Балет Игоря Моисеева</div>
+                            </div>
+                            <div class="age">6+</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">
+                        <div class="promo__item">
+                            <div class="promo-img">
+                                <img src="/upload/resize_cache/iblock/25a/820_546_2/25a9154108b9fb1b315952de21d6e1a7.jpg">
+                            </div>
+                            <div class="promo-wrap"></div>
+                            <div class="promo-desc">
+                                <div class="promo-date">24 декабря, 20:00</div>
+                                <div class="promo-name">Балет Игоря Моисеева</div>
+                            </div>
+                            <div class="age">6+</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">
+                        <div class="promo__item">
+                            <div class="promo-img">
+                                <img src="/upload/resize_cache/iblock/5a8/820_546_2/5a80833f3c10cd49c7a543b467b9ac05.jpg">
                             </div>
                             <div class="promo-wrap"></div>
                             <div class="promo-desc">

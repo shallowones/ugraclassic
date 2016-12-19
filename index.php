@@ -43,12 +43,17 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
     '>=DATE_ACTIVE_TO' => date('d.m.Y'),
     '!PROPERTY_location' => $arEnum['ID']
 ];
+
+$GLOBALS['FLT_EVENTS_PROMO'] = [
+    '>=DATE_ACTIVE_TO' => date('d.m.Y'),
+    '!PROPERTY_is_promo' => false
+];
 //--
 ?>
     <div class="content">
         <? $APPLICATION->IncludeComponent(
             "bitrix:news.list",
-            "promo-block-swiper",
+            "promo-block-swiper-slider",
             array(
                 "ACTIVE_DATE_FORMAT" => "d.m.Y",
                 "ADD_SECTIONS_CHAIN" => "Y",
@@ -73,14 +78,14 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                     0 => "DETAIL_PICTURE",
                     1 => "",
                 ),
-                "FILTER_NAME" => "",
+                "FILTER_NAME" => "FLT_EVENTS_PROMO",
                 "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                "IBLOCK_ID" => $ibPromoID,
-                "IBLOCK_TYPE" => "groups",
+                "IBLOCK_ID" => $ibEventsID,
+                "IBLOCK_TYPE" => "afisha",
                 "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
                 "INCLUDE_SUBSECTIONS" => "Y",
                 "MESSAGE_404" => "",
-                "NEWS_COUNT" => "3",
+                "NEWS_COUNT" => "40",
                 "PAGER_BASE_LINK_ENABLE" => "N",
                 "PAGER_DESC_NUMBERING" => "N",
                 "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -92,9 +97,9 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                 "PARENT_SECTION_CODE" => "",
                 "PREVIEW_TRUNCATE_LEN" => "",
                 "PROPERTY_CODE" => array(
-                    0 => "SELECT_OUT",
-                    1 => "RELATION_EVENT",
-                    2 => "RELATION_BANNER",
+                    0 => "date_text",
+                    1 => "age",
+                    2 => "img_promo",
                 ),
                 "SET_BROWSER_TITLE" => "N",
                 "SET_LAST_MODIFIED" => "N",
@@ -103,11 +108,11 @@ $GLOBALS['FLT_EVENTS_LIST'] = [
                 "SET_STATUS_404" => "N",
                 "SET_TITLE" => "N",
                 "SHOW_404" => "N",
-                "SORT_BY1" => "ACTIVE_FROM",
-                "SORT_BY2" => "SORT",
-                "SORT_ORDER1" => "DESC",
-                "SORT_ORDER2" => "ASC",
-                "COMPONENT_TEMPLATE" => "promo-block",
+                "SORT_BY1" => "SORT",
+                "SORT_BY2" => "ACTIVE_FROM",
+                "SORT_ORDER1" => "ASC",
+                "SORT_ORDER2" => "DESC",
+                "COMPONENT_TEMPLATE" => "promo-block-swiper-slider",
                 "TEMPLATE_THEME" => "blue",
                 "MEDIA_PROPERTY" => "",
                 "SLIDER_PROPERTY" => "",
