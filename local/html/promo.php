@@ -11,7 +11,7 @@ $APPLICATION->SetTitle("Обратная связь");
                             <a href="#">
                                 <div class="promo__item">
                                     <div class="promo-img">
-                                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+                                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/31.jpg' ?>">
                                     </div>
                                     <div class="promo-wrap"></div>
                                     <div class="promo-desc">
@@ -41,7 +41,7 @@ $APPLICATION->SetTitle("Обратная связь");
                             <a href="#">
                                 <div class="promo__item">
                                     <div class="promo-img">
-                                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/0.jpg' ?>">
+                                        <img src="<? echo SITE_TEMPLATE_PATH . '/img/content/31.jpg' ?>">
                                     </div>
                                     <div class="promo-wrap"></div>
                                     <div class="promo-desc">
@@ -154,8 +154,8 @@ $APPLICATION->SetTitle("Обратная связь");
             paginationClickable: true,
             spaceBetween: 10,
             loop: true,
-            autoplay: 2500,
-            autoplayDisableOnInteraction: false
+            //autoplay: 2500,
+            //autoplayDisableOnInteraction: false
         });
 
         $('.promo-swip-container').swiper({
@@ -166,8 +166,8 @@ $APPLICATION->SetTitle("Обратная связь");
             prevButton: '.swiper-button-prev',
             spaceBetween: 10,
             loop: true,
-            autoplay: 2500,
-            autoplayDisableOnInteraction: false
+            //autoplay: 2500,
+            //autoplayDisableOnInteraction: false
         });
 
     </script>
