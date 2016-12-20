@@ -17,7 +17,7 @@ $this->setFrameMode(true);
         <?=$arResult["NAV_STRING"]?><br />
     <?endif;?>
     <?foreach($arResult["ITEMS"] as $arItem):?>
-        <?$pic = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>700, 'height'=>360), BX_RESIZE_IMAGE_EXACT, true);?>
+        <?$pic = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>175, 'height'=>175), BX_RESIZE_IMAGE_EXACT, true);?>
         <?
         $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
         $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
@@ -29,9 +29,9 @@ $this->setFrameMode(true);
                     <img class="preview_picture"
                          border="0"
                          src="<?=$pic["src"]?>"
-                         width="306"
                          alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
                          title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
+			style="max-width: 175px;"
                     />
                 </a>
             <?endif?>
