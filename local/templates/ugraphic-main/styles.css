@@ -1909,7 +1909,7 @@ input.err, textarea.err {
     margin-top: 10px;
 }
 .s-col .ms-container .ms-list {
-    height: 70px;
+    height: 100px; /*70px;*/
 }
 .s-col .ms-container .ms-selectable li.ms-elem-selectable {
     border: none;
