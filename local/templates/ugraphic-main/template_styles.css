@@ -649,11 +649,11 @@ h1
     justify-content: space-between;
     height: 100%;
     align-items: flex-start;
-    padding-left: 150px;
+    padding-left: 70px;
 }
 
 .head-1 {
-    padding-top: 50px;
+    padding-top: 20px;
 }
 .head-2 {
     padding-top: 20px;
@@ -732,6 +732,10 @@ h1
 .conts {
     display: flex;
 }
+.conts-row {}
+.conts-row:first-child {
+    margin-right: 40px;
+}
 .conts__item {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 13px;
@@ -740,22 +744,34 @@ h1
     color: #777777;
 }
 .conts__item:first-child {
-    margin-right: 30px;
+    margin-bottom: 10px;
 }
 .dsc {
     margin-bottom: 7px;
 }
+.dsc > span {
+    font-size: 15px;
+    font-weight: bold;
+}
+.dsc > i {
+    font-style: normal;
+}
 .nmb {
     font-size: 18px;
 }
-.nmb > span {
+.nmb-first > span, .nmb-second > span {
     font-weight: bold;
     color: #d0cfcf;
+}
+.nmb-first, .nmb-second {
+    display: inline-block;
+}
+.nmb-first::after {
+    content: ',';
 }
 .soc {
     display: flex;
     align-items: center;
-    margin-left: 30px;
 }
 .soc > .dsc {
     margin-bottom: 0;
@@ -991,13 +1007,15 @@ a:hover > .soc-vk, a:hover > .soc-insta {
     }
     .head-info
     {
-        padding-left: 60px;
+        padding-left: 50px;
     }
     .tours > .ev-map {
         margin-left: 30px;
     }
+    .spec-version {
+        font-size: 12px;
+    }
 }
-
 @media (min-width: 768px) and (max-width: 1000px) {
     h1 {
         font-size: 33px;
@@ -1015,8 +1033,20 @@ a:hover > .soc-vk, a:hover > .soc-insta {
         margin-top: 40px;
     }
 
+    .logo {
+        width: 72px;
+        margin-left: 20px;
+    }
+    .head-info {
+        padding-left: 50px;
+    }
+
     .to-back {
         margin-top: 10px;
+    }
+
+    .spec-version {
+        display: none;
     }
 
     .search-head {
@@ -1085,12 +1115,6 @@ a:hover > .soc-vk, a:hover > .soc-insta {
 
     .content {
         padding-bottom: 510px;
-    }
-
-
-    .head-info
-    {
-        padding-left: 30px;
     }
 
     .spec-version {
@@ -1429,21 +1453,24 @@ a:hover > .soc-vk, a:hover > .soc-insta {
     .social-widget__item:first-child {
         margin-bottom: 15px;
     }
+    .soc-vk, .soc-insta {
+        margin: 0 10px;
+    }
 }
 
 
 @media screen and (max-width: 1399px) {
     .head-1 {
-        padding-top: 20px;
+        padding-top: 12px;
     }
-    .conts {
-        display: block;
+    .conts-row {
+        width: 39%;
     }
-    .conts__item:first-child, .conts__item:nth-child(2) {
-        display: inline-block;
+    .conts-time {
+        padding-top: 26px;
     }
-    .soc {
-        margin: 20px 0;
+    .conts-row:last-child {
+        margin-top: -3px;
     }
     .list__item {
         line-height: 20px;
@@ -1460,6 +1487,9 @@ a:hover > .soc-vk, a:hover > .soc-insta {
     .groups__item {
         width: 23%;
         height: auto;
+    }
+    .dsc > i {
+        display: none;
     }
 }
 @media screen and (max-width: 1000px) {
@@ -1497,18 +1527,6 @@ a:hover > .soc-vk, a:hover > .soc-insta {
         display: flex;
         justify-content: space-around;
     }
-    .soc {
-        display: block;
-    }
-    .soc-vk {
-        margin-bottom: 4px;
-    }
-    .soc-vk, .soc-insta {
-        margin-left: 0;
-    }
-    .soc > .dsc {
-        display: none;
-    }
     .mobile-menu {
         display: none;
         width: 100%;
@@ -1531,6 +1549,21 @@ a:hover > .soc-vk, a:hover > .soc-insta {
         padding-bottom: 0;
         border-top: 0;
     }
+    .dsc > i {
+        display: inline;
+    }
+    .conts__item.soc > a {
+        width: auto;
+    }
+    .conts-time {
+        padding: 0;
+    }
+    .conts-row:first-child {
+        margin: 0;
+    }
+    .conts-row {
+        width: 45%;
+    }
 }
 @media (max-width: 600px) {
     .groups__item {
@@ -1550,6 +1583,12 @@ a:hover > .soc-vk, a:hover > .soc-insta {
         width: 100%;
     }
     .groups__item {
+        width: 100%;
+    }
+    .conts {
+        flex-direction: column;
+    }
+    .conts-row {
         width: 100%;
     }
 }

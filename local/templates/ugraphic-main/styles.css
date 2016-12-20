@@ -1283,7 +1283,6 @@ p.unmar {
 .conts-hidden {
     display: none;
     width: 100%;
-    height: 80px;
     background: #303030;
     padding: 25px 20px;
 }
