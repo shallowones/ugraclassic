@@ -3,8 +3,8 @@ namespace UW;
 
 class Services
 {
-    protected static $handlerDisallow = false;
-    protected static $handlerCodeDisallow = false;
+    protected static $handlerDisallow           = false;
+    protected static $handlerCodeDisallow       = false;
 
     /**
      * Получат массив URL
@@ -150,7 +150,7 @@ class Services
      */
     public static function DuplicateNews($arFields, $pictureOld = 0, $section_id = 0)
     {
-        $arIB = \CIBlock::GetList([],['TYPE'=>'news', 'CODE'=>'news'])->GetNext()['ID'];
+        $arIB = \CIBlock::GetList([],['TYPE'=>'news', 'CODE'=>'news'])->GetNext();
 
         $obEl = new \CIBlockElement;
 

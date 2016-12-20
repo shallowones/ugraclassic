@@ -8,10 +8,11 @@
 
 /*Автоматическое подключение классов*/
 \Bitrix\Main\Loader::registerAutoLoadClasses(null, array(
-    'UW\IBBase'         => '/local/libs/base/ib.base.php',
-    'UW\HLBase'         => '/local/libs/base/hl.base.php',
-    'UW\SystemBase'     => '/local/libs/base/system.base.php',
-    'UW\Services'     => '/local/libs/base/services.php'
+    'UW\IBBase'             => '/local/libs/base/ib.base.php',
+    'UW\HLBase'             => '/local/libs/base/hl.base.php',
+    'UW\SystemBase'         => '/local/libs/base/system.base.php',
+    'UW\Services'           => '/local/libs/base/services.php',
+    'UW\SubscribeAfisha'    => '/local/libs/events/SubscribeAfisha.php'
 ));
 
 $arEvents = [];
@@ -23,27 +24,34 @@ $arEvents = [];
 \UW\SystemBase::registerHandlers($arEvents);
 
 // для дублирования новостей коллективов
-AddEventHandler("iblock", "OnBeforeIBlockElementAdd", Array("UW\Services", "CheckDuplicateNewsForAdd"));
-AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\Services", "CheckDuplicateNewsForUpd"));
+AddEventHandler("iblock", "OnBeforeIBlockElementAdd", Array("UW\\Services", "CheckDuplicateNewsForAdd"));
+AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\\Services", "CheckDuplicateNewsForUpd"));
 
 // для промо-блока на главной
-AddEventHandler("iblock", "OnBeforeIBlockElementDelete", Array("UW\Services", "CheckDeletePromo"));
-AddEventHandler("iblock", "OnBeforeIBlockElementAdd", Array("UW\Services", "CheckAddPromo"));
-AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\Services", "CheckEditPromo"));
+AddEventHandler("iblock", "OnBeforeIBlockElementDelete", Array("UW\\Services", "CheckDeletePromo"));
+AddEventHandler("iblock", "OnBeforeIBlockElementAdd", Array("UW\\Services", "CheckAddPromo"));
+AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", Array("UW\\Services", "CheckEditPromo"));
 
 // отписка от рассылки
-AddEventHandler("subscribe", "BeforePostingSendMail", array("UW\Services", "BeforePostingSendMailHandler"));
+AddEventHandler("subscribe", "BeforePostingSendMail", array("UW\\Services", "BeforePostingSendMailHandler"));
 
 // копирование дат проведения в Афише
-AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "CopyDatesAfisha"));
-AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "CopyDatesAfisha"));
+AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\\ervices", "CopyDatesAfisha"));
+AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\\ervices", "CopyDatesAfisha"));
 
 // добавляем к символьному коду ID элемента (для Афиши)
-AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\Services", "AddIdForCode"));
-AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\Services", "AddIdForCode"));
+AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\\Services", "AddIdForCode"));
+AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\\Services", "AddIdForCode"));
 
 // скрываем разделы в меню в админке
-AddEventHandler("main", "OnBuildGlobalMenu", Array("UW\Services", "ASDOnBuildGlobalMenu"));
+AddEventHandler("main", "OnBuildGlobalMenu", Array("UW\\Services", "ASDOnBuildGlobalMenu"));
+
+// добавление мероприятия из афиши в инфоблок рассылки
+AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("UW\\SubscribeAfisha", "AddEventToIbSubscribe"));
+// деактивация эхлемента в инфоблоке рассылки
+AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("UW\\SubscribeAfisha", "DeactivateEventSubscribe"));
+// удаление эхлемента в инфоблоке рассылки
+AddEventHandler("iblock", "OnBeforeIBlockElementDelete", Array("UW\\SubscribeAfisha", "DeleteEventSubscribe"));
 
 /**
  * Распечатывает массивы
