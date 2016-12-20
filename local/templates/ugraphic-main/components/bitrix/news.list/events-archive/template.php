@@ -77,11 +77,6 @@ $this->setFrameMode(true);
                         <div class="tick-2"><?=$arItem["DISPLAY_PROPERTIES"]["cost"]["DISPLAY_VALUE"]?></div>
                     </div>
                 <? endif; ?>
-                <? if(strlen(trim($arItem['DISPLAY_PROPERTIES']['link_kassir']['VALUE'])) > 0): ?>
-                    <div class="tick">
-                        <a href="<?=$arItem['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>">Купить билет онлайн</a>
-                    </div>
-                <? endif; ?>
             </div>
             <?if(isset($arItem["DISPLAY_PROPERTIES"]["age"])):?>
                 <div class="age"><?=$arItem["DISPLAY_PROPERTIES"]["age"]["DISPLAY_VALUE"]?></div>
