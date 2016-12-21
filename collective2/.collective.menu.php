@@ -15,6 +15,17 @@ $ibControlID 		= 	\UW\IBBase::getIBIdByCode("peoples_visits");
 $SiteID    = \UW\Services::GetSiteParam('ID');
 
 
+$boolDocuments = \UW\Services::IsSectionVis($ibDocumentsID, $SiteID);
+$boolArtisty = \UW\Services::IsSectionVis($ibArtistyID, $SiteID);
+$boolHistory = \UW\Services::IsSectionVis($ibHistoryID, $SiteID);
+$boolControl = \UW\Services::IsSectionVis($ibControlID, $SiteID);
+$boolVideo = \UW\Services::IsSectionVis($ibVideoID, $SiteID);
+$boolJobs = \UW\Services::IsSectionVis($ibJobsID, $SiteID);
+$boolPhotogal = \UW\Services::IsSectionVis($ibPhotogalID, $SiteID);
+
+$boolOnas = $boolDocuments || $boolArtisty || $boolHistory ||
+    $boolControl || $boolVideo || $boolJobs || $boolPhotogal;
+
 $aMenuLinks = [];
 $aMenuLinks[] = [
         "Главная",
@@ -23,14 +34,17 @@ $aMenuLinks[] = [
         Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"", "DEPTH_LEVEL"=>"1"),
         ""
 ];
-$aMenuLinks[] = [
-    "О нас",
-    "#",
-    Array(),
-    Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"1", "DEPTH_LEVEL"=>"1"),
-    ""
-];
-if(\UW\Services::IsSectionVis($ibDocumentsID, $SiteID))
+if($boolOnas)
+{
+    $aMenuLinks[] = [
+        "О нас",
+        "#",
+        Array(),
+        Array("FROM_IBLOCK"=>"1","IS_PARENT"=>"1", "DEPTH_LEVEL"=>"1"),
+        ""
+    ];
+}
+if($boolDocuments)
 {
     $aMenuLinks[] = [
         "Документация",
@@ -40,7 +54,7 @@ if(\UW\Services::IsSectionVis($ibDocumentsID, $SiteID))
         ""
     ];
 }
-if(\UW\Services::IsSectionVis($ibArtistyID, $SiteID))
+if($boolArtisty)
 {
     $aMenuLinks[] = [
         "Артисты",
@@ -50,7 +64,7 @@ if(\UW\Services::IsSectionVis($ibArtistyID, $SiteID))
         ""
     ];
 }
-if(\UW\Services::IsSectionVis($ibHistoryID, $SiteID))
+if($boolHistory)
 {
     $aMenuLinks[] = [
         "История",
@@ -60,7 +74,7 @@ if(\UW\Services::IsSectionVis($ibHistoryID, $SiteID))
         ""
     ];
 }
-if(\UW\Services::IsSectionVis($ibControlID, $SiteID))
+if($boolControl)
 {
     $aMenuLinks[] = [
         "Руководство",
@@ -70,7 +84,7 @@ if(\UW\Services::IsSectionVis($ibControlID, $SiteID))
         ""
     ];
 }
-if(\UW\Services::IsSectionVis($ibVideoID, $SiteID))
+if($boolVideo)
 {
     $aMenuLinks[] = [
         "Видео",
@@ -80,7 +94,7 @@ if(\UW\Services::IsSectionVis($ibVideoID, $SiteID))
         ""
     ];
 }
-if(\UW\Services::IsSectionVis($ibJobsID, $SiteID))
+if($boolJobs)
 {
     $aMenuLinks[] = [
         "Вакансии",
@@ -90,7 +104,7 @@ if(\UW\Services::IsSectionVis($ibJobsID, $SiteID))
         ""
     ];
 }
-if(\UW\Services::IsSectionVis($ibPhotogalID, $SiteID))
+if($boolPhotogal)
 {
     $aMenuLinks[] = [
         "Фотоотчеты",
