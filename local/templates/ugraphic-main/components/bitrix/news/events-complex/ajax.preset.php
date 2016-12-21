@@ -24,7 +24,7 @@ if($obRequest->isAjaxRequest())
     $nPlus = 7 - $nDay;
 
     $nDayMonth = date('t', $mCurrentDate);
-    $nPlusMonth = $nDayMonth - $arCD[1];
+    $nPlusMonth = $nDayMonth - $arCD[0];
 
     if($preset == 'this_week')
     {
@@ -47,7 +47,7 @@ if($obRequest->isAjaxRequest())
         $response['dateEnd'] = date('d.m.Y',
             mktime(0,0,0,
                 intval($arCD[1]),
-                intval($arCD[0])+$nPlusMonth-1,
+                intval($arCD[0])+$nPlusMonth,
                 intval($arCD[2])
             )
         );
@@ -57,7 +57,7 @@ if($obRequest->isAjaxRequest())
         $response['dateStart'] = date('d.m.Y',
             mktime(0,0,0,
                 intval($arCD[1]),
-                intval($arCD[0])+$nPlusMonth,
+                intval($arCD[0])+$nPlusMonth+1,
                 intval($arCD[2])
             )
         );
