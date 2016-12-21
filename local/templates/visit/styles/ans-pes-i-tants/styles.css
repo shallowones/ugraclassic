@@ -802,7 +802,7 @@ span.mobile{
 /* ------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news - events-service-complex */
 .afisha-list .afisha-name a:hover {
     text-decoration: none;
-    color: #aad0c8;
+    color: #f2635f;
 }
 
 
@@ -832,7 +832,7 @@ span.mobile{
 
 /* ------------------------------------------------------------------------- СТИЛИ С ШАБЛОНА news.list - news-index */
 .news-index .news-name a:hover, .news-name a:active {
-    color: #2e353a;
+    color: #f2635f;
 }
 /* ---------------------------------------------------------------------------------------------------------------- */
 
