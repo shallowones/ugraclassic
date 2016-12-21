@@ -13,7 +13,7 @@ $ibDocumentsID		=	\UW\IBBase::getIBIdByCode("documents_visits");
 $ibControlID 		= 	\UW\IBBase::getIBIdByCode("peoples_visits");
 
 $SiteID    = \UW\Services::GetSiteParam('ID');
-
+$NameSectionVis = \UW\Services::GetNameSectionVis();
 
 $boolDocuments = \UW\Services::IsSectionVis($ibDocumentsID, $SiteID);
 $boolArtisty = \UW\Services::IsSectionVis($ibArtistyID, $SiteID);
@@ -26,7 +26,7 @@ $boolPhotogal = \UW\Services::IsSectionVis($ibPhotogalID, $SiteID);
 $boolOnas = $boolDocuments || $boolArtisty || $boolHistory ||
     $boolControl || $boolVideo || $boolJobs || $boolPhotogal;
 
-$aMenuLinks = [];
+$aMenuLinks = array();
 $aMenuLinks[] = [
         "Главная",
         $CODE_SITE."/index.php",
@@ -144,4 +144,5 @@ if(\UW\Services::IsSectionVis($ibContactsID, $SiteID))
         ""
     ];
 }
+
 ?>

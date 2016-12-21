@@ -78,6 +78,7 @@ class Services
      */
     public static function GetCollectiveID($ibID)
     {
+	\Bitrix\Main\Loader::includeModule('iblock');
         $arCollNews = \CIBlockSection::GetList(
             [],
             ['IBLOCK_ID'=>$ibID,'=UF_COLLECTIVE'=>self::GetSiteParam('ID')]
@@ -109,6 +110,7 @@ class Services
      */
     public static function IsSectionVis($ibID, $siteID)
     {
+	\Bitrix\Main\Loader::includeModule('iblock');
         $result = false;
 
         $arCollNews = \CIBlockSection::GetList(
