@@ -53,7 +53,7 @@ $GLOBALS['FLT_EVENTS_PROMO'] = [
     <div class="content">
         <? $APPLICATION->IncludeComponent(
             "bitrix:news.list",
-            "promo-block-swiper-slider",
+            "promo-events-swiper-slider",
             array(
                 "ACTIVE_DATE_FORMAT" => "d.m.Y",
                 "ADD_SECTIONS_CHAIN" => "Y",
