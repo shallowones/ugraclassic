@@ -45,7 +45,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                     <?=$colFtrName?>
                 </div>
                 <div class="footer-counter">
-                    <img src="<? echo SITE_TEMPLATE_PATH . '/styles/solisti-ktc-yugraclassic/img/counter.png' ?>">
+                    <?/*<img src="<? echo SITE_TEMPLATE_PATH . '/styles/solisti-ktc-yugraclassic/img/counter.png' ?>">*/?>
                 </div>
                 <div class="footer-ugraweb">
                     Разработка и поддержка —
