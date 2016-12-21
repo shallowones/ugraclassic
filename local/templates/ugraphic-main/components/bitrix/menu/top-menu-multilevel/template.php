@@ -73,6 +73,7 @@
                             <? /*<div class="menu-clear-left"></div>
                 <ul class="t-menu"></ul>
                 <div class="menu-clear-left"></div>*/ ?>
+                            <ul class="t-menu" id="top-menu-2"></ul>
                             <div class="conts-hidden"></div>
         </div>
     </nav>

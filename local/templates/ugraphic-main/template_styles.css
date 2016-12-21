@@ -980,6 +980,11 @@ a:hover > .soc-vk, a:hover > .soc-insta {
         margin-right: 147px;
     }
 }
+@media (min-width: 769px) and (max-width: 1399px) {
+    .t-more {
+        display: list-item;
+    }
+}
 
 @media (min-width: 1000px) and (max-width: 1399px) {
         
@@ -1016,7 +1021,7 @@ a:hover > .soc-vk, a:hover > .soc-insta {
         font-size: 12px;
     }
 }
-@media (min-width: 768px) and (max-width: 1000px) {
+@media (min-width: 769px) and (max-width: 1000px) {
     h1 {
         font-size: 33px;
     }
@@ -1429,7 +1434,7 @@ a:hover > .soc-vk, a:hover > .soc-insta {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .cross {
         display: none;
     }
@@ -1522,7 +1527,10 @@ a:hover > .soc-vk, a:hover > .soc-insta {
         height: auto;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 757px) {
+
+}
+@media screen and (max-width: 768px) {
     .conts {
         display: flex;
         justify-content: space-around;

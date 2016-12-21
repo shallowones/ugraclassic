@@ -1265,6 +1265,7 @@ p.unmar {
     height: 49px;
     position: relative;
     margin-left: 5px;
+    display: none;
 }
 .t-more:hover {
     cursor: pointer;
@@ -1428,7 +1429,7 @@ input.err, textarea.err {
         padding-right: 0;
     }
 }
-@media screen and (max-width: 757px) {
+@media screen and (max-width: 768px) {
     .f-line {
         display: block;
     }

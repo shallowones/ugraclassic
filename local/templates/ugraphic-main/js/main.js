@@ -86,6 +86,7 @@ $(document).ready(function () {
                     countDaysOfMonth = new Date().daysInMonth(year, month);
                     dateStart.val('01.' + month + '.' + year);
                     dateEnd.val(countDaysOfMonth + '.' + month + '.' + year);
+                    break;
             }
         }
     });
@@ -186,20 +187,56 @@ $(document).ready(function () {
      });*/
 
     // высчитваем верхнее меню
-    if (window.matchMedia('(max-width: 1000px)').matches && window.matchMedia('(min-width: 757px)').matches) {
-        // подставляем число пунктов для первого меню, остальные уйдут во второе скрытое меню
-        editTopMenu(3);
-    }
-    /*if (window.matchMedia('(max-width: 1399px)').matches && window.matchMedia('(min-width: 1000px)').matches) {
-     editTopMenu(4);
-     }*/
 
-    function editTopMenu(countMenuItem) {
+    var boolResize = false;
+    $(window).resize(function() {
+        if ($(this).width() > 752 && $(this).width() < 1383) {
+            if (!boolResize) {
+                editTopMenu();
+                boolResize = true;
+            }
+        } else {
+            if (boolResize) {
+                returnTopMenu();
+                boolResize = false;
+            }
+        }
+    });
+
+    if (window.matchMedia('(max-width: 1399px)').matches && window.matchMedia('(min-width: 757px)').matches) {
+        editTopMenu();
+    }
+    
+    function returnTopMenu() {
+        $('#top-menu-1').find('li').each(function () {
+           if ($(this).hasClass('t-more')) {
+               $(this).remove();
+           } else {
+               if ($(this).css('display') == 'none') {
+                   $(this).css({display: 'list-item'});
+               }
+           }
+        });
+        $('#top-menu-2').find('li').each(function () {
+           $(this).remove();
+        });
+        $('#header').removeAttr('style');
+        $('.mobile-menu').removeAttr('style');
+    }
+    
+    function editTopMenu() {
+
+        $('.mobile-menu').removeAttr('style'); // удаляем лишние атрибуты, оставшиеся от slideToggle
+
         var count = 0;
         var arLI = [];
-        var topMenu = '.top-menu';
+        var topMenu = '#top-menu-1';
+        var sumItemWidth = 50; // начинаем вычислять с 50px, потому что ширина блока с точками равна 50px
+        var widthTopMenu = $(topMenu).width();
+
         $(topMenu + '> li').each(function (index, element) {
-            if (index > countMenuItem) {
+            sumItemWidth += $(this).width();
+            if (sumItemWidth > widthTopMenu) {
                 arLI[count] = '<li>' + $(element).html() + '</li>';
                 count++;
                 $(this).css({display: 'none'});
@@ -228,7 +265,7 @@ $(document).ready(function () {
             var header = $('#header');
             var heightHeader = header.height();
             var menuHead = $('.menu-head');
-            var heightMenuHead = menuHead.height();
+            var heightMenuHead = menuHead.height() + 1;
 
             heightRightCont = parseInt(rightCont.css('top'));
 
