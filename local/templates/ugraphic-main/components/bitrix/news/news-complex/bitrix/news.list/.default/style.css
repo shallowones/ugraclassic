@@ -10,7 +10,7 @@
 .news-complex .news-item .preview_picture {
 	float: left;
 	width: 175px;
-	height: 175px;
+	/*height: 175px;*/
 	margin-right: 15px;
 }
 
