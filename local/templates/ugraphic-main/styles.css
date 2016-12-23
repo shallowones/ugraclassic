@@ -2167,6 +2167,12 @@ a:hover > .promo__item > .promo-desc > .promo-name, a:hover > .promo__item > .ag
         left: 10px;
     }
 }
+@media (max-width: 768px) {
+    .promo-desc {
+        bottom: 5px;
+        left: 5px;
+    }
+}
 .content-block img {
     width: 50%;
 }
@@ -2206,4 +2212,13 @@ a:hover > .promo__item > .promo-desc > .promo-name, a:hover > .promo__item > .ag
 
 .uk-today-box .ktc-today span {
     letter-spacing: 2px;
+}
+
+@media (max-width: 400px) {
+    .promo-date {
+        font-size: 17px;
+    }
+    .promo-name {
+        font-size: 24px;
+    }
 }
