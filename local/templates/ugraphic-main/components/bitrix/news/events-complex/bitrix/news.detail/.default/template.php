@@ -60,7 +60,14 @@ $this->setFrameMode(true);
                             <?echo $date;?>, <?=ToLower(FormatDate("l", MakeTimeStamp($arResult["ACTIVE_FROM"])))?>
                         <? endif; ?>
                     </i></li>
-                    <li class="afisha-w__item"><span>Время:</span> <?echo ConvertDateTime($arResult["ACTIVE_FROM"],"HH:MI");?></li>
+                    <li class="afisha-w__item">
+                        <span>Время:</span>
+                        <? if(strlen(trim($arResult['PROPERTIES']['other_time']['VALUE'])) > 0): ?>
+                            <?=$arResult['PROPERTIES']['other_time']['VALUE']?>
+                        <? else: ?>
+                            <? echo ConvertDateTime($arResult["ACTIVE_FROM"],"HH:MI"); ?>
+                        <? endif; ?>
+                    </li>
                 <?endif?>
                 <?if(isset($arResult["DISPLAY_PROPERTIES"]["hall"])):?>
                     <li class="afisha-w__item"><span>Место:</span>

@@ -56,7 +56,14 @@ $this->setFrameMode(true);
                                     ?>
                                 <? endif; ?>
                             </li>
-                            <li class="afisha-w__item"><span>Время:</span> <?echo ConvertDateTime($arItem["ACTIVE_FROM"],"HH:MI");?></li>
+                            <li class="afisha-w__item">
+                                <span>Время:</span>
+                                <? if(strlen(trim($arItem['PROPERTIES']['other_time']['VALUE'])) > 0): ?>
+                                    <?=$arItem['PROPERTIES']['other_time']['VALUE']?>
+                                <? else: ?>
+                                    <? echo ConvertDateTime($arItem["ACTIVE_FROM"],"HH:MI"); ?>
+                                <? endif; ?>
+                            </li>
                         <?endif;?>
                         <?if(isset($arItem["DISPLAY_PROPERTIES"]["hall"])):?>
                             <li class="afisha-w__item"><span>Место:</span>
