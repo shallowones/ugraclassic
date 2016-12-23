@@ -45,3 +45,9 @@
     -o-transition:all 0.3s ease;
     transition:all 0.3s ease;
 }
+
+@media (max-width: 768px) {
+    .bx_breadcrumbs {
+        padding-top: 0;
+    }
+}

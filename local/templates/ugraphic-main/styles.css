@@ -374,9 +374,6 @@
     color: #daac4f;
     margin-bottom: 5px;
 }
-.team-phone > span {
-    font-weight: bold;
-}
 .team__item > p {
     margin: 0;
     color: #9d9c9c;
@@ -2200,6 +2197,11 @@ a:hover > .promo__item > .promo-desc > .promo-name, a:hover > .promo__item > .ag
     .content-block img {
         width: 100%;
     }
+}
+
+.phone-start {
+    color: #9d9c9c;
+    font-weight: normal;
 }
 
 .uk-today-box .ktc-today span {

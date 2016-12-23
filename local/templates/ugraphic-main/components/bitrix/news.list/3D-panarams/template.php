@@ -41,21 +41,25 @@ $this->setFrameMode(true);
 			smartSpeed : 500,
 		    navText : ["<i></i>","<i></i>"],
 		    responsive:{
-				0:{
-					items:2,
-					mouseDrag : true,
-				},
-				758:{
-					items:3,
-					mouseDrag : true,
-				},
+                0: {
+                    items: 1,
+                    mouseDrag: false
+                },
+                550: {
+                    items: 2,
+                    mouseDrag: false
+                },
+                680: {
+                    items: 3,
+                    mouseDrag: false
+                },
         		1000:{
             		items:4,
-            		mouseDrag : false,
+            		mouseDrag : false
         		},
         		1400:{
             		items:5,
-            		mouseDrag : false,
+            		mouseDrag : false
         		}
         	}
 		});

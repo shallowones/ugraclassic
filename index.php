@@ -656,7 +656,7 @@ $GLOBALS['FLT_EVENTS_PROMO'] = [
         <div class="virt-tour-box"> <!-- 3d tour -->
             <div class="wrapper">
 
-                <h1>ВИРТУАЛЬНЬIЙ ТУР</h1>
+                <h1>ВИРТУАЛЬНЫЙ ТУР</h1>
 
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:news.list",
