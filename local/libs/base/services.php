@@ -78,7 +78,7 @@ class Services
      */
     public static function GetCollectiveID($ibID)
     {
-	\Bitrix\Main\Loader::includeModule('iblock');
+        \Bitrix\Main\Loader::includeModule('iblock');
         $arCollNews = \CIBlockSection::GetList(
             [],
             ['IBLOCK_ID'=>$ibID,'=UF_COLLECTIVE'=>self::GetSiteParam('ID')]
@@ -110,7 +110,7 @@ class Services
      */
     public static function IsSectionVis($ibID, $siteID)
     {
-	\Bitrix\Main\Loader::includeModule('iblock');
+        \Bitrix\Main\Loader::includeModule('iblock');
         $result = false;
 
         $arCollNews = \CIBlockSection::GetList(
@@ -573,7 +573,7 @@ class Services
                     }
                 }
                 else
-                // св-во пустое
+                    // св-во пустое
                 {
                     // есть две даты для заполнения
                     if($arEl['DATE_ACTIVE_FROM'] != $arEl['DATE_ACTIVE_TO'])
