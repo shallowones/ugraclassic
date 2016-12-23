@@ -324,7 +324,7 @@
     transition: 0.2s;
 }
 .documents__item .description {
-    width: 95%;
+    width: 75%;
 }
 .doc-format {
     width: 35px;
@@ -466,13 +466,12 @@
 }
 .static p {
     margin-bottom: 25px;
-    font-size: 16px;
 }
 .chronicle { }
 .chronicle > h2 {
     font-weight: bold;
     font-size: 24px;
-    margin: 50px 0;
+    margin: 0 0 30px;
 }
 .chron {
     margin: 0 0 0 -30px;
@@ -638,8 +637,6 @@ p.unmar {
     }
 
     .news-complex .news-item .preview_picture {
-        width: 100%;
-        height: 100%;
         margin-right: 0;
         float: initial;
     }
@@ -653,6 +650,9 @@ p.unmar {
     .news-complex .news-item .news-name-text-box {
         height: 100%;
         overflow: initial;
+    }
+    .content > .col-left-cont {
+        width: auto;
     }
 }
 /* ----------------------------------------------------------------------------------------------------------- MAP */
@@ -1124,6 +1124,9 @@ p.unmar {
     .online-two {
         width: 70%;
     }
+    .chron__item {
+        width: 28%;
+    }
 }
 @media screen and (max-width: 1000px) {
     .online-one {
@@ -1145,6 +1148,12 @@ p.unmar {
         border-bottom: 4px solid #daac4f;
         padding-bottom: 15px;
         margin: 0 0 15px;
+    }
+    .chron__item {
+        width: 100%;
+    }
+    .chron__item p {
+        margin-bottom: 5px;
     }
 }
 /* --------------------------------------------------------------------------------------------- PHOTO-FILTER */
@@ -1443,7 +1452,15 @@ input.err, textarea.err {
     .top-menu {
         height: auto;
     }
+    .team {
+        margin: 0;
+        text-align: center;
+    }
+    .team__item {
+        margin: 0 20px 20px 0;
+    }
 }
+
 @media screen and (max-width: 580px) {
     .feedback-form {
         line-height: 25px;
@@ -1460,6 +1477,11 @@ input.err, textarea.err {
     }
     .feedback-button {
         margin: 0 auto;
+    }
+}
+@media screen and (max-width: 520px) {
+    .team__item {
+        width: 100%;
     }
 }
 @media screen and (max-width: 350px) {
@@ -2148,6 +2170,18 @@ a:hover > .promo__item > .promo-desc > .promo-name, a:hover > .promo__item > .ag
         left: 10px;
     }
 }
+.content-block img {
+    width: 50%;
+}
+.content-block img[align="left"] {
+    margin: 0 20px 20px 0;
+}
+.content-block img[align="right"] {
+    margin: 0 0 20px 20px;
+}
+.content-block ul {
+    list-style-type: disc;
+}
 
 @media (max-width: 560px) {
     .promo-block .promo-slide {
@@ -2162,6 +2196,9 @@ a:hover > .promo__item > .promo-desc > .promo-name, a:hover > .promo__item > .ag
     }
     .promo-block .promo-slide .promo-name {
         font-size: 20px;
+    }
+    .content-block img {
+        width: 100%;
     }
 }
 
