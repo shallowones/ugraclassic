@@ -15,13 +15,6 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"За кулисами", 
-		"/news/backstage/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
 		"Фотоотчёты", 
 		"/news/photo/", 
 		Array(), 
