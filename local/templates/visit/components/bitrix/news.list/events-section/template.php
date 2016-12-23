@@ -54,7 +54,7 @@ $this->setFrameMode(true);
 			<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
 					<div class="afisha-text">
 						<?
-						$mess = mb_substr($arItem["PREVIEW_TEXT"], 0, 330, 'UTF-8') . '...';
+						$mess = mb_substr(strip_tags($arItem["PREVIEW_TEXT"]), 0, 330, 'UTF-8') . '...';
 						echo $mess;
 						?>
 					</div>

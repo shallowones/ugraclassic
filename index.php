@@ -637,7 +637,7 @@ $GLOBALS['FLT_EVENTS_PROMO'] = [
         <div class="uk-today-box"> <!-- UK today -->
             <div class="wrapper">
                 <div class="ktc-today">
-                    <h1>«Югра-Классик» <br/>сегодня</h1>
+                    <h1><span>«</span>Югра-Класси<span>к»</span> <br/>сегодня</h1>
 
                     <?$APPLICATION->IncludeFile(
                         $APPLICATION->GetTemplatePath("include_areas/ktc-today.php"),

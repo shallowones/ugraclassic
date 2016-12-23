@@ -547,13 +547,13 @@ p.unmar {
 .news-complex .news-item {
     min-height: 175px;
     border-bottom: 1px solid #e2e1e1;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
 }
 
 .news-complex .news-item .preview_picture {
     float: left;
-    width: 175px;
-    height: 175px;
+    max-width: 175px;
+    /*height: 175px;*/
     margin-right: 15px;
 }
 
@@ -2200,4 +2200,8 @@ a:hover > .promo__item > .promo-desc > .promo-name, a:hover > .promo__item > .ag
     .content-block img {
         width: 100%;
     }
+}
+
+.uk-today-box .ktc-today span {
+    letter-spacing: 2px;
 }
