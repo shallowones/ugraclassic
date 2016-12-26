@@ -18,6 +18,10 @@
 if(!$inWidget) die('inWidget object was not initialised.');
 if(!is_object($inWidget->data)) die('<b style="color:red;">Cache file contains plain text:</b><br />'.$inWidget->data);
 
+define("NO_KEEP_STATISTIC", true);
+define("NO_AGENT_CHECK", true);
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
@@ -148,7 +152,8 @@ if(!is_object($inWidget->data)) die('<b style="color:red;">Cache file contains p
 				ling-height:0px;
 			}
 			.widget .data .image img {
-				width:<?php echo $inWidget->imgWidth; ?>px;
+				/*width:<?php echo $inWidget->imgWidth; ?>px;*/
+                max-height: 220px;
 			}
 			.widget .data .image:hover {
 				filter: alpha(opacity=80);
