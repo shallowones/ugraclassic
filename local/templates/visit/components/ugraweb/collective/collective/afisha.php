@@ -11,7 +11,11 @@ $APPLICATION->AddChainItem("Афиша");
 ?>
 
     <h4><a href="<?=$sectionEventsArchive?>">Прошедшие события</a></h4><br>
-<?$APPLICATION->IncludeComponent(
+<?
+$GLOBALS['arFiltAfAr'] = [
+    '>DATE_ACTIVE_FROM' => date('d.m.Y').' 00:00:01',
+];
+$APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "events-section",
     array(
@@ -23,10 +27,11 @@ $APPLICATION->AddChainItem("Афиша");
         "AJAX_OPTION_JUMP" => "N",
         "AJAX_OPTION_STYLE" => "Y",
         "CACHE_FILTER" => "Y",
+        "FILTER_NAME" => "arFiltAfAr",
         "CACHE_GROUPS" => "N",
         "CACHE_TIME" => "36000000",
         "CACHE_TYPE" => "N",
-        "CHECK_DATES" => "Y",
+        "CHECK_DATES" => "N",
         "DETAIL_URL" => "{$arResult['FOLDER']}{$arResult['VARIABLES']['COLL_CODE']}/afisha/#ELEMENT_ID#/",
         "DISPLAY_BOTTOM_PAGER" => "N",
         "DISPLAY_DATE" => "N",
@@ -43,7 +48,6 @@ $APPLICATION->AddChainItem("Афиша");
             5 => "cost",
             6 => "",
         ),
-        "FILTER_NAME" => "",
         "HIDE_LINK_WHEN_NO_DETAIL" => "N",
         "IBLOCK_ID" => $arParams['IB_EVENTS'],
         "IBLOCK_TYPE" => "site_visit",

@@ -43,12 +43,12 @@ foreach ($arResult['ITEMS'] as $key => $arItem) {
     // парсим дату и место проведения
     if (!empty($arItem['PROPERTIES']['locality']['VALUE'])) {
         $arResult['ITEMS'][$key]['D-PLACE'] =
-            strtolower(FormatDate("d F", MakeTimeStamp($arItem['PROPERTIES']['date']['VALUE'])))
+            strtolower(FormatDate("d F", MakeTimeStamp($arItem['ACTIVE_FROM'])))
             . ', ' . $arItem['PROPERTIES']['locality']['VALUE']
             . ', ' . $arItem['PROPERTIES']['municipality']['VALUE'];
     } else {
         $arResult['ITEMS'][$key]['D-PLACE'] =
-            strtolower(FormatDate("d F", MakeTimeStamp($arItem['PROPERTIES']['date']['VALUE'])))
+            strtolower(FormatDate("d F", MakeTimeStamp($arItem['ACTIVE_FROM'])))
             . ', ' . $arItem['PROPERTIES']['municipality']['VALUE'];
     }
     if (strpos($arResult['ITEMS'][$key]['D-PLACE'], '0') === 0) {
