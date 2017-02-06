@@ -77,7 +77,7 @@ if (!empty($_GET['set_filter'])) {
 }
 ?>
 
-    <form method="get" enctype="multipart/form-data" class="tours">
+    <form method="get"  id="set_filt" enctype="multipart/form-data" class="tours">
         <div class="navigation">
             <div class="tours__item">
                 <label for="collective">Коллективы</label>
@@ -129,7 +129,7 @@ if (!empty($_GET['set_filter'])) {
                 </ul>
             </div>
             <div class="filter-buttons">
-                <input type="submit" name="set_filter" value="Применить">
+                <input type="submit" name="set_filter" id="cl_but" value="Применить">
                 <div class="rset" id='deselect-all'><a href="javascript:void(0)">Сбросить</a></div>
             </div>
         </div>
@@ -534,6 +534,13 @@ if (!empty($_GET['set_filter'])) {
                 break;
         }
         municipality.selectMultiple('select', arrActive);
+
+//        var d = location.href;
+//        window.location = d + '&set_filter=Применить';
+//        alert(window.location);
+
+//        $('#set_filt').submit({set_filter:'Применить'});
+    $('#cl_but').click();
     });
 
     $('.mapq').maphilight({
@@ -555,3 +562,6 @@ if (!empty($_GET['set_filter'])) {
     // скролим фильтр для просмотра результатов
     //$('.timetable-block').animatescroll();
 </script>
+<!--http://ugraclassic.probitrix.com/events/region-event/?collective=&municipality%5B%5D=357&municipality%5B%5D=358&municipality%5B%5D=364&date_start=&date_end=&area-6=true&area-1=true#1-->
+<!---->
+<!--http://ugraclassic.probitrix.com/events/region-event/?collective=&municipality%5B%5D=357&municipality%5B%5D=358&municipality%5B%5D=364&date_start=&date_end=&set_filter=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C&area-1=true&area-6=true#1-->
