@@ -77,7 +77,7 @@ if (!empty($_GET['set_filter'])) {
 }
 ?>
 
-    <form method="get" enctype="multipart/form-data" class="tours">
+    <form method="get" id="set_filt" enctype="multipart/form-data" class="tours">
         <div class="navigation">
             <div class="tours__item">
                 <label for="collective">Коллективы</label>
@@ -129,7 +129,7 @@ if (!empty($_GET['set_filter'])) {
                 </ul>
             </div>
             <div class="filter-buttons">
-                <input type="submit" name="set_filter" value="Применить">
+                <input type="submit" name="set_filter" id="cl_but" value="Применить">
                 <div class="rset" id='deselect-all'><a href="javascript:void(0)">Сбросить</a></div>
             </div>
         </div>
@@ -250,7 +250,9 @@ if (!empty($_GET['set_filter'])) {
         </div>
     </form>
 
-<? $APPLICATION->IncludeComponent(
+<? 
+$GLOBALS['mapFilter']['>=DATE_ACTIVE_FROM']= date('d.m.Y').' 00:00:01';
+$APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "map",
     array(
@@ -265,7 +267,7 @@ if (!empty($_GET['set_filter'])) {
         "CACHE_GROUPS" => "Y",
         "CACHE_TIME" => "36000000",
         "CACHE_TYPE" => "A",
-        "CHECK_DATES" => "Y",
+        "CHECK_DATES" => "N",
         "DETAIL_URL" => "",
         "DISPLAY_BOTTOM_PAGER" => "Y",
         "DISPLAY_DATE" => "Y",
@@ -534,6 +536,7 @@ if (!empty($_GET['set_filter'])) {
                 break;
         }
         municipality.selectMultiple('select', arrActive);
+$('#cl_but').click();
     });
 
     $('.mapq').maphilight({
