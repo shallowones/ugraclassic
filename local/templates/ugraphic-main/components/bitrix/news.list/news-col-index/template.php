@@ -38,12 +38,12 @@ $this->setFrameMode(true);
                 <? endif; ?>
                 <? if ($arParams["DISPLAY_NAME"] != "N" && $arItem["NAME"]): ?>
                     <div class="name">
-                        <a href="<? echo $arItem["DETAIL_PAGE_URL"] ?>"><? echo TruncateText(strip_tags($arItem["NAME"]), 70); ?></a>
+                        <a href="<? echo $arItem["DETAIL_PAGE_URL"] ?>"><? echo strip_tags($arItem["NAME"]) ?></a>
                     </div>
                 <? endif; ?>
                 <? if ($arParams["DISPLAY_PREVIEW_TEXT"] != "N" && $arItem["PREVIEW_TEXT"]): ?>
                     <p>
-                        <? echo TruncateText(strip_tags($arItem["PREVIEW_TEXT"]), 90); ?>
+                        <? echo strip_tags($arItem["PREVIEW_TEXT"]) ?>
                     </p>
                 <? endif; ?>
             </div>

@@ -341,16 +341,4 @@ $(document).ready(function () {
         }
     });
 
-    /*var promo = $('.promo-first, .promo-second-line, .swip-container');
-    promo.mouseover(function () {
-        $(this).find('.promo-wrap').stop().animate({
-            opacity: 0.2
-        }, 200);
-    });
-    promo.mouseout(function () {
-        $(this).find('.promo-wrap').stop().animate({
-            opacity: 0.5
-        }, 200);
-    });*/
-
 });

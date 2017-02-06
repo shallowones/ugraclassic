@@ -186,6 +186,7 @@
     padding-right: 10px;
     padding-bottom: 10px;
     line-height: 22px;
+    height: 156px;
 }
 .list-img {
     width: 175px;
@@ -195,6 +196,7 @@
 .list-text {
     font-family: 'Noto Serif', serif;
     color: #272727;
+    overflow-y: hidden;
 }
 .list-text > .date {
     font-family: 'Roboto Condensed', sans-serif;
