@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
 ?>
 <div class="news-complex">
 	<?if (count($arResult["ITEMS"])>0){?>
@@ -18,7 +19,7 @@ $this->setFrameMode(true);
 	<?=$arResult["NAV_STRING"]?><br />
 <?endif;?>
 <?foreach($arResult["ITEMS"] as $arItem):?>
-<?$pic = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>175, 'height'=>175), BX_RESIZE_IMAGE_EXACT, true);?>
+<?$pic = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>175, 'height'=>117), BX_RESIZE_IMAGE_EXACT, true);?>
 	<?
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
@@ -30,8 +31,6 @@ $this->setFrameMode(true);
 					<img class="preview_picture"
 						border="0"
 						src="<?=$pic["src"]?>"
-						width="<?=$pic["width"]?>"
-						height="<?=$pic["height"]?>"
 						alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
 						title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
 						/>
@@ -50,14 +49,14 @@ $this->setFrameMode(true);
 				<?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
 					<div class="news-name">
 						<a href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
-							<?echo $arItem["NAME"]?>
+							<?echo strip_tags($arItem["NAME"]) ?>
 						</a>
 					</div>
 				<?endif;?>
 
 				<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
 					<div class="news-text">
-						<?echo $arItem["PREVIEW_TEXT"];?>
+						<?echo strip_tags($arItem["PREVIEW_TEXT"]) ?>
 					</div>
 				<?endif;?>
 			</div>

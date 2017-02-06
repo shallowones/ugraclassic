@@ -2,9 +2,11 @@
 }
 
 .news-complex .news-item {
-	min-height: 175px;
+	min-height: 150px;
     border-bottom: 1px solid #e2e1e1;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
+	overflow-y: hidden;
+	padding: 10px 0 20px;
 }
 
 .news-complex .news-item .preview_picture {
@@ -17,7 +19,6 @@
 .news-complex .news-item .news-info {
 	float: left;
 	width: calc(100% - 190px);
-	padding-top: 10px;
 }
 
 .news-complex .news-item .news-date {
@@ -29,7 +30,6 @@
 }
 
 .news-complex .news-item .news-name-text-box {
-	height: 136px;
 	overflow: hidden;
 }
 
