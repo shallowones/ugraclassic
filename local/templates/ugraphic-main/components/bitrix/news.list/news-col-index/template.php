@@ -38,7 +38,7 @@ $this->setFrameMode(true);
                 <? endif; ?>
                 <? if ($arParams["DISPLAY_NAME"] != "N" && $arItem["NAME"]): ?>
                     <div class="name">
-                        <a href="<? echo $arItem["DETAIL_PAGE_URL"] ?>"><? echo TruncateText(strip_tags($arItem["NAME"]), 90); ?></a>
+                        <a href="<? echo $arItem["DETAIL_PAGE_URL"] ?>"><? echo TruncateText(strip_tags($arItem["NAME"]), 70); ?></a>
                     </div>
                 <? endif; ?>
                 <? if ($arParams["DISPLAY_PREVIEW_TEXT"] != "N" && $arItem["PREVIEW_TEXT"]): ?>
