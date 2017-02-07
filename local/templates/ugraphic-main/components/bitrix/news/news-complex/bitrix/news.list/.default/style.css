@@ -11,14 +11,14 @@
 
 .news-complex .news-item .preview_picture {
 	float: left;
-	width: 175px;
+	width: 306px;
 	/*height: 175px;*/
 	margin-right: 15px;
 }
 
 .news-complex .news-item .news-info {
 	float: left;
-	width: calc(100% - 190px);
+	width: calc(100% - 330px);
 }
 
 .news-complex .news-item .news-date {
