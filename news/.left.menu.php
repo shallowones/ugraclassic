@@ -20,6 +20,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Интервью",
+		"/news/?sections=112&date_start=&date_end=&set_filter=Применить",
+		Array(),
+		Array(),
+		""
 	)
 );
 ?>
