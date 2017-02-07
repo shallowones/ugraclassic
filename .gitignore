@@ -4,3 +4,4 @@
 /.vagrant
 /Vagrantfile
 /_dev
+/local/libs/inwidget/cache/db.txt
