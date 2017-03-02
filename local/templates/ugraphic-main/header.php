@@ -94,11 +94,14 @@ if ($_REQUEST['slow_vision'] == "Y") {
                         <div class="conts-row">
                             <div class="conts__item soc">
                                 <div class="dsc">Соцсети:</div>
-                                <a href="https://vk.com/club8121061">
+                                <a href="https://vk.com/club8121061" target="_blank">
                                     <div class="soc-vk"></div>
                                 </a>
-                                <a href="https://www.instagram.com/explore/locations/217530984/">
+                                <a href="https://www.instagram.com/explore/locations/217530984/" target="_blank">
                                     <div class="soc-insta"></div>
+                                </a>
+                                <a href="https://www.facebook.com/ugraclassic/" target="_blank">
+                                    <div class="soc-fb"></div>
                                 </a>
                             </div>
                             <div class="conts__item conts-time">
