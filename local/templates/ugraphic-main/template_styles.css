@@ -790,6 +790,15 @@ a:hover > .soc-vk, a:hover > .soc-insta {
 .soc-insta {
     background: url(img/insta.png) no-repeat 0 0;
 }
+.soc-fb {
+    background: url(img/fbicon.png) no-repeat 0 0;
+    width: 8px;
+    height: 16px;
+    margin-left: 10px;
+}
+a:hover > .soc-fb {
+    background-position-x: -8px;
+}
 .contact
 {
     font-family: 'Roboto Condensed', sans-serif;
