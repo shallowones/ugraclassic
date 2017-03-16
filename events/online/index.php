@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Online-трансляции");
 ?>
-<iframe width="660" height="415" src="https://www.youtube.com/embed/YU-wNOfz9pw?autoplay=1" frameborder="0" allowfullscreen></iframe>
+
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"online", 
