@@ -456,6 +456,11 @@
     width: 14px;
     height: 14px;
 }
+.cont__item > a .fb {
+    background: url('img/social.png') no-repeat 0 0;
+    width: 10px;
+    height: 16px;
+}
 .map {
     margin-top: 25px;
     width: 100%;
