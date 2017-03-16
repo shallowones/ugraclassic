@@ -2,14 +2,14 @@
 }
 
 .news-complex .news-item {
-	min-height: 180px;
+	min-height: 154px;
 	margin-bottom: 5px;
 }
 
 .news-complex .news-item .preview_picture {
 	float: left;
 	width: 306px;
-	height: 180px;
+	/*height: 180px;*/
 	margin-right: 20px;
 }
 
