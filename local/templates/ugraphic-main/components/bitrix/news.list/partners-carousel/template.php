@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 <div class="panaram3d-box">
-    <div id="panaram3d-partner" class="owl-carousel owl-theme">
+    <div class="owl-carousel owl-theme panaram3d-partner">
         <? foreach ($arResult["ITEMS"] as $arItem): ?>
             <? $slide = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width' => 100, 'height' => 100), BX_RESIZE_IMAGE_EXACT, true); ?>
             <?
@@ -30,7 +30,7 @@ $this->setFrameMode(true);
     </div>
 </div>
 <script>
-    var owl = $('#panaram3d-partner');
+    var owl = $('.panaram3d-partner');
     owl.owlCarousel({
         //loop: true,
         nav: true,
