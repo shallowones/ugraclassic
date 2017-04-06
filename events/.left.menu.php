@@ -8,13 +8,6 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Спецпроекты", 
-		"/events/official_events/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
 		"Гастрольная карта", 
 		"/events/region-event/", 
 		Array(), 

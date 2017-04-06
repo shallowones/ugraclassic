@@ -57,8 +57,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Услуги", 
-		"/about/services/", 
+		"Зрителям", 
+		"/about/viewers/", 
 		Array(), 
 		Array(), 
 		"" 

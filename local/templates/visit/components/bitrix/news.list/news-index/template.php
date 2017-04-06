@@ -18,7 +18,7 @@ $this->setFrameMode(true);
         <h1>НОВОСТИ</h1>
 <div class="news-index">
 <?foreach($arResult["ITEMS"] as $arItem):?>
-<?$pic = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>175, 'height'=>117), BX_RESIZE_IMAGE_EXACT, true);?>
+<?$pic = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], array('width'=>220, 'height'=>146), BX_RESIZE_IMAGE_EXACT, true);?>
 	<?
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
@@ -32,7 +32,7 @@ $this->setFrameMode(true);
 						src="<?=$pic["src"]?>"
 						alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
 						title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
-						style="max-width: 175px;"
+						style="max-width: 220px;"
 						/>
 				</a>
 		<?endif?>

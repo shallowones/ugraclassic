@@ -97,7 +97,7 @@ if ($_REQUEST['slow_vision'] == "Y") {
                                 <a href="https://vk.com/club8121061" target="_blank">
                                     <div class="soc-vk"></div>
                                 </a>
-                                <a href="https://www.instagram.com/explore/locations/217530984/" target="_blank">
+                                <a href="https://www.instagram.com/ugra_classic86/" target="_blank">
                                     <div class="soc-insta"></div>
                                 </a>
                                 <a href="https://www.facebook.com/ugraclassic/" target="_blank">

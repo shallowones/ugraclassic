@@ -600,8 +600,16 @@ h1 {
     background-position: -42px 0px;
 }
 
+.head-info .social .in {
+    width: 14px;
+    height: 14px;
+    margin-left: 15px;
+    background: url('/local/templates/visit/styles/kontsertnyy-orkestr-yugry/img/in.png') no-repeat 0 0;
+}
 
-
+.head-info .social .in:hover {
+    background-position-y: -18px;
+}
 .mobile-info {
     display: none;
 }
