@@ -85,12 +85,6 @@ $APPLICATION->SetTitle("Вакансии");
  <br>
 </p>
 <p>
- <b>Адрес для резюме:</b>
-</p>
-<p>
-	 reklamy.<a href="mailto:otdel@mail.ru">otdel@mail.ru</a>
-</p>
-<p>
  <br>
 </p>
 <h4> <b>Специалист по закупкам</b> </h4>
@@ -212,7 +206,7 @@ $APPLICATION->SetTitle("Вакансии");
 </p>
  </h4>
 <p>
-	<u><i>Требования к образованию и квалификации:</i></u>
+ <u><i>Требования к образованию и квалификации:</i></u>
 </p>
 <p>
 	 - высшее профессиональное образование;
@@ -232,9 +226,17 @@ $APPLICATION->SetTitle("Вакансии");
 <p>
 </p>
 <p>
-	 &nbsp;
+ <b>&nbsp; </b>
 </p>
-<h4><br>
+<b> </b>
+<h4><b> </b>
+<p>
+	<b>
+	Адрес для резюме:</b>
+</p>
+<p>
+ <a href="mailto:otdel@mail.ru">okrart@mail.ru</a>
+</p>
  </h4>
 <p>
 </p>

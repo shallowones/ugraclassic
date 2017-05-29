@@ -50,7 +50,7 @@ $APPLICATION->SetTitle("Поиск");
 		),
 		"arrFILTER_iblock_news" => array(
 			0 => "2",
-			1 => "6",
+			1 => "73",
 		),
 		"arrFILTER_iblock_photo" => array(
 			0 => "7",

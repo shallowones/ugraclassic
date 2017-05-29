@@ -887,7 +887,7 @@ $GLOBALS['FLT_EVENTS_PROMO'] = [
                 );?>
 
 
-                <h1 class="m-top30">УЧРЕЖДЕНИЯ КУЛЬТУРЫ</h1>
+                <h1 class="m-top30">УЧРЕЖДЕНИЯ КУЛЬТУРЫ ЮГРЫ</h1>
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:news.list",
                     "partners-carousel",
@@ -954,7 +954,7 @@ $GLOBALS['FLT_EVENTS_PROMO'] = [
                 );?>
             </div><!-- .wrapper -->
         </div>
-
+        <br><br>
 
 
     </div><!-- .content -->

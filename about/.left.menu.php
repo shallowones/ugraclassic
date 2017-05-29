@@ -36,6 +36,13 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Сведения о доходах руководителя учреждения", 
+		"/about/svedeniya-o-dokhodakh-rukovoditelya-uchrezhdeniya/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
 		"Дирекция", 
 		"/about/management/", 
 		Array(), 
