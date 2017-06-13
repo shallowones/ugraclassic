@@ -149,7 +149,6 @@ class OrderBindingToCourierComponent extends CBitrixComponent
             ['ID', 'NAME', 'UF_LINK']
         );
         while ($arSection = $rsSections->Fetch()) {
-            gg($this->getParentSectionUrl($arSection['ID']));
             $this->arResult['LIST'][] = [
                 'ID' => $arSection['ID'],
                 'NAME' => $arSection['NAME'],
