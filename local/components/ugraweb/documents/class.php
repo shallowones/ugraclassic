@@ -62,7 +62,7 @@ class OrderBindingToCourierComponent extends CBitrixComponent
         $link = $APPLICATION->GetCurDir() . $sectionId . '/';
 
         // проверка на наличие подразделов
-        $rsSections = \CIBlockSection::GetList(
+        /*$rsSections = \CIBlockSection::GetList(
             ['SORT' => 'ASC', 'CREATED' => 'ASC'],
             ['SECTION_ID' => $sectionId, 'ACTIVE' => 'Y'],
             false,
@@ -82,9 +82,9 @@ class OrderBindingToCourierComponent extends CBitrixComponent
         );
         if ($arElement = $rsElements->Fetch()) {
             return $link;
-        }
+        }*/
 
-        return '';
+        return $link;
     }
 
     private function checkLink($link)
@@ -149,6 +149,7 @@ class OrderBindingToCourierComponent extends CBitrixComponent
             ['ID', 'NAME', 'UF_LINK']
         );
         while ($arSection = $rsSections->Fetch()) {
+            gg($this->getParentSectionUrl($arSection['ID']));
             $this->arResult['LIST'][] = [
                 'ID' => $arSection['ID'],
                 'NAME' => $arSection['NAME'],
