@@ -210,7 +210,7 @@ class OrderBindingToCourierComponent extends CBitrixComponent
         }
         elseif (!empty($_GET['year']) && $_SESSION['YEAR_FILTER'] !== $_GET['year']) {
             $_SESSION['YEAR_FILTER'] = $_GET['year'];
-            LocalRedirect($APPLICATION->GetCurDir());
+            LocalRedirect($APPLICATION->GetCurDir() . 'index.php');
         }
 
         $this
