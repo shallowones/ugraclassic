@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Документы");
-$ibDocumentsID 			= 	\UW\IBBase::getIBIdByCode("ktc_documents");
+/*$ibDocumentsID 			= 	\UW\IBBase::getIBIdByCode("ktc_documents");
 
 $arYear = CIBlockSection::GetList(
     ['NAME'=>'DESC'],
@@ -66,5 +66,20 @@ $arYear = CIBlockSection::GetList(
 		"SORT_ORDER2" => "ASC",
         "YEAR" => $_GET['YEAR']
 	)
-);?><br>
+);*/?><br>
+
+
+<?$APPLICATION->IncludeComponent(
+	"ugraweb:documents", 
+	"documents-template", 
+	array(
+		"COMPONENT_TEMPLATE" => "documents-template",
+		"IBLOCK_TYPE" => "documents",
+		"IBLOCK_ID" => \UW\IBBase::getIBIdByCode("doc-new"),
+		"COUNT_SHOW_ELEMENTS" => "10"
+	),
+	false
+);?>
+
+
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
