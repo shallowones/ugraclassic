@@ -24,6 +24,7 @@ $this->setFrameMode(true);
 
     <br><br>
 
+<? if ($arResult['ITEMS']): ?>
     <ul class="documents">
         <? foreach ($arResult['ITEMS'] as $arItem): ?>
             <li class="documents__item">
@@ -39,9 +40,13 @@ $this->setFrameMode(true);
             </li>
         <? endforeach; ?>
     </ul>
+<? else: ?>
+    <p>Нет подходящих элементов. Измените параметры фильтрации.</p>
+<? endif; ?>
+
 
 <? if ($arParams['BACK_URL']): ?>
-    <a href="<? echo $arParams['BACK_URL'] ?>">НАЗАД</a>
+    <br><a href="<? echo $arParams['BACK_URL'] ?>">НАЗАД</a><br><br>
 <? endif; ?>
 
 <? echo ($arResult['NAV_STRING']) ? $arResult['NAV_STRING'] : '' ?>

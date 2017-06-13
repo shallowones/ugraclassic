@@ -76,7 +76,12 @@ $arYear = CIBlockSection::GetList(
 		"COMPONENT_TEMPLATE" => "documents-template",
 		"IBLOCK_TYPE" => "documents",
 		"IBLOCK_ID" => \UW\IBBase::getIBIdByCode("doc-new"),
-		"COUNT_SHOW_ELEMENTS" => "10"
+		"COUNT_SHOW_ELEMENTS" => "10",
+		"SEF_MODE" => "Y",
+		"SEF_FOLDER" => "/about/docs/",
+		"SEF_URL_TEMPLATES" => array(
+			"news" => "",
+		)
 	),
 	false
 );?>

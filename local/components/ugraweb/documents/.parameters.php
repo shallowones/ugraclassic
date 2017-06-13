@@ -35,6 +35,13 @@ $arComponentParameters = array(
             "NAME" => 'Количество элементов на странице',
             "TYPE" => "STRING",
             "DEFAULT" => '10',
+        ),
+        "SEF_MODE" => Array(
+            "news" => array(
+                "NAME" => GetMessage("T_IBLOCK_SEF_PAGE_NEWS"),
+                "DEFAULT" => "",
+                "VARIABLES" => array(),
+            )
         )
-    ),
+    )
 );
