@@ -28,8 +28,8 @@ $this->setFrameMode(true);
     <ul class="documents">
         <? foreach ($arResult['ITEMS'] as $arItem): ?>
             <li class="documents__item">
-                <a href="<? echo $arItem['LINK'] ?>">
-                    <div class="doc-format"><? echo $arItem['FILE_TYPE'] ?></div>
+                <a href="<? echo $arItem['LINK'] ?>"<? echo ($arItem['TYPE'] === 'outer') ? ' target="_blank"' : '' ?>>
+                    <div class="doc-format<? echo ($arItem['TYPE']) ? ' ' . $arItem['TYPE'] : '' ?>"><? echo $arItem['FILE_TYPE'] ?></div>
                     <div class="description">
                         <div class="doc-name"><? echo $arItem['NAME'] ?></div>
                         <? if ($arItem['FILE_SIZE']): ?>

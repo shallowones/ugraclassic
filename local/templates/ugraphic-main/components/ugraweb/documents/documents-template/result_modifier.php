@@ -3,9 +3,25 @@
 
 // запись расширения файла и его размера
 foreach ($arResult['ITEMS'] as $key => $arItem) {
+    // файл
     if (strripos($arItem['LINK'], 'upload/iblock')) {
         $arResult['ITEMS'][$key]['FILE_TYPE'] = substr($arItem['LINK'], strripos($arItem['LINK'], '.') + 1);
         $arResult['ITEMS'][$key]['FILE_SIZE'] = fileSizeConvert(filesize($_SERVER['DOCUMENT_ROOT'] . $arItem['LINK']));
+    }
+
+    // внешний ресурс
+    elseif (!$arItem['IS_INNER']) {
+        $arResult['ITEMS'][$key]['TYPE'] = 'outer';
+    }
+
+    // вложенность
+    elseif (strripos($arItem['LINK'], '/docs/')) {
+        $arResult['ITEMS'][$key]['TYPE'] = 'enclosure';
+    }
+
+    // внутренний раздел
+    else {
+        $arResult['ITEMS'][$key]['TYPE'] = 'inner';
     }
 }
 
