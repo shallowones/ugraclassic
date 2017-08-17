@@ -96,9 +96,11 @@ $this->setFrameMode(true);
                     <?endif?>
                     <div class="tick">
                         <? if(intval($arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE']) > 0): ?>
-                            <a href="https://hm.kassir.ru/kassirwidget/event/<?=$arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>?key=ff01bc2d-7012-9f23-e03c-cf3e49f87b30" target="_blank">Купить билет онлайн</a>
+                            <?/*<a href="https://hm.kassir.ru/kassirwidget/event/<?=$arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>?key=ff01bc2d-7012-9f23-e03c-cf3e49f87b30" target="_blank">Купить билет онлайн</a>*/?>
+                            <a href="javascript:void();" onclick="kassirWidget.summon({url:'https://hm.kassir.ru/frame/entry/index/<?=$arResult['DISPLAY_PROPERTIES']['link_kassir']['VALUE']?>?type=A&key=7f4d1d66-fe66-c762-a4ec-2d94af6176d9'})">Купить билет онлайн</a>
                         <? else: ?>
-                            <a href="javascript:void();" onclick="kassirWidget.summon({url:'https://hm.kassir.ru/kassirwidget/ro?key=ff01bc2d-7012-9f23-e03c-cf3e49f87b30'})">Купить билет онлайн</a>
+                            <?/*<a href="javascript:void();" onclick="kassirWidget.summon({url:'https://hm.kassir.ru/kassirwidget/ro?key=ff01bc2d-7012-9f23-e03c-cf3e49f87b30'})">Купить билет онлайн</a>*/?>
+                            <a href="javascript:void();" onclick="kassirWidget.summon({url:'https://hm.kassir.ru/bilety-na-koncert?key=ff01bc2d-7012-9f23-e03c-cf3e49f87b30'})">Купить билет онлайн</a>
                         <? endif; ?>
                     </div>
                 </div>

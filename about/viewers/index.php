@@ -62,8 +62,7 @@ $APPLICATION->SetTitle("Зрителям");
 	 Концертно-театральный центр «Югра-Классик» - главная сцена Югры – заботится о том, чтобы сделать насыщенным и качественным ваш культурный досуг, внести в вашу жизнь позитивные эмоции.
 </p>
 <p>
-	 Нам очень важно знать ваше мнение о работе КТЦ «Югра-Классик». По ссылке <a href="http://simpoll.ru/run/survey/65001517">http://simpoll.ru/run/survey/65001517</a>
-	можно пройти онлайн-анкетирование. Ссылка будет действовать до 15 июня.
+	 Нам очень важно знать ваше мнение о работе КТЦ «Югра-Классик». По ссылке <a href="http://simpoll.ru/run/survey/dc4fd5ad" target="_blank">http://simpoll.ru/run/survey/dc4fd5ad</a> можно пройти онлайн-анкетирование. Ссылка будет действовать до 30 июня.
 </p>
 <p>
 </p>
@@ -73,10 +72,10 @@ $APPLICATION->SetTitle("Зрителям");
 <p style="text-align: left;">
 </p>
 <p style="text-align: left;">
-	<br>
+ <br>
 </p>
 <p style="text-align: left;">
-	Ознакомиться с правилами посещения КТЦ «Югра-Классик» можно <a href="https://drive.google.com/file/d/0B7y2nl_8uveQUjQwWHEtWVo5aDg/view?usp=sharing">здесь.</a>
+	 Ознакомиться с правилами посещения КТЦ «Югра-Классик» можно <a href="https://drive.google.com/file/d/0B7y2nl_8uveQUjQwWHEtWVo5aDg/view?usp=sharing">здесь.</a>
 </p>
 <p>
  <a href="https://drive.google.com/file/d/0B7y2nl_8uveQUjQwWHEtWVo5aDg/view?usp=sharing"></a><br>
