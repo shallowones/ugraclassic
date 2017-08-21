@@ -41,6 +41,7 @@ if ($_REQUEST['slow_vision'] == "Y") {
         CJSCore::Init(array('date'));
         ?>
         <? $APPLICATION->ShowHead(); ?>
+        <script charset="UTF-8" src="//cdn.sendpulse.com/28edd3380a1c17cf65b137fe96516659/js/push/1a4acface838571e6276b89d1b9aa975_0.js" async></script>
     </head>
 <body>
     <div id="panel">
