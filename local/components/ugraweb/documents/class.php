@@ -2,7 +2,7 @@
 
 \Bitrix\Main\Loader::includeModule('iblock');
 
-class OrderBindingToCourierComponent extends CBitrixComponent
+class CUwDocs extends CBitrixComponent
 {
     public function onPrepareComponentParams($arParams)
     {
@@ -36,7 +36,6 @@ class OrderBindingToCourierComponent extends CBitrixComponent
         return $arParams;
     }
 
-
     private function getSectionName($sectionId)
     {
         $rsSections = \CIBlockSection::GetList(
@@ -60,29 +59,6 @@ class OrderBindingToCourierComponent extends CBitrixComponent
     {
         global $APPLICATION;
         $link = $APPLICATION->GetCurDir() . $sectionId . '/';
-
-        // проверка на наличие подразделов
-        /*$rsSections = \CIBlockSection::GetList(
-            ['SORT' => 'ASC', 'CREATED' => 'ASC'],
-            ['SECTION_ID' => $sectionId, 'ACTIVE' => 'Y'],
-            false,
-            ['ID']
-        );
-        if ($arSection = $rsSections->Fetch()) {
-            return $link;
-        }
-
-        // проверка на наличие элементов
-        $rsElements = \CIBlockElement::GetList(
-            ['SORT' => 'ASC', 'DATE_ACTIVE_FROM' => 'ASC'],
-            ['SECTION_ID' => $sectionId, 'ACTIVE' => 'Y'],
-            false,
-            false,
-            ['ID']
-        );
-        if ($arElement = $rsElements->Fetch()) {
-            return $link;
-        }*/
 
         return $link;
     }
@@ -205,7 +181,7 @@ class OrderBindingToCourierComponent extends CBitrixComponent
         global $APPLICATION;
 
         if ($_GET['year'] === 'all') {
-            unset($_SESSION['YEAR_FILTER']);
+            $_SESSION['YEAR_FILTER'] = '';
             LocalRedirect($APPLICATION->GetCurDir());
         }
         elseif (!empty($_GET['year']) && $_SESSION['YEAR_FILTER'] !== $_GET['year']) {

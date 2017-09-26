@@ -7,16 +7,16 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/kontsertnyy-orkestr-yugry/o-nas/photogal/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/kontsertnyy-orkestr-yugry/o-nas/artisty/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/kontsertnyy-orkestr-yugry/o-nas/artisty/index.php",
-	),
-	array(
 		"CONDITION" => "#^/collective/kontsertnyy-orkestr-yugry/o-nas/control/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/collective/kontsertnyy-orkestr-yugry/o-nas/control/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/kontsertnyy-orkestr-yugry/o-nas/artisty/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/kontsertnyy-orkestr-yugry/o-nas/artisty/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/kontsertnyy-orkestr-yugry/o-nas/video/#",
@@ -31,22 +31,16 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/kontsertnyy-orkestr-yugry/afisha/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/ans-pes-i-tants/o-nas/photogal/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/ans-pes-i-tants/o-nas/photogal/index.php",
-	),
-	array(
 		"CONDITION" => "#^/collective/kontsertnyy-orkestr-yugry/news/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/collective/kontsertnyy-orkestr-yugry/news/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/ans-pes-i-tants/o-nas/artisty/#",
+		"CONDITION" => "#^/collective/ans-pes-i-tants/o-nas/photogal/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/ans-pes-i-tants/o-nas/artisty/index.php",
+		"PATH" => "/collective/ans-pes-i-tants/o-nas/photogal/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/ans-pes-i-tants/o-nas/control/#",
@@ -55,10 +49,10 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/ans-pes-i-tants/o-nas/control/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/dukh-or-yugry/o-nas/photogal/#",
+		"CONDITION" => "#^/collective/ans-pes-i-tants/o-nas/artisty/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/dukh-or-yugry/o-nas/photogal/index.php",
+		"PATH" => "/collective/ans-pes-i-tants/o-nas/artisty/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/solisty-yugry/o-nas/photogal/#",
@@ -67,22 +61,10 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/solisty-yugry/o-nas/photogal/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/solisty-yugry/o-nas/artisty/#",
+		"CONDITION" => "#^/collective/dukh-or-yugry/o-nas/photogal/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/solisty-yugry/o-nas/artisty/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/dukh-or-yugry/o-nas/control/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/dukh-or-yugry/o-nas/control/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/dukh-or-yugry/o-nas/artisty/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/dukh-or-yugry/o-nas/artisty/index.php",
+		"PATH" => "/collective/dukh-or-yugry/o-nas/photogal/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/ans-pes-i-tants/o-nas/video/#",
@@ -103,16 +85,22 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/solisty-yugry/o-nas/control/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/akadem-tants/o-nas/artisty/#",
+		"CONDITION" => "#^/collective/solisty-yugry/o-nas/artisty/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/akadem-tants/o-nas/artisty/index.php",
+		"PATH" => "/collective/solisty-yugry/o-nas/artisty/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/akadem-tants/o-nas/control/#",
+		"CONDITION" => "#^/collective/dukh-or-yugry/o-nas/control/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/akadem-tants/o-nas/control/index.php",
+		"PATH" => "/collective/dukh-or-yugry/o-nas/control/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/dukh-or-yugry/o-nas/artisty/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/dukh-or-yugry/o-nas/artisty/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/sibir-brass/o-nas/photogal/#",
@@ -121,22 +109,16 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/sibir-brass/o-nas/photogal/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/teatr-kost/o-nas/photogal/#",
+		"CONDITION" => "#^/collective/akadem-tants/o-nas/control/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/teatr-kost/o-nas/photogal/index.php",
+		"PATH" => "/collective/akadem-tants/o-nas/control/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/sibir-brass/o-nas/artisty/#",
+		"CONDITION" => "#^/collective/akadem-tants/o-nas/artisty/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/sibir-brass/o-nas/artisty/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/dukh-or-yugry/o-nas/video/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/dukh-or-yugry/o-nas/video/index.php",
+		"PATH" => "/collective/akadem-tants/o-nas/artisty/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/sibir-brass/o-nas/control/#",
@@ -149,6 +131,24 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/collective/solisty-yugry/o-nas/video/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/dukh-or-yugry/o-nas/video/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/dukh-or-yugry/o-nas/video/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/sibir-brass/o-nas/artisty/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/sibir-brass/o-nas/artisty/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/teatr-kost/o-nas/photogal/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/teatr-kost/o-nas/photogal/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/teatr-kost/o-nas/artisty/#",
@@ -193,40 +193,16 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/ans-pes-i-tants/afisha/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/konsone/o-nas/control/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/konsone/o-nas/control/index.php",
-	),
-	array(
 		"CONDITION" => "#^/collective/konsone/o-nas/artisty/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/collective/konsone/o-nas/artisty/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/mlada/o-nas/photogal/#",
+		"CONDITION" => "#^/collective/konsone/o-nas/control/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/mlada/o-nas/photogal/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/ans-pes-i-tants/news/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/ans-pes-i-tants/news/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/dukh-or-yugry/afisha/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/dukh-or-yugry/afisha/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/solisty-yugry/afisha/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/solisty-yugry/afisha/index.php",
+		"PATH" => "/collective/konsone/o-nas/control/index.php",
 	),
 	array(
 		"CONDITION" => "#^/сollective/mlada/o-nas/photogal/#",
@@ -241,6 +217,54 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/smola/o-nas/photogal/index.php",
 	),
 	array(
+		"CONDITION" => "#^/collective/solisty-yugry/afisha/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/solisty-yugry/afisha/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/ans-pes-i-tants/news/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/ans-pes-i-tants/news/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/dukh-or-yugry/afisha/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/dukh-or-yugry/afisha/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/mlada/o-nas/photogal/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/mlada/o-nas/photogal/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/smola/o-nas/artisty/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/smola/o-nas/artisty/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/smola/o-nas/control/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/smola/o-nas/control/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/mlada/o-nas/artisty/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/mlada/o-nas/artisty/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/konsone/o-nas/video/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/konsone/o-nas/video/index.php",
+	),
+	array(
 		"CONDITION" => "#^/collective/mlada/o-nas/control/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
@@ -253,28 +277,10 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/akadem-tants/afisha/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/konsone/o-nas/video/#",
+		"CONDITION" => "#^/collective/dukh-or-yugry/news/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/konsone/o-nas/video/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/smola/o-nas/control/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/smola/o-nas/control/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/smola/o-nas/artisty/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/smola/o-nas/artisty/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/mlada/o-nas/artisty/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/mlada/o-nas/artisty/index.php",
+		"PATH" => "/collective/dukh-or-yugry/news/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/solisty-yugry/news/#",
@@ -289,22 +295,10 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/sibir-brass/afisha/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/dukh-or-yugry/news/#",
+		"CONDITION" => "#^/collective/mlada/o-nas/video/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/dukh-or-yugry/news/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/teatr-kost/afisha/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/teatr-kost/afisha/index.php",
-	),
-	array(
-		"CONDITION" => "#^/collective/akadem-tants/news/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/akadem-tants/news/index.php",
+		"PATH" => "/collective/mlada/o-nas/video/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/smola/o-nas/video/#",
@@ -313,10 +307,16 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/smola/o-nas/video/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/mlada/o-nas/video/#",
+		"CONDITION" => "#^/collective/akadem-tants/news/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/collective/mlada/o-nas/video/index.php",
+		"PATH" => "/collective/akadem-tants/news/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/teatr-kost/afisha/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/teatr-kost/afisha/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/sibir-brass/news/#",
@@ -337,10 +337,10 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/konsone/afisha/index.php",
 	),
 	array(
-		"CONDITION" => "#^/bitrix/services/ymarket/#",
+		"CONDITION" => "#^/collective/konsone/news/#",
 		"RULE" => "",
-		"ID" => "",
-		"PATH" => "/bitrix/services/ymarket/index.php",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/konsone/news/index.php",
 	),
 	array(
 		"CONDITION" => "#^/collective/smola/afisha/#",
@@ -355,16 +355,22 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/mlada/afisha/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/konsone/news/#",
+		"CONDITION" => "#^/bitrix/services/ymarket/#",
 		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/konsone/news/index.php",
+		"ID" => "",
+		"PATH" => "/bitrix/services/ymarket/index.php",
 	),
 	array(
 		"CONDITION" => "#^/events/official_events/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/events/official_events/index.php",
+	),
+	array(
+		"CONDITION" => "#^/collective/mlada/news/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/collective/mlada/news/index.php",
 	),
 	array(
 		"CONDITION" => "#^/сollective/mlada/news/#",
@@ -379,16 +385,16 @@ $arUrlRewrite = array(
 		"PATH" => "/collective/smola/news/index.php",
 	),
 	array(
-		"CONDITION" => "#^/collective/mlada/news/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/collective/mlada/news/index.php",
-	),
-	array(
 		"CONDITION" => "#^/news/newsculture/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/news/newsculture/index.php",
+	),
+	array(
+		"CONDITION" => "#^/about/documents/#",
+		"RULE" => "",
+		"ID" => "ugraweb:documents",
+		"PATH" => "/about/docs/index.php",
 	),
 	array(
 		"CONDITION" => "#^/news/backstage/#",
@@ -409,6 +415,12 @@ $arUrlRewrite = array(
 		"PATH" => "/news/photo/index.php",
 	),
 	array(
+		"CONDITION" => "#^/documents/#",
+		"RULE" => "",
+		"ID" => "ugraweb:documents",
+		"PATH" => "/documents/index.php",
+	),
+	array(
 		"CONDITION" => "#^/events/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
@@ -418,13 +430,19 @@ $arUrlRewrite = array(
 		"CONDITION" => "#^/news/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/news/index.php",
+		"PATH" => "/news/interview/index.php",
 	),
 	array(
 		"CONDITION" => "#^/news/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/news/interview/index.php",
+		"PATH" => "/news/index.php",
+	),
+	array(
+		"CONDITION" => "#^/#",
+		"RULE" => "",
+		"ID" => "ugraweb:documents",
+		"PATH" => "/test.php",
 	),
 );
 
